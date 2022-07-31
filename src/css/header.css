@@ -22,7 +22,7 @@ body {
 }
 
 .navbar-brand {
-  /*Cemosis: align-items: center;*/
+  /* Cemosis: align-items: center; */
   display: flex;
   flex: auto;
   padding-left: 1rem;
