@@ -1,6 +1,6 @@
 .doc .panel {
   margin-top: 1rem;
-  background-color: var(--color-smoke-50);
+  background-color: var(--color-gray-30);
   border-radius: 0.5em;
   padding: 0.75rem 1.25rem;
   font-size: calc(16 / var(--rem-base) * 1rem);
