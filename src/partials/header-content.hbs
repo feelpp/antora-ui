@@ -31,6 +31,7 @@
             <hr class="navbar-divider">
           </div>
         </div>
+        {{#if (eq 'feelpp' page.component.name) }}
         <div class="navbar-item has-dropdown is-hoverable">
           <div class="navbar-link">Feel++</div>
           <div class="navbar-dropdown">
@@ -45,6 +46,7 @@
             
           </div>
         </div>
+        {{/if}}
         {{#if env.ALGOLIA_API_KEY}}
         <div class="primary-action">
             <form class="navbar-item search">
