@@ -1,5 +1,5 @@
 name: antora-ui-default
 title: Cemosis Documentation UI
-version: master
+version: ~
 nav:
 - modules/ROOT/nav.adoc
