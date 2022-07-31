@@ -123,7 +123,7 @@ module.exports = (src, dest, preview) => () => {
             }),
           ].reduce((accum, it) => (it ? accum.concat(it) : accum), [])
         )
-      ),
+    ),
     vfs.src('img/book_cover_simple.svg', opts),
     vfs.src('helpers/*.js', opts),
     vfs.src('layouts/*.hbs', opts),
