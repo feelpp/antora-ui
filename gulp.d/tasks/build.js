@@ -103,7 +103,7 @@ module.exports = (src, dest, preview) => () => {
     //vfs.src(require.resolve('<package-name-or-require-path>'), opts).pipe(concat('js/vendor/<library-name>.js')),
     vfs.src(require.resolve('jquery/dist/jquery.min.js'), opts).pipe(concat('js/vendor/jquery.js')),
     vfs
-      .src(['css/site.css', 'css/vendor/*.css'], { ...opts, sourcemaps })
+      .src(['css/site.css', 'css/home.css', 'css/vendor/*.css'], { ...opts, sourcemaps })
       .pipe(postcss((file) => ({ plugins: postcssPlugins, options: { file } }))),
     vfs.src('font/*.{ttf,woff*(2)}', opts),
     vfs.src(['img/**/*.{gif,ico,jpg,png,svg}', '!img/book_cover_simple.svg'], opts).pipe(
