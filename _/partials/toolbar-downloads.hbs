@@ -1,0 +1,20 @@
+<div class="dropdown">
+  <button class="dropbtn" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <div class="dropdown-content">
+
+{{#if page.attributes.jupyter}}
+
+        <a download href="{{relativize (resolveResourceURL (replace (join 'attachment$' page.relativeSrcPath) '.adoc' '.ipynb'))}}" title="Download Jupyter Notebook" data-toggle="tooltip" data-placement="left">
+         .ipynb <i class="fas fa-file"></i>
+        </a>
+
+{{/if}}
+
+          <a onclick="print(this)"  class="headerbtn"  data-toggle="tooltip" data-placement="left" title="Print to PDF">
+              .pdf <i class="fas fa-file-pdf"></i>
+          </a>
+
+  </div>
+</div>
