@@ -2,8 +2,7 @@
   <nav class="navbar  navbar-expand-sm bg-dark navbar-dark">
     <div class="navbar-brand">
       <div class="navbar-item">
-         <!--  <a href="https://book.feelpp.org">Feel++ documentation</a> -->
-           <a href="{{{site.url}}}">{{{site.title}}}</a>
+           <a href="{{{site.url}}}"><img src="{{{uiRootPath}}}/img/feelpp-logo.svg" alt="Feel++ logo"/></a>
       </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
@@ -13,55 +12,51 @@
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item" href="{{{site.url}}}">Home</a>
         <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Docs</div>
+          <div class="navbar-link">Manuals</div>
           <div class="navbar-dropdown">
-            <div class="navbar-item"><strong>Latest Version</strong></div>
-
-            <!-- this code allow to manage ordering of navbar item -->
-            {{#each site.components}} {{#if (not eq 'cemosis' ./name)}} {{#each ./versions}} {{#if (eq this ../latestVersion)}}
-              <a class="navbar-item" href="{{{./url}}}"> {{{./title}}} </a>
-            {{/if}} {{/each}} {{/if}} {{/each}}
-
-            <hr class="navbar-divider">
+            <a class="navbar-item" href="http://docs.feelpp.org/user/{{{asciidoc.attributes.feelpp-version}}}">User</a>
+            <a class="navbar-item" href="http://docs.feelpp.org/dev/{{{asciidoc.attributes.feelpp-version}}}">Developer</a>
+            <a class="navbar-item" href="http://docs.feelpp.org/toolbox/{{{asciidoc.attributes.feelpp-version}}}">Toolbox</a>
           </div>
         </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Feel++</div>
-          <div class="navbar-dropdown">
-            <div class="navbar-item"><strong>GitHub</strong></div>
-            <a class="navbar-item" href="http://github.com/feelpp/feelpp">GitHub Repository</a>
-            <a class="navbar-item" href="http://github.com/feelpp/feelpp/issues">GitHub Issue Tracker</a>
-            <hr class="navbar-divider">
-            <div class="navbar-item"><strong>Documentation</strong></div>
-            <a class="navbar-item" href="http://docs.feelpp.org/user/{{{asciidoc.attributes.feelpp-version}}}">User Manual</a>
-            <a class="navbar-item" href="http://docs.feelpp.org/dev/{{{asciidoc.attributes.feelpp-version}}}">Developer Manual</a>
-            <a class="navbar-item" href="http://docs.feelpp.org/toolbox/{{{asciidoc.attributes.feelpp-version}}}">Toolbox Manual</a>
-
-          </div>
-        </div>
-        {{#if env.ALGOLIA_API_KEY}}
-        <div class="primary-action">
+        <div class="navbar-item search hide-for-print">
             <form class="navbar-item search">
+              <i class="fa-solid fa-search"></i>
               <input type="text" placeholder="Search {{{site.title}}}" class="query" id="search-query">
-              <button type="button" class="search-btn"><i class="fas fa-search"></i></button>
             </form>
         </div>
-        {{/if}}
-        <div class="navbar-item">
+        <!--div class="navbar-item">
           <a class="navbar-brand" href="https://join.slack.com/t/feelpp/shared_invite/zt-2qe0q9hw-4pVbhohCXUE6Po9Ma8dbiQ">
-            <img src="{{{uiRootPath}}}/img/slack.png" alt="slack" style="width:30px;"></a>
-        </div>
-        <div class="navbar-item">
-          <a class="navbar-brand"  href="http://docs.feelpp.org">
-            <img src="{{{uiRootPath}}}/img/logoFeelpp.png" alt="Feel++" style="width:60px;">
-          </a>
-        </div>
+            <img class="slack-logo" src="{{{uiRootPath}}}/img/slack.svg" alt="Slack logo"></a>
+        </div-->
         <div class="navbar-item">
           <a class="navbar-brand"  href="http://www.cemosis.fr">
-            <img src="{{{uiRootPath}}}/img/logoCemosisTransparent.png" alt="Cemosis" style="width:60px;">
+            <img class="cemosis-logo"  src="{{{uiRootPath}}}/img/cemosis-logo.svg" alt="Cemosis logo"/>
           </a>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item" href="about/support/" data-title="Support">
+            <span class="icon"><img src="./_/img/octicons-24.svg#view-comment-discussion"></span>
+          </a>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item has-icon" href="https://chat.asciidoctor.org" target="_blank" rel="noopener">
+              <span class="icon"><img src="./_/img/octicons-16.svg#view-comment-discussion"></span>
+              <span>Chat</span>
+            </a>
+            <a class="navbar-item has-icon" href="https://discuss.asciidoctor.org" target="_blank" rel="noopener">
+              <span class="icon"><img src="./_/img/octicons-16.svg#view-mail"></span>
+              <span>List</span>
+            </a>
+            <a class="navbar-item has-icon" href="https://github.com/asciidoctor" target="_blank" rel="noopener">
+              <span class="icon"><img src="./_/img/octicons-16.svg#view-mark-github"></span>
+              <span>Source</span>
+            </a>
+            <a class="navbar-item has-icon" href="https://twitter.com/asciidoctor" target="_blank" rel="noopener">
+              <span class="icon"><img src="./_/img/octicons-16.svg#view-hash"></span>
+              <span>Tweets</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
