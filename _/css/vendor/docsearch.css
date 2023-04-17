@@ -633,6 +633,8 @@
   --color-background-hljs: #16191d;
   --color-border: var(--color-brand-silver);
   --checkbox-border-color: var(--color-brand-gray9);
+  --vh: 1vh;
+  --viewport-height: calc(var(--vh, 1vh)*100);
 
   /* fonts */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
@@ -762,7 +764,7 @@
   --toolbar-height: calc(45/var(--rem-base)*1rem);
   --drawer-height: var(--toolbar-height);
   --body-top: var(--navbar-height);
-  --body-min-height: calc(100vh - var(--body-top));
+  --body-min-height: calc(var(--viewport-height) - var(--body-top));
   --nav-height: calc(var(--body-min-height) - var(--toolbar-height));
   --nav-height--desktop: var(--body-min-height);
   --nav-panel-menu-height: calc(100% - var(--drawer-height));
