@@ -1310,6 +1310,51 @@ monospace;
   color: #9c9c9c;
   color: var(--toolbar-muted-color);
 }
+.toolbar .page-downloads {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 0.75em;
+  margin-right: 1em;
+}
+.toolbar .page-downloads .label {
+  font-weight: 500;
+  color: #9c9c9c;
+  color: var(--toolbar-muted-color);
+}
+.toolbar .download-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  gap: 0.75em;
+  padding: 0;
+  margin: 0 0 0 1em;
+  color: #9c9c9c;
+  color: var(--toolbar-muted-color);
+}
+.toolbar .jupyter-download,
+.toolbar .pdf-download {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.25em;
+}
+.toolbar .pdf-file-icon {
+  height: 1.15em;
+}
+.toolbar .jupyter-file-icon {
+  height: 1.75em;
+}
 .breadcrumbs {
   display: none;
   -webkit-box-flex: 1;

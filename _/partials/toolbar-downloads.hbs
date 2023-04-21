@@ -1,20 +1,19 @@
-<div class="dropdown">
-  <button class="dropbtn" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <div class="dropdown-content">
-
-{{#if page.attributes.jupyter}}
-
-        <a download href="{{relativize (resolveResourceURL (replace (join 'attachment$' page.relativeSrcPath) '.adoc' '.ipynb'))}}" title="Download Jupyter Notebook" data-toggle="tooltip" data-placement="left">
-         .ipynb <i class="fas fa-file"></i>
+<div class="page-downloads">
+  <span class="label">Download as</span>
+  <ul class="download-options">
+    <li>
+      <a onclick="print(this)" href="#" data-toggle="tooltip" data-placement="left" title="Print to PDF"
+         class="pdf-download">
+        <img class="pdf-file-icon icon" src="{{uiRootPath}}/img/pdf.svg"/> .pdf
+      </a>
+    </li>
+    {{#if page.attributes.jupyter}}
+      <li>
+        <a href="{{relativize (resolveResourceURL (replace (join 'attachment$' page.relativeSrcPath) '.adoc' '.ipynb'))}}"
+           title="Download Jupyter Notebook" data-toggle="tooltip" data-placement="left" class="jupyter-download">
+          <img class="jupyter-file-icon icon" src="{{uiRootPath}}/img/jupyter-logo.svg"/> .ipynb
         </a>
-
-{{/if}}
-
-          <a onclick="print(this)"  class="headerbtn"  data-toggle="tooltip" data-placement="left" title="Print to PDF">
-              .pdf <i class="fas fa-file-pdf"></i>
-          </a>
-
-  </div>
+      </li>
+    {{/if}}
+  </ul>
 </div>
