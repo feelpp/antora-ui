@@ -15,15 +15,6 @@
 </script>
 {{/if}}
 
-{{#if page.attributes.pseudocode}}
-<script type="text/javascript">
-const codes = JSON.parse('{{{page.attributes.pseudocode}}}');
-codes.forEach((item) => {
- pseudocode.renderElement(document.getElementById(item));
-});
-</script>
-{{/if}}
-
 <script type="text/javascript">
 function toggleFullScreen() {
    var doc = window.document;

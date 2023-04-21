@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Page Not Found :: Brand Docs</title>
+    <title>Pseudocode :: Brand Docs</title>
     <meta name="generator" content="Antora 1.0.0">
     <link rel="stylesheet" href="_/css/site.css">
 <link rel="icon" href="_/img/favicon.ico" type="image/x-icon">
@@ -93,7 +93,7 @@ MathJax.Hub.Config({
 <script>var uiRootPath = '_'</script>
 
   </head>
-  <body class="status-404">
+  <body class="article">
 <header class="header">
   <nav class="navbar  navbar-expand-sm bg-dark navbar-dark">
     <div class="navbar-brand">
@@ -159,10 +159,58 @@ MathJax.Hub.Config({
   </nav>
 </header>
 <div class="body">
-<div class="nav-container">
+<div class="nav-container" data-component="xyz" data-version="5.2">
   <aside class="nav">
     <div class="panels">
-<div class="nav-panel-explore is-active" data-panel="explore">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="#">Project XYZ</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#">Quickstart</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="index.html">Brand&#8217;s Hardware &amp; Software Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#cu-solet">Cu Solet</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#english+中文">English + 中文</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#liber-recusabo">Liber Recusabo</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#">Keyboard Shortcuts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#">Importing and Exporting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#some-code">Some Code</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Project XYZ</span>
+    <span class="version">5.2</span>
+  </div>
   <ul class="components">
     <li class="component">
       <a class="title" href="#">Project ABC</a>
@@ -175,13 +223,13 @@ MathJax.Hub.Config({
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="/xyz/6.0/index.html">Project XYZ</a>
+    <li class="component is-current">
+      <a class="title" href="../6.0/index.html">Project XYZ</a>
       <ul class="versions">
         <li class="version">
-          <a href="/xyz/6.0/index.html">6.0</a>
+          <a href="../6.0/index.html">6.0</a>
         </li>
-        <li class="version">
+        <li class="version is-current">
           <a href="#">5.2</a>
         </li>
         <li class="version">
@@ -214,12 +262,27 @@ MathJax.Hub.Config({
 <main class="article">
 <div class="toolbar" role="navigation">
   <button class="nav-toggle"></button>
-    <a href="/xyz/5.2/index.html" class="home-link"></a>
+    <a href="index.html" class="home-link is-current"></a>
   <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="#">Project XYZ</a></li>
+    <li>Quickstart</li>
+    <li><a href="index.html">Brand&#8217;s Hardware &amp; Software Requirements</a></li>
+  </ul>
 </nav>
 
-  
+  <div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">5.2</button>
+  <div class="version-menu">
+    <a class="version" href="#">6.0</a>
+    <a class="version is-current" href="#">5.2</a>
+    <a class="version" href="#">5.1</a>
+    <a class="version is-missing" href="#">5.0</a>
+  </div>
+</div>
 
+    <div class="edit-this-page"><a href="http://example.com/project-xyz/blob/main/index.adoc">Edit this Page</a></div>
+  
   <div class="page-downloads">
   <span class="label">Download as</span>
   <ul class="download-options">
@@ -234,14 +297,92 @@ MathJax.Hub.Config({
 </div>
 
   <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+
 <article class="doc">
-<h1 class="page">Page Not Found</h1>
+<h1 class="page">Pseudocode</h1>
 <div class="paragraph">
-<p>The page you&#8217;re looking for does not exist. It may have been moved. You can return to the <a href="/xyz/5.2/index.html">start page</a>, or follow one of the links in the navigation to the left.</p>
+<p>The documentation embeds some algorithms written using <a href="https://github.com/SaswatPadhi/pseudocode.js"><code>pseudocode.js</code></a> whose syntax is mostly compatible with latex package <code>algorithmic</code>.</p>
 </div>
 <div class="paragraph">
-<p>If you arrived on this page by clicking on a link, please notify the owner of the site that the link is broken.
-If you typed the URL of this page manually, please double check that you entered the address correctly.</p>
+<p>The documentation and in particular the grammar is <a href="https://github.com/SaswatPadhi/pseudocode.js#grammar">here</a>.</p>
+</div>
+<div class="literalblock pseudocode">
+<div class="title">Example of the pseudocode for the quicksort algorithm rendered by <code>pseudocode.js</code></div>
+<div class="content">
+<pre>% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
+\begin{algorithm}
+\caption{Quicksort}
+\begin{algorithmic}
+\PROCEDURE{Quicksort}{$A, p, r$}
+    \IF{$p &lt; r$}
+        \STATE $q = $ \CALL{Partition}{$A, p, r$}
+        \STATE \CALL{Quicksort}{$A, p, q - 1$}
+        \STATE \CALL{Quicksort}{$A, q + 1, r$}
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Partition}{$A, p, r$}
+    \STATE $x = A[r]$
+    \STATE $i = p - 1$
+    \FOR{$j = p$ \TO $r - 1$}
+        \IF{$A[j] &lt; x$}
+            \STATE $i = i + 1$
+            \STATE exchange
+            $A[i]$ with $A[j]$
+        \ENDIF
+        \STATE exchange $A[i]$ with $A[r]$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+In order to display it properly you have to use <code>[.pseudocode]</code> on a literal block.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Original code in AsciiDoc</div>
+<div class="content">
+<pre>[.pseudocode]
+....
+% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
+\begin{algorithm}
+\caption{Quicksort}
+\begin{algorithmic}
+\PROCEDURE{Quicksort}{$A, p, r$}
+    \IF{$p &lt; r$}
+        \STATE $q = $ \CALL{Partition}{$A, p, r$}
+        \STATE \CALL{Quicksort}{$A, p, q - 1$}
+        \STATE \CALL{Quicksort}{$A, q + 1, r$}
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Partition}{$A, p, r$}
+    \STATE $x = A[r]$
+    \STATE $i = p - 1$
+    \FOR{$j = p$ \TO $r - 1$}
+        \IF{$A[j] &lt; x$}
+            \STATE $i = i + 1$
+            \STATE exchange
+            $A[i]$ with $A[j]$
+        \ENDIF
+        \STATE exchange $A[i]$ with $A[r]$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}
+....</pre>
+</div>
 </div>
 </article>
   </div>
