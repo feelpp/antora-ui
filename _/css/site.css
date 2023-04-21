@@ -3095,6 +3095,21 @@ form.search {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+.navbar-item .download-btn {
+  font-weight: 500;
+}
+@media screen and (min-width: 1024px) {
+  .navbar-item .download-btn {
+    padding: 0.5em 1.25em;
+    border-radius: 0.5em;
+    color: white;
+    background-color: hsl(160deg 38.78% 40.18%);
+  }
+
+  .navbar-item.download-item .navbar-dropdown {
+    border-top: 3px solid hsl(160deg 38.78% 40.18%);
+  }
+}
 .navbar-dropdown .navbar-item.has-icon {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
