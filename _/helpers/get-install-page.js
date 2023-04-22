@@ -6,7 +6,7 @@ module.exports = (version, { data: { root } }) => {
     // find latest stable version
     const userComponent = contentCatalog.getComponent('user')
     const componentVersions = userComponent.versions
-    if (componentVersions.length > 0) {
+    if (componentVersions.length > 1) {
       const stableVersion = componentVersions[1].version
       const page = contentCatalog.getById({
         component: 'user',
