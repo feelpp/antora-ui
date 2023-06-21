@@ -5,23 +5,25 @@ module.exports = (version, { data: { root } }) => {
   if (version === 'stable') {
     // find latest stable version
     const userComponent = contentCatalog.getComponent('user')
-    const componentVersions = userComponent.versions
-    if (componentVersions.length > 1) {
-      const stableVersion = componentVersions[1].version
-      const page = contentCatalog.getById({
-        component: 'user',
-        version: stableVersion,
-        family: 'page',
-        module: 'install',
-        relative: 'index.adoc',
-      })
-      if (page) {
-        return {
-          ...page,
+    if (userComponent) {
+      const componentVersions = userComponent.versions
+      if (componentVersions.length > 1) {
+        const stableVersion = componentVersions[1].version
+        const page = contentCatalog.getById({
+          component: 'user',
           version: stableVersion,
+          family: 'page',
+          module: 'install',
+          relative: 'index.adoc',
+        })
+        if (page) {
+          return {
+            ...page,
+            version: stableVersion,
+          }
         }
+        return page
       }
-      return page
     }
     return undefined
   }

@@ -5,11 +5,6 @@
 <script src="{{uiRootPath}}/js/vendor/tabs-block-extension.js"></script>
 <script src="{{uiRootPath}}/js/vendor/tabs-block-behavior.js"></script>
 
-{{#if page.attributes.cover}}
-    <script src="{{uiRootPath}}/js/vendor/cover.js"></script>
-    <script src="{{uiRootPath}}/js/vendor/cover_custom.js"></script>
-{{/if}}
-
 {{#if page.attributes.vtkjs}}
     <script type="text/javascript" src="{{uiRootPath}}/js/vendor/visu-vtk.js"></script>
 {{/if}}
@@ -17,22 +12,10 @@
     <script type="text/javascript" src="{{uiRootPath}}/js/vendor/Viewer.js"></script>
 {{/if}}
 
-{{#if page.attributes.plotly}}
-    <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script type="text/javascript">
-        function feelpp_unpack(rows, key) {
-           return rows.map(function(row) { return row[key] });
-        }
-          function feelpp_add_redimensionable_plot(plot) {
-            var oldResize = window.onresize;
-            window.onresize = function() {
-              if(typeof oldResize === 'function')
-                oldResize();
-              Plotly.Plots.resize(plot);
-            };
-          }
-      </script>
-{{/if}}
+{{#unless (eq page.attributes.plotly undefined) }}
+  <script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7" charset="utf-8"></script>
+{{/unless}}
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({

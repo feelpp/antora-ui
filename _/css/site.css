@@ -1021,7 +1021,7 @@ html.is-clipped--nav {
       -ms-flex-align: inherit;
           align-items: inherit;
 }
-.nav-panel-explore .context .version::after {
+.nav-panel-explore:not(:first-child) .context .version::after {
   content: "";
   background: url(../img/chevron.svg) no-repeat center right / auto 100%;
   width: 1.25em;
@@ -1176,6 +1176,24 @@ monospace;
 .doc .grid ul a {
   font-weight: 500;
   font-weight: var(--body-font-weight-bold);
+}
+.latest-news {
+  padding-top: 2.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 3em;
+  gap: 2em;
+}
+.twitter-timeline {
+  display: block;
+}
+.twitter-timeline-container {
+  max-width: 100%;
+  width: 420px;
+  height: 500px;
 }
 @media screen and (max-width: 1023.5px) {
   aside.toc.sidebar {
@@ -3980,43 +3998,6 @@ code::-webkit-scrollbar-thumb {
   background-color: #c1c1c1;
   background-color: var(--color-border);
 }
-.cover-left {
-  float: left;
-  margin-left: 3vw;
-  margin-right: 3vw;
-}
-/* Default cover witdh (keep ratio). */
-.cover svg {
-  height: auto;
-  width: 200px;
-  -webkit-box-shadow: 5px 5px 5px #aaa;
-          box-shadow: 5px 5px 5px #aaa;
-}
-/* Adapt size for small screen. */
-@media (max-width: 500px) {
-  .cover svg {
-    height: auto;
-    width: 60vw;
-    -webkit-box-shadow: 5px 5px 5px #aaa;
-            box-shadow: 5px 5px 5px #aaa;
-  }
-}
-.cover svg:hover {
-  margin-top: 1px;
-  margin-bottom: -1px;
-  margin-left: 1px;
-  margin-right: -1px;
-  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 255, 0.5);
-          box-shadow: 3px 3px 10px rgba(0, 0, 255, 0.5);
-}
-.cover svg:active {
-  margin-top: 2px;
-  margin-bottom: -2px;
-  margin-left: 2px;
-  margin-right: -2px;
-  -webkit-box-shadow: 3px 3px 10px rgba(0, 255, 255, 0.5);
-          box-shadow: 3px 3px 10px rgba(0, 255, 255, 0.5);
-}
 .tabs ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4076,5 +4057,120 @@ code::-webkit-scrollbar-thumb {
 }
 .tab-pane > :first-child {
   margin-top: 0;
+}
+@media screen and (min-width: 1024px) {
+  body.docs-home .toolbar {
+    display: none;
+  }
+}
+@media screen and (max-width: 1023px) {
+  body.docs-home .doc {
+    padding: 1rem;
+  }
+
+  body.docs-home .toolbar {
+    top: 0;
+  }
+
+  body.docs-home .nav-container {
+    z-index: 30;
+    margin-top: 2.5rem;
+    margin-top: var(--toolbar-height);
+  }
+}
+body.docs-home .doc > h1.page:first-child {
+  font-size: 2rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+body.docs-home .doc .paragraph.lead {
+  margin-top: 0.5rem;
+  color: #5d5d5d;
+  color: var(--color-gray-70);
+}
+body.docs-home .doc .paragraph.lead > p {
+  font-size: 1.15rem;
+}
+@media screen and (min-width: 769px) {
+  body.docs-home .doc > h1.page:first-child {
+    margin-top: 1.5rem;
+  }
+
+  body.docs-home .doc .paragraph.lead > p {
+    font-size: 1.25rem;
+  }
+}
+body.docs-home .books {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-top: 2em;
+}
+body.docs-home .book-cover > svg a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+body.docs-home .book-cover > svg {
+  height: auto;
+  width: 250px;
+  -webkit-box-shadow: 5px 5px 5px #aaa;
+          box-shadow: 5px 5px 5px #aaa;
+}
+body.docs-home .book-cover > svg:hover {
+  margin: 1px -1px -1px 1px;
+  -webkit-box-shadow: 3px 3px 10px #545454;
+          box-shadow: 3px 3px 10px #545454;
+}
+body.docs-home .book-cover > svg:active {
+  margin: 2px -2px -2px 2px;
+  -webkit-box-shadow: 3px 3px 10px #545454;
+          box-shadow: 3px 3px 10px #545454;
+}
+body.docs-home .button {
+  padding: 0.75em 1.5em;
+  font-size: inherit;
+  line-height: 1.5;
+  border-radius: 0.5em;
+  border: 1px solid;
+  -webkit-transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  -webkit-transition-property: color, background-color, border-color, -webkit-box-shadow;
+  transition-property: color, background-color, border-color, -webkit-box-shadow;
+  transition-property: color, background-color, box-shadow, border-color;
+  transition-property: color, background-color, box-shadow, border-color, -webkit-box-shadow;
+  -webkit-box-shadow: #9c9c9c, #9c9c9c;
+          box-shadow: #9c9c9c, #9c9c9c;
+  -webkit-box-shadow: var(--color-gray-30), var(--color-gray-30);
+          box-shadow: var(--color-gray-30), var(--color-gray-30);
+}
+body.docs-home article.doc {
+  padding-bottom: 2em;
+}
+body.docs-home .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+}
+body.docs-home .button.primary {
+  color: white;
+  background-color: hsl(344deg 60% 49.02%);
+  border-color: hsl(344 60% 35% / 1);
+}
+body.docs-home .button.secondary {
+  background-color: #f5f5f5;
+  background-color: var(--color-smoke-50);
+  color: #222;
+  color: var(--color-jet-70);
+  border-color: #e1e1e1;
+  border-color: var(--color-smoke-90);
 }
 /*# sourceMappingURL=site.css.map */
