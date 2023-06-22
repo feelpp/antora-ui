@@ -816,6 +816,9 @@ object[type="image/svg+xml"]:not([width]) {
   z-index: var(--z-index-nav);
   visibility: hidden;
 }
+.nav-container.hidden {
+  display: none;
+}
 @media screen and (min-width: 769px) {
   .nav-container {
     width: 15rem;
@@ -845,21 +848,15 @@ object[type="image/svg+xml"]:not([width]) {
   top: var(--toolbar-height);
   height: calc(100vh - 6rem);
   height: var(--nav-height);
-}
-@media screen and (min-width: 769px) {
-  .nav {
-    -webkit-box-shadow: 0.5px 0 3px #c1c1c1;
-            box-shadow: 0.5px 0 3px #c1c1c1;
-    -webkit-box-shadow: 0.5px 0 3px var(--nav-border-color);
-            box-shadow: 0.5px 0 3px var(--nav-border-color);
-  }
+  -webkit-box-shadow: 1px 0 3px #c1c1c1;
+          box-shadow: 1px 0 3px #c1c1c1;
+  -webkit-box-shadow: 1px 0 3px var(--nav-border-color);
+          box-shadow: 1px 0 3px var(--nav-border-color);
 }
 @media screen and (min-width: 1024px) {
   .nav {
     top: 3.5rem;
     top: var(--navbar-height);
-    -webkit-box-shadow: none;
-            box-shadow: none;
     position: sticky;
     height: calc(100vh - 3.5rem);
     height: var(--nav-height--desktop);
@@ -867,6 +864,31 @@ object[type="image/svg+xml"]:not([width]) {
 }
 .nav a {
   color: inherit;
+}
+.menu-expand-toggle {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .menu-expand-toggle.expand {
+    left: -0.75rem;
+    background: hsl(0 0% 77% / 1) url(../img/octicons-24.svg#view-arrow-right) no-repeat center / 50% 50%;
+  }
+
+  .menu-expand-toggle {
+    display: block;
+    background: hsl(0 0% 77% / 1) url(../img/octicons-24.svg#view-arrow-left) no-repeat center / 50% 50%;
+    top: 7.5rem;
+    left: 14rem;
+    left: calc(var(--nav-width) - 1rem);
+    border-radius: 50%;
+    -webkit-filter: invert(1) brightness(275%);
+            filter: invert(1) brightness(275%);
+    cursor: pointer;
+    z-index: 2;
+    height: 2rem;
+    width: 2rem;
+    position: fixed;
+  }
 }
 .nav .panels {
   display: -webkit-box;
