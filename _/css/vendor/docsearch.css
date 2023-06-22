@@ -644,9 +644,9 @@
   --body-line-height: 1.15;
   --body-font-color: var(--color-jet-70);
   --body-font-family: "Roboto", sans-serif;
-  --body-font-weight-bold: 700;
+  --body-font-weight-bold: 500;
   --monospace-font-family: "Roboto Mono", monospace;
-  --monospace-font-weight-bold: 700;
+  --monospace-font-weight-bold: 500;
 
   /* New  design font style */
 
@@ -738,7 +738,7 @@
   --kbd-background: var(--panel-background);
   --kbd-border-color: var(--color-gray-10);
   --pre-background-hljs: var(--color-background-hljs);
-  --pre-background: var(--panel-background);
+  --pre-background: var(--color-black);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: var(--color-gray-50);
   --quote-background: var(--panel-background);
