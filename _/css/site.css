@@ -223,7 +223,7 @@
   --kbd-background: var(--panel-background);
   --kbd-border-color: var(--color-gray-10);
   --pre-background-hljs: var(--color-background-hljs);
-  --pre-background: var(--color-black);
+  --pre-background: var(--panel-background);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: var(--color-gray-50);
   --quote-background: var(--panel-background);
@@ -816,6 +816,9 @@ object[type="image/svg+xml"]:not([width]) {
   z-index: var(--z-index-nav);
   visibility: hidden;
 }
+.nav-container.hidden {
+  display: none;
+}
 @media screen and (min-width: 769px) {
   .nav-container {
     width: 15rem;
@@ -845,21 +848,15 @@ object[type="image/svg+xml"]:not([width]) {
   top: var(--toolbar-height);
   height: calc(100vh - 6rem);
   height: var(--nav-height);
-}
-@media screen and (min-width: 769px) {
-  .nav {
-    -webkit-box-shadow: 0.5px 0 3px #c1c1c1;
-            box-shadow: 0.5px 0 3px #c1c1c1;
-    -webkit-box-shadow: 0.5px 0 3px var(--nav-border-color);
-            box-shadow: 0.5px 0 3px var(--nav-border-color);
-  }
+  -webkit-box-shadow: 1px 0 3px #c1c1c1;
+          box-shadow: 1px 0 3px #c1c1c1;
+  -webkit-box-shadow: 1px 0 3px var(--nav-border-color);
+          box-shadow: 1px 0 3px var(--nav-border-color);
 }
 @media screen and (min-width: 1024px) {
   .nav {
     top: 3.5rem;
     top: var(--navbar-height);
-    -webkit-box-shadow: none;
-            box-shadow: none;
     position: sticky;
     height: calc(100vh - 3.5rem);
     height: var(--nav-height--desktop);
@@ -867,6 +864,31 @@ object[type="image/svg+xml"]:not([width]) {
 }
 .nav a {
   color: inherit;
+}
+.menu-expand-toggle {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .menu-expand-toggle.expand {
+    left: -0.75rem;
+    background: hsl(0 0% 77% / 1) url(../img/octicons-24.svg#view-arrow-right) no-repeat center / 50% 50%;
+  }
+
+  .menu-expand-toggle {
+    display: block;
+    background: hsl(0 0% 77% / 1) url(../img/octicons-24.svg#view-arrow-left) no-repeat center / 50% 50%;
+    top: 7.5rem;
+    left: 14rem;
+    left: calc(var(--nav-width) - 1rem);
+    border-radius: 50%;
+    -webkit-filter: invert(1) brightness(275%);
+            filter: invert(1) brightness(275%);
+    cursor: pointer;
+    z-index: 2;
+    height: 2rem;
+    width: 2rem;
+    position: fixed;
+  }
 }
 .nav .panels {
   display: -webkit-box;
@@ -961,8 +983,7 @@ html.is-clipped--nav {
 }
 .is-current-page > .nav-link,
 .is-current-page > .nav-text {
-  font-weight: 500;
-  font-weight: var(--body-font-weight-bold);
+  font-weight: 800;
 }
 .nav-panel-explore {
   background: #fafafa;
@@ -2488,18 +2509,16 @@ auto;
 .doc pre.highlight code,
 .doc .listingblock pre:not(.highlight),
 .doc .literalblock pre {
-  color: #fafafa;
-  color: var(--color-smoke-30);
-  background: #000;
+  background: #fafafa;
   background: var(--pre-background);
-  -webkit-box-shadow: inset 0 0 1.75px #e1e1e1;
-          box-shadow: inset 0 0 1.75px #e1e1e1;
-  -webkit-box-shadow: inset 0 0 1.75px var(--pre-border-color);
-          box-shadow: inset 0 0 1.75px var(--pre-border-color);
-  border-radius: 0.75rem;
+  -webkit-box-shadow: inset 0 0 2px #e1e1e1;
+          box-shadow: inset 0 0 2px #e1e1e1;
+  -webkit-box-shadow: inset 0 0 2px var(--pre-border-color);
+          box-shadow: inset 0 0 2px var(--pre-border-color);
   display: block;
   overflow-x: auto;
   padding: 0.875em;
+  max-height: 500px;
 }
 .doc .listingblock > .content {
   position: relative;
@@ -3441,6 +3460,7 @@ form.search {
   vertical-align: top;
 }
 .footer-links p.address {
+  font-weight: 200;
   font-weight: var(--weight-light);
   margin: 0;
   white-space: pre-wrap;
@@ -3551,6 +3571,7 @@ form.search {
   display: block;
 }
 .footer-terms a {
+  font-weight: 200;
   font-weight: var(--weight-light);
   display: inline-block;
   margin: 0.625rem 0.3125rem;
@@ -3623,66 +3644,65 @@ form.search {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  color: #abb2bf;
   background: #282c34;
 }
 .hljs-keyword,
 .hljs-operator {
-  color: #f92672;
+  color: #ae0443;
 }
 .hljs-pattern-match {
-  color: #f92672;
+  color: #ae0443;
 }
 .hljs-pattern-match .hljs-constructor {
-  color: #61aeee;
+  color: #0f538a;
 }
 .hljs-function {
-  color: #61aeee;
+  color: #0f538a;
 }
 .hljs-function .hljs-params {
-  color: #a6e22e;
+  color: #567911;
 }
 .hljs-function .hljs-params .hljs-typing {
-  color: #fd971f;
+  color: #a75a02;
 }
 .hljs-module-access .hljs-module {
   color: #7e57c2;
 }
 .hljs-constructor {
-  color: #e2b93d;
+  color: #66500f;
 }
 .hljs-constructor .hljs-string {
-  color: #9ccc65;
+  color: #517836;
 }
 .hljs-comment,
 .hljs-quote {
-  color: #b18eb1;
+  color: #6c4b6c;
   font-style: italic;
 }
 .hljs-doctag,
 .hljs-formula {
-  color: #c678dd;
+  color: #83289f;
 }
 .hljs-section,
 .hljs-name,
 .hljs-selector-tag,
 .hljs-deletion,
 .hljs-subst {
-  color: #e06c75;
+  color: #9c212b;
 }
 .hljs-literal {
-  color: #56b6c2;
+  color: #156270;
 }
 .hljs-string,
 .hljs-regexp,
 .hljs-addition,
 .hljs-attribute,
 .hljs-meta-string {
-  color: #98c379;
+  color: #43632c;
 }
 .hljs-built_in,
 .hljs-class .hljs-title {
-  color: #e6c07b;
+  color: #8d651b;
 }
 .hljs-attr,
 .hljs-variable,
@@ -3692,7 +3712,7 @@ form.search {
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-number {
-  color: #d19a66;
+  color: #915d2b;
 }
 .hljs-symbol,
 .hljs-bullet,
@@ -3700,7 +3720,7 @@ form.search {
 .hljs-meta,
 .hljs-selector-id,
 .hljs-title {
-  color: #61aeee;
+  color: #1266ab;
 }
 .hljs-emphasis {
   font-style: italic;
@@ -3816,6 +3836,10 @@ div.stretchy-wrapper-16_9 > div {
   left: 0;
   right: 0;
 }
+:root {
+  --weight-light: 200;
+  --weight-normal: 400;
+}
 .view-source-button {
   color: #73768a;
   color: var(--color-brand-gray4);
@@ -3828,6 +3852,7 @@ div.stretchy-wrapper-16_9 > div {
   color: var(--color-brand-gray4);
   font-size: 1rem;
   font-size: var(--font-base);
+  font-weight: 200;
   font-weight: var(--weight-light);
   line-height: 1;
   text-transform: capitalize;
@@ -3880,9 +3905,11 @@ a.copy-code-button:hover {
 }
 .copy-code-button:hover::after {
   content: attr(data-title);
-  color: var("--color-brand-gray4");
+  color: #73768a;
+  color: var(--color-brand-gray4);
   font-size: 1rem;
   font-size: var(--font-base);
+  font-weight: 200;
   font-weight: var(--weight-light);
   line-height: 1;
   text-transform: capitalize;
@@ -3931,8 +3958,10 @@ a.copy-code-button:hover {
 }
 .doc .listingblock code[data-lang] + .source-type-box .data-source {
   content: attr(data-lang);
-  color: var("--color-brand-gray1");
+  color: #292b36;
+  color: var(--color-brand-gray1);
   font-size: 0.75rem;
+  font-weight: 400;
   font-weight: var(--weight-normal);
   letter-spacing: 1px;
   line-height: 18px;
