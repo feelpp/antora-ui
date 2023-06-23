@@ -23,8 +23,12 @@
     <div class="content">
       <article class="doc">
         <div class="actions">
-          <a href="#" class="button primary">Quickstart</a>
-          <a href="#" class="button secondary">Overview</a>
+          {{#with (get-quickstart-page 'stable')}}
+            <a href="{{{relativize this.pub.url}}}" class="button primary">Quickstart</a>
+          {{/with}}
+          {{#with (get-overview-page 'stable')}}
+            <a href="#" class="button secondary">Overview</a>
+          {{/with}}
         </div>
       </article>
     </div>
