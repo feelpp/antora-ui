@@ -2803,6 +2803,139 @@ sans-serif;
   text-align: right;
   width: 1.5em;
 }
+/* Math */
+.sidebarblock.prop,
+.exampleblock.prop,
+.sidebarblock.proof,
+.exampleblock.proof,
+.sidebarblock.lem,
+.exampleblock.lem,
+.sidebarblock.prob,
+.exampleblock.prob {
+  background-color: transparent;
+  -webkit-box-shadow: 1px 5px 5px 0 #e4e4e4;
+          box-shadow: 1px 5px 5px 0 #e4e4e4;
+  border-radius: 0;
+  padding: 0;
+}
+.sidebarblock.prop > .content,
+.exampleblock.prop > .content,
+.sidebarblock.proof > .content,
+.exampleblock.proof > .content,
+.sidebarblock.lem > .content,
+.exampleblock.lem > .content,
+.sidebarblock.prob > .content,
+.exampleblock.prob > .content {
+  border-left: 2px solid;
+  padding-left: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+.sidebarblock.prop > .content,
+.exampleblock.prop > .content {
+  border-left-color: #389f9f;
+}
+.sidebarblock.proof > .content,
+.exampleblock.proof > .content {
+  border-left-color: #41af46;
+}
+.sidebarblock.lem > .content,
+.exampleblock.lem > .content {
+  border-left-color: #f266aa;
+}
+.sidebarblock.prob > .content,
+.exampleblock.prob > .content {
+  border-left-color: #e6ac00;
+}
+.sidebarblock.prop > .content .title,
+.exampleblock.prop > .content .title,
+.sidebarblock.proof > .content .title,
+.exampleblock.proof > .content .title,
+.sidebarblock.lem > .content .title,
+.exampleblock.lem > .content .title,
+.sidebarblock.prob > .content .title,
+.exampleblock.prob > .content .title {
+  margin-left: -0.75rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+  padding-left: 0.65rem;
+  text-align: start;
+}
+.sidebarblock.prop > .content .title,
+.exampleblock.prop > .content .title {
+  background-color: #a4dfdf;
+}
+.sidebarblock.proof > .content .title,
+.exampleblock.proof > .content .title {
+  background-color: #8fd693;
+}
+.sidebarblock.prob > .content .title,
+.exampleblock.prob > .content .title {
+  background-color: #fff0c4;
+}
+.sidebarblock.lem > .content .title,
+.exampleblock.lem > .content .title {
+  background-color: #f7a6cd;
+}
+details.proof {
+  background-color: transparent;
+  -webkit-box-shadow: 1px 5px 5px 0 #e4e4e4;
+          box-shadow: 1px 5px 5px 0 #e4e4e4;
+  border-radius: 0;
+  padding: 0;
+  margin-left: 0;
+}
+details.proof > .title {
+  border-left: 2px solid #41af46;
+  background-color: #8fd693;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+  padding-left: 0.65rem;
+  text-align: start;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+details.proof > .content {
+  padding-top: 0.75rem;
+  border-left: 2px solid;
+  padding-left: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-left-color: #41af46;
+}
+details.proof > summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5em;
+}
+details.proof > summary::before,
+details.proof > summary::after {
+  display: none;
+}
+details.proof > summary::before {
+  display: block;
+  position: initial;
+  background: url(../img/octicons-16.svg#view-chevron-right) no-repeat center / 50% 50%;
+  width: 2em;
+  height: 2em;
+  border: none;
+}
+details.proof[open] > summary::before {
+  background: url(../img/octicons-16.svg#view-chevron-down) no-repeat center / 50% 50%;
+  width: 2em;
+  height: 2em;
+  border: none;
+  -webkit-transform: translateX(0.25em) translateY(2px);
+          transform: translateX(0.25em) translateY(2px);
+}
 nav.pagination {
   display: -webkit-box;
   display: -ms-flexbox;
