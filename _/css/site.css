@@ -840,6 +840,10 @@ object[type="image/svg+xml"]:not([width]) {
 .nav-container.is-active {
   visibility: visible;
 }
+.article.docs-home .nav {
+  /* no toolbar on home page */
+  top: 0;
+}
 .nav {
   background: #fafafa;
   background: var(--nav-background);
