@@ -13,7 +13,7 @@ module.exports = (version, { data: { root } }) => {
           component: 'user',
           version: stableVersion,
           family: 'page',
-          module: 'install',
+          module: 'ROOT',
           relative: 'index.adoc',
         })
         if (page) {

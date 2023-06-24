@@ -17,6 +17,34 @@ module.exports = ({ data: { root } }) => {
       })
     }
   }
+  const tbComponent = contentCatalog.getComponent('toolboxes')
+  if (tbComponent) {
+    const { versions } = tbComponent
+    if (versions && versions.length) {
+      // stable
+      const startPageUrl = versions[0].navigation[0].items[0].url
+      result.push({
+        title: 'TOOLBOXES MANUAL',
+        color: '#1dffbf',
+        id: 'toolboxes-manual',
+        url: startPageUrl,
+      })
+    }
+  }
+  const casesComponent = contentCatalog.getComponent('cases')
+  if (casesComponent) {
+    const { versions } = casesComponent
+    if (versions && versions.length) {
+      // stable
+      const startPageUrl = versions[0].navigation[0].items[0].url
+      result.push({
+        title: 'TOOLBOXES CASE STUDIES',
+        color: '#1dffbf',
+        id: 'cases-manual',
+        url: startPageUrl,
+      })
+    }
+  }
   const devComponent = contentCatalog.getComponent('dev')
   if (devComponent) {
     const { versions } = devComponent
