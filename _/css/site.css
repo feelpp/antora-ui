@@ -2808,6 +2808,10 @@ sans-serif;
   width: 1.5em;
 }
 /* Math */
+.sidebarblock.exer,
+.exampleblock.exer,
+.sidebarblock.examp,
+.exampleblock.examp,
 .sidebarblock.thm,
 .exampleblock.thm,
 .sidebarblock.def,
@@ -2826,6 +2830,10 @@ sans-serif;
   border-radius: 0;
   padding: 0;
 }
+.sidebarblock.exer > .content,
+.exampleblock.exer > .content,
+.sidebarblock.examp > .content,
+.exampleblock.examp > .content,
 .sidebarblock.thm > .content,
 .exampleblock.thm > .content,
 .sidebarblock.def > .content,
@@ -2841,6 +2849,14 @@ sans-serif;
   border-left: 2px solid;
   padding-left: 0.75rem;
   padding-bottom: 0.5rem;
+}
+.sidebarblock.exer > .content,
+.exampleblock.exer > .content {
+  border-left-color: #8bc34a;
+}
+.sidebarblock.examp > .content,
+.exampleblock.examp > .content {
+  border-left-color: #ffeb3b;
 }
 .sidebarblock.thm > .content,
 .exampleblock.thm > .content {
@@ -2866,6 +2882,10 @@ sans-serif;
 .exampleblock.prob > .content {
   border-left-color: #ff5722;
 }
+.sidebarblock.exer > .content .title,
+.exampleblock.exer > .content .title,
+.sidebarblock.examp > .content .title,
+.exampleblock.examp > .content .title,
 .sidebarblock.thm > .content .title,
 .exampleblock.thm > .content .title,
 .sidebarblock.def > .content .title,
@@ -2885,6 +2905,14 @@ sans-serif;
   padding-bottom: 0.45rem;
   padding-left: 0.65rem;
   text-align: start;
+}
+.sidebarblock.exer > .content .title,
+.exampleblock.exer > .content .title {
+  background-color: #f0fff0;
+}
+.sidebarblock.examp > .content .title,
+.exampleblock.examp > .content .title {
+  background-color: #fffacd;
 }
 .sidebarblock.thm > .content .title,
 .exampleblock.thm > .content .title {
