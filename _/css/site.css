@@ -2808,6 +2808,10 @@ sans-serif;
   width: 1.5em;
 }
 /* Math */
+.sidebarblock.thm,
+.exampleblock.thm,
+.sidebarblock.def,
+.exampleblock.def,
 .sidebarblock.prop,
 .exampleblock.prop,
 .sidebarblock.proof,
@@ -2822,6 +2826,10 @@ sans-serif;
   border-radius: 0;
   padding: 0;
 }
+.sidebarblock.thm > .content,
+.exampleblock.thm > .content,
+.sidebarblock.def > .content,
+.exampleblock.def > .content,
 .sidebarblock.prop > .content,
 .exampleblock.prop > .content,
 .sidebarblock.proof > .content,
@@ -2834,9 +2842,17 @@ sans-serif;
   padding-left: 0.75rem;
   padding-bottom: 0.5rem;
 }
+.sidebarblock.thm > .content,
+.exampleblock.thm > .content {
+  border-left-color: #2196f3;
+}
+.sidebarblock.def > .content,
+.exampleblock.def > .content {
+  border-left-color: #673ab7;
+}
 .sidebarblock.prop > .content,
 .exampleblock.prop > .content {
-  border-left-color: #389f9f;
+  border-left-color: #ffc107;
 }
 .sidebarblock.proof > .content,
 .exampleblock.proof > .content {
@@ -2844,12 +2860,16 @@ sans-serif;
 }
 .sidebarblock.lem > .content,
 .exampleblock.lem > .content {
-  border-left-color: #f266aa;
+  border-left-color: #f06292;
 }
 .sidebarblock.prob > .content,
 .exampleblock.prob > .content {
-  border-left-color: #e6ac00;
+  border-left-color: #ff5722;
 }
+.sidebarblock.thm > .content .title,
+.exampleblock.thm > .content .title,
+.sidebarblock.def > .content .title,
+.exampleblock.def > .content .title,
 .sidebarblock.prop > .content .title,
 .exampleblock.prop > .content .title,
 .sidebarblock.proof > .content .title,
@@ -2866,21 +2886,29 @@ sans-serif;
   padding-left: 0.65rem;
   text-align: start;
 }
+.sidebarblock.thm > .content .title,
+.exampleblock.thm > .content .title {
+  background-color: #f0f8ff;
+}
+.sidebarblock.def > .content .title,
+.exampleblock.def > .content .title {
+  background-color: #e6e6fa;
+}
 .sidebarblock.prop > .content .title,
 .exampleblock.prop > .content .title {
-  background-color: #a4dfdf;
+  background-color: #f5f5dc;
 }
 .sidebarblock.proof > .content .title,
 .exampleblock.proof > .content .title {
-  background-color: #8fd693;
+  background-color: #e0eee0;
 }
 .sidebarblock.prob > .content .title,
 .exampleblock.prob > .content .title {
-  background-color: #fff0c4;
+  background-color: #ffdead;
 }
 .sidebarblock.lem > .content .title,
 .exampleblock.lem > .content .title {
-  background-color: #f7a6cd;
+  background-color: #fff0f5;
 }
 details.proof {
   background-color: transparent;
@@ -2891,8 +2919,8 @@ details.proof {
   margin-left: 0;
 }
 details.proof > .title {
-  border-left: 2px solid #41af46;
-  background-color: #8fd693;
+  border-left: 2px solid #4caf50;
+  background-color: #e0eee0;
   font-weight: 500;
   font-size: 0.9rem;
   padding-top: 0.45rem;
@@ -2909,7 +2937,7 @@ details.proof > .content {
   border-left: 2px solid;
   padding-left: 0.75rem;
   padding-bottom: 0.75rem;
-  border-left-color: #41af46;
+  border-left-color: #4caf50;
 }
 details.proof > summary {
   display: -webkit-box;
