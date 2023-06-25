@@ -180,20 +180,25 @@
   --page-version-missing-font-color: var(--color-gray-40);
   /* admonitions */
   --caution-color: #a0439c;
-  --caution-background: rgba(160, 67, 156, 0.8);
-  --caution-on-color: var(--color-white);
+  --caution-background: rgba(255, 182, 193, 1);
+  --caution-border-color: rgba(255, 20, 147, 1);
+  --caution-on-color: rgba(255, 20, 147, 1);
   --important-color: #d32f2f;
-  --important-background: rgba(211, 47, 47, 0.8);
-  --important-on-color: var(--color-white);
-  --note-color: #217ee7;
-  --note-background: rgba(33, 126, 231, 0.8);
-  --note-on-color: var(--color-white);
+  --important-background: rgba(253, 253, 150, 1);
+  --important-border-color: rgba(255, 215, 0, 1);
+  --important-on-color: rgba(255, 140, 0, 1);
+  --note-color: #e0ffff;
+  --note-background: rgba(224, 255, 255, 1);
+  --note-border-color: #00ced1;
+  --note-on-color: var(--color-black);
   --tip-color: #41af46;
-  --tip-background: rgba(65, 175, 70, 0.8);
-  --tip-on-color: var(--color-white);
+  --tip-background: rgba(240, 255, 240, 1);
+  --tip-border-color: rgba(124, 252, 0, 1);
+  --tip-on-color: rgba(0, 100, 0, 1);
   --warning-color: #e18114;
-  --warning-background: rgba(225, 129, 20, 0.8);
-  --warning-on-color: var(--color-white);
+  --warning-background: rgba(255, 160, 122, 1);
+  --warning-border-color: rgba(255, 69, 0, 1);
+  --warning-on-color: rgba(139, 0, 0, 1);
   /* doc */
   --doc-font-color: var(--color-jet-50);
   --doc-font-size: inherit;
@@ -2131,54 +2136,54 @@ auto;
   padding-right: 0.35em;
 }
 .doc .admonitionblock.caution .icon {
-  background-color: rgba(160, 67, 156, 0.8);
+  background-color: rgba(255, 182, 193, 1);
   background-color: var(--caution-background);
-  color: #fff;
+  color: rgba(255, 20, 147, 1);
   color: var(--caution-on-color);
 }
 .doc .admonitionblock.important .icon {
-  background-color: rgba(211, 47, 47, 0.8);
+  background-color: rgba(253, 253, 150, 1);
   background-color: var(--important-background);
-  color: #fff;
+  color: rgba(255, 140, 0, 1);
   color: var(--important-on-color);
 }
 .doc .admonitionblock.note .icon {
-  background-color: rgba(33, 126, 231, 0.8);
+  background-color: rgba(224, 255, 255, 1);
   background-color: var(--note-background);
-  color: #fff;
+  color: #000;
   color: var(--note-on-color);
 }
 .doc .admonitionblock.tip .icon {
-  background-color: rgba(65, 175, 70, 0.8);
+  background-color: rgba(240, 255, 240, 1);
   background-color: var(--tip-background);
-  color: #fff;
+  color: rgba(0, 100, 0, 1);
   color: var(--tip-on-color);
 }
 .doc .admonitionblock.warning .icon {
-  background-color: rgba(225, 129, 20, 0.8);
+  background-color: rgba(255, 160, 122, 1);
   background-color: var(--warning-background);
-  color: #fff;
+  color: rgba(139, 0, 0, 1);
   color: var(--warning-on-color);
 }
 .doc .admonitionblock.caution {
-  border-left-color: #a0439c;
-  border-left-color: var(--caution-color);
+  border-left-color: rgba(255, 20, 147, 1);
+  border-left-color: var(--caution-border-color);
 }
 .doc .admonitionblock.important {
-  border-left-color: #d32f2f;
-  border-left-color: var(--important-color);
+  border-left-color: rgba(255, 215, 0, 1);
+  border-left-color: var(--important-border-color);
 }
 .doc .admonitionblock.tip {
-  border-left-color: #41af46;
-  border-left-color: var(--tip-color);
+  border-left-color: rgba(124, 252, 0, 1);
+  border-left-color: var(--tip-border-color);
 }
 .doc .admonitionblock.note {
-  border-left-color: #217ee7;
-  border-left-color: var(--note-color);
+  border-left-color: #00ced1;
+  border-left-color: var(--note-border-color);
 }
 .doc .admonitionblock.warning {
-  border-left-color: #e18114;
-  border-left-color: var(--warning-color);
+  border-left-color: rgba(255, 69, 0, 1);
+  border-left-color: var(--warning-border-color);
 }
 .doc .admonitionblock .icon i {
   display: -webkit-inline-box;
