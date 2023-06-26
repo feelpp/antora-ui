@@ -595,12 +595,6 @@
   --color-brand-black: #000;
   --color-brand-red: #bb3a50;
   --color-brand-white: #fff;
-  --color-brand-accent: hsl(160deg 38.78% 40.18%);
-  --color-brand-accent-hue: 160deg;
-  --color-brand-accent-sat: 38.78%;
-  --color-brand-accent-light: 40.18%;
-  --color-brand-accent-rgb: rgb(63 142 116);
-  --color-brand-accent-hex: #3f8e74;
   /* secondary */
   --color-brand-secondary: #fff;
   --color-brand-blue: #8fbab1;

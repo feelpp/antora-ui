@@ -5,9 +5,10 @@ module.exports = ({ data: { root } }) => {
   const result = []
   const userComponent = contentCatalog.getComponent('user')
   if (userComponent) {
-    if ('latest' in userComponent) {
+    const { versions } = userComponent
+    if (versions && versions.length) {
       // stable
-      const startPageUrl = userComponent.latest.navigation[0].items[0].url
+      const startPageUrl = versions[0].navigation[0].items[0].url
       result.push({
         title: 'USER MANUAL',
         color: '#1ddaff',
@@ -18,9 +19,10 @@ module.exports = ({ data: { root } }) => {
   }
   const tbComponent = contentCatalog.getComponent('toolboxes')
   if (tbComponent) {
-    if ('latest' in tbComponent) {
+    const { versions } = tbComponent
+    if (versions && versions.length) {
       // stable
-      const startPageUrl = tbComponent.latest.navigation[0].items[0].url
+      const startPageUrl = versions[0].navigation[0].items[0].url
       result.push({
         title: 'TOOLBOXES MANUAL',
         color: '#1dffbf',
@@ -31,9 +33,10 @@ module.exports = ({ data: { root } }) => {
   }
   const casesComponent = contentCatalog.getComponent('cases')
   if (casesComponent) {
-    if ('latest' in casesComponent) {
+    const { versions } = casesComponent
+    if (versions && versions.length) {
       // stable
-      const startPageUrl = casesComponent.latest.navigation[0].items[0].url
+      const startPageUrl = versions[0].navigation[0].items[0].url
       result.push({
         title: 'TOOLBOXES CASE STUDIES',
         color: '#1dffbf',
@@ -44,9 +47,10 @@ module.exports = ({ data: { root } }) => {
   }
   const devComponent = contentCatalog.getComponent('dev')
   if (devComponent) {
-    if ('latest' in devComponent) {
+    const { versions } = devComponent
+    if (versions && versions.length) {
       // stable
-      const startPageUrl = devComponent.latest.navigation[0].items[0].url
+      const startPageUrl = versions[0].navigation[0].items[0].url
       result.push({
         title: 'DEV. MANUAL',
         color: '#50377b',
@@ -57,9 +61,10 @@ module.exports = ({ data: { root } }) => {
   }
   const dataComponent = contentCatalog.getComponent('data')
   if (dataComponent) {
-    if ('latest' in dataComponent) {
+    const { versions } = dataComponent
+    if (versions && versions.length) {
       // stable
-      const startPageUrl = dataComponent.latest.navigation[0].items[0].url
+      const startPageUrl = versions[0].navigation[0].items[0].url
       result.push({
         title: 'DATA MANUAL',
         color: '#0080FF',
