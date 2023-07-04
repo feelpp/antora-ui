@@ -185,26 +185,22 @@
   --page-version-menu-background: var(--color-smoke-70);
   --page-version-missing-font-color: var(--color-gray-40);
   /* admonitions */
-  --caution-color: #a0439c;
-  --caution-background: rgba(255, 182, 193, 1);
-  --caution-border-color: rgba(255, 20, 147, 1);
-  --caution-on-color: rgba(255, 20, 147, 1);
-  --important-color: #d32f2f;
-  --important-background: rgba(253, 253, 150, 1);
-  --important-border-color: rgba(255, 215, 0, 1);
-  --important-on-color: rgba(255, 140, 0, 1);
-  --note-color: #e0ffff;
-  --note-background: rgba(224, 255, 255, 1);
-  --note-border-color: #00ced1;
-  --note-on-color: var(--color-black);
-  --tip-color: #41af46;
-  --tip-background: rgba(240, 255, 240, 1);
-  --tip-border-color: rgba(124, 252, 0, 1);
-  --tip-on-color: rgba(0, 100, 0, 1);
-  --warning-color: #e18114;
-  --warning-background: rgba(255, 160, 122, 1);
-  --warning-border-color: rgba(255, 69, 0, 1);
-  --warning-on-color: rgba(139, 0, 0, 1);
+  --caution-background: hsl(340 100% 85%);
+  --caution-border-color: hsl(340 100% 35%);
+  --caution-on-color: hsl(340 100% 20%);
+  --important-background: hsl(5 100% 85%);
+  --important-border-color: hsl(5 100% 35%);
+  --important-on-color: hsl(5 100% 20%);
+  --note-background: hsl(195 100% 90%);
+  --note-border-color: hsl(195 100% 35%);
+  --note-on-color: hsl(195 100% 20%);
+  --tip-color: hsl(120deg 100% 55%);
+  --tip-background: hsl(120deg 100% 95%);
+  --tip-border-color: hsl(120deg 100% 35%);
+  --tip-on-color: hsl(120deg 100% 20%);
+  --warning-background: hsl(24 100% 80%);
+  --warning-border-color: hsl(24 100% 35%);
+  --warning-on-color: hsl(24 100% 20%);
   /* doc */
   --doc-font-color: var(--color-jet-50);
   --doc-font-size: inherit;
@@ -1901,7 +1897,7 @@ auto;
           hyphens: none;
 }
 .doc a.unresolved {
-  color: #d32f2f;
+  color: var(--important-color);
   color: var(--link_unresolved-font-color);
 }
 .doc i.fa {
@@ -2124,53 +2120,53 @@ auto;
   padding-right: 0.35em;
 }
 .doc .admonitionblock.caution .icon {
-  background-color: rgba(255, 182, 193, 1);
+  background-color: hsl(340 100% 85%);
   background-color: var(--caution-background);
-  color: rgba(255, 20, 147, 1);
+  color: hsl(340 100% 20%);
   color: var(--caution-on-color);
 }
 .doc .admonitionblock.important .icon {
-  background-color: rgba(253, 253, 150, 1);
+  background-color: hsl(5 100% 85%);
   background-color: var(--important-background);
-  color: rgba(255, 140, 0, 1);
+  color: hsl(5 100% 20%);
   color: var(--important-on-color);
 }
 .doc .admonitionblock.note .icon {
-  background-color: rgba(224, 255, 255, 1);
+  background-color: hsl(195 100% 90%);
   background-color: var(--note-background);
-  color: #000;
+  color: hsl(195 100% 20%);
   color: var(--note-on-color);
 }
 .doc .admonitionblock.tip .icon {
-  background-color: rgba(240, 255, 240, 1);
+  background-color: hsl(120deg 100% 95%);
   background-color: var(--tip-background);
-  color: rgba(0, 100, 0, 1);
+  color: hsl(120deg 100% 20%);
   color: var(--tip-on-color);
 }
 .doc .admonitionblock.warning .icon {
-  background-color: rgba(255, 160, 122, 1);
+  background-color: hsl(24 100% 80%);
   background-color: var(--warning-background);
-  color: rgba(139, 0, 0, 1);
+  color: hsl(24 100% 20%);
   color: var(--warning-on-color);
 }
 .doc .admonitionblock.caution {
-  border-left-color: rgba(255, 20, 147, 1);
+  border-left-color: hsl(340 100% 35%);
   border-left-color: var(--caution-border-color);
 }
 .doc .admonitionblock.important {
-  border-left-color: rgba(255, 215, 0, 1);
+  border-left-color: hsl(5 100% 35%);
   border-left-color: var(--important-border-color);
 }
 .doc .admonitionblock.tip {
-  border-left-color: rgba(124, 252, 0, 1);
+  border-left-color: hsl(120deg 100% 35%);
   border-left-color: var(--tip-border-color);
 }
 .doc .admonitionblock.note {
-  border-left-color: #00ced1;
+  border-left-color: hsl(195 100% 35%);
   border-left-color: var(--note-border-color);
 }
 .doc .admonitionblock.warning {
-  border-left-color: rgba(255, 69, 0, 1);
+  border-left-color: hsl(24 100% 35%);
   border-left-color: var(--warning-border-color);
 }
 .doc .admonitionblock .icon i {
