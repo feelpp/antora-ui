@@ -1,3 +1,6 @@
+{{#if empty}}
+  <div class="empty"></div>
+{{else}}
 <a class="page-card" href="{{{relativize pub.url}}}">
     <div class="page-card-illustration">
       <img alt="" src="{{relativize (resolveResourceURL (join 'image$' asciidoc.attributes.page-illustration))}}"/>
@@ -7,3 +10,4 @@
       <p class="page-card-description">{{{asciidoc.attributes.description}}}</p>
     </div>
 </a>
+{{/if}}

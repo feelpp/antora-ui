@@ -4420,26 +4420,48 @@ body.docs-home .button.join-chat::before {
   height: 500px;
 }
 .docs-case-study .cases,
-.docs-case-study .benchmarks {
+.docs-case-study .benchmarks,
+.docs-case-study .toolboxes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 2em;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  gap: clamp(1.5em, 2vw, 5em);
 }
 .docs-case-study .cases .case,
-.docs-case-study .benchmarks .benchmark {
-  max-width: 270px;
+.docs-case-study .benchmarks .benchmark,
+.docs-case-study .toolboxes .toolbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 calc(33.33% - 5em);
+          flex: 1 calc(33.33% - 5em);
+  max-width: 500px;
+}
+/* Media query for small screens */
+@media (max-width: 767px) {
+  .docs-case-study .cases .case,
+  .docs-case-study .benchmarks .benchmark,
+  .docs-case-study .toolboxes .toolbox {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 250px;
+            flex: 1 250px;
+  }
+}
+/* Media query for large screens */
+@media (min-width: 768px) {
+  .docs-case-study .cases .case,
+  .docs-case-study .benchmarks .benchmark,
+  .docs-case-study .toolboxes .toolbox {
+    min-width: 250px;
+  }
 }
 .docs-case-study .page-card:hover,
 .docs-case-study .page-card:focus {
@@ -4460,6 +4482,9 @@ body.docs-home .button.join-chat::before {
           flex-direction: column;
   color: initial;
   border-radius: 0.5em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .docs-case-study .page-card-illustration {
   height: 150px;

@@ -22,22 +22,12 @@
         {{#with @root.page.title}}
           <h1 class="page">{{{this}}}</h1>
         {{/with}}
-        {{#with (get-page-cards @root.page 'benchmark' true)}}
+        {{#with (get-page-cards @root.page 'toolbox' false)}}
           {{#if this.length}}
-          <h2>Benchmarks</h2>
-          <div class="benchmarks">
+          <h2>Toolboxes</h2>
+          <div class="toolboxes">
             {{#each this}}
-              <div class="benchmark">{{> page-card this}}</div>
-            {{/each}}
-          </div>
-          {{/if}}
-        {{/with}}
-        {{#with (get-page-cards @root.page 'case' true)}}
-          {{#if this.length}}
-          <h2>Cases</h2>
-          <div class="cases">
-            {{#each this}}
-              <div class="case">{{> page-card this}}</div>
+            <div class="toolbox">{{> page-card this}}</div>
             {{/each}}
           </div>
           {{/if}}
