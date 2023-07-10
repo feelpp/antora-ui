@@ -3,7 +3,7 @@
 {{else}}
 <a class="page-card" href="{{{relativize pub.url}}}">
     <div class="page-card-illustration">
-      <img alt="" src="{{relativize (resolveResourceURL (join 'image$' asciidoc.attributes.page-illustration))}}"/>
+      <img alt="" src="{{relativize (resolveResourceURL (imageSpec asciidoc.attributes.page-illustration))}}"/>
     </div>
     <div class="page-card-body">
       <h4>{{title}}</h4>
