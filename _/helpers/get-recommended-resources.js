@@ -3,71 +3,87 @@
 module.exports = ({ data: { root } }) => {
   const { contentCatalog } = root
   const result = []
-  const userComponent = contentCatalog.getComponent('user')
-  if (userComponent) {
-    if ('latest' in userComponent) {
-      // stable
-      const startPageUrl = userComponent.latest.navigation[0].items[0].url
-      result.push({
-        title: 'USER MANUAL',
-        color: '#1ddaff',
-        id: 'user-manual',
-        url: startPageUrl,
-      })
-    }
+  // user manual
+  const userManualPage = contentCatalog.getById({
+    component: 'user',
+    version: 'latest',
+    family: 'page',
+    module: 'ROOT',
+    relative: 'index.adoc',
+  })
+  if (userManualPage) {
+    result.push({
+      title: 'USER MANUAL',
+      color: '#1ddaff',
+      id: 'user-manual',
+      url: userManualPage.pub.url,
+    })
   }
-  const tbComponent = contentCatalog.getComponent('toolboxes')
-  if (tbComponent) {
-    if ('latest' in tbComponent) {
-      // stable
-      const startPageUrl = tbComponent.latest.navigation[0].items[0].url
-      result.push({
-        title: 'TOOLBOXES MANUAL',
-        color: '#1dffbf',
-        id: 'toolboxes-manual',
-        url: startPageUrl,
-      })
-    }
+  // toolboxes manual
+  const toolboxesManualPage = contentCatalog.getById({
+    component: 'toolboxes',
+    version: 'latest',
+    family: 'page',
+    module: 'ROOT',
+    relative: 'index.adoc',
+  })
+  if (toolboxesManualPage) {
+    result.push({
+      title: 'TOOLBOXES MANUAL',
+      color: '#1dffbf',
+      id: 'toolboxes-manual',
+      url: toolboxesManualPage.pub.url,
+    })
   }
-  const casesComponent = contentCatalog.getComponent('cases')
-  if (casesComponent) {
-    if ('latest' in casesComponent) {
-      // stable
-      const startPageUrl = casesComponent.latest.navigation[0].items[0].url
-      result.push({
-        title: 'TOOLBOXES CASE STUDIES',
-        color: '#1dffbf',
-        id: 'cases-manual',
-        url: startPageUrl,
-      })
-    }
+  // toolbox cases
+  const toolboxCasesPage = contentCatalog.getById({
+    component: 'cases',
+    version: 'latest',
+    family: 'page',
+    module: 'ROOT',
+    relative: 'index.adoc',
+  })
+  if (toolboxCasesPage) {
+    result.push({
+      title: 'TOOLBOXES CASE STUDIES',
+      color: '#1dffbf',
+      id: 'cases-manual',
+      url: toolboxCasesPage.pub.url,
+    })
   }
-  const devComponent = contentCatalog.getComponent('dev')
-  if (devComponent) {
-    if ('latest' in devComponent) {
-      // stable
-      const startPageUrl = devComponent.latest.navigation[0].items[0].url
-      result.push({
-        title: 'DEV. MANUAL',
-        color: '#50377b',
-        id: 'dev-manual',
-        url: startPageUrl,
-      })
-    }
+  // dev manual
+  const devManualPage = contentCatalog.getById({
+    component: 'dev',
+    version: 'latest',
+    family: 'page',
+    module: 'ROOT',
+    relative: 'index.adoc',
+  })
+  if (devManualPage) {
+    result.push({
+      title: 'DEV. MANUAL',
+      color: '#50377b',
+      id: 'dev-manual',
+      url: devManualPage.pub.url,
+    })
   }
-  const dataComponent = contentCatalog.getComponent('data')
-  if (dataComponent) {
-    if ('latest' in dataComponent) {
-      // stable
-      const startPageUrl = dataComponent.latest.navigation[0].items[0].url
-      result.push({
-        title: 'DATA MANUAL',
-        color: '#0080FF',
-        id: 'data-manual',
-        url: startPageUrl,
-      })
-    }
+  // data manual
+  const dataManualPage = contentCatalog.getById({
+    component: 'data',
+    version: 'latest',
+    family: 'page',
+    module: 'ROOT',
+    relative: 'index.adoc',
+  })
+  if (dataManualPage) {
+    result.push({
+      title: 'DATA MANUAL',
+      color: '#0080FF',
+      id: 'data-manual',
+      url: dataManualPage.pub.url,
+    })
   }
+  // fem
   const femIndexPage = contentCatalog.getById({
     component: 'math',
     version: 'master',
@@ -83,6 +99,7 @@ module.exports = ({ data: { root } }) => {
       url: femIndexPage.pub.url,
     })
   }
+  // hdg
   const hdgIndexPage = contentCatalog.getById({
     component: 'math',
     version: 'master',

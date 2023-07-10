@@ -54,19 +54,9 @@
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable download-item">
-          <div class="navbar-item"><div class="download-btn">Get Feel++</div></div>
-          <div class="navbar-dropdown is-right">
-            {{#with (get-install-page 'stable')}}
-              <a class="navbar-item" href="{{{relativize this.pub.url}}}" target="_blank" rel="noopener">
-                <span>Stable ({{this.version}})</span>
-              </a>
-            {{/with}}
-            {{#with (get-install-page 'latest')}}
-              <a class="navbar-item" href="{{{relativize this.pub.url}}}" target="_blank" rel="noopener">
-                <span>Latest</span>
-              </a>
-            {{/with}}
-          </div>
+          {{#with (get-install-page 'latest')}}
+            <div class="navbar-item"><a href="{{{relativize this.pub.url}}}" class="download-btn">Get Feel++</a></div>
+          {{/with}}
         </div>
         <div class="navbar-item">
           <a class="navbar-brand"  href="https://www.cemosis.fr">
