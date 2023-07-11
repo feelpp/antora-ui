@@ -14,6 +14,10 @@ module.exports = (parentPage, tag, withinParentModule = true, { data: { root } }
     while (pages.length % 3 !== 0) {
       pages.push({
         empty: true,
+        title: 'MANUAL',
+        color: '#1dffbf',
+        id: 'manual',
+        //url: page.pub.url,
       })
     }
   }

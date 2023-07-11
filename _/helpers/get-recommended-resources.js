@@ -36,19 +36,35 @@ module.exports = ({ data: { root } }) => {
     })
   }
   // toolbox cases
-  const toolboxCasesPage = contentCatalog.getById({
-    component: 'cases',
-    version: 'latest',
+  // const toolboxCasesPage = contentCatalog.getById({
+  //   component: 'cases',
+  //   version: 'latest',
+  //   family: 'page',
+  //   module: 'ROOT',
+  //   relative: 'index.adoc',
+  // })
+  // if (toolboxCasesPage) {
+  //   result.push({
+  //     title: 'TOOLBOXES CASE STUDIES',
+  //     color: '#1dffbf',
+  //     id: 'cases-manual',
+  //     url: toolboxCasesPage.pub.url,
+  //   })
+  // }
+  // feelpp-project
+  const projectPage = contentCatalog.getById({
+    component: 'feelpp-project',
+    version: '',
     family: 'page',
     module: 'ROOT',
     relative: 'index.adoc',
   })
-  if (toolboxCasesPage) {
+  if (projectPage) {
     result.push({
-      title: 'TOOLBOXES CASE STUDIES',
+      title: 'Project',
       color: '#1dffbf',
-      id: 'cases-manual',
-      url: toolboxCasesPage.pub.url,
+      id: 'project-manual',
+      url: projectPage.pub.url,
     })
   }
   // dev manual
