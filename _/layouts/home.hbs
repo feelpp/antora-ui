@@ -24,10 +24,10 @@
       <article class="doc">
         <div class="actions">
           {{#with (get-quickstart-page 'latest')}}
-            <a href="#" class="button primary">Quickstart</a>
+            <a href="{{{relativize this.pub.url}}}" class="button primary">Quickstart</a>
           {{/with}}
           {{#with (get-overview-page 'latest')}}
-            <a href="#" class="button secondary overview">Overview</a>
+            <a href="{{{relativize this.pub.url}}}" class="button secondary overview">Overview</a>
           {{/with}}
           <a href="https://join.slack.com/t/feelpp/shared_invite/zt-2qe0q9hw-4pVbhohCXUE6Po9Ma8dbiQ"
              class="button join-chat">Join Community</a>
