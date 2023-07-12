@@ -24,7 +24,7 @@
         {{/with}}
         {{#with (get-page-cards @root.page 'manual' true)}}
         {{#if this.length}}
-        <h2>Manual</h2>
+        <h2 id="manuals">Manuals</h2>
         <div class="manuals">
           {{#each this}}
           <div class="manual">{{> page-card this}}</div>
@@ -34,7 +34,7 @@
         {{/with}}
         {{#with (get-page-cards @root.page 'benchmark' true)}}
           {{#if this.length}}
-          <h2>Benchmarks</h2>
+          <h2 id="benchmarks">Benchmarks</h2>
           <div class="benchmarks">
             {{#each this}}
               <div class="benchmark">{{> page-card this}}</div>
@@ -44,7 +44,7 @@
         {{/with}}
         {{#with (get-page-cards @root.page 'case' true)}}
           {{#if this.length}}
-          <h2>Cases</h2>
+          <h2 id="cases">Cases</h2>
           <div class="cases">
             {{#each this}}
               <div class="case">{{> page-card this}}</div>
