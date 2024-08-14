@@ -17,6 +17,8 @@
 This project produces a UI bundle that can be used by {url-antora}[Antora] to generate a documentation site.
 You can see a preview of the UI at {url-preview}.
 
+Test gmsh highlight support
+
 == Usage
 
 If you want to simply use the UI for your Antora-generated site, add the following UI configuration to your playbook:
