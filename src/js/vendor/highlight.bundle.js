@@ -39,6 +39,7 @@
   hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
   hljs.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'))
   hljs.registerLanguage('mpirun', require('../../../lib/highlight.js/mpirun'))
+  hljs.registerLanguage('gmsh', require('../../../lib/highlight.js/gmsh'))
   ;[].slice.call(document.querySelectorAll('pre code.hljs[data-lang]')).forEach(function (node) {
     hljs.highlightBlock(node)
   })
