@@ -19,7 +19,6 @@ image::https://github.com/feelpp/antora-ui/actions/workflows/ci.yml/badge.svg[Ge
 This project produces a UI bundle that can be used by {url-antora}[Antora] to generate a documentation site.
 You can see a preview of the UI at {url-preview}.
 
-Test gmsh highlight support
 
 == Usage
 
