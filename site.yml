@@ -15,7 +15,7 @@ ui:
     snapshot: true
 output:
   clean: true
-  dir: public
+  dir: build/site
 antora:
   extensions:
   - '@antora/collector-extension'
