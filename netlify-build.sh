@@ -2,4 +2,4 @@
 #npm i
 #npx gulp bundle
 #npx gulp preview:build
-antora --html-url-extension-style=indexify site.yml
+npx antora --html-url-extension-style=indexify site.yml
