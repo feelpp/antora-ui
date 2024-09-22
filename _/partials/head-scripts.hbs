@@ -1,0 +1,12 @@
+{{#with site.keys.googleAnalytics}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{this}}"></script>
+<script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','{{this}}')</script>
+{{/with}}
+<script>var uiRootPath = '{{{uiRootPath}}}'</script>
+
+{{#if (eq site.url 'https://docs.feelpp.org')}}
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f34e90f94876f0012457ea1&product=sop' async='async'></script>
+{{/if}}
+{{#if ( eq site.url "https://docs.cemosis.fr")}}
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f34dfe894876f0012457e9f&product=sop' async='async'></script>
+{{/if}}
