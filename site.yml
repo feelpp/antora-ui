@@ -2,6 +2,8 @@ site:
   title: Feel++ Project
   url: https://feelpp.github.io/antora-ui
   start_page: feelpp-antora-ui::index.adoc
+  keys:
+    google_analytics: 'UA-39841210-3'
 content:
   sources:
   - url: .
