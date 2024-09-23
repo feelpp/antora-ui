@@ -1,0 +1,6 @@
+= Item A
+:page-layout: toolboxes
+:page-tags: toolbox, catalog, itemA
+:parent-catalogs: catalog-base
+:description: Item containing 2 subitems.
+:page-illustration: ROOT:A.png

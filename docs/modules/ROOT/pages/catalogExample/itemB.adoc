@@ -1,0 +1,6 @@
+= Item B
+:page-layout: toolboxes
+:page-tags: toolbox, catalog, itemB
+:parent-catalogs: catalog-base
+:description: Item containing 1 shared subitem.
+:page-illustration: ROOT:B.png

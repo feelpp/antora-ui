@@ -1,0 +1,7 @@
+:page-layout: toolboxes
+:page-tags: toolbox, catalog, catalog-base
+:parent-catalogs: page-layouts
+:description: Example of the catalog page layout.
+:page-illustration: ROOT:grid.png
+
+= Catalog
