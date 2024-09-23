@@ -1,0 +1,33 @@
+= Item C
+:page-tags: toolbox, catalog, itemC
+:parent-catalogs: catalog-base, itemB
+:description: Leaf item.
+:page-illustration: ROOT:C.png
+
+This is a leaf item, shared between the Item B and the catalog base.
+
+Note that this page appears twice, without duplicating the content.
+
+To replicate this page structure:
+
+- Base page
+[asciidoc]
+----
+:page-layout: toolboxes
+:page-tags: catalog, catalog-base
+----
+
+- Item B
+[asciidoc]
+----
+:page-layout: toolboxes
+:page-tags: catalog, itemB
+:parent-catalogs: catalog-base
+----
+
+- Item C
+[asciidoc]
+----
+:page-tags: catalog, itemC
+:parent-catalogs: catalog-base, itemB
+----

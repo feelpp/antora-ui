@@ -8,6 +8,12 @@ module.exports = (parentPage, tag, withinParentModule = true, { data: { root } }
       (withinParentModule && src.module !== parentPage.module) ||
       src.version !== parentPage.componentVersion.version) return
     const pageTags = asciidoc.attributes['page-tags']
+    if (pageTags && pageTags.split(',').map((tag) => tag.trim()).includes('catalog') &&
+      parentPage.attributes.tags && asciidoc.attributes['parent-catalogs'] &&
+      asciidoc.attributes['parent-catalogs'].split(',').map((parentCat) => parentCat.trim()).every((parentCat) =>
+        !parentPage.attributes.tags.split(',').map((parentTag) => parentTag.trim()).includes(parentCat)
+      )
+    ) return
     return pageTags && pageTags.split(',').map((v) => v.trim()).includes(tag)
   }).sort((a, b) => (a.title || '').localeCompare((b.title || '')))
   if (pages && pages.length > 0) {

@@ -1,0 +1,32 @@
+= Subitem A-2
+:page-tags: toolbox, catalog, subitemA-2
+:parent-catalogs: itemA
+:page-illustration: ROOT:A-2.png
+
+== Leaf Item
+This is a leaf item of the catalog.
+It is a children from Item A, which is a children from the catalog base.
+
+To replicate this page structure:
+
+- Base page
+[asciidoc]
+----
+:page-layout: toolboxes
+:page-tags: catalog, catalog-base
+----
+
+- Item A
+[asciidoc]
+----
+:page-layout: toolboxes
+:page-tags: catalog, itemA
+:parent-catalogs: catalog-base
+----
+
+- Subitem A-2
+[asciidoc]
+----
+:page-tags: catalog, subitemA-2
+:parent-catalogs: itemA
+----
