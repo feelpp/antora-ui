@@ -1,0 +1,97 @@
+= Dynamic processor
+
+This extension allows you to compile and run code snippets in different languages (C and {cpp} at this time), and with different compilers.
+
+
+== Usage
+
+We present the different options that you can use with the dynamic processor.
+
+* `%dynamic`: The block should start with the `%dynamic` directive, so that the processor can identify it.
+* `language`: The programming language of the code block. It is usefull on the one hand because it allows the processor to display correctly the code block, and on the other hand because it allows the processor to know which compiler to use.
+* `filename`: The name of the file where the code block will be saved. If the file already exists, it will be overwritten. If nothing is specified, the file will be of the `tmp_1738748912630.cpp` (depending on the date and the file format specified).
+* `compile`: The type of compilation that will be done, in one of the following:
+    ** `sh` or `cpp`: The code will be compiled with the `g++` compiler.
+    ** `c`: The code will be compiled with the `gcc` compiler.
+    ** `mpi`: The code will be compiled with the `mpicxx` compiler.
+    ** `make`: The code will be compiled with the `make` command.
+    ** `cmake`: The code will be compiled with the `cmake` command. _(not implemented yet)_
+    Note that for the two last options, the page should contain the source of the Makefile or the CMakeLists.txt file. See example below.
+* `args`: The arguments that will be passed to the program during the execution.
+* `comp-args`: The arguments that will be passed to the compiler during the compilation, if none are specified, the default arguments are `-std=c++17`.
+
+
+NOTE: A `C` code will be compiled wi
+
+== Example
+
+
+=== Example of a {cpp} code
+
+[source, asciidoc, subs="attributes"]
+----
+[%dynamic, cpp, filename="Hello.cpp", compile=sh, args="arg1 arg2 arg3"]
+----
+
+
+.Test compile {cpp}
+[%dynamic, cpp, filename="Hello.cpp", compile=sh, args="arg1 arg2 arg3"]
+----
+#include <iostream>
+
+int main(int argc, char **argv)
+{
+    for (int i=0; i<argc; i++)
+        std::cout << argv[i] << std::endl;
+    std::cout << "Hello, world!" << std::endl;
+    return 0;
+}
+----
+
+=== Example of a C code
+
+[source, asciidoc, subs="attributes"]
+----
+[%dynamic, c, filename="Hello.c", compile=c, args="arg1 arg2 arg3", comp-args="-Wall -Wextra -Werror"]
+----
+
+.Test compile C
+[%dynamic, c, filename="Hello.c", compile=c, args="arg1 arg2 arg3", comp-args="-Wall -Wextra -Werror"]
+----
+#include <stdio.h>
+
+int main(int argc, char **argv)
+{
+    for (int i=0; i<argc; i++)
+        printf("%s\n", argv[i]);
+    printf("Hello, world!\n");
+    return 0;
+}
+----
+
+
+
+=== TExample of a MPI code
+
+
+[source, asciidoc, subs="attributes"]
+----
+[%dynamic, c, filename="MPI_Allgather.c", compile=mpi, np=3]
+----
+
+.Test compile MPI
+[%dynamic, c, filename="MPI_Allgather.c", compile=mpi, np=3]
+----
+#include <mpi.h>
+#include <stdio.h>
+
+int main(int argc, char **argv)
+{
+    MPI_Init(&argc, &argv);
+    int rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    printf("Hello from process %d\n", rank);
+    MPI_Finalize();
+    return 0;
+}
+----
