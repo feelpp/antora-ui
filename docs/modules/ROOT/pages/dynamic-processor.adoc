@@ -11,14 +11,18 @@ We present the different options that you can use with the dynamic processor.
 * `language`: The programming language of the code block. It is usefull on the one hand because it allows the processor to display correctly the code block, and on the other hand because it allows the processor to know which compiler to use.
 * `filename`: The name of the file where the code block will be saved. If the file already exists, it will be overwritten. If nothing is specified, the file will be of the `tmp_1738748912630.cpp` (depending on the date and the file format specified).
 * `compile`: The type of compilation that will be done, in one of the following:
-    ** `sh` or `cpp`: The code will be compiled with the `g++` compiler.
+    ** `sh` or `cpp`: The code will be compiled with the `g++` compiler. Default is `sh`.
     ** `c`: The code will be compiled with the `gcc` compiler.
     ** `mpi`: The code will be compiled with the `mpicxx` compiler.
     ** `make`: The code will be compiled with the `make` command.
     ** `cmake`: The code will be compiled with the `cmake` command. _(not implemented yet)_
     Note that for the two last options, the page should contain the source of the Makefile or the CMakeLists.txt file. See example below.
-* `args`: The arguments that will be passed to the program during the execution.
+* `inputs`: The arguments that will be passed to the program during the execution.
 * `comp-args`: The arguments that will be passed to the compiler during the compilation, if none are specified, the default arguments are `-std=c++17`.
+* `run`: Tells if the program is executed or not (default is `true`).
+* `build`: Build directory (for CMake), default is `build`.
+* `exec`: The name of the executable file that will be created. If nothing is specified, the file will be of the form `Helloworld.exe`.
+* `np`: The number of processes that will be used for the MPI compilation. Default is `2`.
 
 
 NOTE: A `C` code will be compiled wi
@@ -30,12 +34,12 @@ NOTE: A `C` code will be compiled wi
 
 [source, asciidoc, subs="attributes"]
 ----
-[%dynamic, cpp, filename="Hello.cpp", compile=sh, args="arg1 arg2 arg3"]
+[%dynamic, cpp, filename="Hello.cpp", compile=sh, inputs="arg1 arg2 arg3"]
 ----
 
 
 .Test compile {cpp}
-[%dynamic, cpp, filename="Hello.cpp", compile=sh, args="arg1 arg2 arg3"]
+[%dynamic, cpp, filename="Hello.cpp", compile=sh, inputs="arg1 arg2 arg3"]
 ----
 #include <iostream>
 
@@ -71,7 +75,7 @@ int main(int argc, char **argv)
 
 
 
-=== TExample of a MPI code
+=== Example of a MPI code
 
 
 [source, asciidoc, subs="attributes"]
@@ -92,6 +96,64 @@ int main(int argc, char **argv)
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     printf("Hello from process %d\n", rank);
     MPI_Finalize();
+    return 0;
+}
+----
+
+
+
+=== Example of a code with OpenMP
+
+[source, asciidoc, subs="attributes"]
+----
+[%dynamic, cpp, filename="HelloWorld_omp.cpp", compile=openmp]
+----
+
+.Test compile OpenMP
+[%dynamic, cpp, filename="HelloWorld_omp.cpp", compile=openmp]
+----
+#include <iostream>
+#include <omp.h>
+
+int main(int argc, char* argv[])
+{
+	// Use 4 OpenMP threads
+	omp_set_num_threads(4);
+
+	// Variable that will be private
+	int val = 123456789;
+
+	printf("Value of \"val\" before the OpenMP parallel region: %d.\n", val);
+	#pragma omp parallel private(val)
+	{
+		printf("Thread %d sees \"val\" = %d, and updates it to be %d.\n", omp_get_thread_num(), val, omp_get_thread_num());
+		val = omp_get_thread_num();
+	}
+	// Value after the parallel region; unchanged.
+	printf("Value of \"val\" after the OpenMP parallel region: %d.\n", val);
+	return 0;
+}
+----
+
+=== Example of a compilation with CMake
+
+[%dynamic, cmake]
+----
+cmake_minimum_required(VERSION 3.0)
+project(HelloWorld)
+add_executable(HelloWorld HelloWorldCMake.cpp)
+----
+
+
+[%dynamic, cpp, filename="HelloWorldCMake.cpp", compile=cmake, args="arg1 arg2 arg3", exec="HelloWorld"]
+----
+#include <iostream>
+
+int main(int argc, char **argv)
+{
+    for (int i = 1; i < argc; ++i)
+        std::cout << argv[i] <<  " ";
+    std::cout << std::endl;
     return 0;
 }
 ----
