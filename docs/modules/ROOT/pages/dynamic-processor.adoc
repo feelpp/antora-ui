@@ -25,7 +25,14 @@ We present the different options that you can use with the dynamic processor.
 * `np`: The number of processes that will be used for the MPI compilation. Default is `2`.
 
 
-NOTE: A `C` code will be compiled wi
+[NOTE]
+====
+The three asciidoctor extensions should be loaded in that order in the `site.yml` file:
+
+. `cmake-dynamic-processor.js`
+. `makefile-dynamic-processor.js`
+. `dynamic-processor.js`
+====
 
 == Example
 
@@ -137,6 +144,12 @@ int main(int argc, char* argv[])
 
 === Example of a compilation with CMake
 
+
+[source, asciidoc, subs="attributes"]
+----
+[%dynamic, cmake]
+----
+
 [%dynamic, cmake]
 ----
 cmake_minimum_required(VERSION 3.0)
@@ -155,5 +168,51 @@ int main(int argc, char **argv)
         std::cout << argv[i] <<  " ";
     std::cout << std::endl;
     return 0;
+}
+----
+
+
+=== Example of a code with Makefile
+
+[source, asciidoc, subs="attributes"]
+----
+[%dynamic, makefile, filename="Makefile"]
+----
+
+[%dynamic, makefile, filename="Makefile"]
+----
+# Spécifie le compilateur à utiliser
+CXX = g++
+
+# Spécifie les flags du compilateur
+CXXFLAGS = -Wall -O2 --std=c++17
+
+# Cible par défaut (quand on tape 'make' tout seul)
+all: mon_programme
+
+# Règle pour construire mon_programme
+mon_programme: mon_programme.cpp
+	echo "Compilation de mon_programme..."
+	$(CXX) $(CXXFLAGS) mon_programme.cpp -o mon_programme.exe
+
+# Règle pour nettoyer les fichiers générés
+clean:
+	rm -f mon_programme
+----
+
+
+[source, asciidoc, subs="attributes"]
+----
+[%dynamic, cpp, compile="make", filename="mon_programme.cpp"]
+----
+
+[%dynamic, cpp, compile="make", filename="mon_programme.cpp"]
+----
+#include <iostream>
+
+int main()
+{
+	std::cout << "Hello, world!" << std::endl;
+	return 0;
 }
 ----
