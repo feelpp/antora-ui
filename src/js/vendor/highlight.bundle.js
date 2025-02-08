@@ -1,7 +1,10 @@
 ;(function () {
   'use strict'
 
-  var hljs = require('highlight.js/lib/highlight')
+  // Use the new core entry point
+  var hljs = require('highlight.js/lib/core')
+
+  // Register languages (paths remain the same for shipped languages)
   hljs.registerLanguage('asciidoc', require('highlight.js/lib/languages/asciidoc'))
   hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
   hljs.registerLanguage('clojure', require('highlight.js/lib/languages/clojure'))
@@ -38,9 +41,13 @@
   hljs.registerLanguage('swift', require('highlight.js/lib/languages/swift'))
   hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
   hljs.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'))
+  
+  // Custom language definitions
   hljs.registerLanguage('mpirun', require('../../../lib/highlight.js/mpirun'))
   hljs.registerLanguage('gmsh', require('../../../lib/highlight.js/gmsh'))
+
+  // Highlight all <pre><code> elements that have the hljs class and a data-lang attribute
   ;[].slice.call(document.querySelectorAll('pre code.hljs[data-lang]')).forEach(function (node) {
-    hljs.highlightBlock(node)
+    hljs.highlightElement(node)
   })
 })()
