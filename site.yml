@@ -12,7 +12,7 @@ content:
     start_path: docs
 ui:
   bundle:
-    url: build/ui-bundle.zip
+    url: ./build/ui-bundle.zip
     snapshot: true
 output:
   clean: true
@@ -24,7 +24,7 @@ asciidoc:
   attributes:
     page-pagination: ''
     cemosis: Cemosis
-    project_name: Feel++ Project
+    project_name: Feel++ Antora UI
     project_version: 2.0.2
     numbered: true
     allow-uri-read: true

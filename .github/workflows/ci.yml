@@ -12,6 +12,34 @@ on:
         - main
 
 jobs:
+  build-bundle:
+    runs-on: ubuntu-latest
+    name: Build UI Bundle
+    if: "!contains(github.event.head_commit.message, 'ui skip')"
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Generates Antora UI Bundle
+      run: |
+        gulp bundle
+        gulp preview:build
+
+    - name: Upload UI Bundle
+      uses: actions/upload-artifact@v3
+      with:
+        name: ui-bundle
+        path: build/ui-bundle.zip
+
   build-docs:
     runs-on: ubuntu-latest
     name: Build Antora UI
@@ -20,6 +48,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+
+    - name: Download UI Bundle
+      uses: actions/download-artifact@v3
+      with:
+        name: ui-bundle
+        path: build
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -39,7 +73,7 @@ jobs:
       with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: public # The folder the action should deploy.
+          FOLDER: build/site # The folder the action should deploy.
 
     - name: Release
       if: startsWith(github.ref, 'refs/tags/v')
