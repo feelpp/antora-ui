@@ -15,7 +15,7 @@
   ],
   "devDependencies": {
     "@asciidoctor/core": "~2.2",
-    "@feelpp/asciidoctor-extensions": "^1.0.0-rc.7",
+    "@feelpp/asciidoctor-extensions": "^1.0.0-rc.13",
     "@fontsource/roboto": "~4.5",
     "@fontsource/roboto-mono": "~4.5",
     "@fortawesome/fontawesome-free": "~6.4",
@@ -51,7 +51,7 @@
     "gulp-vinyl-zip": "~2.2",
     "handlebars": "~4.7",
     "handlebars-utils": "^1.0.6",
-    "highlight.js": "9.18.3",
+    "highlight.js": "11.11.1",
     "http-server": "^14.1.1",
     "js-yaml": "~3.13",
     "merge-stream": "~2.0",
@@ -78,12 +78,12 @@
     "lint:js": "eslint gulpfile.js \"gulp.d/**/*.js\" \"src/{helpers,js}/**/*.js\"",
     "build": "npm run generate-fontawesome-icon-defs && gulp bundle",
     "antora": "npx antora site.yml --stacktrace",
-    "serve": "http-server public",
+    "serve": "http-server build/site",
     "generate-fontawesome-icon-defs": "node tasks/generate-fontawesome-icon-defs.js"
   },
   "dependencies": {
     "@antora/cli": "^3.1",
-    "@antora/collector-extension": "^1.0.0-beta.2",
+    "@antora/collector-extension": "^1.0.1",
     "@antora/site-generator": "^3.1",
     "@asciidoctor/core": "~2.2.8",
     "asciidoctor": "~2.2.8",

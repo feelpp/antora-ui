@@ -1,6 +1,7 @@
 * xref:style-guide.adoc[]
 ** xref:inline-text-styles.adoc[]
 ** xref:admonition-styles.adoc[]
+** xref:dynamic-processor.adoc[]
 ** xref:source-highlighting.adoc[]
 ** xref:copy-to-clipboard.adoc[]
 //** xref:plotly.adoc[]

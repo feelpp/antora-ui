@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-action.json
 name: Generate Antora UI with Gulp
 
 on:
@@ -11,8 +12,10 @@ on:
         - main
 
 jobs:
-  build:
+  build-bundle:
     runs-on: ubuntu-latest
+    name: Build UI Bundle
+    if: "!contains(github.event.head_commit.message, 'ui skip')"
 
     steps:
     - name: Checkout repository
@@ -24,23 +27,53 @@ jobs:
         node-version: '18'
 
     - name: Install dependencies
-      run: npm ci
+      run: npm install
 
-    - name: Generate Antora UI Bundle
+    - name: Generates Antora UI Bundle
       run: gulp bundle
 
-    - name: Generates Antora UI Preview
-      run: gulp preview:build
+    - name: Upload UI Bundle
+      uses: actions/upload-artifact@v4
+      with:
+        name: ui-bundle
+        path: build/ui-bundle.zip
 
-    - name: Generates Documentation
-      run: npm run antora
+  build-docs:
+    # depends on build-bundle job
+    needs: build-bundle
+    runs-on: ubuntu-latest
+    name: Build Antora UI
+    if: "!contains(github.event.head_commit.message, 'docs skip')"
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download UI Bundle
+      uses: actions/download-artifact@v4
+      with:
+        name: ui-bundle
+        path: build
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build Antora Site
+      run: |
+          npm run antora
 
     - name: Deploy Antora UI to GitHub Pages
       if: ${{ github.ref_name == 'main' }}
-      uses: peaceiris/actions-gh-pages@v3
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        personal_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: build/site # The folder the action should deploy.
 
     - name: Release
       if: startsWith(github.ref, 'refs/tags/v')
