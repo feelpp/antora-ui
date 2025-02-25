@@ -1,6 +1,9 @@
 = Item A
-:page-layout: toolboxes
-:page-tags: toolbox, catalog, itemA
+:page-layout: dashboard
+:page-tags: catalog, itemA
 :parent-catalogs: catalog-base
 :description: Item containing 2 subitems.
 :page-illustration: ROOT:A.png
+
+== Description
+This page is a catalog item, children of the root item, containing 2 subitems.

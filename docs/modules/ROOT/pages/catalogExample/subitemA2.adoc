@@ -1,5 +1,5 @@
 = Subitem A-2
-:page-tags: toolbox, catalog, subitemA-2
+:page-tags: catalog, subitemA-2
 :parent-catalogs: itemA
 :page-illustration: ROOT:A-2.png
 
@@ -12,14 +12,14 @@ To replicate this page structure:
 - Base page
 [asciidoc]
 ----
-:page-layout: toolboxes
+:page-layout: dashboard
 :page-tags: catalog, catalog-base
 ----
 
 - Item A
 [asciidoc]
 ----
-:page-layout: toolboxes
+:page-layout: dashboard
 :page-tags: catalog, itemA
 :parent-catalogs: catalog-base
 ----

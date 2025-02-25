@@ -1,6 +1,9 @@
 = Item B
-:page-layout: toolboxes
-:page-tags: toolbox, catalog, itemB
+:page-layout: dashboard
+:page-tags: catalog, itemB
 :parent-catalogs: catalog-base
 :description: Item containing 1 shared subitem.
 :page-illustration: ROOT:B.png
+
+== Description
+This page is a catalog item, containing Item C as children, which is shared with the catalog base.

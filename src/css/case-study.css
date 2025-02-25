@@ -1,6 +1,7 @@
 .docs-case-study .cases,
 .docs-case-study .benchmarks,
 .docs-case-study .toolboxes,
+.docs-case-study .dashboard,
 .docs-case-study .manuals {
   display: flex;
   flex-wrap: wrap;
@@ -13,6 +14,7 @@
 .docs-case-study .cases .case,
 .docs-case-study .benchmarks .benchmark,
 .docs-case-study .toolboxes .toolbox,
+.docs-case-study .dashboard .catalog,
 .docs-case-study .manuals .manual {
   display: flex;
   flex: 1 calc(33.33% - 5em);
@@ -24,6 +26,7 @@
   .docs-case-study .cases .case,
   .docs-case-study .benchmarks .benchmark,
   .docs-case-study .toolboxes .toolbox,
+  .docs-case-study .dashboard .catalog,
   .docs-case-study .manuals .manual {
     flex: 1 250px;
   }
@@ -34,6 +37,7 @@
   .docs-case-study .cases .case,
   .docs-case-study .benchmarks .benchmark,
   .docs-case-study .toolboxes .toolbox,
+  .docs-case-study .dashboard .catalog,
   .docs-case-study .manuals .manual {
     min-width: 250px;
   }

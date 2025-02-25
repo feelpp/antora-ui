@@ -1,7 +1,10 @@
-:page-layout: toolboxes
-:page-tags: toolbox, catalog, catalog-base
+:page-layout: dashboard
+:page-tags: catalog, catalog-base
 :parent-catalogs: page-layouts
 :description: Example of the catalog page layout.
 :page-illustration: ROOT:grid.png
 
 = Catalog
+
+== Description
+This is the base page of the catalog. It is identified by the `catalog-base` tag, and also contains the `catalog` tag, making it available to have child items.
