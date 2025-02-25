@@ -1,4 +1,4 @@
 = Page Layouts
 :navtitle: Page Layouts
-:page-layout: toolboxes
-:page-tags: catalog, page-layouts
+:page-layout: dashboard
+:page-tags: page-layouts

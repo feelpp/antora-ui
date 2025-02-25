@@ -1,5 +1,5 @@
 = Item C
-:page-tags: toolbox, catalog, itemC
+:page-tags: catalog, itemC
 :parent-catalogs: catalog-base, itemB
 :description: Leaf item.
 :page-illustration: ROOT:C.png
@@ -13,14 +13,14 @@ To replicate this page structure:
 - Base page
 [asciidoc]
 ----
-:page-layout: toolboxes
+:page-layout: dashboard
 :page-tags: catalog, catalog-base
 ----
 
 - Item B
 [asciidoc]
 ----
-:page-layout: toolboxes
+:page-layout: dashboard
 :page-tags: catalog, itemB
 :parent-catalogs: catalog-base
 ----
