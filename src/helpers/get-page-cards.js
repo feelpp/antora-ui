@@ -15,16 +15,24 @@ module.exports = (parentPage, tag, withinParentModule = true, { data: { root } }
       )
     ) return
     return pageTags && pageTags.split(',').map((v) => v.trim()).includes(tag)
-  }).sort((a, b) => (a.title || '').localeCompare((b.title || '')))
-  if (pages && pages.length > 0) {
-    while (pages.length % 3 !== 0) {
-      pages.push({
-        empty: true,
-        title: 'MANUAL',
-        color: '#1dffbf',
-        id: 'manual',
-        //url: page.pub.url,
-      })
+  })
+
+  if (pages) {
+    pages.sort((a, b) => {
+      const order = (pageTags && pageTags.split(',').map((tag) => tag.trim()).includes('descending')) ? -1 : 1
+      return order * (a.title || '').localeCompare(b.title || '')
+    })
+
+    if (pages.length > 0) {
+      while (pages.length % 3 !== 0) {
+        pages.push({
+          empty: true,
+          title: 'MANUAL',
+          color: '#1dffbf',
+          id: 'manual',
+          //url: page.pub.url,
+        })
+      }
     }
   }
   return pages
