@@ -1,0 +1,8 @@
+= Subitem D-1
+:page-tags: toolbox, catalog, subitemD-1
+:parent-catalogs: itemD
+:page-illustration: ROOT:D-1.png
+
+== Leaf Item
+This is a leaf item of the catalog.
+It is a children from Item D, which is a children from the catalog base.
