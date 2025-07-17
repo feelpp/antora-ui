@@ -1,7 +1,7 @@
 = Subitem D-2
 :page-tags: toolbox, catalog, subitemD-2
 :parent-catalogs: itemD
-:page-illustration: ROOT:D-1.png
+:page-illustration: ROOT:D-2.png
 
 == Leaf Item
 This is a leaf item of the catalog.

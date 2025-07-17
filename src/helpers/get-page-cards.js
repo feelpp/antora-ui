@@ -25,8 +25,10 @@ module.exports = (parentPage, tag, withinParentModule = true, { data: { root } }
     pages.sort((a, b) => {
       // Tag "descending" to set the order of display the cards. By default in increasing order.
       // if the tag is provided, then they are displayed in decreasing order.
-      // const order = (pageTags && pageTags.split(',').map((tag) => tag.trim()).includes('descending')) ? -1 : 1
-      return order * (a.title || '').localeCompare(b.title || '')
+      if (order > 0) {
+        return (a.title || '').localeCompare(b.title || '')
+      }
+      return (b.title || '').localeCompare(a.title || '')
     })
 
     if (pages.length > 0) {
