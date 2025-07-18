@@ -1,6 +1,6 @@
 = Item D
 :page-layout: toolboxes
-:page-tags: toolbox, catalog, itemD, decreasing
+:page-tags: toolbox, catalog, itemD, descending
 :parent-catalogs: catalog-base
 :description: Item containing 2 subitems in decreasing order.
 :page-illustration: ROOT:D.png
