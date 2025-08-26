@@ -1,7 +1,7 @@
-.docs-case-study .cases,
-.docs-case-study .benchmarks,
-.docs-case-study .toolboxes,
-.docs-case-study .manuals {
+.docs-cards-layout .cases,
+.docs-cards-layout .benchmarks,
+.docs-cards-layout .toolboxes,
+.docs-cards-layout .manuals {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -10,10 +10,10 @@
   gap: clamp(1.5em, 2vw, 5em);
 }
 
-.docs-case-study .cases .case,
-.docs-case-study .benchmarks .benchmark,
-.docs-case-study .toolboxes .toolbox,
-.docs-case-study .manuals .manual {
+.docs-cards-layout .cases .case,
+.docs-cards-layout .benchmarks .benchmark,
+.docs-cards-layout .toolboxes .toolbox,
+.docs-cards-layout .manuals .manual {
   display: flex;
   flex: 1 calc(33.33% - 5em);
   max-width: 500px;
@@ -21,31 +21,31 @@
 
 /* Media query for small screens */
 @media (max-width: 767px) {
-  .docs-case-study .cases .case,
-  .docs-case-study .benchmarks .benchmark,
-  .docs-case-study .toolboxes .toolbox,
-  .docs-case-study .manuals .manual {
+  .docs-cards-layout .cases .case,
+  .docs-cards-layout .benchmarks .benchmark,
+  .docs-cards-layout .toolboxes .toolbox,
+  .docs-cards-layout .manuals .manual {
     flex: 1 250px;
   }
 }
 
 /* Media query for large screens */
 @media (min-width: 768px) {
-  .docs-case-study .cases .case,
-  .docs-case-study .benchmarks .benchmark,
-  .docs-case-study .toolboxes .toolbox,
-  .docs-case-study .manuals .manual {
+  .docs-cards-layout .cases .case,
+  .docs-cards-layout .benchmarks .benchmark,
+  .docs-cards-layout .toolboxes .toolbox,
+  .docs-cards-layout .manuals .manual {
     min-width: 250px;
   }
 }
 
-.docs-case-study .page-card:hover,
-.docs-case-study .page-card:focus {
+.docs-cards-layout .page-card:hover,
+.docs-cards-layout .page-card:focus {
   box-shadow: 0 6px 12px 1px #104d92ad;
   text-decoration: none;
 }
 
-.docs-case-study .page-card {
+.docs-cards-layout .page-card {
   box-shadow: 0 3px 6px 1px #e0e0e0;
   padding: 1.5em 1em 1em;
   display: flex;
@@ -55,7 +55,7 @@
   flex: 1;
 }
 
-.docs-case-study .page-card-illustration {
+.docs-cards-layout .page-card-illustration {
   height: 150px;
   object-fit: contain;
   display: flex;
@@ -65,14 +65,14 @@
   padding-right: 1em;
 }
 
-.docs-case-study .page-card-illustration > img {
+.docs-cards-layout .page-card-illustration > img {
   max-width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 0.25em;
 }
 
-.docs-case-study .page-card .page-card-body {
+.docs-cards-layout .page-card .page-card-body {
   border-top: 1px solid #e1e1e1;
   margin-top: 1rem;
   padding-bottom: 0.75rem;
@@ -80,12 +80,12 @@
   margin-right: 0.75rem;
 }
 
-.docs-case-study .page-card .page-card-body p {
+.docs-cards-layout .page-card .page-card-body p {
   font-size: 0.9em;
   color: #56595c;
 }
 
-.docs-case-study .page-card .page-card-body h4 {
+.docs-cards-layout .page-card .page-card-body h4 {
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
