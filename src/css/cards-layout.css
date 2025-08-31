@@ -1,7 +1,8 @@
 .docs-cards-layout .cases,
 .docs-cards-layout .benchmarks,
 .docs-cards-layout .toolboxes,
-.docs-cards-layout .manuals {
+.docs-cards-layout .manuals,
+.docs-cards-layout .catalogs {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -13,7 +14,8 @@
 .docs-cards-layout .cases .case,
 .docs-cards-layout .benchmarks .benchmark,
 .docs-cards-layout .toolboxes .toolbox,
-.docs-cards-layout .manuals .manual {
+.docs-cards-layout .manuals .manual,
+.docs-cards-layout .catalogs .catalog {
   display: flex;
   flex: 1 calc(33.33% - 5em);
   max-width: 500px;
@@ -24,7 +26,8 @@
   .docs-cards-layout .cases .case,
   .docs-cards-layout .benchmarks .benchmark,
   .docs-cards-layout .toolboxes .toolbox,
-  .docs-cards-layout .manuals .manual {
+  .docs-cards-layout .manuals .manual,
+  .docs-cards-layout .catalogs .catalog {
     flex: 1 250px;
   }
 }
@@ -34,7 +37,8 @@
   .docs-cards-layout .cases .case,
   .docs-cards-layout .benchmarks .benchmark,
   .docs-cards-layout .toolboxes .toolbox,
-  .docs-cards-layout .manuals .manual {
+  .docs-cards-layout .manuals .manual,
+  .docs-cards-layout .catalogs .catalog {
     min-width: 250px;
   }
 }
@@ -63,6 +67,18 @@
   justify-content: center;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+.docs-cards-layout .page-card-illustration i.fas,
+.docs-cards-layout .page-card-illustration i.fa-solid {
+  font-size: 140px;
+  color: #111;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: auto;
+  line-height: 1;
+  text-align: center;
 }
 
 .docs-cards-layout .page-card-illustration > img {
