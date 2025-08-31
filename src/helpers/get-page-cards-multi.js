@@ -27,6 +27,20 @@ module.exports = function () {
     acrossComponents = !!args[3]
   }
 
+  // If the parent page declares a page-level attribute to opt into across-components
+  // behavior, honor it when acrossComponents wasn't explicitly set by the caller.
+  if (!acrossComponents) {
+    const attrAcross =
+      parentPage.asciidoc?.attributes?.['page-cards-across-components'] ||
+      parentPage.asciidoc?.attributes?.['cards-across-components'] ||
+      parentPage.attributes?.['page-cards-across-components'] ||
+      parentPage.attributes?.['cards-across-components']
+    if (typeof attrAcross !== 'undefined') {
+      // treat any value other than the string 'false' as true
+      acrossComponents = !(String(attrAcross).toLowerCase() === 'false')
+    }
+  }
+
   if (withinParentModule === undefined) withinParentModule = true
 
   // Determine array of requested tags: prefer page-cards-tag, fallback to cards-tag, fallback to argument
@@ -55,8 +69,15 @@ module.exports = function () {
       if (!out || !asciidoc) return
       // if acrossComponents is false, restrict to same component/version as the parent page
       if (!acrossComponents) {
-        if (src.component !== parentPage.componentVersion.name) return
-        if (src.version !== parentPage.componentVersion.version) return
+        // Determine parent component/version with fallbacks so modules in the
+        // same component are detected even when componentVersion is empty.
+        const parentCompName =
+          parentPage.componentVersion?.name || parentPage.attributes?.['component-name'] || parentPage.component || ''
+        const parentCompVersion =
+          parentPage.componentVersion?.version || parentPage.attributes?.['component-version'] || parentPage.attributes?.version || ''
+
+        if (parentCompName && src.component !== parentCompName) return
+        if (parentCompVersion && src.version !== parentCompVersion) return
       }
       if (within && src.module !== parentPage.module) return
 
@@ -112,15 +133,45 @@ module.exports = function () {
         })
       }
     }
+    // Debug logging when enabled
+    try {
+      if (process && process.env && process.env.ANTORA_DEBUG_PAGE_CARDS === '1') {
+        /* eslint-disable no-console */
+        console.log('[get-page-cards-multi] tag=%s -> pages=%d (including padding)', cardsTag, pages.length)
+        pages.forEach(function (p, i) {
+          console.log('[get-page-cards-multi]   page[%d] title=%s id=%s empty=%s url=%s', i, p.title || '(no-title)', p.id || '(no-id)', !!p.empty, (p.pub && p.pub.url) || '(no-url)')
+        })
+        /* eslint-enable no-console */
+      }
+    } catch (e) {
+      // ignore
+    }
     return pages
   }
-
   // Build groups for each tag including optional title from parent page attributes
   const groups = cardsTags.map(function (tag) {
     const titleKey = `page-cards-${tag}-title`
     const title = parentPage.asciidoc?.attributes?.[titleKey] || parentPage.attributes?.[titleKey]
     return { tag, title, pages: makePagesForTag(tag) }
   }).filter((g) => g.pages && g.pages.length)
+
+  // More debug: log summary of what we built
+  try {
+    if (process && process.env && process.env.ANTORA_DEBUG_PAGE_CARDS === '1') {
+      /* eslint-disable no-console */
+      console.log('[get-page-cards-multi] parent=%s module=%s tags=%s within=%s across=%s groups=%d',
+        parentPage.attributes?.['component-name'] || parentPage.componentVersion?.name || parentPage.component || '(unknown)',
+        parentPage.module || '(unknown)',
+        cardsTags.join(','),
+        within,
+        acrossComponents,
+        groups.length)
+      groups.forEach(function (g) {
+        console.log('[get-page-cards-multi] group %s -> pages=%d', g.tag, g.pages.length)
+      })
+      /* eslint-enable no-console */
+    }
+  } catch (e) {}
 
   return groups
 }

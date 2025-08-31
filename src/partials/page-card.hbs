@@ -1,6 +1,7 @@
 {{#if empty}}
   <div class="empty"></div>
 {{else}}
+<!-- debug: page-card title={{title}} url={{pub.url}} empty={{empty}} -->
 <a class="page-card" href="{{{relativize pub.url}}}">
   <div class="page-card-illustration">
     {{#if asciidoc.attributes.page-illustration}}

@@ -29,8 +29,15 @@ module.exports = function (parentPage, tag, withinParentModule = true, { data: {
 
   const pages = contentCatalog.getPages(function ({ asciidoc, out, src }) {
     if (!out || !asciidoc) return
-    if (src.component !== parentPage.componentVersion.name) return
-    if (src.version !== parentPage.componentVersion.version) return
+    // Determine parent component/version with fallbacks so modules in the
+    // same component are detected even when componentVersion is empty.
+    const parentCompName =
+      parentPage.componentVersion?.name || parentPage.attributes?.['component-name'] || parentPage.component || ''
+    const parentCompVersion =
+      parentPage.componentVersion?.version || parentPage.attributes?.['component-version'] || parentPage.attributes?.version || ''
+
+    if (parentCompName && src.component !== parentCompName) return
+    if (parentCompVersion && src.version !== parentCompVersion) return
     if (withinParentModule && src.module !== parentPage.module) return
 
     // Prefer page-tags, fallback to tags
