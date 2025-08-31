@@ -3,7 +3,7 @@
 <head>
   {{> head defaultPageTitle='Untitled'}}
 </head>
-<body class="article docs-home{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
+<body class="article docs-home docs-cards-layout {{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
 {{> header}}
 
 <div class="body">
@@ -38,15 +38,38 @@
     <div class="content">
       <article class="doc">
         <h2>Recommended Resources</h2>
-        <div class="books">
-          {{#each (get-recommended-resources)}}
-            {{> book-cover this}}
-          {{/each}}
-        </div>
+  {{!-- Show only top-level catalogs on the homepage (no manuals) --}}
+  {{#with 'catalog' as |cardsTag|}}
+          {{#with (get-attr @root.page 'cards-within-module' 'true') as |withinModule|}}
+            {{#if (eq withinModule 'false')}}
+              {{#with (get-page-cards-multi @root.page cardsTag false true) as |groups|}}
+                {{#if groups.length}}
+                  {{#each groups}}
+                    {{#if this.title}}<h3 class="cards-group-title">{{this.title}}</h3>{{/if}}
+                    {{> _cards-list this.pages title=(get-attr @root.page (concat 'page-cards-' this.tag '-title') ) wrapper='catalogs' itemClass='catalog'}}
+                  {{/each}}
+                {{else}}
+                  {{#with (get-page-cards @root.page cardsTag false)}} {{> _cards-list}} {{/with}}
+                {{/if}}
+              {{/with}}
+            {{else}}
+              {{#with (get-page-cards-multi @root.page cardsTag true true) as |groups|}}
+                {{#if groups.length}}
+                  {{#each groups}}
+                    {{#if this.title}}<h3 class="cards-group-title">{{this.title}}</h3>{{/if}}
+                    {{> _cards-list this.pages}}
+                  {{/each}}
+                {{else}}
+                  {{#with (get-page-cards @root.page cardsTag true)}}  {{> _cards-list}} {{/with}}
+                {{/if}}
+              {{/with}}
+            {{/if}}
+          {{/with}}
+        {{/with}}
       </article>
     </div>
 
-    <div class="content">
+    <!--<div class="content">
       <article class="doc">
         <h2>Latest news</h2>
         <div class="latest-news">
@@ -58,7 +81,7 @@
           </div>
         </div>
       </article>
-    </div>
+    </div>-->
 
   </main>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
