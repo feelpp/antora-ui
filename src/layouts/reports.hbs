@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {{> head defaultPageTitle='Catalog'}}
+  {{> head defaultPageTitle='Reports'}}
 </head>
-<body class="article docs-manuals-catalog docs-cards-layout {{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
+<body class="article docs-reports-catalog docs-cards-layout {{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
 {{> header}}
 
 <div class="body">
@@ -20,7 +20,7 @@
         {{#with @root.page.title}} <h1 class="page">{{{this}}}</h1> {{/with}}
 
         {{!-- attributes from AsciiDoc (fallback to page.attributes) --}}
-        {{#with (get-attr @root.page 'cards-tag' 'manual') as |cardsTag|}}
+        {{#with (get-attr @root.page 'cards-tag' 'report') as |cardsTag|}}
           {{#with (get-attr @root.page 'cards-within-module' 'true') as |withinModuleStr|}}
             {{!-- Try the multi-tag helper which returns groups per tag --}}
             {{#if (eq withinModuleStr 'false')}}

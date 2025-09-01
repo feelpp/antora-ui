@@ -2,23 +2,32 @@
 .docs-cards-layout .benchmarks,
 .docs-cards-layout .toolboxes,
 .docs-cards-layout .manuals,
-.docs-cards-layout .catalogs {
+.docs-cards-layout .catalogs,
+.docs-cards-layout .reports {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: 5em;
   margin-bottom: 5em;
-  gap: clamp(1.5em, 2vw, 5em);
+  gap: 1.5rem;
 }
 
 .docs-cards-layout .cases .case,
 .docs-cards-layout .benchmarks .benchmark,
 .docs-cards-layout .toolboxes .toolbox,
 .docs-cards-layout .manuals .manual,
-.docs-cards-layout .catalogs .catalog {
+.docs-cards-layout .catalogs .catalog,
+.docs-cards-layout .reports .report {
+  /* make each item a flex child with a stable basis so the row wraps into 3 columns
+     Use box-sizing so padding doesn't break sizing. Use flex on the item so the
+     inner .page-card can be given an aspect-ratio (square) without breaking layout. */
+  box-sizing: border-box;
   display: flex;
-  flex: 1 calc(33.33% - 5em);
-  max-width: 500px;
+  align-items: stretch;
+  /* fix the basis so items don't grow to full width when there's spare space */
+  flex: 0 0 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+  /* allow a reasonable max width but don't force a small max that can break layout */
 }
 
 /* Media query for small screens */
@@ -27,8 +36,18 @@
   .docs-cards-layout .benchmarks .benchmark,
   .docs-cards-layout .toolboxes .toolbox,
   .docs-cards-layout .manuals .manual,
-  .docs-cards-layout .catalogs .catalog {
-    flex: 1 250px;
+  .docs-cards-layout .catalogs .catalog,
+  .docs-cards-layout .reports .report {
+    /* on small screens: allow items to shrink to full width (stack) */
+    flex: 0 1 100%;
+    width: 100%;
+  }
+
+  /* On small screens remove the forced square aspect so cards can size naturally. */
+  .docs-cards-layout .page-card {
+    /* stylelint-disable property-no-unknown */
+    aspect-ratio: auto;
+    /* stylelint-enable property-no-unknown */
   }
 }
 
@@ -38,8 +57,12 @@
   .docs-cards-layout .benchmarks .benchmark,
   .docs-cards-layout .toolboxes .toolbox,
   .docs-cards-layout .manuals .manual,
-  .docs-cards-layout .catalogs .catalog {
+  .docs-cards-layout .catalogs .catalog,
+  .docs-cards-layout .reports .report {
+    /* on larger screens ensure a reasonable minimum so cards don't become too narrow */
+    flex: 0 0 calc(33.333% - 1rem);
     min-width: 250px;
+    max-width: calc(33.333% - 1rem);
   }
 }
 
@@ -51,34 +74,47 @@
 
 .docs-cards-layout .page-card {
   box-shadow: 0 3px 6px 1px #e0e0e0;
-  padding: 1.5em 1em 1em;
+  padding: 1em 0.8em 0.8em;
   display: flex;
   flex-direction: column;
   color: initial;
   border-radius: 0.5em;
-  flex: 1;
+  /* Make each card fill its flex-item with a more reasonable aspect ratio on
+     larger viewports. We override this on small screens so cards can stack naturally. */
+  width: 100%;
+  /* stylelint-disable property-no-unknown */
+  aspect-ratio: 3 / 2;
+  /* stylelint-enable property-no-unknown */
+  position: relative; /* allow pseudo-element badge */
+  overflow: hidden;
 }
 
 .docs-cards-layout .page-card-illustration {
-  height: 150px;
+  /* Allow the illustration to grow inside the card while keeping it centered. */
+  flex: 1 0 auto;
   object-fit: contain;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-left: 1em;
   padding-right: 1em;
+  min-height: 0; /* prevent flex item overflow in some browsers */
 }
 
 .docs-cards-layout .page-card-illustration i.fas,
-.docs-cards-layout .page-card-illustration i.fa-solid {
-  font-size: 140px;
+.docs-cards-layout .page-card-illustration i.fa-solid,
+.docs-cards-layout .page-card-illustration i.fab,
+.docs-cards-layout .page-card-illustration i.fa-brands,
+.docs-cards-layout .page-card-illustration i.far,
+.docs-cards-layout .page-card-illustration i.fa-regular {
+  font-size: 100px;
   color: #111;
   width: 100%;
   height: 100%;
-  display: block;
-  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
-  text-align: center;
 }
 
 .docs-cards-layout .page-card-illustration > img {
@@ -86,6 +122,52 @@
   height: 100%;
   object-fit: cover;
   border-radius: 0.25em;
+}
+
+/* Differentiate manual vs catalog vs report cards */
+.docs-cards-layout .manuals .manual .page-card {
+  background: #fff;
+  border: 1px solid rgba(16, 77, 146, 0.06);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card {
+  background: #f6fbff; /* subtle blue tint for catalogs */
+  border: 1px solid rgba(34, 108, 165, 0.08);
+}
+
+.docs-cards-layout .reports .report .page-card {
+  background: #fffaf6; /* subtle orange tint for reports */
+  border: 1px solid rgba(165, 108, 34, 0.08);
+}
+
+/* Small top-right badge to label the card type */
+.docs-cards-layout .manuals .manual .page-card::before,
+.docs-cards-layout .catalogs .catalog .page-card::before,
+.docs-cards-layout .reports .report .page-card::before {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+}
+
+.docs-cards-layout .manuals .manual .page-card::before {
+  content: "Manual";
+  background: #2b6ea3; /* blue */
+}
+
+.docs-cards-layout .catalogs .catalog .page-card::before {
+  content: "Catalog";
+  background: #1976a8; /* slightly different blue */
+}
+
+.docs-cards-layout .reports .report .page-card::before {
+  content: "Report";
+  background: #a56c22; /* orange */
 }
 
 .docs-cards-layout .page-card .page-card-body {

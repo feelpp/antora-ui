@@ -25,9 +25,9 @@
         {{#with (get-page-cards @root.page 'catalog' false)}}
           {{#if this.length}}
           <h2>Catalog</h2>
-          <div class="manuals">
+          <div class="catalogs">
             {{#each this}}
-              <div class="manual">{{> page-card this}}</div>
+              <div class="catalog">{{> page-card this}}</div>
             {{/each}}
           </div>
           {{else}}

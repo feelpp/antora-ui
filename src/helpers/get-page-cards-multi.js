@@ -65,7 +65,7 @@ module.exports = function () {
   const within = (withinParentModule === true) || String(withinParentModule) !== 'false'
 
   const makePagesForTag = function (cardsTag) {
-    const pages = contentCatalog.getPages(function ({ asciidoc, out, src }) {
+    let pages = contentCatalog.getPages(function ({ asciidoc, out, src }) {
       if (!out || !asciidoc) return
       // if acrossComponents is false, restrict to same component/version as the parent page
       if (!acrossComponents) {
@@ -89,6 +89,10 @@ module.exports = function () {
 
       // Only include if the page has the desired tag
       if (!pageTags.includes(cardsTag)) return
+
+      // Allow pages to opt out of appearing as cards using a page attribute
+      const excludeCardsAttr = asciidoc.attributes['page-cards-exclude'] || asciidoc.attributes['exclude-from-cards']
+      if (typeof excludeCardsAttr !== 'undefined' && String(excludeCardsAttr).toLowerCase() === 'true') return
 
       // If the page declares parent-catalogs, enforce that at least one of those
       // parent-catalog names matches a tag on the parent page. This prevents
@@ -121,6 +125,18 @@ module.exports = function () {
       }
       return (a.title || '').localeCompare(b.title || '')
     })
+
+    // Exclude the parent page itself from the results (avoid showing the
+    // catalog root as one of its own cards).
+    const filtered = pages.filter(function (p) {
+      try {
+        const parentUrl = parentPage.pub && parentPage.pub.url
+        const pageUrl = p.pub && p.pub.url
+        if (parentUrl && pageUrl && parentUrl === pageUrl) return false
+      } catch (e) {}
+      return true
+    })
+    pages = filtered
 
     // Pad to 3-column grid
     if (pages && pages.length > 0) {

@@ -37,30 +37,52 @@
 
     <div class="content">
       <article class="doc">
-        <h2>Recommended Resources</h2>
-  {{!-- Show only top-level catalogs on the homepage (no manuals) --}}
-  {{#with 'catalog' as |cardsTag|}}
-          {{#with (get-attr @root.page 'cards-within-module' 'true') as |withinModule|}}
-            {{#if (eq withinModule 'false')}}
-              {{#with (get-page-cards-multi @root.page cardsTag false true) as |groups|}}
+        {{!-- attributes from AsciiDoc (fallback to page.attributes) --}}
+        {{#with (get-attr @root.page 'cards-tag' 'catalog') as |cardsTag|}}
+          {{#with (get-attr @root.page 'cards-within-module' 'true') as |withinModuleStr|}}
+            {{!-- Try the multi-tag helper which returns groups per tag --}}
+            {{#if (eq withinModuleStr 'false')}}
+              {{#with (get-page-cards-multi @root.page cardsTag false) as |groups|}}
                 {{#if groups.length}}
                   {{#each groups}}
-                    {{#if this.title}}<h3 class="cards-group-title">{{this.title}}</h3>{{/if}}
-                    {{> _cards-list this.pages title=(get-attr @root.page (concat 'page-cards-' this.tag '-title') ) wrapper='catalogs' itemClass='catalog'}}
+                    {{!-- Render optional per-tag title from parent page attribute `page-cards-<tag>-title` --}}
+                    {{#if this.title}}<h2 class="cards-group-title">{{this.title}}</h2>{{/if}}
+                    
+                    {{!-- Use direct inline rendering since _cards-list has scoping issues with group objects --}}
+                    {{#if this.pages}}
+                      <div class="{{this.tag}}s">
+                        {{#each this.pages}}
+                          {{#unless this.empty}}
+                            <div class="{{../tag}}">{{> page-card this}}</div>
+                          {{/unless}}
+                        {{/each}}
+                      </div>
+                    {{/if}}
                   {{/each}}
                 {{else}}
-                  {{#with (get-page-cards @root.page cardsTag false)}} {{> _cards-list}} {{/with}}
+                  {{#with (get-page-cards @root.page cardsTag false)}} {{> _cards-list pages=this }} {{/with}}
                 {{/if}}
               {{/with}}
             {{else}}
-              {{#with (get-page-cards-multi @root.page cardsTag true true) as |groups|}}
+              {{#with (get-page-cards-multi @root.page cardsTag true) as |groups|}}
                 {{#if groups.length}}
                   {{#each groups}}
-                    {{#if this.title}}<h3 class="cards-group-title">{{this.title}}</h3>{{/if}}
-                    {{> _cards-list this.pages}}
+                    {{!-- Render optional per-tag title from parent page attribute `page-cards-<tag>-title` --}}
+                    {{#if this.title}}<h2 class="cards-group-title">{{this.title}}</h2>{{/if}}
+                    
+                    {{!-- Use direct inline rendering since _cards-list has scoping issues with group objects --}}
+                    {{#if this.pages}}
+                      <div class="{{this.tag}}s">
+                        {{#each this.pages}}
+                          {{#unless this.empty}}
+                            <div class="{{../tag}}">{{> page-card this}}</div>
+                          {{/unless}}
+                        {{/each}}
+                      </div>
+                    {{/if}}
                   {{/each}}
                 {{else}}
-                  {{#with (get-page-cards @root.page cardsTag true)}}  {{> _cards-list}} {{/with}}
+                  {{#with (get-page-cards @root.page cardsTag true)}}  {{> _cards-list pages=this }} {{/with}}
                 {{/if}}
               {{/with}}
             {{/if}}

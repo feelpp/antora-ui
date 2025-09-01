@@ -65,6 +65,10 @@ module.exports = function (parentPage, tag, withinParentModule = true, { data: {
       return
     }
 
+    // Allow pages to opt out of appearing as cards
+    const excludeCardsAttr = asciidoc.attributes['page-cards-exclude'] || asciidoc.attributes['exclude-from-cards']
+    if (typeof excludeCardsAttr !== 'undefined' && String(excludeCardsAttr).toLowerCase() === 'true') return
+
     return true
   }).sort(function (a, b) {
     // Sort by page-cards-order if present, otherwise by title
@@ -93,5 +97,15 @@ module.exports = function (parentPage, tag, withinParentModule = true, { data: {
       })
     }
   }
+  // Exclude the parent page itself from results
+  try {
+    const parentUrl = parentPage.pub && parentPage.pub.url
+    if (parentUrl) {
+      const filtered = pages.filter(function (p) {
+        return !(p.pub && p.pub.url && p.pub.url === parentUrl)
+      })
+      return filtered
+    }
+  } catch (e) {}
   return pages
 }
