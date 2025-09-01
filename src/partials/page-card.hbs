@@ -5,9 +5,13 @@
 <a class="page-card" href="{{{relativize pub.url}}}">
   <div class="page-card-illustration">
     {{#if asciidoc.attributes.page-illustration}}
-      <i class="{{asciidoc.attributes.page-illustration}}"></i>
+      {{#if (isFontIcon asciidoc.attributes.page-illustration)}}
+        <i class="{{asciidoc.attributes.page-illustration}}"></i>
+      {{else}}
+        <img alt="" src="{{relativize (resolveResourceURL (imageSpec asciidoc.attributes.page-illustration))}}"/>
+      {{/if}}
     {{else}}
-      <img alt="" src="{{relativize (resolveResourceURL (imageSpec asciidoc.attributes.page-illustration))}}"/>
+      <i></i>
     {{/if}}
   </div>
   <div class="page-card-body">
