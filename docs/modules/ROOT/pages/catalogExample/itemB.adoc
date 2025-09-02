@@ -1,6 +1,43 @@
-= Item B
-:page-layout: toolboxes
-:page-tags: toolbox, catalog, itemB
-:parent-catalogs: catalog-base
-:description: Item containing 1 shared subitem.
-:page-illustration: ROOT:B.png
+= Manual C: Advanced Features
+:page-tags: manual, example-content, advanced
+:parent-catalogs: catalog-example
+:description: Demonstrates advanced catalog features including multi-tag organization and card grouping.
+:page-illustration: fa-solid fa-star
+
+This manual showcases advanced features of the catalog system including tag-based organization and card grouping.
+
+== Multi-Tag Support
+
+The catalog system supports multiple organizational approaches:
+
+Single Tag Filtering:: Filter cards by a single tag (e.g., `manual`)
+Multi-Tag Grouping:: Group cards by different tags with optional group titles
+Cross-Module Search:: Search for cards across different Antora modules
+
+== Tag-Based Organization
+
+This page demonstrates the use of multiple tags:
+
+[source,asciidoc]
+----
+:page-tags: manual, example-content, advanced
+----
+
+Tags serve different purposes:
+
+manual:: Primary content type classification
+example-content:: Content category for this demonstration
+advanced:: Feature level indicator
+
+== Card Grouping
+
+The catalog layout can group cards by tags and display group titles using the `page-cards-<tag>-title` attribute pattern on the parent catalog page.
+
+== Module Scope Control
+
+The `page-cards-within-module` attribute controls search scope:
+
+true (default):: Search only within the current Antora module
+false:: Search across all modules in the site
+
+This enables both focused module-specific catalogs and site-wide content organization.

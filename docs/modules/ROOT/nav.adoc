@@ -7,3 +7,6 @@
 //** xref:plotly.adoc[]
 ** xref:pseudocode.adoc[]
 * xref:page-layouts.adoc[]
+** xref:manuals.adoc[]
+** xref:card-system.adoc[]
+** xref:catalogExample/catalog.adoc[]

@@ -1,7 +1,36 @@
-:page-layout: toolboxes
-:page-tags: toolbox, catalog, catalog-base
+= Catalog Example
+:page-layout: manuals
+:page-tags: catalog-example,catalog
+:page-cards-tag: catalog,manual
+:page-cards-within-module: false
+:page-cards-title: Example Content
 :parent-catalogs: page-layouts
-:description: Example of the catalog page layout.
+:description: Demonstration of the catalog page layout with cards.
 :page-illustration: fa-solid fa-grip
 
-= Catalog
+This page demonstrates the manuals layout functioning as a catalog. It automatically displays cards for all pages that have this page listed in their `parent-catalogs` attribute.
+
+== How It Works
+
+The catalog layout uses the following mechanism:
+
+1. This page has `page-layout: manuals` and `page-tags: catalog-example,catalog`
+2. Child pages reference this catalog with `parent-catalogs: catalog-example`
+3. The layout automatically finds and displays matching pages as cards
+4. Cards show the page title, description, and illustration (Font Awesome icon or image)
+
+== Card Generation
+
+Cards are generated for pages with:
+- `parent-catalogs: catalog-example` (matching this page's primary tag)
+- Appropriate `page-tags` that match the `page-cards-tag` criteria
+- Valid `description` and `page-illustration` attributes for display
+
+== Visual Features
+
+Font Awesome Icons:: Pages can use Font Awesome classes like `fa-solid fa-gear` for illustrations
+Image Support:: Traditional images are also supported using standard Antora image references
+Responsive Design:: Cards automatically adapt to different screen sizes
+Hover Effects:: Interactive feedback when hovering over cards
+
+The child pages below demonstrate different illustration types and content organization patterns.

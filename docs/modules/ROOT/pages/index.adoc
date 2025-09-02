@@ -15,9 +15,19 @@
 :url-git: https://git-scm.com
 :url-git-dl: {url-git}/downloads
 
-This project produces the {url-preview}[default UI bundle] for documentation sites generated with {url-antora}[Antora].
+This project produces the {url-preview}[Feel++ UI bundle] for documentation sites generated with {url-antora}[Antora].
 It contains the UI assets (page templates, CSS, JavaScript, images, etc.) and a Gulp build script.
 The build can be used to preview the UI locally (featuring live updates), or to package it for consumption by the Antora site generator.
+
+== Key Features
+
+The Feel++ Antora UI provides several advanced features beyond the standard Antora UI:
+
+Card-Based Navigation:: Sophisticated catalog system with automatic card generation for related content
+Font Awesome Integration:: First-class support for Font Awesome icons in page illustrations
+Multiple Layout Types:: Specialized layouts for manuals, catalogs, case studies, and reports
+Responsive Design:: Mobile-first design with adaptive layouts across all device sizes
+Enhanced Styling:: Custom CSS for scientific documentation including math rendering support
 
 This documentation explains how to use this project to set up, customize and manage a UI for a documentation site generated with Antora.
 After reading it, you'll be able to:
