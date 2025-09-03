@@ -64,6 +64,11 @@
     min-width: 250px;
     max-width: calc(33.333% - 1rem);
   }
+
+  /* Ensure cards have consistent height on larger screens */
+  .docs-cards-layout .page-card {
+    min-height: 320px;
+  }
 }
 
 .docs-cards-layout .page-card:hover,
@@ -82,8 +87,10 @@
   /* Make each card fill its flex-item with a more reasonable aspect ratio on
      larger viewports. We override this on small screens so cards can stack naturally. */
   width: 100%;
+  /* Allow cards to grow based on content instead of fixed aspect ratio */
+  min-height: 300px;
   /* stylelint-disable property-no-unknown */
-  aspect-ratio: 3 / 2;
+  aspect-ratio: auto;
   /* stylelint-enable property-no-unknown */
   position: relative; /* allow pseudo-element badge */
   overflow: hidden;
@@ -98,7 +105,8 @@
   justify-content: center;
   padding-left: 1em;
   padding-right: 1em;
-  min-height: 0; /* prevent flex item overflow in some browsers */
+  min-height: 140px; /* ensure minimum space for illustrations */
+  max-height: 200px; /* prevent illustrations from becoming too large */
 }
 
 .docs-cards-layout .page-card-illustration i.fas,
@@ -120,7 +128,7 @@
 .docs-cards-layout .page-card-illustration > img {
   max-width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 0.25em;
 }
 
@@ -174,8 +182,11 @@
   border-top: 1px solid #e1e1e1;
   margin-top: 1rem;
   padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
   margin-left: 0.75rem;
   margin-right: 0.75rem;
+  flex: 0 0 auto; /* don't allow the body to shrink */
+  min-height: 80px; /* ensure minimum space for title and description */
 }
 
 .docs-cards-layout .page-card .page-card-body p {
