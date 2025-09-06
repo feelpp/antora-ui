@@ -12,6 +12,21 @@
   gap: 1.5rem;
 }
 
+/* Mobile-specific adjustments for card containers */
+@media (max-width: 767px) {
+  .docs-cards-layout .cases,
+  .docs-cards-layout .benchmarks,
+  .docs-cards-layout .toolboxes,
+  .docs-cards-layout .manuals,
+  .docs-cards-layout .catalogs,
+  .docs-cards-layout .reports {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+
 .docs-cards-layout .cases .case,
 .docs-cards-layout .benchmarks .benchmark,
 .docs-cards-layout .toolboxes .toolbox,
@@ -24,13 +39,13 @@
   box-sizing: border-box;
   display: flex;
   align-items: stretch;
-  /* fix the basis so items don't grow to full width when there's spare space */
+  /* Default: 3 columns for large screens */
   flex: 0 0 calc(33.333% - 1rem);
   max-width: calc(33.333% - 1rem);
   /* allow a reasonable max width but don't force a small max that can break layout */
 }
 
-/* Media query for small screens */
+/* Media query for small screens (Mobile: Single column) */
 @media (max-width: 767px) {
   .docs-cards-layout .cases .case,
   .docs-cards-layout .benchmarks .benchmark,
@@ -38,9 +53,10 @@
   .docs-cards-layout .manuals .manual,
   .docs-cards-layout .catalogs .catalog,
   .docs-cards-layout .reports .report {
-    /* on small screens: allow items to shrink to full width (stack) */
-    flex: 0 1 100%;
-    width: 100%;
+    /* on small screens: single column layout */
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
   }
 
   /* On small screens remove the forced square aspect so cards can size naturally. */
@@ -48,18 +64,47 @@
     /* stylelint-disable property-no-unknown */
     aspect-ratio: auto;
     /* stylelint-enable property-no-unknown */
+    min-height: 180px; /* Reduced height for single column */
+    padding: 0.8em 0.6em 0.6em; /* Reduced padding */
   }
 }
 
-/* Media query for large screens */
-@media (min-width: 768px) {
+/* Media query for tablet screens (768px - 1024px): 2 columns */
+@media (min-width: 768px) and (max-width: 1024px) {
   .docs-cards-layout .cases .case,
   .docs-cards-layout .benchmarks .benchmark,
   .docs-cards-layout .toolboxes .toolbox,
   .docs-cards-layout .manuals .manual,
   .docs-cards-layout .catalogs .catalog,
   .docs-cards-layout .reports .report {
-    /* on larger screens ensure a reasonable minimum so cards don't become too narrow */
+    /* 2 columns on tablets */
+    flex: 0 0 calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
+  }
+
+  .docs-cards-layout .page-card {
+    min-height: 280px; /* Medium height for tablets */
+  }
+
+  .docs-cards-layout .page-card-illustration i.fas,
+  .docs-cards-layout .page-card-illustration i.fa-solid,
+  .docs-cards-layout .page-card-illustration i.fab,
+  .docs-cards-layout .page-card-illustration i.fa-brands,
+  .docs-cards-layout .page-card-illustration i.far,
+  .docs-cards-layout .page-card-illustration i.fa-regular {
+    font-size: 80px; /* Medium icon size for tablets */
+  }
+}
+
+/* Media query for large screens (1025px - 1399px): 3 columns */
+@media (min-width: 1025px) and (max-width: 1399px) {
+  .docs-cards-layout .cases .case,
+  .docs-cards-layout .benchmarks .benchmark,
+  .docs-cards-layout .toolboxes .toolbox,
+  .docs-cards-layout .manuals .manual,
+  .docs-cards-layout .catalogs .catalog,
+  .docs-cards-layout .reports .report {
+    /* 3 columns on large screens */
     flex: 0 0 calc(33.333% - 1rem);
     min-width: 250px;
     max-width: calc(33.333% - 1rem);
@@ -68,6 +113,34 @@
   /* Ensure cards have consistent height on larger screens */
   .docs-cards-layout .page-card {
     min-height: 320px;
+  }
+}
+
+/* Media query for extra large screens (1400px+): 4 columns */
+@media (min-width: 1400px) {
+  .docs-cards-layout .cases .case,
+  .docs-cards-layout .benchmarks .benchmark,
+  .docs-cards-layout .toolboxes .toolbox,
+  .docs-cards-layout .manuals .manual,
+  .docs-cards-layout .catalogs .catalog,
+  .docs-cards-layout .reports .report {
+    /* 4 columns on extra large screens */
+    flex: 0 0 calc(25% - 1.125rem);
+    min-width: 280px;
+    max-width: calc(25% - 1.125rem);
+  }
+
+  .docs-cards-layout .page-card {
+    min-height: 340px; /* Slightly taller for better proportions with 4 columns */
+  }
+
+  .docs-cards-layout .page-card-illustration i.fas,
+  .docs-cards-layout .page-card-illustration i.fa-solid,
+  .docs-cards-layout .page-card-illustration i.fab,
+  .docs-cards-layout .page-card-illustration i.fa-brands,
+  .docs-cards-layout .page-card-illustration i.far,
+  .docs-cards-layout .page-card-illustration i.fa-regular {
+    font-size: 110px; /* Slightly larger icons for extra large screens */
   }
 }
 
@@ -109,6 +182,16 @@
   max-height: 200px; /* prevent illustrations from becoming too large */
 }
 
+/* Mobile adjustments for illustrations */
+@media (max-width: 767px) {
+  .docs-cards-layout .page-card-illustration {
+    min-height: 80px; /* Reduced for mobile */
+    max-height: 120px; /* Reduced for mobile */
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
+
 .docs-cards-layout .page-card-illustration i.fas,
 .docs-cards-layout .page-card-illustration i.fa-solid,
 .docs-cards-layout .page-card-illustration i.fab,
@@ -123,6 +206,18 @@
   align-items: center;
   justify-content: center;
   line-height: 1;
+}
+
+/* Mobile adjustments for FontAwesome icons */
+@media (max-width: 767px) {
+  .docs-cards-layout .page-card-illustration i.fas,
+  .docs-cards-layout .page-card-illustration i.fa-solid,
+  .docs-cards-layout .page-card-illustration i.fab,
+  .docs-cards-layout .page-card-illustration i.fa-brands,
+  .docs-cards-layout .page-card-illustration i.far,
+  .docs-cards-layout .page-card-illustration i.fa-regular {
+    font-size: 60px; /* Reduced icon size for mobile */
+  }
 }
 
 .docs-cards-layout .page-card-illustration > img {
@@ -163,6 +258,18 @@
   line-height: 1;
 }
 
+/* Mobile adjustments for badges */
+@media (max-width: 767px) {
+  .docs-cards-layout .manuals .manual .page-card::before,
+  .docs-cards-layout .catalogs .catalog .page-card::before,
+  .docs-cards-layout .reports .report .page-card::before {
+    top: 0.25rem;
+    right: 0.25rem;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.65rem; /* Smaller badge text on mobile */
+  }
+}
+
 .docs-cards-layout .manuals .manual .page-card::before {
   content: "Manual";
   background: #2b6ea3; /* blue */
@@ -189,12 +296,43 @@
   min-height: 80px; /* ensure minimum space for title and description */
 }
 
+/* Mobile adjustments for card body */
+@media (max-width: 767px) {
+  .docs-cards-layout .page-card .page-card-body {
+    margin-top: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    min-height: 60px; /* Reduced minimum height for mobile */
+  }
+}
+
 .docs-cards-layout .page-card .page-card-body p {
   font-size: 0.9em;
   color: #56595c;
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile adjustments for body text */
+@media (max-width: 767px) {
+  .docs-cards-layout .page-card .page-card-body p {
+    font-size: 0.7em; /* Further reduced from 0.8em for better mobile proportion */
+    line-height: 1.3; /* Tighter line height for smaller text */
+  }
 }
 
 .docs-cards-layout .page-card .page-card-body h4 {
   font-weight: 600;
   margin-bottom: 0.5rem;
+  font-size: 1.1em;
+}
+
+/* Mobile adjustments for headings */
+@media (max-width: 767px) {
+  .docs-cards-layout .page-card .page-card-body h4 {
+    font-size: 1.05em; /* Slightly smaller heading on mobile */
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
 }
