@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Highlight :: Feel++ Project</title>
-    <link rel="canonical" href="https://feelpp.github.io/antora-ui/feelpp-antora-ui/asciidoc/highlight.html">
+    <title>Manual A: Font Awesome Example :: Feel++ Project</title>
+    <link rel="canonical" href="https://feelpp.github.io/antora-ui/feelpp-antora-ui/catalogExample/manualA.html">
+    <meta name="description" content="Demonstrates Font Awesome icon usage in page cards with detailed content.">
     <meta name="generator" content="Antora 3.1.12">
 <link rel="stylesheet" href="../../_/css/site.css">
 
@@ -219,7 +220,7 @@ MathJax.Hub.Config({
     <a class="nav-link" href="../card-system.html">Card System Documentation</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../catalogExample/catalog.html">Catalog Example</a>
+    <a class="nav-link" href="catalog.html">Catalog Example</a>
   </li>
 </ul>
   </li>
@@ -249,12 +250,12 @@ MathJax.Hub.Config({
   <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Antora Feel++ UI</a></li>
-    <li><a href="highlight.html">Highlight</a></li>
+    <li><a href="manualA.html">Manual A: Font Awesome Example</a></li>
   </ul>
 </nav>
 
   
-    <div class="edit-this-page"><a href="https://github.com/feelpp/antora-ui/edit/main/docs/modules/ROOT/pages/asciidoc/highlight.adoc">Edit this Page</a></div>
+    <div class="edit-this-page"><a href="https://github.com/feelpp/antora-ui/edit/main/docs/modules/ROOT/pages/catalogExample/manualA.adoc">Edit this Page</a></div>
   
   <div class="page-downloads">
   <span class="label">Download as</span>
@@ -274,67 +275,74 @@ MathJax.Hub.Config({
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Highlight</h1>
+<h1 class="page">Manual A: Font Awesome Example</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>On this page, you&#8217;ll learn:</p>
-</div>
-<div class="ulist checklist">
-<ul class="checklist">
-<li>
-<p><i class="fa fa-check-square-o"></i> How to highlight text with AsciiDoc.</p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> Where to modify your site&#8217;s highlighting styles.</p>
-</li>
-</ul>
+<p>This manual demonstrates how Font Awesome icons are automatically detected and rendered in page cards.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_highlight_syntax"><a class="anchor" href="#_highlight_syntax"></a>1. Highlight syntax</h2>
+<h2 id="_font_awesome_integration"><a class="anchor" href="#_font_awesome_integration"></a>1. Font Awesome Integration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To highlight (or mark) a word or phrase, place a hash (<code>#</code>) at the beginning and end of the text you wish to format (constrained formatting).
-To highlight one or more characters bounded by other characters, place two hashes (<code>##</code>) before and after the characters (unconstrained formatting).</p>
+<p>The page illustration <code>fa-solid fa-cog</code> is automatically detected by the <code>regexMatch "fa-"</code> helper in the page-card partial and rendered as:</p>
 </div>
-<div id="ex-highlight" class="listingblock">
-<div class="title">Highlight inline formatting</div>
+<div class="listingblock">
 <div class="content">
-<pre>Let's #highlight this phrase# and the i and s in th##is##.</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The result of <a href="#ex-highlight">Highlight inline formatting</a> is displayed below.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>Let&#8217;s <mark>highlight this phrase</mark> and the i and the s in th<mark>is</mark>.</p>
-</div>
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;i class="fa-solid fa-cog"&gt;&lt;/i&gt;</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_site_styles"><a class="anchor" href="#_site_styles"></a>2. Site styles</h2>
+<h2 id="_card_attributes"><a class="anchor" href="#_card_attributes"></a>2. Card Attributes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>How highlighted text appears on your site depends on the CSS styles applied to the <code>&lt;mark&gt;</code> HTML tag.
-You can learn more about customizing <a href="../inline-text-styles.html#highlight" class="xref page">how highlighted text appears in your site</a> in the UI documentation.</p>
+<p>This page uses the following attributes for card generation:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">page-tags</dt>
+<dd>
+<p><code>manual, example-content</code> - Identifies this as manual content</p>
+</dd>
+<dt class="hdlist1">parent-catalogs</dt>
+<dd>
+<p><code>catalog-example</code> - Links this page to the catalog</p>
+</dd>
+<dt class="hdlist1">description</dt>
+<dd>
+<p>Brief text shown on the card preview</p>
+</dd>
+<dt class="hdlist1">page-illustration</dt>
+<dd>
+<p><code>fa-solid fa-cog</code> - Font Awesome icon for the card</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_content_organization"><a class="anchor" href="#_content_organization"></a>3. Content Organization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pages with <code>parent-catalogs: catalog-example</code> automatically appear as cards on the catalog page. The catalog layout handles:</p>
 </div>
 <div class="ulist">
-<div class="title"><strong>AsciiDoc and Asciidoctor resources</strong></div>
 <ul>
 <li>
-<p><a href="https://docs.asciidoctor.org/asciidoc/latest/text/highlight/" target="_blank" rel="noopener">Highlighted text formatting</a></p>
+<p>Automatic card generation</p>
 </li>
 <li>
-<p><a href="https://docs.asciidoctor.org/asciidoc/latest/text/#formatting-marks-and-pairs" target="_blank" rel="noopener">Formatting marks and pairs</a></p>
+<p>Icon/image rendering</p>
 </li>
 <li>
-<p><a href="https://docs.asciidoctor.org/asciidoc/latest/text/troubleshoot-unconstrained-formatting/" target="_blank" rel="noopener">Constrained versus unconstrained</a></p>
+<p>Responsive card layout</p>
+</li>
+<li>
+<p>Interactive hover effects</p>
 </li>
 </ul>
 </div>

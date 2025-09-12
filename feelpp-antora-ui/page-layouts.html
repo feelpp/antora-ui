@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Page Layouts :: Feel++ Project</title>
     <link rel="canonical" href="https://feelpp.github.io/antora-ui/feelpp-antora-ui/page-layouts.html">
-    <link rel="prev" href="pseudocode.html">
-    <meta name="generator" content="Antora 3.1.9">
-    <link rel="stylesheet" href="../_/css/site.css">
+    <link rel="prev" href="grid.html">
+    <link rel="next" href="manuals.html">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../_/css/site.css">
+
+<!-- Font Awesome webfont CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
 <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
@@ -97,7 +102,7 @@ MathJax.Hub.Config({
 <script>var uiRootPath = '../_'</script>
 
 </head>
-<body class="article docs-case-study">
+<body class="article docs-manuals-catalog docs-cards-layout ">
 <header class="header">
   <nav class="navbar  navbar-expand-sm bg-dark navbar-dark">
     <div class="navbar-brand">
@@ -177,6 +182,9 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="style-guide.html">UI Element Styles</a>
 <ul class="nav-list">
@@ -198,10 +206,25 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="pseudocode.html">Pseudocode</a>
   </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lead.html">Lead Paragraphs</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="page-layouts.html">Page Layouts</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="grid.html">Layout Helpers (Grid)</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="page-layouts.html">Layout Helpers (Page Layouts)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manuals.html">Manuals</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="card-system.html">Card System Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="catalogExample/catalog.html">Catalog Example</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -225,35 +248,140 @@ MathJax.Hub.Config({
   <main class="article">
     <div class="toolbar" role="navigation">
       <button class="nav-toggle"></button>
-        <a href="index.html" class="home-link"></a>
+       <a href="index.html" class="home-link"></a> 
       <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Antora Feel++ UI</a></li>
-    <li><a href="page-layouts.html">Page Layouts</a></li>
+    <li><a href="style-guide.html">UI Element Styles</a></li>
+    <li><a href="page-layouts.html">Layout Helpers (Page Layouts)</a></li>
   </ul>
 </nav>
     </div>
 
     <div class="content">
       <article class="doc">
-          <h1 class="page">Page Layouts</h1>
-          <h2>Toolboxes</h2>
-          <div class="toolboxes">
-            <div class="toolbox"><a class="page-card" href="catalogExample/catalog.html">
-    <div class="page-card-illustration">
-      <img alt="" src="_images/grid.png"/>
+<h1 class="page">Page Layouts</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Antora Feel++ UI provides several specialized page layouts for different content types and organizational structures.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_available_layouts"><a class="anchor" href="#_available_layouts"></a>1. Available Layouts</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">default</dt>
+<dd>
+<p>Standard article layout for regular documentation pages</p>
+</dd>
+<dt class="hdlist1">manuals</dt>
+<dd>
+<p>Card-based catalog layout for organizing related content with visual navigation</p>
+</dd>
+<dt class="hdlist1">toolboxes</dt>
+<dd>
+<p>Alternative catalog layout for toolbox-style content organization</p>
+</dd>
+<dt class="hdlist1">case-study</dt>
+<dd>
+<p>Specialized layout for case studies and detailed examples</p>
+</dd>
+<dt class="hdlist1">reports</dt>
+<dd>
+<p>Layout optimized for report-style documents</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_layout_usage"><a class="anchor" href="#_layout_usage"></a>2. Layout Usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To use a specific layout, add the <code>page-layout</code> attribute to your AsciiDoc file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">= Page Title
+:page-layout: manuals</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_catalog_layouts"><a class="anchor" href="#_catalog_layouts"></a>3. Catalog Layouts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>manuals</code> and <code>toolboxes</code> layouts provide sophisticated card-based organization systems. These layouts automatically generate visual cards for related pages based on tagging and parent-catalog relationships.</p>
+</div>
+<div class="paragraph">
+<p>Key features:
+- Automatic card generation based on page tags
+- Font Awesome icon support for illustrations
+- Hierarchical organization with parent-catalog relationships
+- Flexible content filtering within or across modules
+- Group titles for multi-tag displays</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="grid.html">Layout Helpers (Grid)</a></span>
+  <span class="next"><a href="manuals.html">Manuals</a></span>
+</nav>
+</article>
     </div>
-    <div class="page-card-body">
-      <h4>Catalog</h4>
-      <p class="page-card-description">Example of the catalog page layout.</p>
-    </div>
+
+    <div class="content">
+      <article class="doc">
+         <h1 class="page">Page Layouts</h1> 
+
+                    
+                    
+                      <div class="catalogs">
+                            <div class="catalog"><a class="page-card" href="card-system.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-th"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Card System Documentation</h4>
+    <p class="page-card-description">Comprehensive guide to the card-based navigation system in Feel++ Antora UI.</p>
+  </div>
 </a>
 </div>
-            <div class="toolbox">  <div class="empty"></div>
+                            <div class="catalog"><a class="page-card" href="catalogExample/catalog.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-grip"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Catalog Example</h4>
+    <p class="page-card-description">Demonstration of the catalog page layout with cards.</p>
+  </div>
+</a>
 </div>
-            <div class="toolbox">  <div class="empty"></div>
+                            <div class="catalog"><a class="page-card" href="manuals.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-book"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Manuals and Catalogs Layout</h4>
+    <p class="page-card-description"></p>
+  </div>
+</a>
 </div>
-          </div>
+                            <div class="catalog"><a class="page-card" href="page-layouts.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-th-large"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Page Layouts</h4>
+    <p class="page-card-description"></p>
+  </div>
+</a>
+</div>
+                      </div>
       </article>
     </div>
   </main>
@@ -328,8 +456,7 @@ MathJax.Hub.Config({
 <script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
 
 
-<script async src="../_/js/vendor/fontawesome-icon-defs.js"></script>
-<script async src="../_/js/vendor/fontawesome.js"></script>
+<!-- Font Awesome JS removed to use webfont icons only -->
 <script async src="../_/js/vendor/highlight.js"></script>
 
 

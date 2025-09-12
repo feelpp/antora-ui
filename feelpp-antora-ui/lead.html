@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Admonition Styles :: Feel++ Project</title>
-    <link rel="canonical" href="https://feelpp.github.io/antora-ui/feelpp-antora-ui/admonition-styles.html">
-    <link rel="prev" href="inline-text-styles.html">
-    <link rel="next" href="dynamic-processor.html">
+    <title>Lead Paragraph Styles :: Feel++ Project</title>
+    <link rel="canonical" href="https://feelpp.github.io/antora-ui/feelpp-antora-ui/lead.html">
+    <link rel="prev" href="pseudocode.html">
+    <link rel="next" href="grid.html">
+    <meta name="description" content="Demonstrates the [.lead] variants and themed panels available in this UI">
     <meta name="generator" content="Antora 3.1.12">
 <link rel="stylesheet" href="../_/css/site.css">
 
@@ -190,7 +191,7 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="inline-text-styles.html">Inline Text</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="admonition-styles.html">Admonitions</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -205,7 +206,7 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="pseudocode.html">Pseudocode</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="lead.html">Lead Paragraphs</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -252,12 +253,12 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="index.html">Antora Feel++ UI</a></li>
     <li><a href="style-guide.html">UI Element Styles</a></li>
-    <li><a href="admonition-styles.html">Admonitions</a></li>
+    <li><a href="lead.html">Lead Paragraphs</a></li>
   </ul>
 </nav>
 
   
-    <div class="edit-this-page"><a href="https://github.com/feelpp/antora-ui/edit/main/docs/modules/ROOT/pages/admonition-styles.adoc">Edit this Page</a></div>
+    <div class="edit-this-page"><a href="https://github.com/feelpp/antora-ui/edit/main/docs/modules/ROOT/pages/lead.adoc">Edit this Page</a></div>
   
   <div class="page-downloads">
   <span class="label">Download as</span>
@@ -277,449 +278,166 @@ MathJax.Hub.Config({
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Admonition Styles</h1>
+<h1 class="page">Lead Paragraph Styles</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>An <a href="asciidoc/admonitions.html" class="xref page">admonition</a>, also known as a notice, helps draw attention to content with a special label or icon.</p>
+<div class="paragraph lead">
+<p>Use a lead paragraph to introduce a page or section with a short summary. It can be plain, framed, rounded, or themed to match the site’s palette.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_admonition_blocks"><a class="anchor" href="#_admonition_blocks"></a>1. Admonition blocks</h2>
+<h2 id="_quick_reference"><a class="anchor" href="#_quick_reference"></a>1. Quick Reference</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>An admonition block is a table.
-The table title element is specified by the block class: tip, note, important, warning, or caution.
-Here&#8217;s an AsciiDoc source example that produces an admonition with the table title warning:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">WARNING: Watch out!</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If font-based icons are enabled (<code>icons=font</code>), the table title text is replaced by the associated icon.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;div class="admonitionblock warning"&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td class="icon"&gt;
-&lt;i class="fa icon-warning" title="Warning"&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class="content"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Watch out!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s how it might appear when the title is displayed as text:</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Watch out!
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Base: <code>[.lead]</code> — slightly larger text only</p>
+</li>
+<li>
+<p>Framed: <code>[.lead.panel]</code> — subtle background, thin border, accent bar</p>
+</li>
+<li>
+<p>Rounded: add <code>.rounded</code> to any framed variant</p>
+</li>
+<li>
+<p>Admonition themes: <code>.note</code>, <code>.tip</code>, <code>.warning</code>, <code>.important</code>, <code>.caution</code></p>
+</li>
+<li>
+<p>Brand themes: <code>.theme-accent</code>, <code>.theme-blue</code>, <code>.theme-purple</code>, <code>.theme-orange</code>, <code>.theme-silver</code></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mathematical_blocks"><a class="anchor" href="#_mathematical_blocks"></a>2. Mathematical blocks</h2>
+<h2 id="_plain_lead"><a class="anchor" href="#_plain_lead"></a>2. Plain Lead</h2>
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>This is a plain lead paragraph. It increases the font size for a softer, introductory tone.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_framed_lead"><a class="anchor" href="#_framed_lead"></a>3. Framed Lead</h2>
+<div class="sectionbody">
+<div class="paragraph lead panel">
+<p>This framed lead uses a subtle panel background, thin border, and a small accent bar on the left.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_framed_rounded"><a class="anchor" href="#_framed_rounded"></a>4. Framed + Rounded</h2>
+<div class="sectionbody">
+<div class="paragraph lead panel rounded">
+<p>Rounded corners create a friendlier, card-like feel while keeping the same framing.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_framed_intensities"><a class="anchor" href="#_framed_intensities"></a>5. Framed Intensities</h2>
+<div class="sectionbody">
+<div class="paragraph lead panel subtle">
+<p>Subtle frame: slightly thinner accent bar and the default soft background and border.</p>
+</div>
+<div class="paragraph lead panel strong rounded">
+<p>Strong frame: a touch darker background and border with a thicker accent bar.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_admonition_themed_variants"><a class="anchor" href="#_admonition_themed_variants"></a>6. Admonition-Themed Variants</h2>
+<div class="sectionbody">
+<div class="paragraph lead panel note rounded">
+<p>“Note” theme: uses the same hues as note admonitions for light emphasis.</p>
+</div>
+<div class="paragraph lead panel tip rounded">
+<p>“Tip” theme: a gentle green accent suitable for helpful hints or best practices.</p>
+</div>
+<div class="paragraph lead panel warning rounded">
+<p>“Warning” theme: a warm tone for important caveats without being overpowering.</p>
+</div>
+<div class="paragraph lead panel important rounded">
+<p>“Important” theme: stronger emphasis for critical information.</p>
+</div>
+<div class="paragraph lead panel caution rounded">
+<p>“Caution” theme: attention-grabbing but still subtle and friendly.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_brand_themed_variants"><a class="anchor" href="#_brand_themed_variants"></a>7. Brand-Themed Variants</h2>
+<div class="sectionbody">
+<div class="paragraph lead panel accent rounded">
+<p>Brand accent theme: tinted background and border derived from the site’s accent color.</p>
+</div>
+<div class="paragraph lead panel blue rounded">
+<p>Brand blue theme: soft blue tint with a blue accent bar.</p>
+</div>
+<div class="paragraph lead panel purple rounded">
+<p>Brand purple theme: soft purple tint that pairs well with headings.</p>
+</div>
+<div class="paragraph lead panel orange rounded w-40 justify-self-end">
+<p>Brand orange theme: warm, approachable accent and tint.</p>
+</div>
+<div class="paragraph lead panel silver rounded w-60 justify-self-center">
+<p>Neutral silver theme: understated background for general emphasis.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usage_examples"><a class="anchor" href="#_usage_examples"></a>8. Usage Examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When writing mathematical documents you can use the following style labels:</p>
-</div>
-<div class="hdlist">
-<table>
-<tr>
-<td class="hdlist1">
-Problem statement
-</td>
-<td class="hdlist2">
-<p><code>prob</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Exercise
-</td>
-<td class="hdlist2">
-<p><code>exer</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Example
-</td>
-<td class="hdlist2">
-<p><code>examp</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Lemma
-</td>
-<td class="hdlist2">
-<p><code>lem</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Definition
-</td>
-<td class="hdlist2">
-<p><code>def</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Proof
-</td>
-<td class="hdlist2">
-<p><code>proof</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Proposal
-</td>
-<td class="hdlist2">
-<p><code>prop</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Theorem
-</td>
-<td class="hdlist2">
-<p><code>thm</code></p>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Please note that <code>:stem: latexmath</code> is defined as a document attribute to render STEM block (using MathJax).</p>
+<p>Use roles on a paragraph block to apply styles. You can combine multiple roles.</p>
 </div>
 <div class="listingblock">
-<div class="title">Problem admonition syntax</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Problème : Formulation forte du Laplacien
-[.prob#prob:1]
-****
-On cherche stem:[u] telle que
-[[eq:64]]
-[stem]
-++++
-    \begin{split}
-      -\Delta u &amp;= f \mbox{ dans } \Omega\\
-      u &amp;= 0 \mbox{ sur } \partial \Omega
-\end{split}
-++++
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="prob:1" class="sidebarblock prob">
-<div class="content">
-<div class="title">Problème : Formulation forte du Laplacien</div>
-<div class="paragraph">
-<p>On cherche \(u\) telle que</p>
-</div>
-<div id="eq:64" class="stemblock">
-<div class="content">
-\[    \begin{split}
-      -\Delta u &amp;= f \mbox{ dans } \Omega\\
-      u &amp;= 0 \mbox{ sur } \partial \Omega
-\end{split}\]
-</div>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Lemma admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Lemma
-[.lem#lem:1]
-****
-Soit stem:[\Omega] un ouvert borné de stem:[\R{d}].
-Il existe une constante stem:[c_\Omega] (dépendente de stem:[\Omega] telle que
-[stem]
-++++
-    \forall v \in H^1_0(\Omega),\quad \|v\|_{0,\Omega} \le c_\Omega \|\nabla v\|_{0,\Omega}
-++++
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="lem:1" class="sidebarblock lem">
-<div class="content">
-<div class="title">Lemma</div>
-<div class="paragraph">
-<p>Soit \(\Omega\) un ouvert borné de \(\R{d}\).
-Il existe une constante \(c_\Omega\) (dépendente de \(\Omega\) telle que</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[    \forall v \in H^1_0(\Omega),\quad \|v\|_{0,\Omega} \le c_\Omega \|\nabla v\|_{0,\Omega}\]
-</div>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Exercise admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Exercise: Find the magic number
-[.exer#exer:1]
-****
-This is an exercise...
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="exer:1" class="sidebarblock exer">
-<div class="content">
-<div class="title">Exercise: Find the magic number</div>
-<div class="paragraph">
-<p>This is an exercise&#8230;&#8203;</p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Example: Théorème de Lax-Milgram
-[.examp#examp:1]
-****
-This is an example.
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="examp:1" class="sidebarblock examp">
-<div class="content">
-<div class="title">Example: Théorème de Lax-Milgram</div>
-<div class="paragraph">
-<p>This is an example.</p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Theorem admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Theorem de Perlimpinpin
-[.thm#thm:1]
-****
-Soit stem:[V] un espace de Hilbert et stem:[a \in \mathcal{L}(V \times V, \RR)] une forme bilinéaire continue et _coercive_ sur stem:[V]. Alors, pour toute forme linéaire continue stem:[\ell \in \mathcal{L}(V, \RR)], le problème est bien posé
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="thm:1" class="sidebarblock thm">
-<div class="content">
-<div class="title">Theorem de Perlimpinpin</div>
-<div class="paragraph">
-<p>Soit \(V\) un espace de Hilbert et \(a \in \mathcal{L}(V \times V, \RR)\) une forme bilinéaire continue et <em>coercive</em> sur \(V\). Alors, pour toute forme linéaire continue \(\ell \in \mathcal{L}(V, \RR)\), le problème est bien posé</p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Corollaire admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Corollaire de toto
-[.cor#cor:1]
-****
-Soit stem:[V] un espace de Hilbert et stem:[a \in \mathcal{L}(V \times V, \RR)] une forme bilinéaire continue et _coercive_ sur stem:[V]. Alors, pour toute forme linéaire continue stem:[\ell \in \mathcal{L}(V, \RR)], le problème est bien posé
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="cor:1" class="sidebarblock cor">
-<div class="content">
-<div class="title">Corollary de toto</div>
-<div class="paragraph">
-<p>Soit \(V\) un espace de Hilbert et \(a \in \mathcal{L}(V \times V, \RR)\) une forme bilinéaire continue et <em>coercive</em> sur \(V\). Alors, pour toute forme linéaire continue \(\ell \in \mathcal{L}(V, \RR)\), le problème est bien posé</p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Definition admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Definition de Perlimpinpin
-[.def#def:1]
-****
-Une forme bilinéaire stem:[a \in \mathcal{L}(V \times V, \RR)] est _coercive_ sur stem:[V] s’il existe une constante stem:[\alpha &gt; 0].
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="def:1" class="sidebarblock def">
-<div class="content">
-<div class="title">Definition de Perlimpinpin</div>
-<div class="paragraph">
-<p>Une forme bilinéaire \(a \in \mathcal{L}(V \times V, \RR)\) est <em>coercive</em> sur \(V\) s’il existe une constante \(\alpha &gt; 0\).</p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Reminder: admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Reminder de Perlimpinpin
-[.remind#remind:1]
-****
-Une forme bilinéaire stem:[a \in \mathcal{L}(V \times V, \RR)] est _coercive_ sur stem:[V] s’il existe une constante stem:[\alpha &gt; 0].
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="remind:1" class="sidebarblock remind">
-<div class="content">
-<div class="title">Reminder de Perlimpinpin</div>
-<div class="paragraph">
-<p>Une forme bilinéaire \(a \in \mathcal{L}(V \times V, \RR)\) est <em>coercive</em> sur \(V\) s’il existe une constante \(\alpha &gt; 0\).</p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Notation admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Botation de Perlimpinpin
-[.nota#nota:1]
-****
-Une forme bilinéaire stem:[a \in \mathcal{L}(V \times V, \RR)] est _coercive_ sur stem:[V] s’il existe une constante stem:[\alpha &gt; 0].
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="nota:1" class="sidebarblock nota">
-<div class="content">
-<div class="title">Notation de Perlimpinpin</div>
-<div class="paragraph">
-<p>Une forme bilinéaire \(a \in \mathcal{L}(V \times V, \RR)\) est <em>coercive</em> sur \(V\) s’il existe une constante \(\alpha &gt; 0\).</p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Proposal admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Proposition
-[.prop#prop:7]
-****
-La forme bilinéaire stem:[a] du problème &lt;&lt;prob:2&gt;&gt; est _coercive_
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="prop:7" class="sidebarblock prop">
-<div class="content">
-<div class="title">Proposition</div>
-<div class="paragraph">
-<p>La forme bilinéaire \(a\) du problème <a href="#prob:2">[prob:2]</a> est <em>coercive</em></p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Proof admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Preuve
-[%collapsible.proof]
-====
-On note tout d’abord que par l’inégalité de Poincaré et la définition de
-stem:[\|\cdot\|_{1,\Omega}]
-[[eq:68]]
-[stem]
-++++
-      \|v\|^2_{1,\Omega} \le (1 + c^2_\Omega) \|\nabla v\|^2_{0,\Omega}
-++++
-On en déduit que
-[[eq:67]]
-[stem]
-++++
-\forall v \in H^1_0(\Omega),\quad a(v,v) = \|\nabla v\|^2_{0,\Omega} \ge \frac{1}{1+c^2_\Omega} \|v\|^2_{1,\Omega}
-++++
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[.lead]
+This is a plain lead.
 
-Le Lemme de Lax-Milgram permet alors de conclure sur l’existence d’une solution unique pour le problème &lt;&lt;prob:2&gt;&gt;.
-====</code></pre>
+[.lead.panel]
+This is a framed lead.
+
+[.lead.panel.rounded]
+This is a rounded, framed lead.
+
+[.lead.panel.note.rounded]
+This is a rounded, note-themed lead.
+
+[.lead.panel.theme-accent.rounded]
+This is a rounded, brand-accent themed lead.</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<details class="proof">
-<summary class="title">Preuve</summary>
-<div class="content">
-<div class="paragraph">
-<p>On note tout d’abord que par l’inégalité de Poincaré et la définition de
-\(\|\cdot\|_{1,\Omega}\)</p>
-</div>
-<div id="eq:68" class="stemblock">
-<div class="content">
-\[      \|v\|^2_{1,\Omega} \le (1 + c^2_\Omega) \|\nabla v\|^2_{0,\Omega}\]
 </div>
 </div>
-<div class="paragraph">
-<p>On en déduit que</p>
-</div>
-<div id="eq:67" class="stemblock">
-<div class="content">
-\[\forall v \in H^1_0(\Omega),\quad a(v,v) = \|\nabla v\|^2_{0,\Omega} \ge \frac{1}{1+c^2_\Omega} \|v\|^2_{1,\Omega}\]
-</div>
-</div>
-<div class="paragraph">
-<p>Le Lemme de Lax-Milgram permet alors de conclure sur l’existence d’une solution unique pour le problème <a href="#prob:2">[prob:2]</a>.</p>
-</div>
-</div>
-</details>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The <code>collapsible</code> option is used to make the block content collapsible (i.e., revealed or hidden on interaction).
-By default, the block content is hidden. You can use the <code>%open</code> option to make it visible.
-</td>
-</tr>
-</table>
+<div class="sect1">
+<h2 id="_theming_notes"><a class="anchor" href="#_theming_notes"></a>9. Theming Notes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Framed variants support CSS variables for customization via the theme:</p>
+</li>
+<li>
+<p><code>--lead-accent</code>: color of the left accent bar</p>
+</li>
+<li>
+<p><code>--lead-bg</code>: background color of the panel</p>
+</li>
+<li>
+<p><code>--lead-border</code>: border color of the panel</p>
+</li>
+<li>
+<p>Predefined roles set these variables based on the UI palette. Prefer roles over inline styles to keep content portable.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="inline-text-styles.html">Inline Text</a></span>
-  <span class="next"><a href="dynamic-processor.html">Dynamic processor</a></span>
+  <span class="prev"><a href="pseudocode.html">Pseudocode</a></span>
+  <span class="next"><a href="grid.html">Layout Helpers (Grid)</a></span>
 </nav>
 </article>
   </div>

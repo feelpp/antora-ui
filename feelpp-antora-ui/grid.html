@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Admonition Styles :: Feel++ Project</title>
-    <link rel="canonical" href="https://feelpp.github.io/antora-ui/feelpp-antora-ui/admonition-styles.html">
-    <link rel="prev" href="inline-text-styles.html">
-    <link rel="next" href="dynamic-processor.html">
+    <title>Layout Helpers (Grid) :: Feel++ Project</title>
+    <link rel="canonical" href="https://feelpp.github.io/antora-ui/feelpp-antora-ui/grid.html">
+    <link rel="prev" href="lead.html">
+    <link rel="next" href="page-layouts.html">
+    <meta name="description" content="Examples of the grid and image utility classes included in this UI">
     <meta name="generator" content="Antora 3.1.12">
 <link rel="stylesheet" href="../_/css/site.css">
 
@@ -190,7 +191,7 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="inline-text-styles.html">Inline Text</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="admonition-styles.html">Admonitions</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -208,7 +209,7 @@ MathJax.Hub.Config({
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="lead.html">Lead Paragraphs</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="grid.html">Layout Helpers (Grid)</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -252,12 +253,12 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="index.html">Antora Feel++ UI</a></li>
     <li><a href="style-guide.html">UI Element Styles</a></li>
-    <li><a href="admonition-styles.html">Admonitions</a></li>
+    <li><a href="grid.html">Layout Helpers (Grid)</a></li>
   </ul>
 </nav>
 
   
-    <div class="edit-this-page"><a href="https://github.com/feelpp/antora-ui/edit/main/docs/modules/ROOT/pages/admonition-styles.adoc">Edit this Page</a></div>
+    <div class="edit-this-page"><a href="https://github.com/feelpp/antora-ui/edit/main/docs/modules/ROOT/pages/grid.adoc">Edit this Page</a></div>
   
   <div class="page-downloads">
   <span class="label">Download as</span>
@@ -277,449 +278,218 @@ MathJax.Hub.Config({
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Admonition Styles</h1>
+<h1 class="page">Layout Helpers (Grid)</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>An <a href="asciidoc/admonitions.html" class="xref page">admonition</a>, also known as a notice, helps draw attention to content with a special label or icon.</p>
+<div class="paragraph lead panel note rounded">
+<p>This page demonstrates the grid and image utility classes bundled with this UI. Use these helpers to build simple, responsive layouts quickly.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_admonition_blocks"><a class="anchor" href="#_admonition_blocks"></a>1. Admonition blocks</h2>
+<h2 id="_quick_overview"><a class="anchor" href="#_quick_overview"></a>1. Quick Overview</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>An admonition block is a table.
-The table title element is specified by the block class: tip, note, important, warning, or caution.
-Here&#8217;s an AsciiDoc source example that produces an admonition with the table title warning:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">WARNING: Watch out!</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If font-based icons are enabled (<code>icons=font</code>), the table title text is replaced by the associated icon.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;div class="admonitionblock warning"&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td class="icon"&gt;
-&lt;i class="fa icon-warning" title="Warning"&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class="content"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Watch out!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s how it might appear when the title is displayed as text:</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Watch out!
-</td>
-</tr>
-</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Grid</dt>
+<dd>
+<p><code>.grid</code> container with <code>.grid-2</code>, <code>.grid-3</code>, or <code>.grid-4</code> for columns; add gaps with <code>.gap-1</code>, <code>.gap-2</code>, <code>.gap-3</code>.</p>
+</dd>
+<dt class="hdlist1">Alignment</dt>
+<dd>
+<p><code>.items-start|center|end</code> sets vertical alignment; <code>.justify-start|center|end</code> sets horizontal alignment for all items; use <code>.justify-self-*</code> on a single item.</p>
+</dd>
+<dt class="hdlist1">Images</dt>
+<dd>
+<p><code>img-fluid</code> (responsive), <code>img-shadow</code> (subtle depth), <code>img-rounded</code> (rounded corners); width helpers <code>w-10</code>, <code>w-20</code>, <code>w-30</code>, <code>w-40</code>, <code>w-50</code>, <code>w-60</code>, <code>w-70</code>; floats <code>float-right</code> and <code>float-left</code>.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mathematical_blocks"><a class="anchor" href="#_mathematical_blocks"></a>2. Mathematical blocks</h2>
+<h2 id="_twocolumn_text_image"><a class="anchor" href="#_twocolumn_text_image"></a>2. Two‑Column: Text | Image</h2>
 <div class="sectionbody">
+<div class="openblock grid grid-2 gap-2 items-center">
+<div class="content">
+<div class="exampleblock no-panel">
+<div class="content">
 <div class="paragraph">
-<p>When writing mathematical documents you can use the following style labels:</p>
-</div>
-<div class="hdlist">
-<table>
-<tr>
-<td class="hdlist1">
-Problem statement
-</td>
-<td class="hdlist2">
-<p><code>prob</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Exercise
-</td>
-<td class="hdlist2">
-<p><code>exer</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Example
-</td>
-<td class="hdlist2">
-<p><code>examp</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Lemma
-</td>
-<td class="hdlist2">
-<p><code>lem</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Definition
-</td>
-<td class="hdlist2">
-<p><code>def</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Proof
-</td>
-<td class="hdlist2">
-<p><code>proof</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Proposal
-</td>
-<td class="hdlist2">
-<p><code>prop</code></p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-Theorem
-</td>
-<td class="hdlist2">
-<p><code>thm</code></p>
-</td>
-</tr>
-</table>
+<p><strong>Clean two‑column layout</strong></p>
 </div>
 <div class="paragraph">
-<p>Please note that <code>:stem: latexmath</code> is defined as a document attribute to render STEM block (using MathJax).</p>
+<p>Use <code>.grid.grid-2</code> to create two columns that collapse to one column on small screens. Add <code>.items-center</code> to vertically center content and <code>justify-self-*</code> to align a single cell.</p>
 </div>
-<div class="listingblock">
-<div class="title">Problem admonition syntax</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Responsive: below 768px, columns stack.</p>
+</li>
+<li>
+<p>Spacing: <code>.gap-2</code> adds comfortable spacing between columns.</p>
+</li>
+<li>
+<p>Image: <code>img-fluid img-shadow img-rounded w-60</code> keeps it crisp and contained.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock img-fluid img-shadow img-rounded w-60 justify-self-end">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Problème : Formulation forte du Laplacien
-[.prob#prob:1]
-****
-On cherche stem:[u] telle que
-[[eq:64]]
-[stem]
-++++
-    \begin{split}
-      -\Delta u &amp;= f \mbox{ dans } \Omega\\
-      u &amp;= 0 \mbox{ sur } \partial \Omega
-\end{split}
-++++
-****</code></pre>
+<img src="_images/sample-1.svg" alt="Sample image">
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_three_columns"><a class="anchor" href="#_three_columns"></a>3. Three Columns</h2>
+<div class="sectionbody">
+<div class="openblock grid grid-3 gap-2 justify-start">
+<div class="content">
+<div class="paragraph">
+<p><strong>Focused</strong>
+Short, scannable copy works best in compact cards.</p>
 </div>
 <div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="prob:1" class="sidebarblock prob">
-<div class="content">
-<div class="title">Problème : Formulation forte du Laplacien</div>
-<div class="paragraph">
-<p>On cherche \(u\) telle que</p>
-</div>
-<div id="eq:64" class="stemblock">
-<div class="content">
-\[    \begin{split}
-      -\Delta u &amp;= f \mbox{ dans } \Omega\\
-      u &amp;= 0 \mbox{ sur } \partial \Omega
-\end{split}\]
-</div>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Lemma admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Lemma
-[.lem#lem:1]
-****
-Soit stem:[\Omega] un ouvert borné de stem:[\R{d}].
-Il existe une constante stem:[c_\Omega] (dépendente de stem:[\Omega] telle que
-[stem]
-++++
-    \forall v \in H^1_0(\Omega),\quad \|v\|_{0,\Omega} \le c_\Omega \|\nabla v\|_{0,\Omega}
-++++
-****</code></pre>
-</div>
+<p><strong>Balanced</strong>
+Grids auto-fit at the breakpoint; keep content lengths similar.</p>
 </div>
 <div class="paragraph">
-<p>Here&#8217;s the result:</p>
+<p><strong>Consistent</strong>
+Apply the same spacing and heading levels across cards.</p>
 </div>
-<div id="lem:1" class="sidebarblock lem">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_four_columns"><a class="anchor" href="#_four_columns"></a>4. Four Columns</h2>
+<div class="sectionbody">
+<div class="openblock grid grid-4 gap-2 justify-start">
 <div class="content">
-<div class="title">Lemma</div>
+<div class="exampleblock no-panel">
+<div class="content">
 <div class="paragraph">
-<p>Soit \(\Omega\) un ouvert borné de \(\R{d}\).
-Il existe une constante \(c_\Omega\) (dépendente de \(\Omega\) telle que</p>
+<p><strong>Focused</strong>
+Short, scannable copy works best in compact cards.</p>
 </div>
-<div class="stemblock">
+</div>
+</div>
+<div class="exampleblock no-panel">
 <div class="content">
-\[    \forall v \in H^1_0(\Omega),\quad \|v\|_{0,\Omega} \le c_\Omega \|\nabla v\|_{0,\Omega}\]
+<div class="paragraph">
+<p><strong>Balanced</strong>
+Keep content lengths similar for even rows.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="listingblock">
-<div class="title">Exercise admonition syntax</div>
+<div class="exampleblock no-panel">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Exercise: Find the magic number
-[.exer#exer:1]
-****
-This is an exercise...
-****</code></pre>
+<div class="paragraph">
+<p><strong>Visual</strong>
+Use concise visuals or icons to support text.</p>
+</div>
+</div>
+</div>
+<div class="exampleblock no-panel">
+<div class="content">
+<div class="paragraph">
+<p><strong>Consistent</strong>
+Apply the same spacing and heading levels across cards.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_figure_with_caption"><a class="anchor" href="#_figure_with_caption"></a>5. Figure with Caption</h2>
+<div class="sectionbody">
+<div class="imageblock img-fluid img-shadow w-50 justify-self-start">
+<div class="content">
+<img src="_images/sample-2.svg" alt="Medium image">
+</div>
+<div class="title">Figure 1. Medium width image with shadow left aligned.</div>
+</div>
+<div class="imageblock img-fluid img-shadow w-50 justify-self-center">
+<div class="content">
+<img src="_images/sample-2.svg" alt="Medium image">
+</div>
+<div class="title">Figure 2. Medium width image with shadow centered.</div>
+</div>
+<div class="imageblock img-fluid img-shadow w-50 justify-self-end">
+<div class="content">
+<img src="_images/sample-2.svg" alt="Medium image">
+</div>
+<div class="title">Figure 3. Medium width image with shadow right aligned.</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_float_right_small_images"><a class="anchor" href="#_float_right_small_images"></a>6. Float Right (small images)</h2>
+<div class="sectionbody">
+<div class="imageblock img-rounded float-right w-40">
+<div class="content">
+<img src="_images/sample-3.svg" alt="Small image">
 </div>
 </div>
 <div class="paragraph">
-<p>Here&#8217;s the result:</p>
+<p>Float an image right to let continuous text wrap around it. Prefer small widths (40–50%).</p>
 </div>
-<div id="exer:1" class="sidebarblock exer">
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tiny_images_1030"><a class="anchor" href="#_tiny_images_1030"></a>7. Tiny Images (10–30%)</h2>
+<div class="sectionbody">
+<div class="openblock grid grid-3 gap-2 items-center justify-center">
 <div class="content">
-<div class="title">Exercise: Find the magic number</div>
-<div class="paragraph">
-<p>This is an exercise&#8230;&#8203;</p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example admonition syntax</div>
+<div class="imageblock img-fluid img-shadow img-rounded w-10 justify-self-center">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Example: Théorème de Lax-Milgram
-[.examp#examp:1]
-****
-This is an example.
-****</code></pre>
+<img src="_images/sample-3.svg" alt="Tiny image 10%">
 </div>
 </div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="examp:1" class="sidebarblock examp">
+<div class="imageblock img-fluid img-shadow img-rounded w-20 justify-self-center">
 <div class="content">
-<div class="title">Example: Théorème de Lax-Milgram</div>
-<div class="paragraph">
-<p>This is an example.</p>
+<img src="_images/sample-3.svg" alt="Tiny image 20%">
 </div>
 </div>
-</div>
-<div class="listingblock">
-<div class="title">Theorem admonition syntax</div>
+<div class="imageblock img-fluid img-shadow img-rounded w-30 justify-self-center">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Theorem de Perlimpinpin
-[.thm#thm:1]
-****
-Soit stem:[V] un espace de Hilbert et stem:[a \in \mathcal{L}(V \times V, \RR)] une forme bilinéaire continue et _coercive_ sur stem:[V]. Alors, pour toute forme linéaire continue stem:[\ell \in \mathcal{L}(V, \RR)], le problème est bien posé
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="thm:1" class="sidebarblock thm">
-<div class="content">
-<div class="title">Theorem de Perlimpinpin</div>
-<div class="paragraph">
-<p>Soit \(V\) un espace de Hilbert et \(a \in \mathcal{L}(V \times V, \RR)\) une forme bilinéaire continue et <em>coercive</em> sur \(V\). Alors, pour toute forme linéaire continue \(\ell \in \mathcal{L}(V, \RR)\), le problème est bien posé</p>
+<img src="_images/sample-3.svg" alt="Tiny image 30%">
 </div>
 </div>
 </div>
-<div class="listingblock">
-<div class="title">Corollaire admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Corollaire de toto
-[.cor#cor:1]
-****
-Soit stem:[V] un espace de Hilbert et stem:[a \in \mathcal{L}(V \times V, \RR)] une forme bilinéaire continue et _coercive_ sur stem:[V]. Alors, pour toute forme linéaire continue stem:[\ell \in \mathcal{L}(V, \RR)], le problème est bien posé
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="cor:1" class="sidebarblock cor">
-<div class="content">
-<div class="title">Corollary de toto</div>
-<div class="paragraph">
-<p>Soit \(V\) un espace de Hilbert et \(a \in \mathcal{L}(V \times V, \RR)\) une forme bilinéaire continue et <em>coercive</em> sur \(V\). Alors, pour toute forme linéaire continue \(\ell \in \mathcal{L}(V, \RR)\), le problème est bien posé</p>
 </div>
 </div>
 </div>
-<div class="listingblock">
-<div class="title">Definition admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Definition de Perlimpinpin
-[.def#def:1]
-****
-Une forme bilinéaire stem:[a \in \mathcal{L}(V \times V, \RR)] est _coercive_ sur stem:[V] s’il existe une constante stem:[\alpha &gt; 0].
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="def:1" class="sidebarblock def">
-<div class="content">
-<div class="title">Definition de Perlimpinpin</div>
-<div class="paragraph">
-<p>Une forme bilinéaire \(a \in \mathcal{L}(V \times V, \RR)\) est <em>coercive</em> sur \(V\) s’il existe une constante \(\alpha &gt; 0\).</p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Reminder: admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Reminder de Perlimpinpin
-[.remind#remind:1]
-****
-Une forme bilinéaire stem:[a \in \mathcal{L}(V \times V, \RR)] est _coercive_ sur stem:[V] s’il existe une constante stem:[\alpha &gt; 0].
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="remind:1" class="sidebarblock remind">
-<div class="content">
-<div class="title">Reminder de Perlimpinpin</div>
-<div class="paragraph">
-<p>Une forme bilinéaire \(a \in \mathcal{L}(V \times V, \RR)\) est <em>coercive</em> sur \(V\) s’il existe une constante \(\alpha &gt; 0\).</p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Notation admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Botation de Perlimpinpin
-[.nota#nota:1]
-****
-Une forme bilinéaire stem:[a \in \mathcal{L}(V \times V, \RR)] est _coercive_ sur stem:[V] s’il existe une constante stem:[\alpha &gt; 0].
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="nota:1" class="sidebarblock nota">
-<div class="content">
-<div class="title">Notation de Perlimpinpin</div>
-<div class="paragraph">
-<p>Une forme bilinéaire \(a \in \mathcal{L}(V \times V, \RR)\) est <em>coercive</em> sur \(V\) s’il existe une constante \(\alpha &gt; 0\).</p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Proposal admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Proposition
-[.prop#prop:7]
-****
-La forme bilinéaire stem:[a] du problème &lt;&lt;prob:2&gt;&gt; est _coercive_
-****</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<div id="prop:7" class="sidebarblock prop">
-<div class="content">
-<div class="title">Proposition</div>
-<div class="paragraph">
-<p>La forme bilinéaire \(a\) du problème <a href="#prob:2">[prob:2]</a> est <em>coercive</em></p>
-</div>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Proof admonition syntax</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">.Preuve
-[%collapsible.proof]
-====
-On note tout d’abord que par l’inégalité de Poincaré et la définition de
-stem:[\|\cdot\|_{1,\Omega}]
-[[eq:68]]
-[stem]
-++++
-      \|v\|^2_{1,\Omega} \le (1 + c^2_\Omega) \|\nabla v\|^2_{0,\Omega}
-++++
-On en déduit que
-[[eq:67]]
-[stem]
-++++
-\forall v \in H^1_0(\Omega),\quad a(v,v) = \|\nabla v\|^2_{0,\Omega} \ge \frac{1}{1+c^2_\Omega} \|v\|^2_{1,\Omega}
-++++
-
-Le Lemme de Lax-Milgram permet alors de conclure sur l’existence d’une solution unique pour le problème &lt;&lt;prob:2&gt;&gt;.
-====</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here&#8217;s the result:</p>
-</div>
-<details class="proof">
-<summary class="title">Preuve</summary>
-<div class="content">
-<div class="paragraph">
-<p>On note tout d’abord que par l’inégalité de Poincaré et la définition de
-\(\|\cdot\|_{1,\Omega}\)</p>
-</div>
-<div id="eq:68" class="stemblock">
-<div class="content">
-\[      \|v\|^2_{1,\Omega} \le (1 + c^2_\Omega) \|\nabla v\|^2_{0,\Omega}\]
-</div>
-</div>
-<div class="paragraph">
-<p>On en déduit que</p>
-</div>
-<div id="eq:67" class="stemblock">
-<div class="content">
-\[\forall v \in H^1_0(\Omega),\quad a(v,v) = \|\nabla v\|^2_{0,\Omega} \ge \frac{1}{1+c^2_\Omega} \|v\|^2_{1,\Omega}\]
-</div>
-</div>
-<div class="paragraph">
-<p>Le Lemme de Lax-Milgram permet alors de conclure sur l’existence d’une solution unique pour le problème <a href="#prob:2">[prob:2]</a>.</p>
-</div>
-</div>
-</details>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The <code>collapsible</code> option is used to make the block content collapsible (i.e., revealed or hidden on interaction).
-By default, the block content is hidden. You can use the <code>%open</code> option to make it visible.
-</td>
-</tr>
-</table>
+<div class="sect1">
+<h2 id="_usage_notes"><a class="anchor" href="#_usage_notes"></a>8. Usage Notes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Add <code>role="img-fluid img-shadow"</code> to images to make them responsive and add a subtle elevation.</p>
+</li>
+<li>
+<p>Control image size with <code>w-10</code> up to <code>w-70</code>.</p>
+</li>
+<li>
+<p>Use <code>.grid-2</code>, <code>.grid-3</code>, or <code>.grid-4</code> with <code>.gap-2</code> for spacing; grids collapse to one column below 768px.</p>
+</li>
+<li>
+<p>Align all items with <code>.items-<strong></code> or <code>.justify-</strong></code>; align a single item with <code>.justify-self-*</code>.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="inline-text-styles.html">Inline Text</a></span>
-  <span class="next"><a href="dynamic-processor.html">Dynamic processor</a></span>
+  <span class="prev"><a href="lead.html">Lead Paragraphs</a></span>
+  <span class="next"><a href="page-layouts.html">Layout Helpers (Page Layouts)</a></span>
 </nav>
 </article>
   </div>
