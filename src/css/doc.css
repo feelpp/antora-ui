@@ -171,6 +171,305 @@
   font-size: calc(18 / var(--rem-base) * 1rem);
 }
 
+/* Optional framed lead paragraph for subtle emphasis */
+.doc .paragraph.lead.panel,
+.doc .paragraph.lead.framed,
+.doc .paragraph.lead > p.panel,
+.doc .paragraph.lead > p.framed {
+  /* Provide explicit, visible defaults for neutral framed leads */
+  --lead-bg: var(--lead-bg, #f5f7f9);
+  --lead-border: var(--lead-border, #dfe6ee);
+  --lead-accent: var(--lead-accent, var(--color-brand-blue-secondary));
+
+  background: var(--lead-bg);
+  border: 1px solid var(--lead-border);
+  border-left: 5px solid var(--lead-accent);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+/* Base framed styles are scoped to .lead to avoid collisions with generic .panel rules elsewhere */
+
+.doc .paragraph.lead.panel > p,
+.doc .paragraph.lead.framed > p,
+.doc .paragraph.lead > p.panel,
+.doc .paragraph.lead > p.framed {
+  margin: 0;
+}
+
+.doc .paragraph.lead.panel > p {
+  font-size: calc(20 / var(--rem-base) * 1rem);
+}
+
+/* Lead panel variants (match admonition hues) */
+.doc .paragraph.lead.panel.rounded,
+.doc .paragraph.lead.framed.rounded,
+.doc .paragraph.lead > p.panel.rounded,
+.doc .paragraph.lead > p.framed.rounded {
+  border-radius: 0.75rem;
+}
+
+/* Intensity variants */
+.doc .paragraph.lead.panel.subtle,
+.doc .paragraph.lead.framed.subtle,
+.doc .paragraph.lead > p.panel.subtle,
+.doc .paragraph.lead > p.framed.subtle {
+  /* Keep default bg/border but reduce accent width slightly */
+  border-left-width: 4px;
+}
+
+.doc .paragraph.lead.panel.strong,
+.doc .paragraph.lead.framed.strong,
+.doc .paragraph.lead > p.panel.strong,
+.doc .paragraph.lead > p.framed.strong {
+  /* Slightly stronger background and border with thicker accent */
+  --lead-bg: var(--color-smoke-50);
+  --lead-border: var(--color-brand-gray8);
+
+  border-left-width: 6px;
+}
+
+.doc .paragraph.panel.theme-accent,
+.doc .paragraph.framed.theme-accent,
+.doc .paragraph > p.panel.theme-accent,
+.doc .paragraph > p.framed.theme-accent,
+.doc .paragraph.panel.accent,
+.doc .paragraph.framed.accent,
+.doc .paragraph > p.panel.accent,
+.doc .paragraph > p.framed.accent,
+/* robust match when role lands on wrapper with hyphenated name */
+.doc .paragraph[class*="theme-accent"],
+.doc .paragraph > p[class*="theme-accent"] {
+  --lead-accent: var(--color-brand-accent);
+  /* Use a fixed, widely-supported tint for robustness */
+  --lead-bg: #e8f3ef;
+  --lead-border: #b9dcd3;
+
+  background: var(--lead-bg) !important;
+  border: 1px solid var(--lead-border) !important;
+  border-left: 5px solid var(--lead-accent) !important;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.doc .paragraph.panel.theme-blue,
+.doc .paragraph.framed.theme-blue,
+.doc .paragraph > p.panel.theme-blue,
+.doc .paragraph > p.framed.theme-blue,
+.doc .paragraph.panel.blue,
+.doc .paragraph.framed.blue,
+.doc .paragraph > p.panel.blue,
+.doc .paragraph > p.framed.blue,
+.doc .paragraph[class*="theme-blue"],
+.doc .paragraph > p[class*="theme-blue"] {
+  --lead-accent: var(--color-brand-blue-secondary);
+  /* fixed, robust tint values */
+  --lead-bg: #e7f0fb;
+  --lead-border: #c9ddf3;
+
+  background: var(--lead-bg) !important;
+  border: 1px solid var(--lead-border) !important;
+  border-left: 5px solid var(--lead-accent) !important;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.doc .paragraph.panel.theme-purple,
+.doc .paragraph.framed.theme-purple,
+.doc .paragraph > p.panel.theme-purple,
+.doc .paragraph > p.framed.theme-purple,
+.doc .paragraph.panel.purple,
+.doc .paragraph.framed.purple,
+.doc .paragraph > p.panel.purple,
+.doc .paragraph > p.framed.purple,
+.doc .paragraph[class*="theme-purple"],
+.doc .paragraph > p[class*="theme-purple"] {
+  --lead-accent: var(--color-brand-purple);
+  --lead-bg: #f4e9fa;
+  --lead-border: #e5d4f4;
+
+  background: var(--lead-bg) !important;
+  border: 1px solid var(--lead-border) !important;
+  border-left: 5px solid var(--lead-accent) !important;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.doc .paragraph.panel.theme-orange,
+.doc .paragraph.framed.theme-orange,
+.doc .paragraph > p.panel.theme-orange,
+.doc .paragraph > p.framed.theme-orange,
+.doc .paragraph.panel.orange,
+.doc .paragraph.framed.orange,
+.doc .paragraph > p.panel.orange,
+.doc .paragraph > p.framed.orange,
+.doc .paragraph[class*="theme-orange"],
+.doc .paragraph > p[class*="theme-orange"] {
+  --lead-accent: var(--color-brand-orange);
+  --lead-bg: #fff0da;
+  --lead-border: #f3d9b3;
+
+  background: var(--lead-bg) !important;
+  border: 1px solid var(--lead-border) !important;
+  border-left: 5px solid var(--lead-accent) !important;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.doc .paragraph.panel.theme-silver,
+.doc .paragraph.framed.theme-silver,
+.doc .paragraph > p.panel.theme-silver,
+.doc .paragraph > p.framed.theme-silver,
+.doc .paragraph.panel.silver,
+.doc .paragraph.framed.silver,
+.doc .paragraph > p.panel.silver,
+.doc .paragraph > p.framed.silver,
+.doc .paragraph[class*="theme-silver"],
+.doc .paragraph > p[class*="theme-silver"] {
+  --lead-accent: var(--color-brand-silver);
+  --lead-bg: #f0f0f0;
+  --lead-border: #e1e1e1;
+
+  background: var(--lead-bg) !important;
+  border: 1px solid var(--lead-border) !important;
+  border-left: 5px solid var(--lead-accent) !important;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.doc .paragraph.panel.note,
+.doc .paragraph.framed.note,
+.doc .paragraph > p.panel.note,
+.doc .paragraph > p.framed.note {
+  background: var(--note-background);
+  border-left-color: var(--note-border-color);
+}
+
+.doc .paragraph.panel.tip,
+.doc .paragraph.framed.tip,
+.doc .paragraph > p.panel.tip,
+.doc .paragraph > p.framed.tip {
+  background: var(--tip-background);
+  border-left-color: var(--tip-border-color);
+}
+
+.doc .paragraph.panel.warning,
+.doc .paragraph.framed.warning,
+.doc .paragraph > p.panel.warning,
+.doc .paragraph > p.framed.warning {
+  background: var(--warning-background);
+  border-left-color: var(--warning-border-color);
+}
+
+.doc .paragraph.panel.important,
+.doc .paragraph.framed.important,
+.doc .paragraph > p.panel.important,
+.doc .paragraph > p.framed.important {
+  background: var(--important-background);
+  border-left-color: var(--important-border-color);
+}
+
+.doc .paragraph.panel.caution,
+.doc .paragraph.framed.caution,
+.doc .paragraph > p.panel.caution,
+.doc .paragraph > p.framed.caution {
+  background: var(--caution-background);
+  border-left-color: var(--caution-border-color);
+}
+
+/* Icon decoration for themed lead panels (uses Font Awesome 6) */
+.doc .paragraph.panel.note,
+.doc .paragraph.panel.tip,
+.doc .paragraph.panel.warning,
+.doc .paragraph.panel.important,
+.doc .paragraph.panel.caution,
+.doc .paragraph.framed.note,
+.doc .paragraph.framed.tip,
+.doc .paragraph.framed.warning,
+.doc .paragraph.framed.important,
+.doc .paragraph.framed.caution,
+.doc .paragraph > p.panel.note,
+.doc .paragraph > p.panel.tip,
+.doc .paragraph > p.panel.warning,
+.doc .paragraph > p.panel.important,
+.doc .paragraph > p.panel.caution,
+.doc .paragraph > p.framed.note,
+.doc .paragraph > p.framed.tip,
+.doc .paragraph > p.framed.warning,
+.doc .paragraph > p.framed.important,
+.doc .paragraph > p.framed.caution {
+  display: grid;
+  grid-template-columns: 1.25em 1fr;
+  column-gap: 0.5rem;
+  align-items: start;
+}
+
+.doc .paragraph.panel.note::before,
+.doc .paragraph.panel.tip::before,
+.doc .paragraph.panel.warning::before,
+.doc .paragraph.panel.important::before,
+.doc .paragraph.panel.caution::before,
+.doc .paragraph.framed.note::before,
+.doc .paragraph.framed.tip::before,
+.doc .paragraph.framed.warning::before,
+.doc .paragraph.framed.important::before,
+.doc .paragraph.framed.caution::before,
+.doc .paragraph > p.panel.note::before,
+.doc .paragraph > p.panel.tip::before,
+.doc .paragraph > p.panel.warning::before,
+.doc .paragraph > p.panel.important::before,
+.doc .paragraph > p.panel.caution::before,
+.doc .paragraph > p.framed.note::before,
+.doc .paragraph > p.framed.tip::before,
+.doc .paragraph > p.framed.warning::before,
+.doc .paragraph > p.framed.important::before,
+.doc .paragraph > p.framed.caution::before {
+  /* Avoid stylelint parse issues with font shorthand + var() */
+  font-family: "Font Awesome 6 Free", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.3em;
+  line-height: 1;
+  display: inline-block;
+  margin-top: 0.15em;
+}
+
+.doc .paragraph.panel.note::before,
+.doc .paragraph.framed.note::before,
+.doc .paragraph > p.panel.note::before,
+.doc .paragraph > p.framed.note::before {
+  content: "\f05a"; /* circle-info */
+  color: var(--note-border-color);
+}
+
+.doc .paragraph.panel.tip::before,
+.doc .paragraph.framed.tip::before,
+.doc .paragraph > p.panel.tip::before,
+.doc .paragraph > p.framed.tip::before {
+  content: "\f0eb"; /* lightbulb */
+  color: var(--tip-border-color);
+}
+
+.doc .paragraph.panel.warning::before,
+.doc .paragraph.panel.caution::before,
+.doc .paragraph.framed.warning::before,
+.doc .paragraph.framed.caution::before,
+.doc .paragraph > p.panel.warning::before,
+.doc .paragraph > p.panel.caution::before,
+.doc .paragraph > p.framed.warning::before,
+.doc .paragraph > p.framed.caution::before {
+  content: "\f071"; /* triangle-exclamation */
+  color: var(--warning-border-color);
+}
+
+.doc .paragraph.panel.important::before,
+.doc .paragraph.framed.important::before,
+.doc .paragraph > p.panel.important::before,
+.doc .paragraph > p.framed.important::before {
+  content: "\f06a"; /* circle-exclamation */
+  color: var(--important-border-color);
+}
+
 .doc .right {
   float: right;
 }
@@ -735,6 +1034,14 @@
   border: 0.25rem solid var(--example-border-color);
   border-radius: 0.5rem;
   padding: 0.75rem;
+}
+
+/* Utility to neutralize example panel styling when used as a column */
+.doc .exampleblock.no-panel > .content {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
 }
 
 .doc .exampleblock > .content::after,
