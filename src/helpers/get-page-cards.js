@@ -1,21 +1,92 @@
 'use strict'
 
-module.exports = (parentPage, tag, withinParentModule = true, { data: { root } }) => {
+function splitTags (val) {
+  if (!val) return []
+  return String(val)
+    .split(',')
+    .map((t) => t.trim())
+    .filter(Boolean)
+}
+
+module.exports = function (parentPage, tag, withinParentModule = true, { data: { root } }) {
   const { contentCatalog } = root
-  const pages = contentCatalog.getPages(({ asciidoc, out, src }) => {
+
+  // Prefer page-cards-tag, fallback to cards-tag, fallback to argument
+  const cardsTag =
+    parentPage.asciidoc?.attributes?.['page-cards-tag'] ||
+    parentPage.asciidoc?.attributes?.['cards-tag'] ||
+    parentPage.attributes?.['page-cards-tag'] ||
+    parentPage.attributes?.['cards-tag'] ||
+    tag
+
+  // Parent tags: prefer page-tags, fallback to tags
+  const parentTags =
+    splitTags(
+      parentPage.asciidoc?.attributes?.['page-tags'] ||
+      parentPage.attributes?.['page-tags'] ||
+      parentPage.attributes.tags
+    )
+
+  const pages = contentCatalog.getPages(function ({ asciidoc, out, src }) {
     if (!out || !asciidoc) return
-    if (src.component !== parentPage.componentVersion.name ||
-      (withinParentModule && src.module !== parentPage.module) ||
-      src.version !== parentPage.componentVersion.version) return
-    const pageTags = asciidoc.attributes['page-tags']
-    if (pageTags && pageTags.split(',').map((tag) => tag.trim()).includes('catalog') &&
-      parentPage.attributes.tags && asciidoc.attributes['parent-catalogs'] &&
-      asciidoc.attributes['parent-catalogs'].split(',').map((parentCat) => parentCat.trim()).every((parentCat) =>
-        !parentPage.attributes.tags.split(',').map((parentTag) => parentTag.trim()).includes(parentCat)
+    // Determine parent component/version with fallbacks so modules in the
+    // same component are detected even when componentVersion is empty.
+    const parentCompName =
+      parentPage.componentVersion?.name || parentPage.attributes?.['component-name'] || parentPage.component || ''
+    const parentCompVersion =
+      parentPage.componentVersion?.version || parentPage.attributes?.['component-version'] || parentPage.attributes?.version || ''
+
+    if (parentCompName && src.component !== parentCompName) return
+    if (parentCompVersion && src.version !== parentCompVersion) return
+    if (withinParentModule && src.module !== parentPage.module) return
+
+    // Prefer page-tags, fallback to tags
+    const pageTags =
+      splitTags(
+        asciidoc.attributes['page-tags'] ||
+        asciidoc.attributes.tags
       )
-    ) return
-    return pageTags && pageTags.split(',').map((v) => v.trim()).includes(tag)
-  }).sort((a, b) => (a.title || '').localeCompare((b.title || '')))
+
+    // Only include if the page has the desired tag
+    if (!pageTags.includes(cardsTag)) return
+
+    // If the page declares parent-catalogs, enforce that at least one of those
+    // parent-catalog names matches a tag on the parent page. This prevents
+    // manuals that belong to other catalogs from showing up in this catalog.
+    const parentCatalogs =
+      splitTags(
+        asciidoc.attributes['parent-catalogs'] ||
+        asciidoc.attributes['page-parent-catalogs']
+      )
+    if (
+      parentCatalogs.length &&
+      !parentCatalogs.some(function (cat) { return parentTags.includes(cat) })
+    ) {
+      return
+    }
+
+    // Allow pages to opt out of appearing as cards
+    const excludeCardsAttr = asciidoc.attributes['page-cards-exclude'] || asciidoc.attributes['exclude-from-cards']
+    if (typeof excludeCardsAttr !== 'undefined' && String(excludeCardsAttr).toLowerCase() === 'true') return
+
+    return true
+  }).sort(function (a, b) {
+    // Sort by page-cards-order if present, otherwise by title
+    const aOrder = a.asciidoc?.attributes?.['page-cards-order']
+    const bOrder = b.asciidoc?.attributes?.['page-cards-order']
+    if (aOrder !== undefined && bOrder !== undefined) {
+      const aNum = Number(aOrder)
+      const bNum = Number(bOrder)
+      if (!isNaN(aNum) && !isNaN(bNum) && aNum !== bNum) return aNum - bNum
+    } else if (aOrder !== undefined) {
+      return -1
+    } else if (bOrder !== undefined) {
+      return 1
+    }
+    return (a.title || '').localeCompare(b.title || '')
+  })
+
+  // Pad to 3-column grid
   if (pages && pages.length > 0) {
     while (pages.length % 3 !== 0) {
       pages.push({
@@ -23,9 +94,18 @@ module.exports = (parentPage, tag, withinParentModule = true, { data: { root } }
         title: 'MANUAL',
         color: '#1dffbf',
         id: 'manual',
-        //url: page.pub.url,
       })
     }
   }
+  // Exclude the parent page itself from results
+  try {
+    const parentUrl = parentPage.pub && parentPage.pub.url
+    if (parentUrl) {
+      const filtered = pages.filter(function (p) {
+        return !(p.pub && p.pub.url && p.pub.url === parentUrl)
+      })
+      return filtered
+    }
+  } catch (e) {}
   return pages
 }

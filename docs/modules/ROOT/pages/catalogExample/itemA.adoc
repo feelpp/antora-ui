@@ -1,6 +1,37 @@
-= Item A
-:page-layout: toolboxes
-:page-tags: toolbox, catalog, itemA
-:parent-catalogs: catalog-base
-:description: Item containing 2 subitems.
+= Manual B: Image Example
+:page-tags: manual, example-content
+:parent-catalogs: catalog-example
+:description: Demonstrates traditional image usage in page cards instead of Font Awesome icons.
 :page-illustration: ROOT:A.png
+
+This manual demonstrates how traditional images are rendered in page cards when not using Font Awesome icons.
+
+== Image Handling
+
+When the page illustration doesn't contain `fa-`, the system treats it as an image path:
+
+[source,asciidoc]
+----
+:page-illustration: ROOT:A.png
+----
+
+This renders as:
+
+[source,html]
+----
+<img alt="" src="path/to/image.png"/>
+----
+
+== Image vs Font Awesome
+
+The page-card partial automatically detects the content type:
+
+Font Awesome Detection:: Uses `regexMatch "fa-"` to detect Font Awesome classes
+Image Fallback:: Any non-FA content is treated as an image reference
+Antora Resolution:: Images are resolved using Antora's `resolveResourceURL` helper
+
+== Best Practices
+
+Font Awesome Icons:: Use for consistent, scalable iconography across the documentation
+Custom Images:: Use for specific illustrations, logos, or complex graphics
+Accessibility:: Both approaches support proper alt text and semantic markup

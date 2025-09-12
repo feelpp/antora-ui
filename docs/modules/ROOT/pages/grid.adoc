@@ -1,0 +1,109 @@
+= Layout Helpers (Grid)
+:page-tags: ui, layout
+:description: Examples of the grid and image utility classes included in this UI
+
+[.lead.panel.note.rounded]
+This page demonstrates the grid and image utility classes bundled with this UI. Use these helpers to build simple, responsive layouts quickly.
+
+== Quick Overview
+
+Grid:: `.grid` container with `.grid-2`, `.grid-3`, or `.grid-4` for columns; add gaps with `.gap-1`, `.gap-2`, `.gap-3`.
+Alignment:: `.items-start|center|end` sets vertical alignment; `.justify-start|center|end` sets horizontal alignment for all items; use `.justify-self-*` on a single item.
+Images:: `img-fluid` (responsive), `img-shadow` (subtle depth), `img-rounded` (rounded corners); width helpers `w-10`, `w-20`, `w-30`, `w-40`, `w-50`, `w-60`, `w-70`; floats `float-right` and `float-left`.
+
+== Two‑Column: Text | Image
+
+[.grid.grid-2.gap-2.items-center]
+--
+// Group the text into a single block so the grid has two children (text + image)
+[.no-panel]
+====
+*Clean two‑column layout*
+
+Use `.grid.grid-2` to create two columns that collapse to one column on small screens. Add `.items-center` to vertically center content and `justify-self-*` to align a single cell.
+
+- Responsive: below 768px, columns stack.
+- Spacing: `.gap-2` adds comfortable spacing between columns.
+- Image: `img-fluid img-shadow img-rounded w-60` keeps it crisp and contained.
+====
+
+image::sample-1.svg[role="img-fluid img-shadow img-rounded w-60 justify-self-end",alt="Sample image"]
+--
+
+== Three Columns
+
+[.grid.grid-3.gap-2.justify-start]
+--
+*Focused*
+Short, scannable copy works best in compact cards.
+
+*Balanced*
+Grids auto-fit at the breakpoint; keep content lengths similar.
+
+
+*Consistent*
+Apply the same spacing and heading levels across cards.
+--
+
+== Four Columns
+
+[.grid.grid-4.gap-2.justify-start]
+--
+[.no-panel]
+====
+*Focused*
+Short, scannable copy works best in compact cards.
+====
+
+[.no-panel]
+====
+*Balanced*
+Keep content lengths similar for even rows.
+====
+
+[.no-panel]
+====
+*Visual*
+Use concise visuals or icons to support text.
+====
+
+[.no-panel]
+====
+*Consistent*
+Apply the same spacing and heading levels across cards.
+====
+--
+
+== Figure with Caption
+
+.Medium width image with shadow left aligned.
+image::sample-2.svg[role="img-fluid img-shadow w-50 justify-self-start",alt="Medium image"]
+
+.Medium width image with shadow centered.
+image::sample-2.svg[role="img-fluid img-shadow w-50 justify-self-center",alt="Medium image"]
+
+.Medium width image with shadow right aligned.
+image::sample-2.svg[role="img-fluid img-shadow w-50 justify-self-end",alt="Medium image"]
+
+
+
+== Float Right (small images)
+
+image::sample-3.svg[role="img-rounded float-right w-40",alt="Small image"]
+Float an image right to let continuous text wrap around it. Prefer small widths (40–50%).
+
+== Tiny Images (10–30%)
+
+[.grid.grid-3.gap-2.items-center.justify-center]
+--
+image::sample-3.svg[role="img-fluid img-shadow img-rounded w-10 justify-self-center",alt="Tiny image 10%"]
+image::sample-3.svg[role="img-fluid img-shadow img-rounded w-20 justify-self-center",alt="Tiny image 20%"]
+image::sample-3.svg[role="img-fluid img-shadow img-rounded w-30 justify-self-center",alt="Tiny image 30%"]
+--
+
+== Usage Notes
+
+- Add `role="img-fluid img-shadow"` to images to make them responsive and add a subtle elevation.
+- Control image size with `w-10` up to `w-70`.
+- Use `.grid-2`, `.grid-3`, or `.grid-4` with `.gap-2` for spacing; grids collapse to one column below 768px.
+- Align all items with `.items-*` or `.justify-*`; align a single item with `.justify-self-*`.

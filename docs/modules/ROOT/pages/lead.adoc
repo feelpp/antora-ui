@@ -1,0 +1,101 @@
+= Lead Paragraph Styles
+:page-tags: ui, lead, layout
+:description: Demonstrates the [.lead] variants and themed panels available in this UI
+
+[.lead]
+Use a lead paragraph to introduce a page or section with a short summary. It can be plain, framed, rounded, or themed to match the site’s palette.
+
+== Quick Reference
+
+- Base: `[.lead]` — slightly larger text only
+- Framed: `[.lead.panel]` — subtle background, thin border, accent bar
+- Rounded: add `.rounded` to any framed variant
+- Admonition themes: `.note`, `.tip`, `.warning`, `.important`, `.caution`
+- Brand themes: `.theme-accent`, `.theme-blue`, `.theme-purple`, `.theme-orange`, `.theme-silver`
+
+== Plain Lead
+
+[.lead]
+This is a plain lead paragraph. It increases the font size for a softer, introductory tone.
+
+== Framed Lead
+
+[.lead.panel]
+This framed lead uses a subtle panel background, thin border, and a small accent bar on the left.
+
+== Framed + Rounded
+
+[.lead.panel.rounded]
+Rounded corners create a friendlier, card-like feel while keeping the same framing.
+
+== Framed Intensities
+
+[.lead.panel.subtle]
+Subtle frame: slightly thinner accent bar and the default soft background and border.
+
+[.lead.panel.strong.rounded]
+Strong frame: a touch darker background and border with a thicker accent bar.
+
+== Admonition-Themed Variants
+
+[.lead.panel.note.rounded]
+“Note” theme: uses the same hues as note admonitions for light emphasis.
+
+[.lead.panel.tip.rounded]
+“Tip” theme: a gentle green accent suitable for helpful hints or best practices.
+
+[.lead.panel.warning.rounded]
+“Warning” theme: a warm tone for important caveats without being overpowering.
+
+[.lead.panel.important.rounded]
+“Important” theme: stronger emphasis for critical information.
+
+[.lead.panel.caution.rounded]
+“Caution” theme: attention-grabbing but still subtle and friendly.
+
+== Brand-Themed Variants
+
+[.lead.panel.accent.rounded]
+Brand accent theme: tinted background and border derived from the site’s accent color.
+
+[.lead.panel.blue.rounded]
+Brand blue theme: soft blue tint with a blue accent bar.
+
+[.lead.panel.purple.rounded]
+Brand purple theme: soft purple tint that pairs well with headings.
+
+[.lead.panel.orange.rounded.w-40.justify-self-end]
+Brand orange theme: warm, approachable accent and tint.
+
+[.lead.panel.silver.rounded.w-60.justify-self-center]
+Neutral silver theme: understated background for general emphasis.
+
+== Usage Examples
+
+Use roles on a paragraph block to apply styles. You can combine multiple roles.
+
+[source,asciidoc]
+----
+[.lead]
+This is a plain lead.
+
+[.lead.panel]
+This is a framed lead.
+
+[.lead.panel.rounded]
+This is a rounded, framed lead.
+
+[.lead.panel.note.rounded]
+This is a rounded, note-themed lead.
+
+[.lead.panel.theme-accent.rounded]
+This is a rounded, brand-accent themed lead.
+----
+
+== Theming Notes
+
+- Framed variants support CSS variables for customization via the theme:
+  - `--lead-accent`: color of the left accent bar
+  - `--lead-bg`: background color of the panel
+  - `--lead-border`: border color of the panel
+- Predefined roles set these variables based on the UI palette. Prefer roles over inline styles to keep content portable.

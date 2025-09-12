@@ -3,7 +3,7 @@
 <head>
   {{> head defaultPageTitle='Untitled'}}
 </head>
-<body class="article docs-case-study{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
+<body class="article docs-case-study docs-cards-layout {{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
 {{> header}}
 
 <div class="body">
@@ -22,6 +22,10 @@
         {{#with @root.page.title}}
           <h1 class="page">{{{this}}}</h1>
         {{/with}}
+        
+        {{!-- Include the actual page content here --}}
+        {{{page.contents}}}
+        
         {{#with (get-page-cards @root.page 'manual' true)}}
         {{#if this.length}}
         <h2 id="manuals">Manuals</h2>

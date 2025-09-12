@@ -2,12 +2,19 @@
   <div class="empty"></div>
 {{else}}
 <a class="page-card" href="{{{relativize pub.url}}}">
-    <div class="page-card-illustration">
-      <img alt="" src="{{relativize (resolveResourceURL (imageSpec asciidoc.attributes.page-illustration))}}"/>
-    </div>
-    <div class="page-card-body">
-      <h4>{{title}}</h4>
-      <p class="page-card-description">{{{asciidoc.attributes.description}}}</p>
-    </div>
+  <div class="page-card-illustration">
+    {{#if asciidoc.attributes.page-illustration}}
+      {{!-- if the value contains 'fa-' we treat it as a Font Awesome class list and render an <i> --}}
+      {{#if (regexMatch "fa-" asciidoc.attributes.page-illustration)}}
+        <i class="{{asciidoc.attributes.page-illustration}}"></i>
+      {{else}}
+        <img alt="" src="{{relativize (resolveResourceURL (imageSpec asciidoc.attributes.page-illustration))}}"/>
+      {{/if}}
+    {{/if}}
+  </div>
+  <div class="page-card-body">
+    <h4>{{title}}</h4>
+    <p class="page-card-description">{{{asciidoc.attributes.description}}}</p>
+  </div>
 </a>
 {{/if}}

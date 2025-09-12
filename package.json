@@ -78,15 +78,13 @@
     "lint:js": "eslint gulpfile.js \"gulp.d/**/*.js\" \"src/{helpers,js}/**/*.js\"",
     "build": "npm run generate-fontawesome-icon-defs && gulp bundle",
     "antora": "npx antora site.yml --stacktrace",
-    "serve": "http-server build/site",
+    "serve": "http-server build/site -d -i",
     "generate-fontawesome-icon-defs": "node tasks/generate-fontawesome-icon-defs.js"
   },
   "dependencies": {
-    "@antora/cli": "^3.1",
+    "@antora/cli": "^3.1.12",
     "@antora/collector-extension": "^1.0.1",
-    "@antora/site-generator": "^3.1",
-    "@asciidoctor/core": "~2.2.8",
-    "asciidoctor": "~2.2.8",
+    "@antora/site-generator": "^3.1.12",
     "asciidoctor-jupyter": "^0.7.0",
     "asciidoctor-kroki": "^0.18.1",
     "gulp-cli": "^2.3.0",

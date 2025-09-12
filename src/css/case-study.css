@@ -1,91 +1,37 @@
-.docs-case-study .cases,
-.docs-case-study .benchmarks,
-.docs-case-study .toolboxes,
-.docs-case-study .manuals {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-top: 5em;
-  margin-bottom: 5em;
-  gap: clamp(1.5em, 2vw, 5em);
-}
+/* case-study.css
+   Built on top of cards-layout.css. Only contains layout-specific overrides.
+*/
 
-.docs-case-study .cases .case,
-.docs-case-study .benchmarks .benchmark,
-.docs-case-study .toolboxes .toolbox,
-.docs-case-study .manuals .manual {
-  display: flex;
-  flex: 1 calc(33.33% - 5em);
-  max-width: 500px;
-}
-
-/* Media query for small screens */
-@media (max-width: 767px) {
-  .docs-case-study .cases .case,
-  .docs-case-study .benchmarks .benchmark,
-  .docs-case-study .toolboxes .toolbox,
-  .docs-case-study .manuals .manual {
-    flex: 1 250px;
-  }
-}
-
-/* Media query for large screens */
-@media (min-width: 768px) {
-  .docs-case-study .cases .case,
-  .docs-case-study .benchmarks .benchmark,
-  .docs-case-study .toolboxes .toolbox,
-  .docs-case-study .manuals .manual {
-    min-width: 250px;
-  }
-}
-
-.docs-case-study .page-card:hover,
-.docs-case-study .page-card:focus {
-  box-shadow: 0 6px 12px 1px #104d92ad;
-  text-decoration: none;
-}
-
+/* Improve card aspect ratio for case studies */
 .docs-case-study .page-card {
-  box-shadow: 0 3px 6px 1px #e0e0e0;
-  padding: 1.5em 1em 1em;
-  display: flex;
-  flex-direction: column;
-  color: initial;
-  border-radius: 0.5em;
-  flex: 1;
+  /* Allow more flexible height for case study cards */
+  min-height: 280px;
+  height: auto;
 }
 
+/* Improve illustration sizing for case study cards */
 .docs-case-study .page-card-illustration {
-  height: 150px;
-  object-fit: contain;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 1em;
-  padding-right: 1em;
+  min-height: 160px;
+  max-height: 200px;
+  flex: 0 1 auto;
 }
 
-.docs-case-study .page-card-illustration > img {
-  max-width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0.25em;
+/* Ensure description has enough space */
+.docs-case-study .page-card-body {
+  flex: 1 0 auto;
+  padding-top: 0.75rem;
 }
 
-.docs-case-study .page-card .page-card-body {
-  border-top: 1px solid #e1e1e1;
-  margin-top: 1rem;
-  padding-bottom: 0.75rem;
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
+/* Better text sizing for descriptions */
+.docs-case-study .page-card-body p {
+  font-size: 0.85em;
+  line-height: 1.4;
+  margin-bottom: 0;
 }
 
-.docs-case-study .page-card .page-card-body p {
-  font-size: 0.9em;
-  color: #56595c;
-}
-
-.docs-case-study .page-card .page-card-body h4 {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+/* Improve title spacing */
+.docs-case-study .page-card-body h4 {
+  font-size: 1.1em;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
 }

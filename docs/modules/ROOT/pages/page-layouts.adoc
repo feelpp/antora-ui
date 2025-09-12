@@ -1,4 +1,39 @@
 = Page Layouts
 :navtitle: Page Layouts
-:page-layout: toolboxes
+:page-layout: manuals
 :page-tags: catalog, page-layouts
+:page-cards-tag: catalog
+:page-cards-within-module: false
+:page-cards-title: Available Layouts
+:page-illustration: fa-solid fa-th-large
+
+The Antora Feel++ UI provides several specialized page layouts for different content types and organizational structures.
+
+== Available Layouts
+
+default:: Standard article layout for regular documentation pages
+manuals:: Card-based catalog layout for organizing related content with visual navigation
+toolboxes:: Alternative catalog layout for toolbox-style content organization  
+case-study:: Specialized layout for case studies and detailed examples
+reports:: Layout optimized for report-style documents
+
+== Layout Usage
+
+To use a specific layout, add the `page-layout` attribute to your AsciiDoc file:
+
+[source,asciidoc]
+----
+= Page Title
+:page-layout: manuals
+----
+
+== Catalog Layouts
+
+The `manuals` and `toolboxes` layouts provide sophisticated card-based organization systems. These layouts automatically generate visual cards for related pages based on tagging and parent-catalog relationships.
+
+Key features:
+- Automatic card generation based on page tags
+- Font Awesome icon support for illustrations
+- Hierarchical organization with parent-catalog relationships
+- Flexible content filtering within or across modules
+- Group titles for multi-tag displays

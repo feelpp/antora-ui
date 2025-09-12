@@ -1,0 +1,161 @@
+/* Grid utilities */
+.grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* Allow blocks inside AsciiDoc wrappers to participate as grid items */
+.doc .grid > .content {
+  display: contents;
+}
+
+/* Reduce default margins inside grid children so columns align cleanly */
+.doc .grid > .content > * {
+  margin: 0;
+}
+
+.items-start {
+  align-items: start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: end;
+}
+
+.justify-start {
+  justify-items: start;
+}
+
+.justify-center {
+  justify-items: center;
+}
+
+.justify-end {
+  justify-items: end;
+}
+
+/* Per-item horizontal alignment inside a grid cell */
+.justify-self-start {
+  justify-self: start;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+.gap-1 {
+  gap: 0.5rem;
+}
+
+.gap-2 {
+  gap: 1rem;
+}
+
+.gap-3 {
+  gap: 1.5rem;
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+.grid-4 {
+  grid-template-columns: 1fr;
+}
+
+/* Breakpoints */
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* Image utilities */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-shadow {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.img-rounded {
+  border-radius: 8px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.w-40 {
+  max-width: 40%;
+}
+
+.w-10 {
+  max-width: 10%;
+}
+
+.w-20 {
+  max-width: 20%;
+}
+
+.w-30 {
+  max-width: 30%;
+}
+
+.w-50 {
+  max-width: 50%;
+}
+
+.w-60 {
+  max-width: 60%;
+}
+
+.w-70 {
+  max-width: 70%;
+}
+
+/* Figure captions (AsciiDoc-style figure) */
+.figure {
+  text-align: center;
+}
+
+.figure figcaption {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+/* Floats (use with small images) */
+.float-right {
+  float: right;
+  margin: 0 0 1rem 1rem;
+}
+
+.float-left {
+  float: left;
+  margin: 0 1rem 1rem 0;
+}

@@ -64,6 +64,14 @@
     "iconName": "expand"
   },
   {
+    "prefix": "fas",
+    "iconName": "book"
+  },
+  {
+    "prefix": "fas",
+    "iconName": "chalkboard-teacher"
+  },
+  {
     "prefix": "far",
     "iconName": "check-square"
   },

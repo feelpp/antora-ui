@@ -1,0 +1,34 @@
+= Manual A: Font Awesome Example
+:page-tags: manual, example-content
+:parent-catalogs: catalog-example
+:description: Demonstrates Font Awesome icon usage in page cards with detailed content.
+:page-illustration: fa-solid fa-cog
+
+This manual demonstrates how Font Awesome icons are automatically detected and rendered in page cards.
+
+== Font Awesome Integration
+
+The page illustration `fa-solid fa-cog` is automatically detected by the `regexMatch "fa-"` helper in the page-card partial and rendered as:
+
+[source,html]
+----
+<i class="fa-solid fa-cog"></i>
+----
+
+== Card Attributes
+
+This page uses the following attributes for card generation:
+
+page-tags:: `manual, example-content` - Identifies this as manual content
+parent-catalogs:: `catalog-example` - Links this page to the catalog
+description:: Brief text shown on the card preview
+page-illustration:: `fa-solid fa-cog` - Font Awesome icon for the card
+
+== Content Organization
+
+Pages with `parent-catalogs: catalog-example` automatically appear as cards on the catalog page. The catalog layout handles:
+
+- Automatic card generation
+- Icon/image rendering
+- Responsive card layout
+- Interactive hover effects

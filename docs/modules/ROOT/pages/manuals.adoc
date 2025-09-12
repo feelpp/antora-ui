@@ -1,0 +1,80 @@
+= Manuals and Catalogs Layout
+:navtitle: Manuals
+:page-layout: manuals
+:page-tags: catalog, manuals-docs
+:page-cards-tag: catalog,manual
+:page-cards-within-module: false
+:page-cards-title: Documentation Pages
+:page-illustration: fa-solid fa-book
+:parent-catalogs: page-layouts
+
+The manuals layout provides a powerful card-based system for organizing and displaying related content in catalogs. This layout is particularly useful for creating hierarchical documentation structures where parent pages act as catalogs displaying child pages as cards.
+
+== Key Features
+
+Card-Based Navigation::
+Automatically generates visual cards for related pages based on tags and parent-catalog relationships.
+
+Font Awesome Integration::
+Supports both image illustrations and Font Awesome icons for page cards using the `page-illustration` attribute.
+
+Flexible Tagging System::
+Uses `page-tags` and `page-cards-tag` attributes to control which pages appear in catalogs.
+
+Hierarchical Organization::
+Implements parent-catalog relationships for nested content organization.
+
+Multi-Tag Support::
+Can group cards by different tags with optional group titles.
+
+== Page Attributes for Manuals Layout
+
+Essential attributes for catalog pages:
+
+[source,asciidoc]
+----
+= Catalog Title
+:page-layout: manuals
+:page-tags: catalog-name,catalog
+:page-cards-tag: catalog,manual
+:page-cards-within-module: false
+:page-cards-title: Display Title for Cards
+:page-illustration: fa-solid fa-database
+:parent-catalogs: parent-catalog-name
+----
+
+Essential attributes for manual pages:
+
+[source,asciidoc]
+----
+= Manual Title
+:page-tags: manual,specific-topic
+:parent-catalogs: catalog-name
+:description: Brief description for card display
+:page-illustration: fa-solid fa-gear
+----
+
+== Attribute Reference
+
+page-layout:: Set to `manuals` to use the catalog layout
+page-tags:: Tags for the current page, typically includes `catalog` for catalog pages or `manual` for content pages
+page-cards-tag:: Specifies which tags to look for when building the card list
+page-cards-within-module:: `true` (default) searches within current module, `false` searches across all modules
+page-cards-title:: Optional title displayed above the cards
+page-illustration:: Font Awesome class (e.g., `fa-solid fa-database`) or image path
+parent-catalogs:: Specifies which catalog this page belongs to
+description:: Brief description shown on the page card
+
+== Font Awesome Icons
+
+The system automatically detects Font Awesome classes by looking for the `fa-` prefix:
+
+Font Awesome Icon::
+`page-illustration: fa-solid fa-database` renders as `<i class="fa-solid fa-database"></i>`
+
+Image File::
+`page-illustration: ROOT:diagram.png` renders as an `<img>` element
+
+== Examples
+
+See the xref:catalogExample/catalog.adoc[catalog example] for a working demonstration of the manuals layout system.

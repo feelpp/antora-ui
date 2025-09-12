@@ -1,0 +1,79 @@
+= Card System Documentation
+:page-tags: catalog, card-system
+:parent-catalogs: page-layouts
+:description: Comprehensive guide to the card-based navigation system in Feel++ Antora UI.
+:page-illustration: fa-solid fa-th
+
+The Feel++ Antora UI features a sophisticated card-based navigation system that automatically generates visual cards for related content based on page attributes and tagging.
+
+== System Overview
+
+The card system consists of several key components:
+
+Page Card Partial:: Renders individual cards with illustrations, titles, and descriptions
+Get Page Cards Helper:: JavaScript helper that finds and filters pages for card display
+Manuals Layout:: Handlebars layout that orchestrates card rendering
+CSS Styling:: Responsive card layouts with hover effects and proper spacing
+
+== Card Generation Process
+
+1. **Page Discovery**: The system searches for pages based on `parent-catalogs` and `page-tags` attributes
+2. **Filtering**: Pages are filtered by the `page-cards-tag` criteria
+3. **Illustration Processing**: Font Awesome icons are detected and processed differently from images
+4. **Card Rendering**: Each page is rendered as a card with title, description, and illustration
+5. **Layout Application**: Cards are arranged in responsive grids with proper spacing
+
+== Helper Functions
+
+get-page-cards:: Basic helper that returns pages matching specified criteria
+get-page-cards-multi:: Advanced helper that can group pages by multiple tags
+regexMatch:: Utility helper for detecting Font Awesome classes in illustrations
+
+== CSS Classes and Styling
+
+The card system uses several CSS classes for styling:
+
+.page-card:: Main card container with hover effects
+.page-card-illustration:: Container for icons or images
+.page-card-body:: Text content area with title and description
+.cards-group-title:: Optional titles for grouped card sections
+
+== Responsive Behavior
+
+Cards automatically adapt to different screen sizes:
+
+Desktop:: Multi-column grid layout with full card details
+Tablet:: Reduced columns with maintained aspect ratios
+Mobile:: Single column stack with optimized spacing
+
+== Advanced Features
+
+Multi-Tag Grouping:: Group cards by different tags with section titles
+Cross-Module Search:: Find cards across different Antora modules
+Empty Card Handling:: Graceful handling of missing content or broken references
+Order Control:: Use `page-cards-order` attribute for custom sorting
+
+== Integration with Antora
+
+The card system integrates seamlessly with Antora's content model:
+
+- Uses Antora's page discovery and navigation systems
+- Leverages Antora's image resolution for illustrations
+- Respects Antora's module boundaries and versioning
+- Works with Antora's URL generation and linking
+
+== Best Practices
+
+Consistent Tagging:: Use consistent tag naming conventions across your documentation
+Meaningful Descriptions:: Write clear, concise descriptions for card previews
+Appropriate Illustrations:: Choose icons or images that clearly represent the content
+Hierarchical Organization:: Use parent-catalog relationships to create logical content hierarchies
+
+== Troubleshooting
+
+Common issues and solutions:
+
+Cards Not Appearing:: Check `parent-catalogs` and `page-tags` spelling and consistency
+Missing Illustrations:: Verify Font Awesome class names or image paths
+Layout Issues:: Ensure proper `page-layout: manuals` attribute on catalog pages
+Cross-Module Problems:: Review `page-cards-within-module` setting for desired scope

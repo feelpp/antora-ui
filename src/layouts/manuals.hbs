@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {{> head defaultPageTitle='Untitled'}}
+  {{> head defaultPageTitle='Catalog'}}
 </head>
-<body class="article docs-home docs-cards-layout {{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
+<body class="article docs-manuals-catalog docs-cards-layout {{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
 {{> header}}
 
 <div class="body">
   {{> nav componentOrder=page.attributes.component-order}}
   <main class="article">
-    {{!-- toolbar for responsive nav --}}
     <div class="toolbar" role="navigation">
-      <div class="toolbar-wrapper">
-        {{> nav-toggle}}
-      </div>
+      {{> nav-toggle}}
+      {{#with site.homeUrl}} <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}"></a> {{/with}}
+      {{> breadcrumbs}}
     </div>
 
     <div class="content">
@@ -22,23 +21,10 @@
 
     <div class="content">
       <article class="doc">
-        <div class="actions">
-          {{#with (get-quickstart-page 'latest')}}
-            <a href="{{{relativize this.pub.url}}}" class="button primary">Quickstart</a>
-          {{/with}}
-          {{#with (get-overview-page 'latest')}}
-            <a href="{{{relativize this.pub.url}}}" class="button secondary overview">Overview</a>
-          {{/with}}
-          <a href="https://join.slack.com/t/feelpp/shared_invite/zt-2qe0q9hw-4pVbhohCXUE6Po9Ma8dbiQ"
-             class="button join-chat">Join Community</a>
-        </div>
-      </article>
-    </div>
+        {{#with @root.page.title}} <h1 class="page">{{{this}}}</h1> {{/with}}
 
-    <div class="content">
-      <article class="doc">
         {{!-- attributes from AsciiDoc (fallback to page.attributes) --}}
-        {{#with (get-attr @root.page 'cards-tag' 'catalog') as |cardsTag|}}
+        {{#with (get-attr @root.page 'cards-tag' 'manual') as |cardsTag|}}
           {{#with (get-attr @root.page 'cards-within-module' 'true') as |withinModuleStr|}}
             {{!-- Try the multi-tag helper which returns groups per tag --}}
             {{#if (eq withinModuleStr 'false')}}
@@ -90,23 +76,7 @@
         {{/with}}
       </article>
     </div>
-
-    <!--<div class="content">
-      <article class="doc">
-        <h2>Latest news</h2>
-        <div class="latest-news">
-          <div class="twitter-timeline-container">
-            <a class="twitter-timeline" href="https://twitter.com/feelpp?ref_src=twsrc%5Etfw" data-tweet-limit="3" data-height="500" data-width="420">Tweets by @feelpp</a>
-          </div>
-          <div class="twitter-timeline-container">
-            <a class="twitter-timeline" href="https://twitter.com/cemosis?ref_src=twsrc%5Etfw" data-tweet-limit="3" data-height="500" data-width="420">Tweets by @cemosis</a>
-          </div>
-        </div>
-      </article>
-    </div>-->
-
   </main>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
 {{> footer}}
