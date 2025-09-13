@@ -9,6 +9,7 @@
 //** xref:plotly.adoc[]
 ** xref:pseudocode.adoc[]
 ** xref:lead.adoc[Lead Paragraphs]
+** xref:images.adoc[Image Styles & UI Macros]
 ** xref:ROOT:grid.adoc[Layout Helpers (Grid)]
 ** xref:page-layouts.adoc[Layout Helpers (Page Layouts)]
 ** xref:manuals.adoc[]

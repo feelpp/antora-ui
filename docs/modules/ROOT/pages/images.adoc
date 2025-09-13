@@ -1,0 +1,89 @@
+= Images & Icons
+:page-tags: ui, images, icons
+:description: Roles and examples for inline icons, small screenshots, and image helpers used to document UI menus and buttons
+
+[.lead.panel.note.rounded]
+Use these roles to present small screenshots and icons cleanly inside paragraphs when documenting menus, buttons, and UI flows. 
+They complement AsciiDoc’s built‑in `btn:[]`, `menu:[]`, and `kbd:[]` macros.
+
+== Inline Icons
+
+- Role: `icon` — inline SVG/PNG aligned with text.
+- Sizes: `icon-sm`, `icon` (default), `icon-lg`, `icon-xl`.
+
+Example (inline in a sentence):
+
+See the image:sample-3.svg[role=icon,alt="icon"] icon next to the btn:[Save] button.
+
+Sizes: image:sample-3.svg[role="icon-sm",alt="small icon"] image:sample-3.svg[role="icon",alt="icon"] image:sample-3.svg[role="icon-lg",alt="large icon"] image:sample-3.svg[role="icon-xl",alt="x-large icon"].
+
+AsciiDoc:
+
+[source,asciidoc]
+----
+See the image:sample-3.svg[role=icon,alt="icon"] icon next to the btn:[Save] button.
+
+Sizes: image:sample-3.svg[role="icon-sm"] image:sample-3.svg[role="icon"] image:sample-3.svg[role="icon-lg"] image:sample-3.svg[role="icon-xl"].
+----
+
+== Inline Screenshot (Framed)
+
+- Role: `img-inline` + `img-frame` — small screenshot with a subtle frame.
+
+Example: image:sample-1.svg[role="img-inline img-frame",alt="small framed screenshot"].
+
+[source,asciidoc]
+----
+image:sample-1.svg[role="img-inline img-frame",alt="small framed screenshot"]
+----
+
+== Pill/Badge Screenshot
+
+- Role: `img-inline` + `img-chip` (alias: `img-badge`) — pill‑shaped frame around a tiny snapshot.
+
+Example: image:sample-2.svg[role="img-inline img-chip",alt="pill screenshot"].
+
+[.grid.grid-2.gap-2.items-center.justify-center.w-60]
+--
+[.no-panel,items-center.justify-center]
+====
+
+[source,asciidoc]
+----
+image:sample-2.svg[role="img-inline img-chip",alt="pill screenshot"]
+----
+====
+image:sample-2.svg[role="img-inline img-chip",alt="pill screenshot"]
+--
+
+== Documenting Menus & Buttons
+
+Prefer the built‑in AsciiDoc UI macros for text labels, then augment with icons or small screenshots when useful.
+
+- Button: `btn:[Save]`
+- Menu path: `menu:File[Preferences > Settings]`
+- Keys: `kbd:[Ctrl+S]`, `kbd:[Cmd+,]`
+
+Combine with an icon like this:
+[source,asciidoc]
+----
+Click btn:[Save] image:sample-3.svg[role=icon,alt="icon"] or choose menu:File[Save].
+----
+
+and you get:
+
+Click btn:[Save] image:sample-3.svg[role=icon,alt="icon"] or choose menu:File[Save].
+
+
+== Utility Recap
+
+- `img-fluid` — responsive image (already in this UI)
+- `img-shadow` — soft drop shadow
+- `img-rounded` — rounded corners
+- `img-inline` — scale an image to text height (inline)
+- `icon[-sm|-lg|-xl]` — inline icon sizes
+- `img-frame` — subtle framed look
+- `img-chip` (`img-badge`) — pill frame for tiny UI bits
+
+See also: xref:grid.adoc[Layout Helpers (Grid)] for arranging images in two or more columns.
+
