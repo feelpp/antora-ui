@@ -5,4 +5,5 @@ nav:
 - modules/ROOT/nav.adoc
 asciidoc:
   attributes:
+    experimental: true
     url-asciidoc: https://docs.asciidoctor.org/asciidoc/latest
