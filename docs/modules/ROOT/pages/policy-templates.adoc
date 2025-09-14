@@ -1,0 +1,252 @@
+= Policy Page Templates
+:description: How to use the included policy page templates for legal compliance
+:keywords: templates, policy, legal, GDPR, terms, privacy
+
+[.lead]
+This Antora UI includes ready-to-use policy page templates to help you create legally compliant documentation sites.
+
+== Overview
+
+The UI bundle includes template policy pages that you can copy and customize for your project:
+
+* **Terms of Use** - Usage terms and conditions
+* **Privacy Policy** - Data protection and privacy practices  
+* **Cookie Policy** - Website cookie usage and consent
+* **Support Policy** - Support channels and expectations
+
+These templates are designed for:
+
+* GDPR compliance (EU privacy regulations)
+* Academic and research projects
+* Open-source software projects
+* General web application legal requirements
+
+== Quick Start
+
+=== 1. Extract Templates
+
+The policy templates are included in your UI bundle at:
+
+```
+_/templates/policy-pages/
+├── README.md
+├── terms-of-use.adoc
+├── privacy-policy.adoc
+├── cookie-policy.adoc
+└── support-policy.adoc
+```
+
+After building your site, copy the templates to your content directory:
+
+```bash
+# Copy templates to your Antora pages directory
+cp build/site/_/templates/policy-pages/*.adoc docs/modules/ROOT/pages/
+```
+
+=== 2. Customize Content
+
+Each template contains placeholder sections to customize:
+
+```adoc
+[NOTE]
+====
+Replace this section with information about your organization:
+* Organization name and contact details
+* Data controller information
+* Jurisdiction and applicable laws
+====
+```
+
+Update these sections with your specific information.
+
+=== 3. Add to Navigation
+
+Add the policy pages to your `nav.adoc`:
+
+```adoc
+* Policies & Legal
+** xref:terms-of-use.adoc[Terms of Use]
+** xref:privacy-policy.adoc[Privacy Policy]
+** xref:cookie-policy.adoc[Cookie Policy]
+** xref:support-policy.adoc[Support Policy]
+```
+
+=== 4. Footer Integration
+
+The UI footer is already configured to link to policy pages in your component. The links will automatically work once you add the pages to your content.
+
+== Template Details
+
+=== Terms of Use
+
+Covers:
+
+* Software licensing and usage rights
+* Academic and research use provisions
+* User responsibilities and restrictions
+* Liability limitations
+* Intellectual property rights
+
+Key customizations:
+* Replace generic "software" references with your project name
+* Update licensing information to match your actual licenses
+* Add specific usage restrictions if applicable
+* Update contact information
+
+=== Privacy Policy
+
+Includes:
+
+* GDPR-compliant structure and language
+* Data collection categories and purposes
+* Legal basis for processing
+* User rights and contact information
+* Third-party service disclosures
+
+Key customizations:
+* Add your organization's contact details
+* Specify your actual data collection practices
+* List the third-party services you actually use
+* Update retention periods based on your practices
+* Add data protection officer contact if required
+
+=== Cookie Policy
+
+Provides:
+
+* Cookie categorization and descriptions
+* Third-party cookie disclosures
+* User control and opt-out options
+* Legal compliance information
+
+Key customizations:
+* Update the cookie table with cookies you actually use
+* Remove sections for cookie types you don't use
+* Add any additional third-party services
+* Update contact information
+
+=== Support Policy
+
+Defines:
+
+* Available support channels
+* Response time expectations
+* Community vs. commercial support
+* Support scope and limitations
+
+Key customizations:
+* Update support channel URLs and contact methods
+* Adjust response time expectations to match your capacity
+* Modify support scope based on your project resources
+* Add or remove commercial support options
+
+== Legal Considerations
+
+[WARNING]
+====
+**Legal Disclaimer**
+
+These templates are provided as a starting point only. You should:
+
+* Consult with qualified legal counsel
+* Customize based on your actual practices
+* Review applicable laws in your jurisdiction
+* Update policies when your practices change
+====
+
+=== GDPR Compliance
+
+The privacy and cookie policy templates include GDPR-required elements:
+
+* Legal basis for data processing
+* User rights and contact information
+* Data retention periods
+* International transfer safeguards
+
+=== Academic Use
+
+The templates are designed for academic and research environments:
+
+* Provisions for educational use
+* Research collaboration considerations
+* Student and researcher rights
+* Open-source licensing compatibility
+
+== Maintenance
+
+Keep your policies current:
+
+=== Regular Reviews
+
+* Review policies annually
+* Update when practices change
+* Monitor legal requirement changes
+* Verify contact information accuracy
+
+=== Common Updates
+
+* New third-party services
+* Changed data retention periods
+* Updated support channels
+* Modified privacy practices
+
+== Advanced Usage
+
+=== Multi-Component Sites
+
+For sites with multiple components:
+
+1. **Shared policies:** Place in a dedicated legal component
+2. **Component-specific:** Customize per component
+3. **Centralized:** Use includes to share common sections
+
+Example shared policy structure:
+
+```
+legal-component/
+└── modules/
+    └── ROOT/
+        └── pages/
+            ├── terms-of-use.adoc
+            ├── privacy-policy.adoc
+            ├── cookie-policy.adoc
+            └── support-policy.adoc
+```
+
+=== Custom Footer Links
+
+To customize footer links, override the footer partial:
+
+```handlebars
+<div class="footer-terms-links">
+  <a href="{{relativize 'legal/terms-of-use.html'}}">Terms of Use</a>
+  <a href="{{relativize 'legal/privacy-policy.html'}}">Privacy Policy</a>
+  <!-- Add custom links -->
+  <a href="{{relativize 'legal/accessibility.html'}}">Accessibility</a>
+</div>
+```
+
+== Contributing
+
+Help improve these templates:
+
+1. **Report issues:** Open GitHub issues for template problems
+2. **Suggest improvements:** Propose enhancements
+3. **Legal updates:** Share legal requirement changes
+4. **Translation:** Help translate templates
+
+== Resources
+
+* xref:search-setup.adoc[Search Setup] - Configure search for policy pages
+* https://gdpr.eu/[GDPR Information] - EU privacy regulation details
+* https://ico.org.uk/[ICO Guidance] - UK data protection guidance
+* https://www.cnil.fr/en[CNIL] - French data protection authority
+
+== Support
+
+For help with policy templates:
+
+* Check the template README files
+* Review this documentation
+* Open GitHub issues for bugs
+* Consult legal professionals for compliance questions

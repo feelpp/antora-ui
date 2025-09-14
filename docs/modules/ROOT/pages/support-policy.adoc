@@ -1,0 +1,220 @@
+= Support Policy
+:description: Support policy for Feel++ software and documentation - community and commercial support options
+:keywords: support, help, community, documentation, feel++
+
+[.lead]
+This support policy outlines the available support channels for Feel++ users and sets expectations for response times and support scope.
+
+== Support Philosophy
+
+Feel++ is an open-source scientific computing platform developed primarily for research and education. Our support model reflects this mission:
+
+* **Community-driven:** Primary support through user community
+* **Educational focus:** Priority on learning and knowledge sharing
+* **Research-oriented:** Support for academic and scientific applications
+* **Best-effort basis:** Volunteer-based support with no guarantees
+
+== Support Channels
+
+=== Community Support (Free)
+
+==== GitHub Issues
+* **Purpose:** Bug reports, feature requests, technical questions
+* **URL:** https://github.com/feelpp/feelpp/issues
+* **Response time:** Best effort, typically 1-7 days
+* **Who responds:** Maintainers and community members
+
+==== Discussions Forum
+* **Purpose:** General questions, usage help, troubleshooting
+* **URL:** https://github.com/orgs/feelpp/discussions
+* **Response time:** Best effort, typically 1-3 days
+* **Who responds:** Community members and maintainers
+
+==== Slack Community
+* **Purpose:** Real-time chat, quick questions, community interaction
+* **Access:** https://join.slack.com/t/feelpp/shared_invite/zt-2qe0q9hw-4pVbhohCXUE6Po9Ma8dbiQ
+* **Response time:** Varies, real-time to several hours
+* **Who responds:** Active community members
+
+==== Documentation
+* **Purpose:** Self-service help and tutorials
+* **URL:** https://docs.feelpp.org
+* **Content:** Installation guides, tutorials, API reference
+* **Updates:** Regular community contributions
+
+=== Academic Support
+
+==== Research Collaboration
+* **Purpose:** Academic partnerships and research projects
+* **Contact:** research@cemosis.fr
+* **Scope:** Joint research, academic publications, student projects
+* **Requirements:** Academic affiliation, mutual benefit
+
+==== Educational Support
+* **Purpose:** Course integration, teaching materials
+* **Contact:** education@cemosis.fr
+* **Scope:** Curriculum development, student training
+* **Requirements:** Educational institution affiliation
+
+=== Commercial Support (Paid)
+
+==== Consulting Services
+* **Purpose:** Custom development, integration support
+* **Contact:** consulting@cemosis.fr
+* **Scope:** Custom features, performance optimization, training
+* **Terms:** Negotiated based on requirements
+
+==== Priority Support
+* **Purpose:** Guaranteed response times, direct access
+* **Contact:** support@cemosis.fr
+* **Benefits:** 24-48 hour response, priority bug fixes
+* **Terms:** Annual contracts available
+
+== What We Support
+
+=== Included in Community Support
+
+* **Software bugs:** Reproducible issues in released versions
+* **Documentation questions:** Help understanding features
+* **Installation help:** Basic installation and configuration
+* **Usage guidance:** How to use existing features
+* **Performance tips:** General optimization advice
+
+=== Not Included in Community Support
+
+* **Custom development:** Building specific features for your needs
+* **Debugging your code:** Issues in your own applications
+* **System administration:** Server setup and maintenance
+* **Real-time support:** Immediate response guarantees
+* **Proprietary integrations:** Connecting to commercial software
+
+== Response Time Expectations
+
+[cols="2,2,2,3"]
+|===
+|Channel |Response Time |Resolution Time |Notes
+
+|GitHub Issues
+|1-7 days
+|Varies
+|Community-driven, best effort
+
+|Discussions
+|1-3 days
+|Varies
+|Community Q&A format
+
+|Slack
+|Real-time to hours
+|N/A
+|Informal chat, no guarantees
+
+|Email (General)
+|3-7 days
+|Varies
+|Non-urgent inquiries only
+
+|Commercial Support
+|24-48 hours
+|Negotiated
+|Paid service level agreements
+|===
+
+== How to Get Effective Support
+
+=== Before Asking for Help
+
+1. **Check documentation:** Search docs.feelpp.org first
+2. **Search existing issues:** Look for similar problems on GitHub
+3. **Prepare information:** Version numbers, error messages, minimal examples
+4. **Try basic troubleshooting:** Restart, reinstall, check dependencies
+
+=== When Reporting Issues
+
+Include the following information:
+
+* **Feel++ version:** `feelpp --version` output
+* **Operating system:** Version and distribution
+* **Installation method:** Source, package manager, Docker
+* **Error messages:** Complete error logs
+* **Minimal example:** Smallest code that reproduces the issue
+* **Expected vs actual behavior:** Clear description of the problem
+
+=== Code of Conduct
+
+All support interactions must follow our Code of Conduct:
+
+* Be respectful and professional
+* Provide constructive feedback
+* Help others when possible
+* Avoid duplicate posts across channels
+* Use appropriate channels for different types of questions
+
+== Support Limitations
+
+=== Community Support Limitations
+
+* **No guarantees:** Best-effort basis only
+* **Volunteer time:** Contributors participate when available
+* **Scope boundaries:** Focus on Feel++ core functionality
+* **Language:** Primary support in English and French
+
+=== What We Cannot Support
+
+* **Deprecated versions:** Only current and previous major versions
+* **Modified code:** Significant changes to Feel++ source
+* **Third-party software:** Issues with external dependencies
+* **Hardware problems:** System-level configuration issues
+* **Legal advice:** Licensing questions beyond basic clarification
+
+== Support Escalation
+
+If you need additional help:
+
+1. **Start with community channels:** GitHub, Discussions, Slack
+2. **Provide detailed information:** Follow reporting guidelines
+3. **Be patient:** Allow time for community response
+4. **Consider commercial support:** For urgent or complex needs
+5. **Contact maintainers directly:** Only for security issues or abuse
+
+== Contributing to Support
+
+Help improve support for everyone:
+
+* **Answer questions:** Help other users in community channels
+* **Improve documentation:** Submit documentation improvements
+* **Report bugs clearly:** Follow issue templates
+* **Share solutions:** Post solutions to common problems
+* **Contribute code:** Fix issues and add features
+
+== Security Issues
+
+For security vulnerabilities:
+
+* **Do not use public channels:** Report privately first
+* **Email:** security@cemosis.fr
+* **Provide details:** Steps to reproduce, potential impact
+* **Responsible disclosure:** Allow time for patches before public disclosure
+
+== Feedback and Improvement
+
+Help us improve our support:
+
+* **Support survey:** Annual feedback collection
+* **Documentation feedback:** Report gaps or unclear sections
+* **Process suggestions:** Ideas for better support workflows
+* **Community input:** Participate in support policy discussions
+
+== Contact Information
+
+* **General questions:** https://github.com/orgs/feelpp/discussions
+* **Bug reports:** https://github.com/feelpp/feelpp/issues
+* **Academic collaboration:** research@cemosis.fr
+* **Commercial support:** consulting@cemosis.fr
+* **Security issues:** security@cemosis.fr
+
+---
+
+*Last updated: {docdate}*
+
+*This policy may be updated based on community needs and available resources.*

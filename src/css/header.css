@@ -53,6 +53,10 @@ body {
   max-height: 2em;
 }
 
+.unistra-logo {
+  max-height: 2em;
+}
+
 .navbar-brand .slack-logo {
   /* slightly smaller */
   max-height: 1.5em;

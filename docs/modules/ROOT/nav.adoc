@@ -1,5 +1,6 @@
 * xref:index.adoc[Overview]
 * xref:search-setup.adoc[Search Setup]
+* xref:policy-templates.adoc[Policy Templates]
 
 * UI Element Styles
 ** xref:style-guide.adoc[Style Guide]
@@ -37,3 +38,9 @@
 * Cards System
 ** xref:card-system.adoc[Card System Documentation]
 ** xref:catalogExample/catalog.adoc[Catalog Example]
+
+* Policies & Legal
+** xref:terms-of-use.adoc[Terms of Use]
+** xref:privacy-policy.adoc[Privacy Policy]
+** xref:cookie-policy.adoc[Cookie Policy]
+** xref:support-policy.adoc[Support Policy]
