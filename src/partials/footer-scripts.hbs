@@ -7,11 +7,12 @@
 <!-- Font Awesome JS removed to use webfont icons only -->
 <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
 
-{{#if env.ALGOLIA_API_KEY}}
-<script async id="search-script" src="{{{uiRootPath}}}/js/vendor/docsearch.js"
-  {{~#if env.ALGOLIA_APP_ID}} data-app-id="{{env.ALGOLIA_APP_ID}}" {{/if~}}
-  data-api-key="{{env.ALGOLIA_API_KEY}}" data-index-name="{{env.ALGOLIA_INDEX_NAME}}" data-stylesheet="{{{uiRootPath}}}/css/vendor/docsearch.css">
-</script>
+{{!-- Conditional search: Use Algolia DocSearch if site attributes are set --}}
+{{#if site.keys.docsearch-api-key}}
+<script id="search-script" src="{{{uiRootPath}}}/js/vendor/docsearch.bundle.js" data-stylesheet="{{{uiRootPath}}}/css/docsearch.css" data-app-id="{{site.keys.docsearch-app-id}}" data-api-key="{{site.keys.docsearch-api-key}}" data-index-name="{{site.keys.docsearch-index-name}}"></script>
+{{else}}
+{{!-- Default to Lunr.js client-side search --}}
+<script src="{{{uiRootPath}}}/js/vendor/lunr.js"></script>
 {{/if}}
 
 <script type="text/javascript">

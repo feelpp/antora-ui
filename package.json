@@ -54,6 +54,8 @@
     "highlight.js": "11.11.1",
     "http-server": "^14.1.1",
     "js-yaml": "~3.13",
+    "jsdom": "~20.0.3",
+    "lunr": "~2.3.9",
     "merge-stream": "~2.0",
     "postcss-calc": "~7.0",
     "postcss-custom-properties": "~9.1",
@@ -77,9 +79,14 @@
     "lint:css": "stylelint \"src/css/**/*.css\"",
     "lint:js": "eslint gulpfile.js \"gulp.d/**/*.js\" \"src/{helpers,js}/**/*.js\"",
     "build": "npm run generate-fontawesome-icon-defs && gulp bundle",
+    "build:ui": "npm run generate-fontawesome-icon-defs && gulp bundle",
+    "build:site": "npx antora site.yml --stacktrace",
+    "build:search": "node tasks/generate-search-index.js",
+    "build:full": "npm run build:ui && npm run build:site && npm run build:search",
     "antora": "npx antora site.yml --stacktrace",
     "serve": "http-server build/site -d -i",
-    "generate-fontawesome-icon-defs": "node tasks/generate-fontawesome-icon-defs.js"
+    "generate-fontawesome-icon-defs": "node tasks/generate-fontawesome-icon-defs.js",
+    "generate-search-index": "node tasks/generate-search-index.js"
   },
   "dependencies": {
     "@antora/cli": "^3.1.12",

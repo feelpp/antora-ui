@@ -30,6 +30,7 @@ asciidoc:
     allow-uri-read: true
     hide-uri-scheme: true
     feelpp: Feel++
+    feelpp-version: 0.113.0
     angiotk: AngioTK
     4fastsim: 4FastSim
     stem: latexmath
@@ -38,5 +39,6 @@ asciidoc:
     swimmer: Swimmer
     python: Python
     cpp: C++
+    repository-url: https://github.com/feelpp/antora-ui
   extensions:
     - '@feelpp/asciidoctor-extensions'

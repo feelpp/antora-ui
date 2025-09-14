@@ -1,4 +1,5 @@
 * xref:index.adoc[Overview]
+* xref:search-setup.adoc[Search Setup]
 
 * UI Element Styles
 ** xref:style-guide.adoc[Style Guide]
