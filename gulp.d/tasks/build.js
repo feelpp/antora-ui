@@ -104,7 +104,7 @@ module.exports = (src, dest, preview) => () => {
     // NOTE use the next line to bundle a JavaScript library that cannot be browserified, like jQuery
     //vfs.src(require.resolve('<package-name-or-require-path>'), opts).pipe(concat('js/vendor/<library-name>.js')),
     //vfs.src(require.resolve('jquery/dist/jquery.min.js'), opts).pipe(concat('js/vendor/jquery.js')),
-    // Bundle Lunr.js for client-side search
+    // Bundle Lunr.js for client-side search (used by @feelpp/antora-extensions)
     vfs.src(require.resolve('lunr/lunr.min.js'), opts).pipe(concat('js/vendor/lunr.js')),
     vfs
       .src(['css/site.css', 'css/vendor/*.css'], { ...opts, sourcemaps })

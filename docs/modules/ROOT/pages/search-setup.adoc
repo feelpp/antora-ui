@@ -3,6 +3,8 @@
 
 The Feel++ Antora UI provides two search options: **Lunr.js** for client-side search and **Algolia DocSearch** for server-based search. The UI automatically detects which search system to use based on your site configuration.
 
+Search functionality is now **fully automated** through the `@feelpp/antora-extensions` package, eliminating the need for manual search index generation.
+
 == Search Options Overview
 
 [cols="1,2,2"]
@@ -11,7 +13,7 @@ The Feel++ Antora UI provides two search options: **Lunr.js** for client-side se
 
 |**Lunr.js** (Default)
 |Small to medium sites, self-hosted sites, privacy-focused environments
-|None (client-side only)
+|@feelpp/antora-extensions package (automatic)
 
 |**Algolia DocSearch**
 |Large sites, sites with complex search requirements, existing Algolia integration
@@ -20,68 +22,115 @@ The Feel++ Antora UI provides two search options: **Lunr.js** for client-side se
 
 == Lunr.js Client-Side Search
 
-Lunr.js provides full-text search capabilities directly in the browser without requiring any external services.
+Lunr.js provides full-text search capabilities directly in the browser without requiring any external services. Search index generation is **completely automated** through the `@feelpp/antora-extensions` package.
 
 === Automatic Setup
 
-The UI includes Lunr.js search by default. When you build your site with the Feel++ Antora UI, search functionality is automatically available if:
+The UI includes Lunr.js search by default. When you build your site with the Feel++ Antora UI, search functionality is automatically available:
 
-1. No Algolia DocSearch configuration is detected
-2. A `search-index.json` file is generated during the build
+1. The `@feelpp/antora-extensions` package automatically generates `search-index.json` during site builds
+2. The UI bundle includes Lunr.js for client-side search functionality
+3. No manual configuration or build steps required
 
-=== Manual Setup for Custom Sites
+=== Quick Start for New Sites
 
-If you're setting up a new Antora site with Lunr.js search:
+To add search to a new Antora site:
 
-==== 1. Update package.json
+==== 1. Install the Extension
 
-Add the required dependencies to your UI bundle project:
+Add the Feel++ Antora extensions to your site configuration:
+
+[source,yaml]
+----
+# site.yml
+antora:
+  extensions:
+    - '@feelpp/antora-extensions'
+----
+
+==== 2. Update package.json
+
+Add the extension to your dependencies:
 
 [source,json]
 ----
 {
   "dependencies": {
-    "lunr": "^2.3.9",
-    "jsdom": "^20.0.3"
+    "@antora/cli": "^3.1.12",
+    "@antora/site-generator": "^3.1.12", 
+    "@feelpp/antora-extensions": "^1.0.0-rc.3"
   },
   "scripts": {
-    "build:ui": "npm run generate-fontawesome-icon-defs && gulp bundle",
-    "build:site": "npx antora site.yml --stacktrace", 
-    "build:search": "node tasks/generate-search-index.js",
-    "build:full": "npm run build:ui && npm run build:site && npm run build:search"
+    "build": "npx antora site.yml --stacktrace"
   }
 }
 ----
 
-==== 2. Search Index Generation
+==== 3. Build Your Site
 
-The search index is automatically generated from your built HTML files. The `generate-search-index.js` task:
-
-- Scans all HTML files in your build output
-- Extracts page titles, content, and URLs
-- Creates a `search-index.json` file in your site root
-- Indexes approximately 50-100 documents per MB
-
-==== 3. Build Commands
-
-Use these commands to build your site with search:
+Simply run your normal Antora build:
 
 [source,bash]
 ----
-# Build UI bundle only
-npm run build:ui
-
-# Build site with Antora
-npm run build:site
-
-# Generate search index from built HTML
-npm run build:search
-
-# Complete build (UI + site + search)
-npm run build:full
+# Single command builds everything including search index
+npm run build
 ----
 
-=== Features
+That's it! The search index is automatically generated during the build process.
+
+=== How It Works
+
+The `@feelpp/antora-extensions` package includes a Lunr extension that:
+
+* **Automatically generates search index**: During the `sitePublished` event, the extension scans all generated HTML files
+* **Extracts content intelligently**: Page titles, content, and URLs are extracted using JSDOM
+* **Creates optimized index**: Generates a compact `search-index.json` file in your site root
+* **Supports configuration**: Configurable content selectors and indexing options
+
+The extension runs seamlessly during your normal Antora build process - no additional commands needed.
+
+=== Configuration Options
+
+You can customize the search index generation by adding configuration to your `site.yml`:
+
+[source,yaml]
+----
+# site.yml
+antora:
+  extensions:
+    - require: '@feelpp/antora-extensions'
+      lunr_index_generation:
+        content_selector: 'article.doc .content'  # CSS selector for content
+        exclude_selectors:                        # Content to exclude
+          - '.navigation'
+          - '.page-toc'
+          - 'pre code'
+        boost_title: 10                          # Title importance multiplier
+----
+
+=== Advanced Configuration
+
+For advanced use cases, you can configure multiple content areas or custom extraction logic:
+
+[source,yaml]
+----
+# site.yml  
+antora:
+  extensions:
+    - require: '@feelpp/antora-extensions'
+      lunr_index_generation:
+        content_selectors:
+          - selector: 'h1, h2, h3'
+            boost: 5
+          - selector: '.content p'
+            boost: 1
+          - selector: '.sidebar'
+            boost: 0.5
+        min_content_length: 10        # Minimum content length to index
+        max_content_length: 1000      # Maximum content length per document
+----
+
+=== Search UI Features
 
 The Lunr.js implementation provides:
 
@@ -149,7 +198,7 @@ asciidoc:
 The UI uses this detection logic:
 
 1. **Check for Algolia**: If DocSearch configuration exists, use Algolia
-2. **Check for Lunr Index**: If `search-index.json` exists, use Lunr.js
+2. **Check for Lunr Index**: If `search-index.json` exists, use Lunr.js (automatically generated by @feelpp/antora-extensions)
 3. **Fallback**: Show "Search not available" message
 
 === Search Input
@@ -174,19 +223,25 @@ The search interface is styled consistently regardless of the backend:
 === Lunr.js Issues
 
 **Search index not loading**::
-- Verify `search-index.json` exists in your site root
+- Verify `@feelpp/antora-extensions` is installed and configured in `site.yml`
+- Check that the extension is running during the build process
+- Ensure the generated `search-index.json` is accessible via HTTP(S)
 - Check browser console for loading errors
-- Ensure the file is accessible via HTTP(S)
 
 **No search results**::
-- Verify the search index contains documents
-- Check that page content is being extracted properly
-- Try rebuilding the search index
+- Verify the search index contains documents by checking `/search-index.json` in your browser
+- Check that page content is being extracted properly (review content selectors)
+- Try rebuilding the site completely
 
 **Performance issues**::
 - Large search indexes (>1MB) may cause slow loading
-- Consider excluding certain content types from indexing
-- Use pagination for large result sets
+- Use `exclude_selectors` to remove unnecessary content from indexing
+- Consider using `max_content_length` to limit document size
+
+**Extension not running**::
+- Verify `@feelpp/antora-extensions` is listed in your `site.yml` extensions
+- Check the terminal output during build for extension loading messages
+- Ensure you're using a compatible Antora version (3.1+)
 
 === Algolia DocSearch Issues
 
@@ -207,17 +262,21 @@ For local development with search:
 
 [source,bash]
 ----
+# Build site with automatic search index generation
+npm run build
+
 # Start development server
-npm run build:full
 cd build/site
 python3 -m http.server 8080
 
 # Open browser to http://localhost:8080
 ----
 
+The search index is automatically generated during the build process, so there's no need for separate search generation commands.
+
 === Search Index Structure
 
-The Lunr.js search index has this structure:
+The automatically generated Lunr.js search index has this structure:
 
 [source,json]
 ----
@@ -235,20 +294,41 @@ The Lunr.js search index has this structure:
 
 === Customization
 
-To customize search behavior, modify:
+To customize search behavior:
 
-* `src/js/07-search.js` - Search logic and UI behavior
-* `src/css/lunr-search.css` - Search styling and responsive design
-* `tasks/generate-search-index.js` - Search index generation
+* **Extension configuration**: Modify search index generation in `site.yml`
+* **UI behavior**: Edit `src/js/07-search.js` for search logic and UI behavior
+* **Styling**: Modify `src/css/lunr-search.css` for search styling and responsive design
+* **Content extraction**: Use extension configuration options rather than modifying generation scripts
 
-== Migration from Algolia to Lunr.js
+== Migration from Manual to Automated Search
 
-If migrating from Algolia DocSearch to Lunr.js:
+If migrating from the old manual search setup to `@feelpp/antora-extensions`:
 
-1. Remove Algolia configuration from your site
-2. Ensure the UI bundle includes Lunr.js dependencies
-3. Run `npm run build:full` to generate the search index
-4. Test search functionality thoroughly
-5. Update any custom search-related code
+=== From Manual Lunr.js Setup
+
+1. **Remove manual dependencies**: Remove `lunr` and `jsdom` from devDependencies
+2. **Remove manual scripts**: Delete `build:search` and `generate-search-index.js` 
+3. **Add extension**: Install and configure `@feelpp/antora-extensions`
+4. **Update build process**: Use single `npm run build` command instead of `build:full`
+5. **Clean up**: Remove old search generation files and scripts
+
+=== From Algolia to Lunr.js
+
+If migrating from Algolia DocSearch to automated Lunr.js:
+
+1. **Remove Algolia configuration** from your site
+2. **Add @feelpp/antora-extensions** to your `site.yml`
+3. **Install the extension** via npm
+4. **Run your normal build** - search index will be generated automatically
+5. **Test search functionality** thoroughly
 
 The transition should be seamless as both systems use the same search input element and similar styling.
+
+=== Benefits of Automated Approach
+
+* **Zero maintenance**: No manual scripts to maintain or copy between projects
+* **Consistent behavior**: Same search functionality across all Feel++ documentation sites  
+* **Automatic updates**: Extension updates provide improvements and bug fixes
+* **Simplified builds**: Single command builds everything including search
+* **Better performance**: Optimized index generation and content extraction
