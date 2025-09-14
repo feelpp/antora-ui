@@ -8,12 +8,11 @@
 .docs-cards-layout .manuals,
 .docs-cards-layout .catalogs,
 .docs-cards-layout .reports {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
   margin-top: 5em;
   margin-bottom: 5em;
-  gap: 1.5rem;
 }
 
 /* Mobile-specific adjustments for card containers */
@@ -28,6 +27,7 @@
   .docs-cards-layout .manuals,
   .docs-cards-layout .catalogs,
   .docs-cards-layout .reports {
+    grid-template-columns: 1fr; /* Single column on mobile */
     margin-top: 2em;
     margin-bottom: 2em;
     gap: 1rem;
@@ -43,38 +43,20 @@
 .docs-cards-layout .benchmarks .benchmark,
 .docs-cards-layout .toolboxes .toolbox,
 .docs-cards-layout .manuals .manual,
+.docs-cards-layout .manuals > *,
+.docs-cards-layout .manuals > * > *,
 .docs-cards-layout .catalogs .catalog,
+.docs-cards-layout .catalogs > *,
+.docs-cards-layout .catalogs > * > *,
 .docs-cards-layout .reports .report {
-  /* make each item a flex child with a stable basis so the row wraps into 3 columns
-     Use box-sizing so padding doesn't break sizing. Use flex on the item so the
-     inner .page-card can be given an aspect-ratio (square) without breaking layout. */
-  box-sizing: border-box;
+  /* Consistent card sizing - let grid handle the columns automatically */
   display: flex;
   align-items: stretch;
-  /* Default: 3 columns for large screens */
-  flex: 0 0 calc(33.333% - 1rem);
-  max-width: calc(33.333% - 1rem);
-  /* allow a reasonable max width but don't force a small max that can break layout */
+  /* Grid will handle the sizing automatically based on available space */
 }
 
 /* Media query for small screens (Mobile: Single column) */
 @media (max-width: 767px) {
-  .docs-cards-layout .cases .case,
-  .docs-cards-layout .examples .example,
-  .docs-cards-layout .applications .application,
-  .docs-cards-layout .machines .machine,
-  .docs-cards-layout .usecases .usecase,
-  .docs-cards-layout .benchmarks .benchmark,
-  .docs-cards-layout .toolboxes .toolbox,
-  .docs-cards-layout .manuals .manual,
-  .docs-cards-layout .catalogs .catalog,
-  .docs-cards-layout .reports .report {
-    /* on small screens: single column layout */
-    flex: 1 1 100%;
-    max-width: 100%;
-    margin-bottom: 1rem;
-  }
-
   /* On small screens remove the forced square aspect so cards can size naturally. */
   .docs-cards-layout .page-card {
     /* stylelint-disable property-no-unknown */
@@ -85,92 +67,7 @@
   }
 }
 
-/* Media query for tablet screens (768px - 1024px): 2 columns */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .docs-cards-layout .cases .case,
-  .docs-cards-layout .examples .example,
-  .docs-cards-layout .applications .application,
-  .docs-cards-layout .machines .machine,
-  .docs-cards-layout .usecases .usecase,
-  .docs-cards-layout .benchmarks .benchmark,
-  .docs-cards-layout .toolboxes .toolbox,
-  .docs-cards-layout .manuals .manual,
-  .docs-cards-layout .catalogs .catalog,
-  .docs-cards-layout .reports .report {
-    /* 2 columns on tablets */
-    flex: 0 0 calc(50% - 0.75rem);
-    max-width: calc(50% - 0.75rem);
-  }
-
-  .docs-cards-layout .page-card {
-    min-height: 280px; /* Medium height for tablets */
-  }
-
-  .docs-cards-layout .page-card-illustration i.fas,
-  .docs-cards-layout .page-card-illustration i.fa-solid,
-  .docs-cards-layout .page-card-illustration i.fab,
-  .docs-cards-layout .page-card-illustration i.fa-brands,
-  .docs-cards-layout .page-card-illustration i.far,
-  .docs-cards-layout .page-card-illustration i.fa-regular {
-    font-size: 80px; /* Medium icon size for tablets */
-  }
-}
-
-/* Media query for large screens (1025px - 1399px): 3 columns */
-@media (min-width: 1025px) and (max-width: 1399px) {
-  .docs-cards-layout .cases .case,
-  .docs-cards-layout .examples .example,
-  .docs-cards-layout .applications .application,
-  .docs-cards-layout .machines .machine,
-  .docs-cards-layout .usecases .usecase,
-  .docs-cards-layout .benchmarks .benchmark,
-  .docs-cards-layout .toolboxes .toolbox,
-  .docs-cards-layout .manuals .manual,
-  .docs-cards-layout .catalogs .catalog,
-  .docs-cards-layout .reports .report {
-    /* 3 columns on large screens */
-    flex: 0 0 calc(33.333% - 1rem);
-    min-width: 250px;
-    max-width: calc(33.333% - 1rem);
-  }
-
-  /* Ensure cards have consistent height on larger screens */
-  .docs-cards-layout .page-card {
-    min-height: 320px;
-  }
-}
-
-/* Media query for extra large screens (1400px+): 4 columns */
-@media (min-width: 1400px) {
-  .docs-cards-layout .cases .case,
-  .docs-cards-layout .examples .example,
-  .docs-cards-layout .applications .application,
-  .docs-cards-layout .machines .machine,
-  .docs-cards-layout .usecases .usecase,
-  .docs-cards-layout .benchmarks .benchmark,
-  .docs-cards-layout .toolboxes .toolbox,
-  .docs-cards-layout .manuals .manual,
-  .docs-cards-layout .catalogs .catalog,
-  .docs-cards-layout .reports .report {
-    /* 4 columns on extra large screens */
-    flex: 0 0 calc(25% - 1.125rem);
-    min-width: 280px;
-    max-width: calc(25% - 1.125rem);
-  }
-
-  .docs-cards-layout .page-card {
-    min-height: 340px; /* Slightly taller for better proportions with 4 columns */
-  }
-
-  .docs-cards-layout .page-card-illustration i.fas,
-  .docs-cards-layout .page-card-illustration i.fa-solid,
-  .docs-cards-layout .page-card-illustration i.fab,
-  .docs-cards-layout .page-card-illustration i.fa-brands,
-  .docs-cards-layout .page-card-illustration i.far,
-  .docs-cards-layout .page-card-illustration i.fa-regular {
-    font-size: 110px; /* Slightly larger icons for extra large screens */
-  }
-}
+/* CSS Grid automatically handles responsive columns - no need for complex media queries */
 
 .docs-cards-layout .page-card:hover,
 .docs-cards-layout .page-card:focus {
