@@ -266,6 +266,61 @@
   border: 1px solid rgba(34, 108, 165, 0.08);
 }
 
+/* If a catalog card itself declares a category tag, override tint + badge */
+
+.docs-cards-layout .catalogs .catalog .page-card.benchmark {
+  background: #f2fff5;
+  border: 1px solid rgba(46, 125, 50, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.benchmark::before {
+  background: #2e7d32;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.example {
+  background: #f4e9fa;
+  border: 1px solid rgba(103, 58, 183, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.example::before {
+  background: #6a1b9a;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.application {
+  background: #e0f2f1;
+  border: 1px solid rgba(0, 105, 92, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.application::before {
+  background: #00695c;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.machine {
+  background: #eceff1;
+  border: 1px solid rgba(69, 90, 100, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.machine::before {
+  background: #455a64;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.usecase {
+  background: #efebe9;
+  border: 1px solid rgba(93, 64, 55, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.usecase::before {
+  background: #5d4037;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.report::before {
+  background: #a56c22;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.manual::before {
+  background: #2b6ea3;
+}
+
 .docs-cards-layout .reports .report .page-card {
   background: #fffaf6; /* subtle orange tint for reports */
   border: 1px solid rgba(165, 108, 34, 0.08);
