@@ -1,4 +1,4 @@
-/* global pseudocode */
+/* global pseudocode, MathJax */
 ;(function () {
   'use strict'
 
@@ -15,6 +15,11 @@
       pseudocodeElements.forEach((preElement) => {
         pseudocode.renderElement(preElement)
       })
+
+      // Re-process MathJax after pseudocode rendering
+      if (typeof MathJax !== 'undefined' && MathJax.Hub) {
+        MathJax.Hub.Queue(['Typeset', MathJax.Hub])
+      }
     }
   }
 })()
