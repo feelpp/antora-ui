@@ -165,6 +165,15 @@
 
 /* If a catalog card itself declares a category tag, override tint + badge */
 
+.docs-cards-layout .catalogs .catalog .page-card.case {
+  background: #fff8e1;
+  border: 1px solid rgba(255, 152, 0, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.case::before {
+  background: #ff8f00;
+}
+
 .docs-cards-layout .catalogs .catalog .page-card.benchmark {
   background: #f2fff5;
   border: 1px solid rgba(46, 125, 50, 0.12);
@@ -231,7 +240,8 @@
 .docs-cards-layout .benchmarks .benchmark .page-card::before,
 .docs-cards-layout .applications .application .page-card::before,
 .docs-cards-layout .machines .machine .page-card::before,
-.docs-cards-layout .usecases .usecase .page-card::before {
+.docs-cards-layout .usecases .usecase .page-card::before,
+.docs-cards-layout .cases .case .page-card::before {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -252,12 +262,18 @@
   .docs-cards-layout .benchmarks .benchmark .page-card::before,
   .docs-cards-layout .applications .application .page-card::before,
   .docs-cards-layout .machines .machine .page-card::before,
-  .docs-cards-layout .usecases .usecase .page-card::before {
+  .docs-cards-layout .usecases .usecase .page-card::before,
+  .docs-cards-layout .cases .case .page-card::before {
     top: 0.25rem;
     right: 0.25rem;
     padding: 0.1rem 0.4rem;
     font-size: 0.65rem; /* Smaller badge text on mobile */
   }
+}
+
+.docs-cards-layout .cases .case .page-card::before {
+  content: "Case";
+  background: #ff8f00; /* amber */
 }
 
 .docs-cards-layout .manuals .manual .page-card::before {
@@ -301,6 +317,11 @@
 }
 
 /* Subtle category tints */
+.docs-cards-layout .cases .case .page-card {
+  background: #fff8e1; /* soft amber */
+  border: 1px solid rgba(255, 152, 0, 0.12);
+}
+
 .docs-cards-layout .examples .example .page-card {
   background: #f4e9fa; /* soft purple */
   border: 1px solid rgba(103, 58, 183, 0.12);
