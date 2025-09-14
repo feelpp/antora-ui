@@ -6,13 +6,14 @@
     <title>Manuals and Catalogs Layout :: Feel++ Project</title>
     <link rel="canonical" href="https://feelpp.github.io/antora-ui/feelpp-antora-ui/manuals.html">
     <link rel="prev" href="page-layouts.html">
-    <link rel="next" href="card-system.html">
+    <link rel="next" href="layout-examples.html">
     <meta name="generator" content="Antora 3.1.12">
 <link rel="stylesheet" href="../_/css/site.css">
 
 <!-- Font Awesome webfont CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <link rel="stylesheet" href="../_/css/listing.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
 <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
@@ -144,15 +145,15 @@ MathJax.Hub.Config({
               <span class="icon"><img src="../_/img/octicons-16.svg#view-discussion-closed"></span>
               <span>Discussions</span>
             </a>
-            <a class="navbar-item has-icon" href="https://github.com/feelpp" target="_blank" rel="noopener">
+            <a class="navbar-item has-icon" href="https://github.com/feelpp/antora-ui" target="_blank" rel="noopener">
               <span class="icon"><img src="../_/img/octicons-16.svg#view-mark-github"></span>
               <span>Source</span>
             </a>
-            <a class="navbar-item has-icon" href="https://twitter.com/feelpp" target="_blank" rel="noopener">
-              <span class="icon"><img src="../_/img/octicons-16.svg#view-hash"></span>
-              <span>Tweets</span>
+            <a class="navbar-item has-icon" href="https://linkedin.com/company/feelpp" target="_blank" rel="noopener">
+              <span class="icon"><img src="../_/img/social-icon/LinkedIn_black.svg"></span>
+              <span>LinkedIn</span>
             </a>
-            <a class="navbar-item has-icon" href="https://github.com/feelpp/book.feelpp.org/issues/new">
+            <a class="navbar-item has-icon" href="https://github.com/feelpp/antora-ui/issues" target="_blank" rel="noopener">
               <span class="icon"><img src="../_/img/octicons-16.svg#view-bug"></span>
               <span>Issues</span>
             </a>
@@ -163,6 +164,16 @@ MathJax.Hub.Config({
         <div class="navbar-item">
           <a class="navbar-brand"  href="https://www.cemosis.fr">
             <img class="cemosis-logo"  src="../_/img/cemosis-logo.svg" alt="Cemosis logo"/>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a class="navbar-brand" href="https://www.cnrs.fr">
+            <img class="cnrs-logo" src="../_/img/logo-cnrs.svg" alt="CNRS logo"/>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a class="navbar-brand" href="https://www.unistra.fr">
+            <img class="unistra-logo" src="../_/img/unistra-logo.svg" alt="Université de Strasbourg logo"/>
           </a>
         </div>
       </div>
@@ -185,9 +196,18 @@ MathJax.Hub.Config({
     <a class="nav-link" href="index.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="search-setup.html">Search Setup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="policy-templates.html">Policy Templates</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="style-guide.html">UI Element Styles</a>
+    <span class="nav-text">UI Element Styles</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="style-guide.html">Style Guide</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="inline-text-styles.html">Inline Text</a>
   </li>
@@ -195,7 +215,7 @@ MathJax.Hub.Config({
     <a class="nav-link" href="admonition-styles.html">Admonitions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="dynamic-processor.html">Dynamic processor</a>
+    <a class="nav-link" href="dynamic-processor.html">Dynamic Processor</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="source-highlighting.html">Source Highlighting</a>
@@ -210,22 +230,100 @@ MathJax.Hub.Config({
     <a class="nav-link" href="lead.html">Lead Paragraphs</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="images.html">Image Styles &amp; UI Macros</a>
+    <a class="nav-link" href="images.html">Images &amp; Icons</a>
   </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Layout Helpers</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="grid.html">Layout Helpers (Grid)</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="page-layouts.html">Layout Helpers (Page Layouts)</a>
+    <a class="nav-link" href="page-layouts.html">Page Layouts Overview</a>
   </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Catalog Layouts (via Manuals)</span>
+<ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="manuals.html">Manuals</a>
+    <a class="nav-link" href="manuals.html">Manuals (Catalog Engine)</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="layout-examples.html">Examples Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="layout-benchmarks.html">Benchmarks Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="layout-reports.html">Reports Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="layout-applications.html">Applications Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="layout-machines.html">Machines Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="layout-usecases.html">Use Cases Catalog</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Page Types</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-example.html">Example Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-benchmark.html">Benchmark Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-report.html">Report Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-application.html">Application Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-machine.html">Machine Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-usecase.html">Use Case Page</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Cards System</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="card-system.html">Card System Documentation</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="catalogExample/catalog.html">Catalog Example</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Policies &amp; Legal</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="terms-of-use.html">Terms of Use</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="privacy-policy.html">Privacy Policy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cookie-policy.html">Cookie Policy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="support-policy.html">Support Policy</a>
   </li>
 </ul>
   </li>
@@ -255,19 +353,19 @@ MathJax.Hub.Config({
       <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Antora Feel++ UI</a></li>
-    <li><a href="style-guide.html">UI Element Styles</a></li>
-    <li><a href="manuals.html">Manuals</a></li>
+    <li>Catalog Layouts (via Manuals)</li>
+    <li><a href="manuals.html">Manuals (Catalog Engine)</a></li>
   </ul>
 </nav>
     </div>
 
     <div class="content">
       <article class="doc">
-<h1 class="page">Manuals and Catalogs Layout</h1>
-<div id="preamble">
+         <h1 class="page">Manuals and Catalogs Layout</h1> 
+        <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The manuals layout provides a powerful card-based system for organizing and displaying related content in catalogs. This layout is particularly useful for creating hierarchical documentation structures where parent pages act as catalogs displaying child pages as cards.</p>
+<p>The manuals layout provides a powerful card-based system for organizing and displaying related content in catalogs. This layout is the single, generic catalog engine used for all card catalogs (manuals, reports, examples, benchmarks, applications, machines, use cases, nested catalogs). Parent pages act as catalogs; child pages appear as cards.</p>
 </div>
 </div>
 </div>
@@ -286,22 +384,43 @@ MathJax.Hub.Config({
 </dd>
 <dt class="hdlist1">Flexible Tagging System</dt>
 <dd>
-<p>Uses <code>page-tags</code> and <code>page-cards-tag</code> attributes to control which pages appear in catalogs.</p>
+<p>Uses <code>page-tags</code> and <code>page-cards-tag</code> attributes to control which pages appear in catalogs. <code>page-cards-tag</code> accepts one or more tags.</p>
 </dd>
 <dt class="hdlist1">Hierarchical Organization</dt>
 <dd>
-<p>Implements parent-catalog relationships for nested content organization.</p>
+<p>Implements parent-catalog relationships for nested content organization. A catalog can list page types or other catalogs.</p>
 </dd>
 <dt class="hdlist1">Multi-Tag Support</dt>
 <dd>
-<p>Can group cards by different tags with optional group titles.</p>
+<p>Can group cards by different tags with optional group titles when multiple tags are listed in <code>page-cards-tag</code>.</p>
 </dd>
 </dl>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_page_attributes_for_manuals_layout"><a class="anchor" href="#_page_attributes_for_manuals_layout"></a>2. Page Attributes for Manuals Layout</h2>
+<h2 id="_unified_usage"><a class="anchor" href="#_unified_usage"></a>2. Unified Usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>manuals</code> layout for every catalog and control what appears with <code>:page-cards-tag:</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">// Parent (catalog) page
+:page-layout: manuals
+:page-cards-tag: example, benchmark, report   // one or more types
+:page-cards-within-module: true               // limit search to this module
+
+// Child (card) pages
+:page-tags: example                           // or benchmark/report/…
+:description: Short summary shown on the card
+:page-illustration: fa-solid fa-flask         // or image path</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_page_attributes_for_manuals_layout"><a class="anchor" href="#_page_attributes_for_manuals_layout"></a>3. Page Attributes for Manuals Layout</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Essential attributes for catalog pages:</p>
@@ -333,7 +452,7 @@ MathJax.Hub.Config({
 </div>
 </div>
 <div class="sect1">
-<h2 id="_attribute_reference"><a class="anchor" href="#_attribute_reference"></a>3. Attribute Reference</h2>
+<h2 id="_attribute_reference"><a class="anchor" href="#_attribute_reference"></a>4. Attribute Reference</h2>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
@@ -352,6 +471,10 @@ MathJax.Hub.Config({
 <dt class="hdlist1">page-cards-within-module</dt>
 <dd>
 <p><code>true</code> (default) searches within current module, <code>false</code> searches across all modules</p>
+</dd>
+<dt class="hdlist1">page-cards-across-components</dt>
+<dd>
+<p>Optional; when present and not <code>false</code>, searches across components (use when you want a site‑wide catalog)</p>
 </dd>
 <dt class="hdlist1">page-cards-title</dt>
 <dd>
@@ -374,7 +497,28 @@ MathJax.Hub.Config({
 </div>
 </div>
 <div class="sect1">
-<h2 id="_font_awesome_icons"><a class="anchor" href="#_font_awesome_icons"></a>4. Font Awesome Icons</h2>
+<h2 id="_categoryaware_styling"><a class="anchor" href="#_categoryaware_styling"></a>5. Category‑Aware Styling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cards are tinted and badged by type. On catalog pages that appear as cards (i.e., a catalog-of-X listed inside another catalog), you can add a secondary category tag to recolor the Catalog card automatically while keeping the badge label as "Catalog".</p>
+</div>
+<div class="paragraph">
+<p>Accepted type tags (singular or plural): <code>example</code>, <code>benchmark</code>, <code>report</code>, <code>manual</code>, <code>application</code>, <code>machine</code>, <code>usecase</code>, <code>catalog</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:page-layout: manuals
+:page-tags: catalog, benchmarks              // Catalog-of-benchmarks (tinted green)
+:page-cards-tag: benchmark</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The badge color and card tint follow the tag; the label remains "Catalog" to indicate the page is a catalog.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_font_awesome_icons"><a class="anchor" href="#_font_awesome_icons"></a>6. Font Awesome Icons</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The system automatically detects Font Awesome classes by looking for the <code>fa-</code> prefix:</p>
@@ -394,34 +538,74 @@ MathJax.Hub.Config({
 </div>
 </div>
 <div class="sect1">
-<h2 id="_examples"><a class="anchor" href="#_examples"></a>5. Examples</h2>
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>7. Examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See the <a href="catalogExample/catalog.html" class="xref page">catalog example</a> for a working demonstration of the manuals layout system.</p>
 </div>
 </div>
 </div>
-<nav class="pagination">
-  <span class="prev"><a href="page-layouts.html">Layout Helpers (Page Layouts)</a></span>
-  <span class="next"><a href="card-system.html">Card System Documentation</a></span>
-</nav>
-</article>
-    </div>
-
-    <div class="content">
-      <article class="doc">
-         <h1 class="page">Manuals and Catalogs Layout</h1> 
 
                     
                     
                       <div class="catalogs">
-                            <div class="catalog"><a class="page-card" href="page-layouts.html">
+                            <div class="catalog"><a class="page-card application" href="layout-applications.html">
   <div class="page-card-illustration">
-        <i class="fa-solid fa-th-large"></i>
+        <i class="fa-solid fa-diagram-project"></i>
   </div>
   <div class="page-card-body">
-    <h4>Page Layouts</h4>
-    <p class="page-card-description"></p>
+    <h4>Applications Catalog (via manuals)</h4>
+    <p class="page-card-description">How to list application pages as cards using the generic catalog layout</p>
+  </div>
+</a>
+</div>
+                            <div class="catalog"><a class="page-card benchmark" href="layout-benchmarks.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-gauge"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Benchmarks Catalog (via manuals)</h4>
+    <p class="page-card-description">How to list benchmark pages as cards using the generic catalog layout</p>
+  </div>
+</a>
+</div>
+                            <div class="catalog"><a class="page-card example" href="layout-examples.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-flask"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Examples Catalog (via manuals)</h4>
+    <p class="page-card-description">How to list example pages as cards using the generic catalog layout</p>
+  </div>
+</a>
+</div>
+                            <div class="catalog"><a class="page-card machine" href="layout-machines.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-microchip"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Machines Catalog (via manuals)</h4>
+    <p class="page-card-description">How to list machine pages as cards using the generic catalog layout</p>
+  </div>
+</a>
+</div>
+                            <div class="catalog"><a class="page-card report" href="layout-reports.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-chart-line"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Reports Catalog (via manuals)</h4>
+    <p class="page-card-description">How to list report pages as cards using the generic catalog layout</p>
+  </div>
+</a>
+</div>
+                            <div class="catalog"><a class="page-card usecase" href="layout-usecases.html">
+  <div class="page-card-illustration">
+        <i class="fa-solid fa-briefcase"></i>
+  </div>
+  <div class="page-card-body">
+    <h4>Use Cases Catalog (via manuals)</h4>
+    <p class="page-card-description">How to list use case pages as cards using the generic catalog layout</p>
   </div>
 </a>
 </div>
@@ -489,10 +673,10 @@ MathJax.Hub.Config({
           <span>© 2025 Cemosis, Université de Strasbourg</span>
       </div>
       <div class="footer-terms-links">
-        <a href="https://www.cemosis.fr/terms-of-use">Terms of Use</a>
-        <a href="https://www.cemosis.fr/privacy-policy">Privacy Policy</a>
-        <a href="https://www.cemosis.fr/cookie-policy">Cookie Policy</a>
-        <a href="https://www.cemosis.fr/support-policy">Support Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="support-policy.html">Support Policy</a>
       </div>
     </div>
   </div>
@@ -503,6 +687,7 @@ MathJax.Hub.Config({
 <!-- Font Awesome JS removed to use webfont icons only -->
 <script async src="../_/js/vendor/highlight.js"></script>
 
+<script src="../_/js/vendor/lunr.js"></script>
 
 <script type="text/javascript">
 function toggleFullScreen() {

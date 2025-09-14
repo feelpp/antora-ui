@@ -13,6 +13,7 @@
 <!-- Font Awesome webfont CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <link rel="stylesheet" href="../_/css/listing.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
 <script>!function(l,p){if(l.protocol!==p&&l.host=="docs.antora.org"){l.protocol=p}else if(/\.gitlab\.io$/.test(l.host)){l.replace(p+"//docs.antora.org"+l.pathname.substr(l.pathname.indexOf("/",1))+l.search+l.hash)}}(location,"https:")</script>
 
@@ -144,15 +145,15 @@ MathJax.Hub.Config({
               <span class="icon"><img src="../_/img/octicons-16.svg#view-discussion-closed"></span>
               <span>Discussions</span>
             </a>
-            <a class="navbar-item has-icon" href="https://github.com/feelpp" target="_blank" rel="noopener">
+            <a class="navbar-item has-icon" href="https://github.com/feelpp/antora-ui" target="_blank" rel="noopener">
               <span class="icon"><img src="../_/img/octicons-16.svg#view-mark-github"></span>
               <span>Source</span>
             </a>
-            <a class="navbar-item has-icon" href="https://twitter.com/feelpp" target="_blank" rel="noopener">
-              <span class="icon"><img src="../_/img/octicons-16.svg#view-hash"></span>
-              <span>Tweets</span>
+            <a class="navbar-item has-icon" href="https://linkedin.com/company/feelpp" target="_blank" rel="noopener">
+              <span class="icon"><img src="../_/img/social-icon/LinkedIn_black.svg"></span>
+              <span>LinkedIn</span>
             </a>
-            <a class="navbar-item has-icon" href="https://github.com/feelpp/book.feelpp.org/issues/new">
+            <a class="navbar-item has-icon" href="https://github.com/feelpp/antora-ui/issues" target="_blank" rel="noopener">
               <span class="icon"><img src="../_/img/octicons-16.svg#view-bug"></span>
               <span>Issues</span>
             </a>
@@ -163,6 +164,16 @@ MathJax.Hub.Config({
         <div class="navbar-item">
           <a class="navbar-brand"  href="https://www.cemosis.fr">
             <img class="cemosis-logo"  src="../_/img/cemosis-logo.svg" alt="Cemosis logo"/>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a class="navbar-brand" href="https://www.cnrs.fr">
+            <img class="cnrs-logo" src="../_/img/logo-cnrs.svg" alt="CNRS logo"/>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a class="navbar-brand" href="https://www.unistra.fr">
+            <img class="unistra-logo" src="../_/img/unistra-logo.svg" alt="Université de Strasbourg logo"/>
           </a>
         </div>
       </div>
@@ -184,9 +195,18 @@ MathJax.Hub.Config({
     <a class="nav-link" href="index.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="search-setup.html">Search Setup</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="policy-templates.html">Policy Templates</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="style-guide.html">UI Element Styles</a>
+    <span class="nav-text">UI Element Styles</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="style-guide.html">Style Guide</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="inline-text-styles.html">Inline Text</a>
   </li>
@@ -194,7 +214,7 @@ MathJax.Hub.Config({
     <a class="nav-link" href="admonition-styles.html">Admonitions</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="dynamic-processor.html">Dynamic processor</a>
+    <a class="nav-link" href="dynamic-processor.html">Dynamic Processor</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="source-highlighting.html">Source Highlighting</a>
@@ -209,22 +229,100 @@ MathJax.Hub.Config({
     <a class="nav-link" href="lead.html">Lead Paragraphs</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="images.html">Image Styles &amp; UI Macros</a>
+    <a class="nav-link" href="images.html">Images &amp; Icons</a>
   </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Layout Helpers</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="grid.html">Layout Helpers (Grid)</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="page-layouts.html">Layout Helpers (Page Layouts)</a>
+    <a class="nav-link" href="page-layouts.html">Page Layouts Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Catalog Layouts (via Manuals)</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manuals.html">Manuals (Catalog Engine)</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="manuals.html">Manuals</a>
+    <a class="nav-link" href="layout-examples.html">Examples Catalog</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="layout-benchmarks.html">Benchmarks Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="layout-reports.html">Reports Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="layout-applications.html">Applications Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="layout-machines.html">Machines Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="layout-usecases.html">Use Cases Catalog</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Page Types</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-example.html">Example Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-benchmark.html">Benchmark Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-report.html">Report Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-application.html">Application Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-machine.html">Machine Page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="page-usecase.html">Use Case Page</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Cards System</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="card-system.html">Card System Documentation</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="catalogExample/catalog.html">Catalog Example</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Policies &amp; Legal</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="terms-of-use.html">Terms of Use</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="privacy-policy.html">Privacy Policy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cookie-policy.html">Cookie Policy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="support-policy.html">Support Policy</a>
   </li>
 </ul>
   </li>
@@ -254,7 +352,7 @@ MathJax.Hub.Config({
   <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Antora Feel++ UI</a></li>
-    <li><a href="style-guide.html">UI Element Styles</a></li>
+    <li>UI Element Styles</li>
     <li><a href="admonition-styles.html">Admonitions</a></li>
   </ul>
 </nav>
@@ -722,7 +820,7 @@ By default, the block content is hidden. You can use the <code>%open</code> opti
 </div>
 <nav class="pagination">
   <span class="prev"><a href="inline-text-styles.html">Inline Text</a></span>
-  <span class="next"><a href="dynamic-processor.html">Dynamic processor</a></span>
+  <span class="next"><a href="dynamic-processor.html">Dynamic Processor</a></span>
 </nav>
 </article>
   </div>
@@ -786,10 +884,10 @@ By default, the block content is hidden. You can use the <code>%open</code> opti
           <span>© 2025 Cemosis, Université de Strasbourg</span>
       </div>
       <div class="footer-terms-links">
-        <a href="https://www.cemosis.fr/terms-of-use">Terms of Use</a>
-        <a href="https://www.cemosis.fr/privacy-policy">Privacy Policy</a>
-        <a href="https://www.cemosis.fr/cookie-policy">Cookie Policy</a>
-        <a href="https://www.cemosis.fr/support-policy">Support Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="support-policy.html">Support Policy</a>
       </div>
     </div>
   </div>
@@ -800,6 +898,7 @@ By default, the block content is hidden. You can use the <code>%open</code> opti
 <!-- Font Awesome JS removed to use webfont icons only -->
 <script async src="../_/js/vendor/highlight.js"></script>
 
+<script src="../_/js/vendor/lunr.js"></script>
 
 <script type="text/javascript">
 function toggleFullScreen() {

@@ -1,0 +1,346 @@
+{
+  "documents": [
+    {
+      "id": 1,
+      "title": "Page Not Found :: Feel++ Project",
+      "content": "Download as .pdf Page Not Found The page you’re looking for does not exist. It may have been moved. You can return to the start page, or follow one of the links in the navigation to the left. If you arrived on this page by clicking on a link, please notify the owner of the site that the link is broken. If you typed the URL of this page manually, please double check that you entered the address correctly.",
+      "url": "/404.html"
+    },
+    {
+      "id": 2,
+      "title": "Admonition Styles :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Admonition Styles An admonition, also known as a notice, helps draw attention to content with a special label or icon. 1. Admonition blocks An admonition block is a table. The table title element is specified by the block class: tip, note, important, warning, or caution. Here’s an AsciiDoc source example that produces an admonition with the table title warning: WARNING: Watch out! If font-based icons are enabled (icons=font), the table title text is replaced by the associated icon. <div class=\"admonitionblock warning\"> <table> <tr> <td class=\"icon\"> <i class=\"fa icon-warning\" title=\"Warning\"></i> </td> <td class=\"content\"> <div class=\"paragraph\"> <p>Watch out!</p> </div> </td> </tr> </table> </div> Here’s how it might appear when the title is displayed as text: Watch out! 2. Mathematical blocks When writing mathematical documents you can use the following style labels: Problem statement prob Exercise exer Example examp Lemma lem Definition def Proof proo",
+      "url": "/feelpp-antora-ui/admonition-styles.html"
+    },
+    {
+      "id": 3,
+      "title": "Admonitions :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Admonitions On this page, you’ll learn: How to mark up an admonition with AsciiDoc. How to create an admonition with complex content. 1. Admonition styles An admonition, also known as a notice, helps draw attention to content with a special label or icon. There are five built-in admonition labels. NOTE TIP IMPORTANT CAUTION WARNING 2. Basic admonition If the admonition content is not interrupted by blank lines, start the first line with a style label. The label must be all uppercase and followed by a colon (:) and a single blank space. Basic admonition syntax CAUTION: Don't stick forks in electric sockets. TIP: After someone sticks a fork in a socket, you'll need to reset the circuit in the dark basement. WARNING: Never go into the basement. IMPORTANT: A monster lives in the basement. NOTE: If you go into the basement, see if you can find Kenny's parka. The result of Basic admonition syntax is displayed below. Don’t stick forks in electric sockets. After",
+      "url": "/feelpp-antora-ui/asciidoc/admonitions.html"
+    },
+    {
+      "id": 4,
+      "title": "Bold :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Bold On this page, you’ll learn: How to make text bold in AsciiDoc. Where to modify your site’s bold text styling. Text that is marked up as bold will stand out against the regular, surrounding text due to the application of a thicker or darker font. Bold is useful when the text needs to catch the attention of a site visitor quickly scanning a page. 1. Bold syntax A word or phrase is marked as bold when it’s enclosed in a single set of asterisks (e.g., *word*) (constrained formatting). Bounded characters are marked as bold when they’re enclosed in a set of double asterisks (e.g., char**act**ers) (unconstrained formatting). Bounded characters are characters that are: directly preceded by a non-whitespace character, or directly followed by a non-whitespace character. You don’t need to use double asterisks when an entire word or phrase marked as bold is directly followed by a common punctuation mark, such as ;, \", and !. Bold inline formatting A bold *word*",
+      "url": "/feelpp-antora-ui/asciidoc/bold.html"
+    },
+    {
+      "id": 5,
+      "title": "Example Blocks :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Example Blocks On this page, you’ll learn: How to mark up an example with AsciiDoc. 1. Example syntax An example paragraph or delimited block is useful for visually delineating content that illustrates a concept or showing the result of an operation. An example can contain any type of content and AsciiDoc syntax. Normal substitutions are applied to example content. 1.1. Example paragraph If the example content is contiguous, i.e., not interrupted by blank lines, the block name example can be placed directly on top of the text in an attribute list ([]). Example paragraph syntax .Optional title [example] This is an example paragraph. Here’s the result of Example paragraph syntax. Example 1. Optional title This is an example paragraph. 1.2. Delimited example block If the example content contains elements separated by blank lines, place the content between delimiter lines consisting of four equals signs (====). You don’t need to set the block name when you u",
+      "url": "/feelpp-antora-ui/asciidoc/examples.html"
+    },
+    {
+      "id": 6,
+      "title": "Highlight :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Highlight On this page, you’ll learn: How to highlight text with AsciiDoc. Where to modify your site’s highlighting styles. 1. Highlight syntax To highlight (or mark) a word or phrase, place a hash (#) at the beginning and end of the text you wish to format (constrained formatting). To highlight one or more characters bounded by other characters, place two hashes (##) before and after the characters (unconstrained formatting). Highlight inline formatting Let's #highlight this phrase# and the i and s in th##is##. The result of Highlight inline formatting is displayed below. Let’s highlight this phrase and the i and the s in this. 2. Site styles How highlighted text appears on your site depends on the CSS styles applied to the <mark> HTML tag. You can learn more about customizing how highlighted text appears in your site in the UI documentation. AsciiDoc and Asciidoctor resources Highlighted text formatting Formatting marks and pairs Constrained versus unc",
+      "url": "/feelpp-antora-ui/asciidoc/highlight.html"
+    },
+    {
+      "id": 7,
+      "title": "Italic :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Italic On this page, you’ll learn: How to italicize text in AsciiDoc. Where to modify your site’s italic text styling. Text is often italicized in order to stress a word or phrase, quote a speaker, or introduce a term. Italic type slants slightly to the right, and depending on the font, may have cursive swashes and flourishes. 1. Italic syntax A word or phrase is marked as italic when it is enclosed in a single set of underscores (_word_) (constrained formatting). Bounded characters are marked as italic when they’re enclosed in a set of double underscores (char__act__ers) (unconstrained formatting). Bounded characters are characters that are: directly preceded by a non-whitespace character, or directly followed by a non-whitespace character. You don’t need to use double underscores when an entire word or phrase marked as italic is directly followed by a common punctuation mark, such as ;, \", and !. Italic inline formatting An italic _word_, and an italic",
+      "url": "/feelpp-antora-ui/asciidoc/italic.html"
+    },
+    {
+      "id": 8,
+      "title": "Monospace :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Monospace On this page, you’ll learn: How to apply monospace formatting to inline text in AsciiDoc. Where to modify your site’s inline monospace text styling. Technical content often requires text to be styled in a way that indicates it is a command or source code. Such text is usually emphasized using a fixed-width, i.e., monospace, font. 1. Inline monospace syntax A word or phrase is marked as monospace when it is enclosed in a single set of backticks (`word`) (constrained formatting). Bounded characters are marked as monospace when they’re enclosed in a set of double backticks (char``act``ers) (unconstrained formatting). Bounded characters are characters that are: directly preceded by a non-whitespace character, or directly followed by a non-whitespace character. You don’t need to use double backticks when an entire word or phrase marked as monospace is directly followed by a common punctuation mark, such as ;, \", and !. Monospace inline formatting A ",
+      "url": "/feelpp-antora-ui/asciidoc/monospace.html"
+    },
+    {
+      "id": 9,
+      "title": "Card System Documentation :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Card System Documentation The Feel++ Antora UI features a sophisticated card-based navigation system that automatically generates visual cards for related content based on page attributes and tagging. 1. System Overview The card system consists of several key components: Page Card Partial Renders individual cards with illustrations, titles, and descriptions Get Page Cards Helper JavaScript helper that finds and filters pages for card display Manuals Layout Handlebars layout that orchestrates card rendering CSS Styling Responsive card layouts with hover effects and proper spacing 2. Card Generation Process Page Discovery: The system searches for pages based on parent-catalogs and page-tags attributes Filtering: Pages are filtered by the page-cards-tag criteria Illustration Processing: Font Awesome icons are detected and processed differently from images Card Rendering: Each page is rendered as a card with title, description, and illustration Layout Applic",
+      "url": "/feelpp-antora-ui/card-system.html"
+    },
+    {
+      "id": 10,
+      "title": "Untitled :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf 1. Catalog Application Page Application content example.",
+      "url": "/feelpp-antora-ui/catalogExample/application.html"
+    },
+    {
+      "id": 11,
+      "title": "Untitled :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf 1. Catalog Benchmark Page Benchmark content example.",
+      "url": "/feelpp-antora-ui/catalogExample/benchmark.html"
+    },
+    {
+      "id": 12,
+      "title": "Heat Transfer Case Study :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Heat Transfer Case Study This is an example case study page that demonstrates the case category functionality. 1. Overview This case study focuses on solving heat transfer problems using Feel++ libraries. 2. Problem Description The problem involves: - 2D heat conduction - Dirichlet boundary conditions - Material properties variation 3. Solution Method We use finite element methods to solve the heat equation. 4. Results The simulation produces temperature distributions across the domain.",
+      "url": "/feelpp-antora-ui/catalogExample/case-example.html"
+    },
+    {
+      "id": 13,
+      "title": "Catalog Example :: Feel++ Project",
+      "content": "Catalog Example This page demonstrates the manuals layout functioning as a catalog. It automatically displays cards for all pages that have this page listed in their parent-catalogs attribute. 1. How It Works The catalog layout uses the following mechanism: This page has page-layout: manuals and page-tags: catalog-example,catalog Child pages reference this catalog with parent-catalogs: catalog-example The layout automatically finds and displays matching pages as cards Cards show the page title, description, and illustration (Font Awesome icon or image) 2. Card Generation Cards are generated for pages with: - parent-catalogs: catalog-example (matching this page’s primary tag) - Appropriate page-tags that match the page-cards-tag criteria - Valid description and page-illustration attributes for display 3. Visual Features Font Awesome Icons Pages can use Font Awesome classes like fa-solid fa-gear for illustrations Image Support Traditional images are also supported using standard Antora i",
+      "url": "/feelpp-antora-ui/catalogExample/catalog.html"
+    },
+    {
+      "id": 14,
+      "title": "Untitled :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf 1. Catalog Example Page This is a minimal example page that appears as a card in the catalog example.",
+      "url": "/feelpp-antora-ui/catalogExample/example.html"
+    },
+    {
+      "id": 15,
+      "title": "Manual B: Image Example :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Manual B: Image Example This manual demonstrates how traditional images are rendered in page cards when not using Font Awesome icons. 1. Image Handling When the page illustration doesn’t contain fa-, the system treats it as an image path: :page-illustration: ROOT:A.png This renders as: <img alt=\"\" src=\"path/to/image.png\"/> 2. Image vs Font Awesome The page-card partial automatically detects the content type: Font Awesome Detection Uses regexMatch \"fa-\" to detect Font Awesome classes Image Fallback Any non-FA content is treated as an image reference Antora Resolution Images are resolved using Antora’s resolveResourceURL helper 3. Best Practices Font Awesome Icons Use for consistent, scalable iconography across the documentation Custom Images Use for specific illustrations, logos, or complex graphics Accessibility Both approaches support proper alt text and semantic markup",
+      "url": "/feelpp-antora-ui/catalogExample/itemA.html"
+    },
+    {
+      "id": 16,
+      "title": "Manual C: Advanced Features :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Manual C: Advanced Features This manual showcases advanced features of the catalog system including tag-based organization and card grouping. 1. Multi-Tag Support The catalog system supports multiple organizational approaches: Single Tag Filtering Filter cards by a single tag (e.g., manual) Multi-Tag Grouping Group cards by different tags with optional group titles Cross-Module Search Search for cards across different Antora modules 2. Tag-Based Organization This page demonstrates the use of multiple tags: :page-tags: manual, example-content, advanced Tags serve different purposes: manual Primary content type classification example-content Content category for this demonstration advanced Feature level indicator 3. Card Grouping The catalog layout can group cards by tags and display group titles using the page-cards-<tag>-title attribute pattern on the parent catalog page. 4. Module Scope Control The page-cards-within-module attribute controls search scop",
+      "url": "/feelpp-antora-ui/catalogExample/itemB.html"
+    },
+    {
+      "id": 17,
+      "title": "Item C :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Item C This is a leaf item, shared between the Item B and the catalog base. Note that this page appears twice, without duplicating the content. To replicate this page structure: Base page :page-layout: toolboxes :page-tags: catalog, catalog-base Item B :page-layout: toolboxes :page-tags: catalog, itemB :parent-catalogs: catalog-base Item C :page-tags: catalog, itemC :parent-catalogs: catalog-base, itemB",
+      "url": "/feelpp-antora-ui/catalogExample/itemC.html"
+    },
+    {
+      "id": 18,
+      "title": "Untitled :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf 1. Catalog Machine Page Machine content example.",
+      "url": "/feelpp-antora-ui/catalogExample/machine.html"
+    },
+    {
+      "id": 19,
+      "title": "Manual A: Font Awesome Example :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Manual A: Font Awesome Example This manual demonstrates how Font Awesome icons are automatically detected and rendered in page cards. 1. Font Awesome Integration The page illustration fa-solid fa-cog is automatically detected by the regexMatch \"fa-\" helper in the page-card partial and rendered as: <i class=\"fa-solid fa-cog\"></i> 2. Card Attributes This page uses the following attributes for card generation: page-tags manual, example-content - Identifies this as manual content parent-catalogs catalog-example - Links this page to the catalog description Brief text shown on the card preview page-illustration fa-solid fa-cog - Font Awesome icon for the card 3. Content Organization Pages with parent-catalogs: catalog-example automatically appear as cards on the catalog page. The catalog layout handles: Automatic card generation Icon/image rendering Responsive card layout Interactive hover effects",
+      "url": "/feelpp-antora-ui/catalogExample/manualA.html"
+    },
+    {
+      "id": 20,
+      "title": "Untitled :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf 1. Catalog Report Page Report content example.",
+      "url": "/feelpp-antora-ui/catalogExample/report.html"
+    },
+    {
+      "id": 21,
+      "title": "Subitem A-1 :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Subitem A-1 1. Leaf Item This is a leaf item of the catalog. It is a children from Item A, which is a children from the catalog base. To replicate this page structure: Base page :page-layout: toolboxes :page-tags: catalog, catalog-base Item A :page-layout: toolboxes :page-tags: catalog, itemA :parent-catalogs: catalog-base Subitem A-1 :page-tags: catalog, subitemA-1 :parent-catalogs: itemA",
+      "url": "/feelpp-antora-ui/catalogExample/subitemA1.html"
+    },
+    {
+      "id": 22,
+      "title": "Subitem A-2 :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Subitem A-2 1. Leaf Item This is a leaf item of the catalog. It is a children from Item A, which is a children from the catalog base. To replicate this page structure: Base page :page-layout: toolboxes :page-tags: catalog, catalog-base Item A :page-layout: toolboxes :page-tags: catalog, itemA :parent-catalogs: catalog-base Subitem A-2 :page-tags: catalog, subitemA-2 :parent-catalogs: itemA",
+      "url": "/feelpp-antora-ui/catalogExample/subitemA2.html"
+    },
+    {
+      "id": 23,
+      "title": "Untitled :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf 1. Catalog Use Case Page Use case content example.",
+      "url": "/feelpp-antora-ui/catalogExample/usecase.html"
+    },
+    {
+      "id": 24,
+      "title": "Cookie Policy :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Cookie Policy This cookie policy explains how we use cookies and similar technologies on Feel++ websites and documentation. 1. What Are Cookies Cookies are small text files that are placed on your device when you visit a website. They help websites remember your preferences and improve your browsing experience. 2. Types of Cookies We Use 2.1. Essential Cookies These cookies are necessary for the website to function properly: Cookie Name Purpose Duration Type session_id Maintain user session Session Essential csrf_token Security protection Session Essential ui_preferences Remember UI settings 1 year Functional 2.2. Analytics Cookies We use analytics cookies to understand how visitors use our websites: Cookie Name Purpose Duration Type _ga Google Analytics - distinguish users 2 years Analytics ga* Google Analytics - session information 2 years Analytics _gid Google Analytics - distinguish users 24 hours Analytics _gat Google Analytics - throttle requests 1",
+      "url": "/feelpp-antora-ui/cookie-policy.html"
+    },
+    {
+      "id": 25,
+      "title": "Copy to Clipboard :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Copy to Clipboard This page describes the copy to clipboard feature added to source blocks when using the default UI. 1. Source blocks The default UI provides JavaScript that adds a clipboard button to all source blocks. The clipboard button shows up next to the language label when the mouse is hovered over the block. When the user clicks the clipboard button, the contents of the source block will be copied to the user’s clipboard. You can try this behavior below: puts 'Take me to your clipboard!' Copy to clipboard only works for a local site or if the site is hosted over https (SSL). The copy to clipboard does not work on an insecure site (http) since the clipboard API is not available in that environment. In that case, the behavior gracefully degrades so the user will not see the clipboard button or an error. 2. Console blocks The default UI also adds a clipboard button to all console blocks. A console block is either a literal paragraph that begins wi",
+      "url": "/feelpp-antora-ui/copy-to-clipboard.html"
+    },
+    {
+      "id": 26,
+      "title": "Dynamic processor :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Dynamic processor This extension allows you to compile and run code snippets in different languages (C and C++ at this time), and with different compilers. 1. Usage We present the different options that you can use with the dynamic processor. %dynamic: The block should start with the %dynamic directive, so that the processor can identify it. language: The programming language of the code block. It is usefull on the one hand because it allows the processor to display correctly the code block, and on the other hand because it allows the processor to know which compiler to use. filename: The name of the file where the code block will be saved. If the file already exists, it will be overwritten. If nothing is specified, the file will be of the tmp_1738748912630.cpp (depending on the date and the file format specified). compile: The type of compilation that will be done, in one of the following: sh or cpp: The code will be compiled with the g++ compiler. Defa",
+      "url": "/feelpp-antora-ui/dynamic-processor.html"
+    },
+    {
+      "id": 27,
+      "title": "Cemosis UI Extensions :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Cemosis UI Extensions Cemosis and Feel++ use some extension for the document pseudocode plot.ly visu-vtk",
+      "url": "/feelpp-antora-ui/feelpp/"
+    },
+    {
+      "id": 28,
+      "title": "Plotting with Feel++ antora-ui :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Plotting with Feel++ antora-ui",
+      "url": "/feelpp-antora-ui/feelpp/plot.html"
+    },
+    {
+      "id": 29,
+      "title": "Pseudocode :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Pseudocode The documentation embeds some algorithms written using pseudocode.js whose syntax is mostly compatible with latex package algorithmic. The documentation and in particular the grammar is here. Example of the pseudocode for the quicksort algorithm rendered by pseudocode.js <pre id=\"quicksort\" style=\"display:hidden;\"> % This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition) \\begin{algorithm} \\caption{Quicksort} \\begin{algorithmic} \\PROCEDURE{Quicksort}{$A, p, r$} \\IF{$p < r$} \\STATE $q = $ \\CALL{Partition}{$A, p, r$} \\STATE \\CALL{Quicksort}{$A, p, q - 1$} \\STATE \\CALL{Quicksort}{$A, q + 1, r$} \\ENDIF \\ENDPROCEDURE \\PROCEDURE{Partition}{$A, p, r$} \\STATE $x = A[r]$ \\STATE $i = p - 1$ \\FOR{$j = p$ \\TO $r - 1$} \\IF{$A[j] < x$} \\STATE $i = i + 1$ \\STATE exchange $A[i]$ with $A[j]$ \\ENDIF \\STATE exchange $A[i]$ with $A[r]$ \\ENDFOR \\ENDPROCEDURE \\end{algorithmic} \\end{algorithm} </pre> In order to display it prop",
+      "url": "/feelpp-antora-ui/feelpp/pseudocode.html"
+    },
+    {
+      "id": 30,
+      "title": "Layout Helpers (Grid) :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Layout Helpers (Grid) This page demonstrates the grid and image utility classes bundled with this UI. Use these helpers to build simple, responsive layouts quickly. 1. Quick Overview Grid .grid container with .grid-2, .grid-3, or .grid-4 for columns; add gaps with .gap-1, .gap-2, .gap-3. Alignment .items-start|center|end sets vertical alignment; .justify-start|center|end sets horizontal alignment for all items; use .justify-self-* on a single item. Images img-fluid (responsive), img-shadow (subtle depth), img-rounded (rounded corners); width helpers w-10, w-20, w-30, w-40, w-50, w-60, w-70; floats float-right and float-left. 2. Two‑Column: Text | Image Clean two‑column layout Use .grid.grid-2 to create two columns that collapse to one column on small screens. Add .items-center to vertically center content and justify-self-* to align a single cell. Responsive: below 768px, columns stack. Spacing: .gap-2 adds comfortable spacing between columns. Image: img",
+      "url": "/feelpp-antora-ui/grid.html"
+    },
+    {
+      "id": 31,
+      "title": "Images & Icons :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Images & Icons Use these roles to present small screenshots and icons cleanly inside paragraphs when documenting menus, buttons, and UI flows. They complement AsciiDoc’s built‑in ], menu:[, and kbd:[] macros. 1. Inline Icons Role: icon — inline SVG/PNG aligned with text. Sizes: icon-sm, icon (default), icon-lg, icon-xl. Example (inline in a sentence): See the icon next to the Save button. Sizes: . AsciiDoc: See the image:sample-3.svg[role=icon,alt=\"icon\"] icon next to the btn:[Save] button. Sizes: image:sample-3.svg[role=\"icon-sm\"] image:sample-3.svg[role=\"icon\"] image:sample-3.svg[role=\"icon-lg\"] image:sample-3.svg[role=\"icon-xl\"]. 2. Inline Screenshot (Framed) Role: img-inline + img-frame — small screenshot with a subtle frame. Example: . image:sample-1.svg[role=\"img-inline img-frame\",alt=\"small framed screenshot\"] 3. Pill/Badge Screenshot Role: img-inline + img-chip (alias: img-badge) — pill‑shaped frame around a tiny snapshot. Example: . image:sample",
+      "url": "/feelpp-antora-ui/images.html"
+    },
+    {
+      "id": 32,
+      "title": "Antora Feel++ UI :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Antora Feel++ UI This project produces the Feel++ UI bundle for documentation sites generated with Antora. It contains the UI assets (page templates, CSS, JavaScript, images, etc.) and a Gulp build script. The build can be used to preview the UI locally (featuring live updates), or to package it for consumption by the Antora site generator. 1. Key Features The Feel++ Antora UI provides several advanced features beyond the standard Antora UI: Card-Based Navigation Sophisticated catalog system with automatic card generation for related content Font Awesome Integration First-class support for Font Awesome icons in page illustrations Multiple Layout Types Specialized layouts for manuals, catalogs, case studies, and reports Responsive Design Mobile-first design with adaptive layouts across all device sizes Enhanced Styling Custom CSS for scientific documentation including math rendering support This documentation explains how to use this project to set up, cu",
+      "url": "/feelpp-antora-ui/"
+    },
+    {
+      "id": 33,
+      "title": "Inline Text Styles :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Inline Text Styles This page describes how to style text in the contents of the page which is visually emphasized. 1. Bold text (<strong>) How text marked as bold appears on your site depends on the fonts loaded by the UI and the CSS styles the UI applies to the <strong> HTML tag. A bold <strong>word</strong>, or a bold <strong>phrase of text</strong>. Since <strong> is a semantic HTML element, it automatically inherits default styling (font-weight: bold) from the browser. If you want to override the browser styles, you’ll need to define properties on the strong selector in the stylesheet for your UI. In the default UI, the <strong> element is styled in the 500 font weight of the current typeface (Roboto). For example: A bold word, or a bold phrase of text. 2. Italic text (<em>) How italicized text appears on your site depends on the fonts loaded by the UI and the CSS styles the UI applies to the <em> HTML tag. An italic <em>word</em>, or an italic <em>p",
+      "url": "/feelpp-antora-ui/inline-text-styles.html"
+    },
+    {
+      "id": 34,
+      "title": "Applications Catalog (via manuals) :: Feel++ Project",
+      "content": "Applications Catalog (via manuals) Use the generic manuals layout and set :page-cards-tag: to application. Tag each child page with application. 1. Quick Start // Parent page :page-layout: manuals :page-cards-tag: application :page-cards-within-module: true // Child page :page-tags: application :description: Short application summary :page-illustration: fa-solid fa-diagram-project // or image path Application Pages Guidance for single application pages and how they appear in application catalogs",
+      "url": "/feelpp-antora-ui/layout-applications.html"
+    },
+    {
+      "id": 35,
+      "title": "Benchmarks Catalog (via manuals) :: Feel++ Project",
+      "content": "Benchmarks Catalog (via manuals) Use the generic manuals layout for all catalogs. Control what appears with :page-cards-tag:. 1. Quick Start // Parent benchmarks page :page-layout: manuals :page-cards-tag: benchmark :page-cards-within-module: true // Child benchmark page :page-tags: benchmark :description: Short summary shown on card :page-illustration: fa-solid fa-gauge // or image path 2. Attributes page-layout: always manuals for catalogs page-cards-tag: tag(s) to collect (default benchmark) page-cards-within-module: true to limit to current module; false for site‑wide page-cards-<tag>-title: optional group titles if you collect multiple tags Benchmark Page Benchmark page to showcase performance",
+      "url": "/feelpp-antora-ui/layout-benchmarks.html"
+    },
+    {
+      "id": 36,
+      "title": "Examples Catalog (via manuals) :: Feel++ Project",
+      "content": "Examples Catalog (via manuals) Use the generic manuals layout for all catalogs. Control what appears with :page-cards-tag:. 1. Quick Start // Parent examples page :page-layout: manuals :page-cards-tag: example :page-cards-within-module: true // Child example page :page-tags: example :description: Short summary shown on card :page-illustration: fa-solid fa-gauge // or image path 2. Attributes page-layout: always manuals for catalogs page-cards-tag: tag(s) to collect (default example) page-cards-within-module: true to limit to current module; false for site‑wide page-cards-<tag>-title: optional group titles if you collect multiple tags Example Page Example page to showcase features or concepts",
+      "url": "/feelpp-antora-ui/layout-examples.html"
+    },
+    {
+      "id": 37,
+      "title": "Machines Catalog (via manuals) :: Feel++ Project",
+      "content": "Machines Catalog (via manuals) Use the generic manuals layout and set :page-cards-tag: to machine. Tag each child page with machine. 1. Quick Start // Parent page :page-layout: manuals :page-cards-tag: machine :page-cards-within-module: true // Child page :page-tags: machine :description: Short machine summary :page-illustration: fa-solid fa-server // or image path Machine Pages Guidance for single machine pages and how they appear in machine catalogs",
+      "url": "/feelpp-antora-ui/layout-machines.html"
+    },
+    {
+      "id": 38,
+      "title": "Reports Catalog (via manuals) :: Feel++ Project",
+      "content": "Reports Catalog (via manuals) Use the generic manuals layout for all catalogs. Control what appears with :page-cards-tag:. Each child report is a normal page tagged report. 1. Quick Start // In the parent page :page-layout: manuals :page-cards-tag: report // displays report pages :page-cards-within-module: true // limit search to current component/module // On each report page :page-tags: report :description: Short blurb shown on the card :page-illustration: fa-solid fa-chart-line // or image path (ROOT:diagram.png) 2. Attributes page-layout: set to manuals on the parent page. page-cards-tag: tag to collect (default: report). page-cards-within-module: true to look in current module only; set false to search the whole site. page-cards-<tag>-title: optional per-tag heading when grouping by multiple tags. 3. Card Content (child pages) page-tags: include report so the page is collected. page-illustration: Font Awesome (e.g., fa-solid fa-chart-line) or image path. description: short text sh",
+      "url": "/feelpp-antora-ui/layout-reports.html"
+    },
+    {
+      "id": 39,
+      "title": "Use Cases Catalog (via manuals) :: Feel++ Project",
+      "content": "Use Cases Catalog (via manuals) Use the generic manuals layout and set :page-cards-tag: to usecase. Tag each child page with usecase. 1. Quick Start // Parent page :page-layout: manuals :page-cards-tag: usecase :page-cards-within-module: true // Child page :page-tags: usecase :description: Short use case summary :page-illustration: fa-solid fa-briefcase // or image path Use Case page Guidance for single use case pages and how they appear in use case catalogs",
+      "url": "/feelpp-antora-ui/layout-usecases.html"
+    },
+    {
+      "id": 40,
+      "title": "Lead Paragraph Styles :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Lead Paragraph Styles Use a lead paragraph to introduce a page or section with a short summary. It can be plain, framed, rounded, or themed to match the site’s palette. 1. Quick Reference Base: [.lead] — slightly larger text only Framed: [.lead.panel] — subtle background, thin border, accent bar Rounded: add .rounded to any framed variant Admonition themes: .note, .tip, .warning, .important, .caution Brand themes: .theme-accent, .theme-blue, .theme-purple, .theme-orange, .theme-silver 2. Plain Lead This is a plain lead paragraph. It increases the font size for a softer, introductory tone. 3. Framed Lead This framed lead uses a subtle panel background, thin border, and a small accent bar on the left. 4. Framed + Rounded Rounded corners create a friendlier, card-like feel while keeping the same framing. 5. Framed Intensities Subtle frame: slightly thinner accent bar and the default soft background and border. Strong frame: a touch darker background and bor",
+      "url": "/feelpp-antora-ui/lead.html"
+    },
+    {
+      "id": 41,
+      "title": "Manuals and Catalogs Layout :: Feel++ Project",
+      "content": "Manuals and Catalogs Layout The manuals layout provides a powerful card-based system for organizing and displaying related content in catalogs. This layout is the single, generic catalog engine used for all card catalogs (manuals, reports, examples, benchmarks, applications, machines, use cases, nested catalogs). Parent pages act as catalogs; child pages appear as cards. 1. Key Features Card-Based Navigation Automatically generates visual cards for related pages based on tags and parent-catalog relationships. Font Awesome Integration Supports both image illustrations and Font Awesome icons for page cards using the page-illustration attribute. Flexible Tagging System Uses page-tags and page-cards-tag attributes to control which pages appear in catalogs. page-cards-tag accepts one or more tags. Hierarchical Organization Implements parent-catalog relationships for nested content organization. A catalog can list page types or other catalogs. Multi-Tag Support Can group cards by different t",
+      "url": "/feelpp-antora-ui/manuals.html"
+    },
+    {
+      "id": 42,
+      "title": "Application Pages :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Application Pages : An application is a normal page tagged application so it can be collected by a parent applications catalog page. 1. Minimal Application Page = Title of the Application :page-tags: application :description: Single‑line summary used by application catalogs :page-illustration: fa-solid fa-chart-column // or image path Intro paragraph explaining the application… 2. Fields Used by Cards description: shown under the card title page-illustration: Font Awesome class list (e.g., fa-solid fa-chart-column) or image path Tag the page with application so it appears in Applications Layout pages.",
+      "url": "/feelpp-antora-ui/page-application.html"
+    },
+    {
+      "id": 43,
+      "title": "Benchmark Page :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Benchmark Page Use the benchmarks layout to showcase performance or comparison pages in a card grid. 1. Quick Start :page-tags: benchmark :description: Short summary shown on card :page-illustration: fa-solid fa-gauge // or image path",
+      "url": "/feelpp-antora-ui/page-benchmark.html"
+    },
+    {
+      "id": 44,
+      "title": "Example Page :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Example Page Use example pages to showcase features or concepts. 1. Quick Start :page-tags: example :description: Short card summary :page-illustration: fa-solid fa-flask // or image path 2. Child Page Fields page-illustration: Font Awesome or image path (see Card System Documentation) description: one‑line summary",
+      "url": "/feelpp-antora-ui/page-example.html"
+    },
+    {
+      "id": 45,
+      "title": "Untitled :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf = Page Layouts :navtitle: Page Layouts :page-layout: manuals :page-tags: catalog, page-layouts :page-cards-tag: catalog :page-cards-within-module: false :page-cards-title: Available Layouts :page-illustration: fa-solid fa-th-large The Antora Feel++ UI provides a small set of page layouts. The manuals layout is the single, generic catalog engine used to render all card grids. Use it for catalogs of any type by setting :page-cards-tag:. 1. Available Layouts default Standard article layout for regular documentation pages manuals Generic card catalog (use for manuals, reports, examples, benchmarks, applications, machines, use cases, nested catalogs) toolboxes Alternative catalog layout for toolbox-style content organization case-study Specialized layout for case studies and detailed examples 2. Layout Usage To use a specific layout, add the page-layout attribute to your AsciiDoc file: = Page Title :page-layout: manuals 3. Catalogs with manuals Use manuals fo",
+      "url": "/feelpp-antora-ui/page-layouts.html"
+    },
+    {
+      "id": 46,
+      "title": "Machine Pages :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Machine Pages A machine is a normal page tagged machine so it can be collected by a parent machines catalog page. 1. Minimal Machine Page = Title of the Machine :page-layout: machine // optional (default layout also works) :page-tags: machine :description: Single‑line summary used by machine catalogs :page-illustration: fa-solid fa-chart-column // or image path Intro paragraph explaining the machine… 2. Fields Used by Cards description: shown under the card title page-illustration: Font Awesome class list (e.g., fa-solid fa-chart-column) or image path Tag the page with machine so it appears in Machines Layout pages.",
+      "url": "/feelpp-antora-ui/page-machine.html"
+    },
+    {
+      "id": 47,
+      "title": "Report Pages :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Report Pages A report is a normal page tagged report so it can be collected by a parent reports catalog page. 1. Minimal Report Page = Title of the Report :page-tags: report :description: Single‑line summary used by report catalogs :page-illustration: fa-solid fa-chart-column // or image path Intro paragraph explaining the report… 2. Fields Used by Cards description: shown under the card title page-illustration: Font Awesome class list (e.g., fa-solid fa-chart-column) or image path Tag the page with report so it appears in Reports Layout pages.",
+      "url": "/feelpp-antora-ui/page-report.html"
+    },
+    {
+      "id": 48,
+      "title": "Use Case page :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Use Case page A use case is a normal page tagged usecase so it can be collected by a parent usecases catalog page. 1. Minimal Use Case Page = Title of the Use Case :page-tags: usecase :description: Single‑line summary used by use case catalogs :page-illustration: fa-solid fa-chart-column // or image path Intro paragraph explaining the use case… 2. Fields Used by Cards description: shown under the card title page-illustration: Font Awesome class list (e.g., fa-solid fa-chart-column) or image path Tag the page with usecase so it appears in Use Cases Layout pages.",
+      "url": "/feelpp-antora-ui/page-usecase.html"
+    },
+    {
+      "id": 49,
+      "title": "Policy Page Templates :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Policy Page Templates This Antora UI includes ready-to-use policy page templates to help you create legally compliant documentation sites. 1. Overview The UI bundle includes template policy pages that you can copy and customize for your project: Terms of Use - Usage terms and conditions Privacy Policy - Data protection and privacy practices Cookie Policy - Website cookie usage and consent Support Policy - Support channels and expectations These templates are designed for: GDPR compliance (EU privacy regulations) Academic and research projects Open-source software projects General web application legal requirements 2. Quick Start 2.1. 1. Extract Templates The policy templates are included in your UI bundle at: _/templates/policy-pages/ ├── README.md ├── terms-of-use.adoc ├── privacy-policy.adoc ├── cookie-policy.adoc └── support-policy.adoc After building your site, copy the templates to your content directory: # Copy templates to your Antora pages direct",
+      "url": "/feelpp-antora-ui/policy-templates.html"
+    },
+    {
+      "id": 50,
+      "title": "Privacy Policy :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Privacy Policy This privacy policy explains how we collect, use, and protect your personal information when you use Feel++ software, documentation, and related services. 1. Who We Are Feel++ is developed by Cemosis (Centre de Modélisation et de Simulation de Strasbourg) at Université de Strasbourg, France. Data Controller: Université de Strasbourg Contact: privacy@cemosis.fr 2. Information We Collect 2.1. Website Usage Data When you visit our documentation or websites, we may collect: IP address and browser information Pages visited and time spent Referring websites Device and operating system information 2.2. Software Usage Data Feel++ software may collect: Error reports and crash data (if you opt-in) Performance metrics (anonymized) Feature usage statistics (anonymized) 2.3. User Contributions When you contribute to Feel++ (code, documentation, issues): GitHub/GitLab profile information Email address and name (as provided) Contribution content and meta",
+      "url": "/feelpp-antora-ui/privacy-policy.html"
+    },
+    {
+      "id": 51,
+      "title": "Pseudocode :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Pseudocode The documentation embeds some algorithms written using pseudocode.js whose syntax is mostly compatible with LaTeX package algorithmic. The complete documentation and grammar is available at pseudocode.js grammar reference. In order to display pseudocode properly you have to use [.pseudocode] on a literal block. 1. Basic Structure Every pseudocode block follows this basic structure: AsciiDoc Source [.pseudocode] .... \\begin{algorithm} \\caption{Simple Example} \\begin{algorithmic} \\STATE $x \\leftarrow 0$ \\STATE $y \\leftarrow 1$ \\RETURN{$x + y$} \\end{algorithmic} \\end{algorithm} .... Rendered Result \\begin{algorithm} \\caption{Simple Example} \\begin{algorithmic} \\STATE $x \\leftarrow 0$ \\STATE $y \\leftarrow 1$ \\RETURN{$x + y$} \\end{algorithmic} \\end{algorithm} 2. Available Commands 2.1. Control Structures Command Syntax Description \\IF{condition} \\IF{condition} …​ \\ENDIF Conditional statement \\ELSIF{condition} \\ELSIF{condition} …​ Else-if branch \\EL",
+      "url": "/feelpp-antora-ui/pseudocode.html"
+    },
+    {
+      "id": 52,
+      "title": "Search Setup :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Search Setup The Feel++ Antora UI provides two search options: Lunr.js for client-side search and Algolia DocSearch for server-based search. The UI automatically detects which search system to use based on your site configuration. Search functionality is now fully automated through the @feelpp/antora-extensions package, eliminating the need for manual search index generation. 1. Search Options Overview Search Type Best For Requirements Lunr.js (Default) Small to medium sites, self-hosted sites, privacy-focused environments @feelpp/antora-extensions package (automatic) Algolia DocSearch Large sites, sites with complex search requirements, existing Algolia integration Algolia account and DocSearch configuration 2. Lunr.js Client-Side Search Lunr.js provides full-text search capabilities directly in the browser without requiring any external services. Search index generation is completely automated through the @feelpp/antora-extensions package. 2.1. Automat",
+      "url": "/feelpp-antora-ui/search-setup.html"
+    },
+    {
+      "id": 53,
+      "title": "Source Highlighting :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Source Highlighting Source highlighting is applied to text that’s assigned the source block style (either explicitly or implicitly) and a source language. The source language is defined either on the block or inherited from the source-language document attribute. Source Highlighting is provided by Highlight.js. Source block with source highlighting [#hello,python] ---- print('Hello World') ---- Here’s the result: print('Hello World') In addition, mpirun commands are also highlighted using a custom syntax highlighter: [,mpirun] ---- mpirun -np 4 feelpp_toolbox_electric \\ --case \"github:{path:toolboxes/electric/cvg}\" \\ --case.config-file 2d.cfg ---- Here’s the result: mpirun -np 4 feelpp_toolbox_electric \\ --case \"github:{path:toolboxes/electric/cvg}\" \\ --case.config-file 2d.cfg Case option --case \"github:{path:toolboxes/electric/cvg}\" Case config file option --case.config-file 2d.cfg As you can see, the command mpirun and the command line options are high",
+      "url": "/feelpp-antora-ui/source-highlighting.html"
+    },
+    {
+      "id": 54,
+      "title": "UI Element Style Guide :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf UI Element Style Guide When creating a UI theme for Antora, there are certain elements in the UI that require support from the CSS to work correctly. This list includes elements in the shell (i.e., frame) and in the document content. This document identifies these UI elements. 1. Document Content The HTML in the main content area is generated from AsciiDoc using Asciidoctor. AsciiDoc has numerous content elements that require assistance from CSS to render properly. These elements include: Inline text emphasis Admonitions Source Highlighting Copy to Clipboard Pseudocode",
+      "url": "/feelpp-antora-ui/style-guide.html"
+    },
+    {
+      "id": 55,
+      "title": "Support Policy :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Support Policy This support policy outlines the available support channels for Feel++ users and sets expectations for response times and support scope. 1. Support Philosophy Feel++ is an open-source scientific computing platform developed primarily for research and education. Our support model reflects this mission: Community-driven: Primary support through user community Educational focus: Priority on learning and knowledge sharing Research-oriented: Support for academic and scientific applications Best-effort basis: Volunteer-based support with no guarantees 2. Support Channels 2.1. Community Support (Free) 2.1.1. GitHub Issues Purpose: Bug reports, feature requests, technical questions URL: github.com/feelpp/feelpp/issues Response time: Best effort, typically 1-7 days Who responds: Maintainers and community members 2.1.2. Discussions Forum Purpose: General questions, usage help, troubleshooting URL: github.com/orgs/feelpp/discussions Response time: Be",
+      "url": "/feelpp-antora-ui/support-policy.html"
+    },
+    {
+      "id": 56,
+      "title": "Terms of Use :: Feel++ Project",
+      "content": "Edit this Page Download as .pdf Terms of Use These terms of use govern your access to and use of Feel++ software, documentation, and related services provided by Cemosis and Université de Strasbourg. 1. Acceptance of Terms By accessing or using Feel++ software, documentation, or any related services, you agree to be bound by these Terms of Use and all applicable laws and regulations. 2. License and Software Use 2.1. Open Source License Feel++ is distributed under open source licenses. The specific license terms for each component are included with the software distribution and take precedence over these general terms where applicable. 2.2. Permitted Use You may: Use Feel++ software for research, educational, and commercial purposes in accordance with the applicable licenses Modify and distribute the software according to license terms Access and use the documentation for learning and reference purposes Contribute to the project development following our contribution guidelines 2.3. Res",
+      "url": "/feelpp-antora-ui/terms-of-use.html"
+    },
+    {
+      "id": 57,
+      "title": "Redirect Notice",
+      "content": "Redirect Notice The page you requested has been relocated to https://feelpp.github.io/antora-ui/feelpp-antora-ui/index.html.",
+      "url": "/index.html"
+    }
+  ]
+}
