@@ -1,0 +1,29 @@
+= Application Pages
+:page-tags: layout, application
+:description: Guidance for single application pages and how they appear in application catalogs
+:page-illustration: fa-solid fa-diagram-project
+
+:
+
+[.lead.panel.accent.rounded]
+An application is a normal page tagged `application` so it can be collected by a parent `applications` catalog page.
+
+== Minimal Application Page
+
+[source,asciidoc]
+----
+= Title of the Application
+:page-tags: application
+:description: Single‑line summary used by application catalogs
+:page-illustration: fa-solid fa-chart-column // or image path
+
+Intro paragraph explaining the application…
+----
+
+== Fields Used by Cards
+
+- `description`: shown under the card title
+- `page-illustration`: Font Awesome class list (e.g., `fa-solid fa-chart-column`) or image path
+
+NOTE: Tag the page with `application` so it appears in xref:layout-applications.adoc[Applications Layout] pages.
+

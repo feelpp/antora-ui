@@ -104,6 +104,76 @@
   border-radius: 8px;
 }
 
+/* Inline image and icon helpers (for documenting UI)
+   AsciiDoc inline images render as: <span class="image <role>"><img ...></span>
+   Style both wrapper and inner <img> to ensure sizing takes effect. */
+
+/* Generic inline icon size (wrapper) */
+.icon {
+  display: inline-block;
+  vertical-align: -0.2em; /* optically center with text */
+  margin: 0 0.15em;
+}
+
+/* Default icon size and variants (target the img inside the inline wrapper) */
+.doc span.image.icon > img {
+  height: 1.25em;
+  width: auto;
+}
+
+.doc span.image.icon-sm > img {
+  height: 1em;
+  width: auto;
+}
+
+.doc span.image.icon-lg > img {
+  height: 1.5em;
+  width: auto;
+}
+
+.doc span.image.icon-xl > img {
+  height: 1.75em;
+  width: auto;
+}
+
+/* Inline screenshot scaled to text */
+.img-inline {
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+.doc span.image.img-inline > img {
+  height: 1.25em;
+  width: auto;
+}
+
+/* Framed screenshot/chip look for small UI snippets */
+.img-frame {
+  background: var(--panel-background);
+  border: 1px solid var(--panel-border-color);
+  border-radius: 0.25rem;
+  padding: 0.2rem;
+}
+
+/* Pill-shaped frame variant for small inline UI bits */
+.img-chip,
+.img-badge {
+  background: var(--panel-background);
+  border: 1px solid var(--panel-border-color);
+  border-radius: 999px;
+  padding: 0.1rem 0.3rem;
+  vertical-align: middle;
+}
+
+/* Make sure these wrappers do not expand unexpectedly */
+.doc span.image.img-frame,
+.doc span.image.img-chip,
+.doc span.image.img-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15em;
+}
+
 .center {
   display: block;
   margin-left: auto;

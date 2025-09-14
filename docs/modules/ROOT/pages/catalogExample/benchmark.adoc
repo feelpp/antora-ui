@@ -1,0 +1,7 @@
+== Catalog Benchmark Page
+:page-tags: benchmark
+:parent-catalogs: catalog-example
+:description: Benchmark card item for the catalog
+:page-illustration: fa-solid fa-gauge
+
+Benchmark content example.

@@ -1,0 +1,7 @@
+== Catalog Application Page
+:page-tags: application
+:parent-catalogs: catalog-example
+:description: Application card item for the catalog
+:page-illustration: fa-solid fa-diagram-project
+
+Application content example.

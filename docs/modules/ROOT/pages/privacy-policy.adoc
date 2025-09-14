@@ -1,0 +1,163 @@
+= Privacy Policy
+:description: Privacy policy for Feel++ website, software, and services - GDPR compliant
+:keywords: privacy, GDPR, data protection, personal data, feel++
+
+[.lead]
+This privacy policy explains how we collect, use, and protect your personal information when you use Feel++ software, documentation, and related services.
+
+== Who We Are
+
+Feel++ is developed by Cemosis (Centre de Modélisation et de Simulation de Strasbourg) at Université de Strasbourg, France.
+
+**Data Controller:** Université de Strasbourg +
+**Contact:** privacy@cemosis.fr
+
+== Information We Collect
+
+=== Website Usage Data
+
+When you visit our documentation or websites, we may collect:
+
+* IP address and browser information
+* Pages visited and time spent
+* Referring websites
+* Device and operating system information
+
+=== Software Usage Data
+
+Feel++ software may collect:
+
+* Error reports and crash data (if you opt-in)
+* Performance metrics (anonymized)
+* Feature usage statistics (anonymized)
+
+=== User Contributions
+
+When you contribute to Feel++ (code, documentation, issues):
+
+* GitHub/GitLab profile information
+* Email address and name (as provided)
+* Contribution content and metadata
+
+=== Email Communications
+
+If you subscribe to mailing lists or contact us:
+
+* Email address
+* Name and affiliation (if provided)
+* Communication content
+
+== How We Use Your Information
+
+We use collected information to:
+
+* Provide and improve Feel++ software and documentation
+* Respond to support requests and communications
+* Analyze usage patterns to enhance user experience
+* Ensure security and prevent abuse
+* Comply with legal obligations
+
+== Legal Basis for Processing (GDPR)
+
+We process personal data based on:
+
+* **Legitimate interests:** Improving software and providing support
+* **Consent:** When you opt-in to analytics or communications
+* **Contract performance:** When using hosted services
+* **Legal compliance:** When required by law
+
+== Data Sharing
+
+We do not sell personal data. We may share information with:
+
+* **Service providers:** Hosting, analytics, and support tools
+* **Academic partners:** For research collaboration (anonymized data)
+* **Legal authorities:** When required by law
+
+=== Third-Party Services
+
+Our websites and services may use:
+
+* **GitHub/GitLab:** Code hosting and issue tracking
+* **Google Analytics:** Website usage analytics
+* **Netlify/CloudFlare:** Website hosting and CDN
+* **Discourse/Slack:** Community discussions
+
+Each service has its own privacy policy.
+
+== Your Rights (GDPR)
+
+You have the right to:
+
+* **Access:** Request copies of your personal data
+* **Rectification:** Correct inaccurate or incomplete data
+* **Erasure:** Request deletion of your data
+* **Portability:** Receive your data in a portable format
+* **Objection:** Object to processing based on legitimate interests
+* **Restriction:** Limit how we process your data
+* **Withdraw consent:** For consent-based processing
+
+To exercise these rights, contact: privacy@cemosis.fr
+
+== Data Retention
+
+We retain personal data for:
+
+* **Website analytics:** 26 months maximum
+* **User contributions:** Indefinitely (for project continuity)
+* **Email communications:** Until you unsubscribe
+* **Support requests:** 3 years after resolution
+
+== Data Security
+
+We implement appropriate security measures including:
+
+* Encryption of data in transit and at rest
+* Regular security assessments
+* Access controls and authentication
+* Backup and recovery procedures
+
+== International Data Transfers
+
+Your data may be transferred to countries outside the EU. We ensure adequate protection through:
+
+* **Adequacy decisions:** For countries with adequate protection
+* **Standard contractual clauses:** For other transfers
+* **Appropriate safeguards:** As required by GDPR
+
+== Cookies and Tracking
+
+See our xref:cookie-policy.adoc[Cookie Policy] for detailed information about cookies and tracking technologies.
+
+== Children's Privacy
+
+Feel++ services are not directed at children under 13. We do not knowingly collect personal information from children under 13.
+
+== Changes to This Policy
+
+We may update this privacy policy periodically. Material changes will be communicated through:
+
+* Notice on our website
+* Email to registered users
+* Project announcement channels
+
+== Contact Information
+
+For privacy-related questions or requests:
+
+* **Email:** privacy@cemosis.fr
+* **Address:** Cemosis, Université de Strasbourg, 7 rue René Descartes, 67084 Strasbourg Cedex, France
+* **Data Protection Officer:** dpo@unistra.fr
+
+== Supervisory Authority
+
+You have the right to lodge a complaint with the French data protection authority (CNIL):
+
+* **Website:** https://www.cnil.fr
+* **Address:** 3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, France
+
+---
+
+*Last updated: {docdate}*
+
+*This policy complies with the EU General Data Protection Regulation (GDPR) and French data protection laws.*

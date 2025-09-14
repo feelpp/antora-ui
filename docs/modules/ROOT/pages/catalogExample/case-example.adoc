@@ -1,0 +1,28 @@
+= Heat Transfer Case Study
+:page-layout: default
+:page-tags: case
+:parent-catalogs: catalog-example
+:description: A simple case study demonstrating heat transfer simulation in Feel++
+:page-illustration: fa-solid fa-fire
+:page-category: case
+
+This is an example case study page that demonstrates the case category functionality.
+
+== Overview
+
+This case study focuses on solving heat transfer problems using Feel++ libraries.
+
+== Problem Description
+
+The problem involves:
+- 2D heat conduction
+- Dirichlet boundary conditions
+- Material properties variation
+
+== Solution Method
+
+We use finite element methods to solve the heat equation.
+
+== Results
+
+The simulation produces temperature distributions across the domain.

@@ -1,4 +1,4 @@
-= Page Layouts
+ = Page Layouts
 :navtitle: Page Layouts
 :page-layout: manuals
 :page-tags: catalog, page-layouts
@@ -7,15 +7,14 @@
 :page-cards-title: Available Layouts
 :page-illustration: fa-solid fa-th-large
 
-The Antora Feel++ UI provides several specialized page layouts for different content types and organizational structures.
+The Antora Feel++ UI provides a small set of page layouts. The `manuals` layout is the single, generic catalog engine used to render all card grids. Use it for catalogs of any type by setting `:page-cards-tag:`.
 
 == Available Layouts
 
 default:: Standard article layout for regular documentation pages
-manuals:: Card-based catalog layout for organizing related content with visual navigation
-toolboxes:: Alternative catalog layout for toolbox-style content organization  
+manuals:: Generic card catalog (use for manuals, reports, examples, benchmarks, applications, machines, use cases, nested catalogs)
+toolboxes:: Alternative catalog layout for toolbox-style content organization
 case-study:: Specialized layout for case studies and detailed examples
-reports:: Layout optimized for report-style documents
 
 == Layout Usage
 
@@ -27,13 +26,23 @@ To use a specific layout, add the `page-layout` attribute to your AsciiDoc file:
 :page-layout: manuals
 ----
 
-== Catalog Layouts
+== Catalogs with `manuals`
 
-The `manuals` and `toolboxes` layouts provide sophisticated card-based organization systems. These layouts automatically generate visual cards for related pages based on tagging and parent-catalog relationships.
+Use `manuals` for every catalog; control what appears with `:page-cards-tag:` and scope with `:page-cards-within-module:`.
 
-Key features:
-- Automatic card generation based on page tags
-- Font Awesome icon support for illustrations
-- Hierarchical organization with parent-catalog relationships
-- Flexible content filtering within or across modules
-- Group titles for multi-tag displays
+[source,asciidoc]
+----
+// Parent (catalog) page
+:page-layout: manuals
+:page-cards-tag: example, benchmark, report
+:page-cards-within-module: true
+
+// Child (card) pages
+:page-tags: example
+:description: Short card summary
+:page-illustration: fa-solid fa-flask
+----
+
+Notes:
+- `page-cards-tag` accepts multiple tags and can render grouped sections (`page-cards-<tag>-title` provides group titles).
+- Add a category tag to the catalog’s own `page-tags` (e.g., `benchmarks`) to recolor its card when shown inside another catalog. The card remains labeled "Catalog"; only the tint and badge color change.

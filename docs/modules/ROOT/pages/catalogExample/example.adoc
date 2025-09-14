@@ -1,0 +1,7 @@
+== Catalog Example Page
+:page-tags: example
+:parent-catalogs: catalog-example
+:description: Example card item for the catalog
+:page-illustration: fa-solid fa-flask
+
+This is a minimal example page that appears as a card in the catalog example.

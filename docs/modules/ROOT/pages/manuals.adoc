@@ -8,7 +8,7 @@
 :page-illustration: fa-solid fa-book
 :parent-catalogs: page-layouts
 
-The manuals layout provides a powerful card-based system for organizing and displaying related content in catalogs. This layout is particularly useful for creating hierarchical documentation structures where parent pages act as catalogs displaying child pages as cards.
+The manuals layout provides a powerful card-based system for organizing and displaying related content in catalogs. This layout is the single, generic catalog engine used for all card catalogs (manuals, reports, examples, benchmarks, applications, machines, use cases, nested catalogs). Parent pages act as catalogs; child pages appear as cards.
 
 == Key Features
 
@@ -19,13 +19,30 @@ Font Awesome Integration::
 Supports both image illustrations and Font Awesome icons for page cards using the `page-illustration` attribute.
 
 Flexible Tagging System::
-Uses `page-tags` and `page-cards-tag` attributes to control which pages appear in catalogs.
+Uses `page-tags` and `page-cards-tag` attributes to control which pages appear in catalogs. `page-cards-tag` accepts one or more tags.
 
 Hierarchical Organization::
-Implements parent-catalog relationships for nested content organization.
+Implements parent-catalog relationships for nested content organization. A catalog can list page types or other catalogs.
 
 Multi-Tag Support::
-Can group cards by different tags with optional group titles.
+Can group cards by different tags with optional group titles when multiple tags are listed in `page-cards-tag`.
+
+== Unified Usage
+
+Use the `manuals` layout for every catalog and control what appears with `:page-cards-tag:`.
+
+[source,asciidoc]
+----
+// Parent (catalog) page
+:page-layout: manuals
+:page-cards-tag: example, benchmark, report   // one or more types
+:page-cards-within-module: true               // limit search to this module
+
+// Child (card) pages
+:page-tags: example                           // or benchmark/report/…
+:description: Short summary shown on the card
+:page-illustration: fa-solid fa-flask         // or image path
+----
 
 == Page Attributes for Manuals Layout
 
@@ -60,10 +77,26 @@ page-layout:: Set to `manuals` to use the catalog layout
 page-tags:: Tags for the current page, typically includes `catalog` for catalog pages or `manual` for content pages
 page-cards-tag:: Specifies which tags to look for when building the card list
 page-cards-within-module:: `true` (default) searches within current module, `false` searches across all modules
+page-cards-across-components:: Optional; when present and not `false`, searches across components (use when you want a site‑wide catalog)
 page-cards-title:: Optional title displayed above the cards
 page-illustration:: Font Awesome class (e.g., `fa-solid fa-database`) or image path
 parent-catalogs:: Specifies which catalog this page belongs to
 description:: Brief description shown on the page card
+
+== Category‑Aware Styling
+
+Cards are tinted and badged by type. On catalog pages that appear as cards (i.e., a catalog-of-X listed inside another catalog), you can add a secondary category tag to recolor the Catalog card automatically while keeping the badge label as "Catalog".
+
+Accepted type tags (singular or plural): `example`, `benchmark`, `report`, `manual`, `application`, `machine`, `usecase`, `catalog`.
+
+[source,asciidoc]
+----
+:page-layout: manuals
+:page-tags: catalog, benchmarks              // Catalog-of-benchmarks (tinted green)
+:page-cards-tag: benchmark
+----
+
+The badge color and card tint follow the tag; the label remains "Catalog" to indicate the page is a catalog.
 
 == Font Awesome Icons
 

@@ -25,7 +25,7 @@ This framed lead uses a subtle panel background, thin border, and a small accent
 
 == Framed + Rounded
 
-[.lead.panel.rounded]
+[.lead.framed.rounded]
 Rounded corners create a friendlier, card-like feel while keeping the same framing.
 
 == Framed Intensities
@@ -33,7 +33,7 @@ Rounded corners create a friendlier, card-like feel while keeping the same frami
 [.lead.panel.subtle]
 Subtle frame: slightly thinner accent bar and the default soft background and border.
 
-[.lead.panel.strong.rounded]
+[.lead.framed.strong.rounded]
 Strong frame: a touch darker background and border with a thicker accent bar.
 
 == Admonition-Themed Variants

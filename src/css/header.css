@@ -32,11 +32,32 @@ body {
   padding-left: 1rem;
   align-self: center;
   font-size: calc(22 / var(--rem-base) * 1rem);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand .navbar-item.feelpp-logo a {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand .navbar-item.feelpp-logo img {
+  height: 2rem;
+  width: auto;
+  vertical-align: middle;
 }
 
 .cemosis-logo {
+  max-height: 2em;
+}
+
+.cnrs-logo {
+  max-height: 2em;
+}
+
+.unistra-logo {
   max-height: 2em;
 }
 
@@ -55,12 +76,15 @@ body {
   position: relative;
 }
 
-form.search > svg {
+form.search > svg,
+form.search > i {
   position: absolute;
   left: 0.8em;
-  bottom: 0.8em;
+  top: 50%;
+  transform: translateY(-50%);
   height: 0.9em;
   color: var(--color-brand-gray5);
+  z-index: 1;
 }
 
 #search-query {
@@ -68,6 +92,7 @@ form.search > svg {
   color: var(--color-brand-gray3);
   font-size: 0.95rem;
   border: 1px solid var(--color-brand-gray5);
+  padding-left: 2.5em; /* Make room for the icon on the left */
 }
 
 #search-query:disabled {
@@ -82,16 +107,17 @@ form.search > svg {
 }
 
 .navbar-brand .img {
-  vertical-align: top;
-  display: flex;
+  vertical-align: middle;
+  display: inline-flex;
   height: 75%;
+  align-items: center;
 }
 
 .search .query {
   border: none;
   width: 283px;
   font-size: 1rem;
-  padding: 0.5em 2em 0.5em 2em;
+  padding: 0.5em 2em 0.5em 2.5em; /* Left padding for icon, right padding for spacing */
 }
 
 .search {

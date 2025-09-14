@@ -24,6 +24,8 @@
 @import "tabs-block.css";
 @import "docs-home.css";
 @import "cards-layout.css";
+@import "lunr-search.css";
+@import "vendor/docsearch.css";
 @import "case-study.css";
 @import "manuals-catalog.css";
 @import "grid.css";

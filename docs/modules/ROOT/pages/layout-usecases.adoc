@@ -1,0 +1,25 @@
+= Use Cases Catalog (via manuals)
+:page-layout: manuals
+:page-tags: layout, usecases, cards, catalog
+:description: How to list use case pages as cards using the generic catalog layout
+:page-cards-tag: usecase
+:page-cards-within-module: true
+:page-illustration: fa-solid fa-briefcase
+
+[.lead.panel.accent.rounded]
+Use the generic `manuals` layout and set `:page-cards-tag:` to `usecase`. Tag each child page with `usecase`.
+
+== Quick Start
+
+[source,asciidoc]
+----
+// Parent page
+:page-layout: manuals
+:page-cards-tag: usecase
+:page-cards-within-module: true
+
+// Child page
+:page-tags: usecase
+:description: Short use case summary
+:page-illustration: fa-solid fa-briefcase // or image path
+----

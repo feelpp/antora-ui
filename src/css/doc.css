@@ -168,7 +168,13 @@
 }
 
 .doc .paragraph.lead > p {
-  font-size: calc(18 / var(--rem-base) * 1rem);
+  font-size: calc(20 / var(--rem-base) * 1rem);
+}
+
+@media screen and (min-width: 769px) {
+  .doc .paragraph.lead > p {
+    font-size: calc(21 / var(--rem-base) * 1rem);
+  }
 }
 
 /* Optional framed lead paragraph for subtle emphasis */
@@ -178,7 +184,7 @@
 .doc .paragraph.lead > p.framed {
   /* Provide explicit, visible defaults for neutral framed leads */
   --lead-bg: var(--lead-bg, #f5f7f9);
-  --lead-border: var(--lead-border, #dfe6ee);
+  --lead-border: var(--lead-border, #a4bcd8);
   --lead-accent: var(--lead-accent, var(--color-brand-blue-secondary));
 
   background: var(--lead-bg);

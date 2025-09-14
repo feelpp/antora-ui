@@ -1,0 +1,7 @@
+== Catalog Use Case Page
+:page-tags: usecase
+:parent-catalogs: catalog-example
+:description: Use case card item for the catalog
+:page-illustration: fa-solid fa-briefcase
+
+Use case content example.

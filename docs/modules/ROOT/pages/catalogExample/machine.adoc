@@ -1,0 +1,7 @@
+== Catalog Machine Page
+:page-tags: machine
+:parent-catalogs: catalog-example
+:description: Machine card item for the catalog
+:page-illustration: fa-solid fa-server
+
+Machine content example.
