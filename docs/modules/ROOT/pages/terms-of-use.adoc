@@ -1,0 +1,92 @@
+= Terms of Use
+:description: Terms and conditions for using Feel++ software, documentation, and related services
+:keywords: terms, legal, license, usage, feel++
+
+[.lead]
+These terms of use govern your access to and use of Feel++ software, documentation, and related services provided by Cemosis and Université de Strasbourg.
+
+== Acceptance of Terms
+
+By accessing or using Feel++ software, documentation, or any related services, you agree to be bound by these Terms of Use and all applicable laws and regulations.
+
+== License and Software Use
+
+=== Open Source License
+
+Feel++ is distributed under open source licenses. The specific license terms for each component are included with the software distribution and take precedence over these general terms where applicable.
+
+=== Permitted Use
+
+You may:
+
+* Use Feel++ software for research, educational, and commercial purposes in accordance with the applicable licenses
+* Modify and distribute the software according to license terms
+* Access and use the documentation for learning and reference purposes
+* Contribute to the project development following our contribution guidelines
+
+=== Restrictions
+
+You may not:
+
+* Use the software in violation of applicable laws or regulations
+* Remove or modify copyright notices or license information
+* Use the Feel++ name or trademarks without permission
+* Distribute malicious modifications of the software
+
+== Academic and Research Use
+
+Feel++ is primarily intended for academic and research purposes. When using Feel++ in academic work:
+
+* Please cite Feel++ appropriately in publications and presentations
+* Follow academic integrity guidelines and institutional policies
+* Respect intellectual property rights of all contributors
+
+== Documentation and Content
+
+=== License
+
+The Feel++ documentation is made available under Creative Commons licenses as specified in individual documents.
+
+=== User Contributions
+
+By contributing content (documentation, code, examples), you grant Cemosis and the Feel++ project the right to use, modify, and distribute your contributions under the project's licenses.
+
+== Disclaimer of Warranties
+
+Feel++ software and documentation are provided "as is" without warranty of any kind, either express or implied, including but not limited to:
+
+* Fitness for a particular purpose
+* Accuracy or completeness of results
+* Non-infringement of third-party rights
+
+== Limitation of Liability
+
+To the maximum extent permitted by law, Cemosis, Université de Strasbourg, and Feel++ contributors shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of Feel++ software or documentation.
+
+== Support and Maintenance
+
+* Support is provided on a best-effort basis through community channels
+* No guarantee of response time or resolution
+* Commercial support options may be available separately
+
+== Modifications to Terms
+
+These terms may be updated periodically. Continued use of Feel++ services after changes constitutes acceptance of the modified terms.
+
+== Governing Law
+
+These terms are governed by French law. Any disputes shall be subject to the jurisdiction of French courts.
+
+== Contact Information
+
+For questions about these terms:
+
+* Email: feel++ support team
+* Website: https://www.feelpp.org
+* GitHub: https://github.com/feelpp
+
+---
+
+*Last updated: {docdate}*
+
+*These terms are subject to the specific licenses included with Feel++ software distributions.*

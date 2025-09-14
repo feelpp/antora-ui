@@ -1,0 +1,7 @@
+== Catalog Report Page
+:page-tags: report
+:parent-catalogs: catalog-example
+:description: Report card item for the catalog
+:page-illustration: fa-solid fa-chart-line
+
+Report content example.

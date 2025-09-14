@@ -1,0 +1,18 @@
+= Benchmark Page
+:page-tags: benchmark, card
+:description: Benchmark page to showcase performance 
+:page-illustration: fa-solid fa-gauge
+
+[.lead.panel.accent.rounded]
+Use the `benchmarks` layout to showcase performance or comparison pages in a card grid.
+
+== Quick Start
+
+[source,asciidoc]
+----
+:page-tags: benchmark
+:description: Short summary shown on card
+:page-illustration: fa-solid fa-gauge // or image path
+----
+
+

@@ -16,12 +16,9 @@
     </div>
 
     <div class="content">
-      {{> article}}
-    </div>
-
-    <div class="content">
       <article class="doc">
         {{#with @root.page.title}} <h1 class="page">{{{this}}}</h1> {{/with}}
+        {{{page.contents}}}
 
         {{!-- attributes from AsciiDoc (fallback to page.attributes) --}}
         {{#with (get-attr @root.page 'cards-tag' 'manual') as |cardsTag|}}

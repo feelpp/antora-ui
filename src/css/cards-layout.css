@@ -1,25 +1,33 @@
 .docs-cards-layout .cases,
+.docs-cards-layout .examples,
+.docs-cards-layout .applications,
+.docs-cards-layout .machines,
+.docs-cards-layout .usecases,
 .docs-cards-layout .benchmarks,
 .docs-cards-layout .toolboxes,
 .docs-cards-layout .manuals,
 .docs-cards-layout .catalogs,
 .docs-cards-layout .reports {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
   margin-top: 5em;
   margin-bottom: 5em;
-  gap: 1.5rem;
 }
 
 /* Mobile-specific adjustments for card containers */
 @media (max-width: 767px) {
   .docs-cards-layout .cases,
+  .docs-cards-layout .examples,
+  .docs-cards-layout .applications,
+  .docs-cards-layout .machines,
+  .docs-cards-layout .usecases,
   .docs-cards-layout .benchmarks,
   .docs-cards-layout .toolboxes,
   .docs-cards-layout .manuals,
   .docs-cards-layout .catalogs,
   .docs-cards-layout .reports {
+    grid-template-columns: 1fr; /* Single column on mobile */
     margin-top: 2em;
     margin-bottom: 2em;
     gap: 1rem;
@@ -28,37 +36,27 @@
 }
 
 .docs-cards-layout .cases .case,
+.docs-cards-layout .examples .example,
+.docs-cards-layout .applications .application,
+.docs-cards-layout .machines .machine,
+.docs-cards-layout .usecases .usecase,
 .docs-cards-layout .benchmarks .benchmark,
 .docs-cards-layout .toolboxes .toolbox,
 .docs-cards-layout .manuals .manual,
+.docs-cards-layout .manuals > *,
+.docs-cards-layout .manuals > * > *,
 .docs-cards-layout .catalogs .catalog,
+.docs-cards-layout .catalogs > *,
+.docs-cards-layout .catalogs > * > *,
 .docs-cards-layout .reports .report {
-  /* make each item a flex child with a stable basis so the row wraps into 3 columns
-     Use box-sizing so padding doesn't break sizing. Use flex on the item so the
-     inner .page-card can be given an aspect-ratio (square) without breaking layout. */
-  box-sizing: border-box;
+  /* Consistent card sizing - let grid handle the columns automatically */
   display: flex;
   align-items: stretch;
-  /* Default: 3 columns for large screens */
-  flex: 0 0 calc(33.333% - 1rem);
-  max-width: calc(33.333% - 1rem);
-  /* allow a reasonable max width but don't force a small max that can break layout */
+  /* Grid will handle the sizing automatically based on available space */
 }
 
 /* Media query for small screens (Mobile: Single column) */
 @media (max-width: 767px) {
-  .docs-cards-layout .cases .case,
-  .docs-cards-layout .benchmarks .benchmark,
-  .docs-cards-layout .toolboxes .toolbox,
-  .docs-cards-layout .manuals .manual,
-  .docs-cards-layout .catalogs .catalog,
-  .docs-cards-layout .reports .report {
-    /* on small screens: single column layout */
-    flex: 1 1 100%;
-    max-width: 100%;
-    margin-bottom: 1rem;
-  }
-
   /* On small screens remove the forced square aspect so cards can size naturally. */
   .docs-cards-layout .page-card {
     /* stylelint-disable property-no-unknown */
@@ -69,80 +67,7 @@
   }
 }
 
-/* Media query for tablet screens (768px - 1024px): 2 columns */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .docs-cards-layout .cases .case,
-  .docs-cards-layout .benchmarks .benchmark,
-  .docs-cards-layout .toolboxes .toolbox,
-  .docs-cards-layout .manuals .manual,
-  .docs-cards-layout .catalogs .catalog,
-  .docs-cards-layout .reports .report {
-    /* 2 columns on tablets */
-    flex: 0 0 calc(50% - 0.75rem);
-    max-width: calc(50% - 0.75rem);
-  }
-
-  .docs-cards-layout .page-card {
-    min-height: 280px; /* Medium height for tablets */
-  }
-
-  .docs-cards-layout .page-card-illustration i.fas,
-  .docs-cards-layout .page-card-illustration i.fa-solid,
-  .docs-cards-layout .page-card-illustration i.fab,
-  .docs-cards-layout .page-card-illustration i.fa-brands,
-  .docs-cards-layout .page-card-illustration i.far,
-  .docs-cards-layout .page-card-illustration i.fa-regular {
-    font-size: 80px; /* Medium icon size for tablets */
-  }
-}
-
-/* Media query for large screens (1025px - 1399px): 3 columns */
-@media (min-width: 1025px) and (max-width: 1399px) {
-  .docs-cards-layout .cases .case,
-  .docs-cards-layout .benchmarks .benchmark,
-  .docs-cards-layout .toolboxes .toolbox,
-  .docs-cards-layout .manuals .manual,
-  .docs-cards-layout .catalogs .catalog,
-  .docs-cards-layout .reports .report {
-    /* 3 columns on large screens */
-    flex: 0 0 calc(33.333% - 1rem);
-    min-width: 250px;
-    max-width: calc(33.333% - 1rem);
-  }
-
-  /* Ensure cards have consistent height on larger screens */
-  .docs-cards-layout .page-card {
-    min-height: 320px;
-  }
-}
-
-/* Media query for extra large screens (1400px+): 4 columns */
-@media (min-width: 1400px) {
-  .docs-cards-layout .cases .case,
-  .docs-cards-layout .benchmarks .benchmark,
-  .docs-cards-layout .toolboxes .toolbox,
-  .docs-cards-layout .manuals .manual,
-  .docs-cards-layout .catalogs .catalog,
-  .docs-cards-layout .reports .report {
-    /* 4 columns on extra large screens */
-    flex: 0 0 calc(25% - 1.125rem);
-    min-width: 280px;
-    max-width: calc(25% - 1.125rem);
-  }
-
-  .docs-cards-layout .page-card {
-    min-height: 340px; /* Slightly taller for better proportions with 4 columns */
-  }
-
-  .docs-cards-layout .page-card-illustration i.fas,
-  .docs-cards-layout .page-card-illustration i.fa-solid,
-  .docs-cards-layout .page-card-illustration i.fab,
-  .docs-cards-layout .page-card-illustration i.fa-brands,
-  .docs-cards-layout .page-card-illustration i.far,
-  .docs-cards-layout .page-card-illustration i.fa-regular {
-    font-size: 110px; /* Slightly larger icons for extra large screens */
-  }
-}
+/* CSS Grid automatically handles responsive columns - no need for complex media queries */
 
 .docs-cards-layout .page-card:hover,
 .docs-cards-layout .page-card:focus {
@@ -238,6 +163,70 @@
   border: 1px solid rgba(34, 108, 165, 0.08);
 }
 
+/* If a catalog card itself declares a category tag, override tint + badge */
+
+.docs-cards-layout .catalogs .catalog .page-card.case {
+  background: #fff8e1;
+  border: 1px solid rgba(255, 152, 0, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.case::before {
+  background: #ff8f00;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.benchmark {
+  background: #f2fff5;
+  border: 1px solid rgba(46, 125, 50, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.benchmark::before {
+  background: #2e7d32;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.example {
+  background: #f4e9fa;
+  border: 1px solid rgba(103, 58, 183, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.example::before {
+  background: #6a1b9a;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.application {
+  background: #e0f2f1;
+  border: 1px solid rgba(0, 105, 92, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.application::before {
+  background: #00695c;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.machine {
+  background: #eceff1;
+  border: 1px solid rgba(69, 90, 100, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.machine::before {
+  background: #455a64;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.usecase {
+  background: #efebe9;
+  border: 1px solid rgba(93, 64, 55, 0.12);
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.usecase::before {
+  background: #5d4037;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.report::before {
+  background: #a56c22;
+}
+
+.docs-cards-layout .catalogs .catalog .page-card.manual::before {
+  background: #2b6ea3;
+}
+
 .docs-cards-layout .reports .report .page-card {
   background: #fffaf6; /* subtle orange tint for reports */
   border: 1px solid rgba(165, 108, 34, 0.08);
@@ -246,7 +235,13 @@
 /* Small top-right badge to label the card type */
 .docs-cards-layout .manuals .manual .page-card::before,
 .docs-cards-layout .catalogs .catalog .page-card::before,
-.docs-cards-layout .reports .report .page-card::before {
+.docs-cards-layout .reports .report .page-card::before,
+.docs-cards-layout .examples .example .page-card::before,
+.docs-cards-layout .benchmarks .benchmark .page-card::before,
+.docs-cards-layout .applications .application .page-card::before,
+.docs-cards-layout .machines .machine .page-card::before,
+.docs-cards-layout .usecases .usecase .page-card::before,
+.docs-cards-layout .cases .case .page-card::before {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -262,12 +257,23 @@
 @media (max-width: 767px) {
   .docs-cards-layout .manuals .manual .page-card::before,
   .docs-cards-layout .catalogs .catalog .page-card::before,
-  .docs-cards-layout .reports .report .page-card::before {
+  .docs-cards-layout .reports .report .page-card::before,
+  .docs-cards-layout .examples .example .page-card::before,
+  .docs-cards-layout .benchmarks .benchmark .page-card::before,
+  .docs-cards-layout .applications .application .page-card::before,
+  .docs-cards-layout .machines .machine .page-card::before,
+  .docs-cards-layout .usecases .usecase .page-card::before,
+  .docs-cards-layout .cases .case .page-card::before {
     top: 0.25rem;
     right: 0.25rem;
     padding: 0.1rem 0.4rem;
     font-size: 0.65rem; /* Smaller badge text on mobile */
   }
+}
+
+.docs-cards-layout .cases .case .page-card::before {
+  content: "Case";
+  background: #ff8f00; /* amber */
 }
 
 .docs-cards-layout .manuals .manual .page-card::before {
@@ -283,6 +289,62 @@
 .docs-cards-layout .reports .report .page-card::before {
   content: "Report";
   background: #a56c22; /* orange */
+}
+
+.docs-cards-layout .examples .example .page-card::before {
+  content: "Example";
+  background: #6a1b9a; /* purple */
+}
+
+.docs-cards-layout .benchmarks .benchmark .page-card::before {
+  content: "Benchmark";
+  background: #2e7d32; /* green */
+}
+
+.docs-cards-layout .applications .application .page-card::before {
+  content: "Application";
+  background: #00695c; /* teal */
+}
+
+.docs-cards-layout .machines .machine .page-card::before {
+  content: "Machine";
+  background: #455a64; /* blue gray */
+}
+
+.docs-cards-layout .usecases .usecase .page-card::before {
+  content: "Use Case";
+  background: #5d4037; /* brown */
+}
+
+/* Subtle category tints */
+.docs-cards-layout .cases .case .page-card {
+  background: #fff8e1; /* soft amber */
+  border: 1px solid rgba(255, 152, 0, 0.12);
+}
+
+.docs-cards-layout .examples .example .page-card {
+  background: #f4e9fa; /* soft purple */
+  border: 1px solid rgba(103, 58, 183, 0.12);
+}
+
+.docs-cards-layout .benchmarks .benchmark .page-card {
+  background: #f2fff5; /* soft green */
+  border: 1px solid rgba(46, 125, 50, 0.12);
+}
+
+.docs-cards-layout .applications .application .page-card {
+  background: #e0f2f1; /* soft teal */
+  border: 1px solid rgba(0, 105, 92, 0.12);
+}
+
+.docs-cards-layout .machines .machine .page-card {
+  background: #eceff1; /* soft blue-gray */
+  border: 1px solid rgba(69, 90, 100, 0.12);
+}
+
+.docs-cards-layout .usecases .usecase .page-card {
+  background: #efebe9; /* soft brown */
+  border: 1px solid rgba(93, 64, 55, 0.12);
 }
 
 .docs-cards-layout .page-card .page-card-body {

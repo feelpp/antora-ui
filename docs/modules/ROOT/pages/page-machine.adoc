@@ -1,0 +1,28 @@
+= Machine Pages
+:page-tags: layout, machine
+:description: Guidance for single machine pages and how they appear in machine catalogs
+:page-illustration: fa-solid fa-microchip
+
+[.lead.panel.accent.rounded]
+A machine is a normal page tagged `machine` so it can be collected by a parent `machines` catalog page.
+
+== Minimal Machine Page
+
+[source,asciidoc]
+----
+= Title of the Machine
+:page-layout: machine          // optional (default layout also works)
+:page-tags: machine
+:description: Single‑line summary used by machine catalogs
+:page-illustration: fa-solid fa-chart-column // or image path
+
+Intro paragraph explaining the machine…
+----
+
+== Fields Used by Cards
+
+- `description`: shown under the card title
+- `page-illustration`: Font Awesome class list (e.g., `fa-solid fa-chart-column`) or image path
+
+Tag the page with `machine` so it appears in xref:machines.adoc[Machines Layout] pages.
+

@@ -1,0 +1,25 @@
+= Machines Catalog (via manuals)
+:page-layout: manuals
+:page-tags: layout, machines, cards, catalog
+:description: How to list machine pages as cards using the generic catalog layout
+:page-cards-tag: machine
+:page-cards-within-module: true
+:page-illustration: fa-solid fa-microchip
+
+[.lead.panel.accent.rounded]
+Use the generic `manuals` layout and set `:page-cards-tag:` to `machine`. Tag each child page with `machine`.
+
+== Quick Start
+
+[source,asciidoc]
+----
+// Parent page
+:page-layout: manuals
+:page-cards-tag: machine
+:page-cards-within-module: true
+
+// Child page
+:page-tags: machine
+:description: Short machine summary
+:page-illustration: fa-solid fa-server // or image path
+----

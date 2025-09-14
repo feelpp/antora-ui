@@ -1,0 +1,32 @@
+= Benchmarks Catalog (via manuals)
+:page-layout: manuals
+:page-tags: layout, benchmarks, cards, catalog
+:description: How to list benchmark pages as cards using the generic catalog layout
+:page-cards-tag: benchmark
+:page-cards-within-module: true
+:page-illustration: fa-solid fa-gauge
+
+[.lead.panel.accent.rounded]
+Use the generic `manuals` layout for all catalogs. Control what appears with `:page-cards-tag:`.
+
+== Quick Start
+
+[source,asciidoc]
+----
+// Parent benchmarks page
+:page-layout: manuals
+:page-cards-tag: benchmark
+:page-cards-within-module: true
+
+// Child benchmark page
+:page-tags: benchmark
+:description: Short summary shown on card
+:page-illustration: fa-solid fa-gauge // or image path
+----
+
+== Attributes
+
+- `page-layout`: always `manuals` for catalogs
+- `page-cards-tag`: tag(s) to collect (default `benchmark`)
+- `page-cards-within-module`: `true` to limit to current module; `false` for site‑wide
+- `page-cards-<tag>-title`: optional group titles if you collect multiple tags

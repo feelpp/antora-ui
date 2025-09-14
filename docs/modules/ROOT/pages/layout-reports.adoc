@@ -1,0 +1,40 @@
+= Reports Catalog (via manuals)
+:page-layout: manuals
+:page-tags: layout, reports, cards, catalog
+:description: How to list report pages as cards using the generic catalog layout
+:page-cards-tag: report
+:page-cards-within-module: true
+:page-illustration: fa-solid fa-chart-line
+
+[.lead.panel.accent.rounded]
+Use the generic `manuals` layout for all catalogs. Control what appears with `:page-cards-tag:`. Each child report is a normal page tagged `report`.
+
+== Quick Start
+
+[source,asciidoc]
+----
+// In the parent page
+:page-layout: manuals
+:page-cards-tag: report           // displays report pages
+:page-cards-within-module: true   // limit search to current component/module
+
+// On each report page
+:page-tags: report
+:description: Short blurb shown on the card
+:page-illustration: fa-solid fa-chart-line   // or image path (ROOT:diagram.png)
+----
+
+== Attributes
+
+- `page-layout`: set to `manuals` on the parent page.
+- `page-cards-tag`: tag to collect (default: `report`).
+- `page-cards-within-module`: `true` to look in current module only; set `false` to search the whole site.
+- `page-cards-<tag>-title`: optional per-tag heading when grouping by multiple tags.
+
+== Card Content (child pages)
+
+- `page-tags`: include `report` so the page is collected.
+- `page-illustration`: Font Awesome (e.g., `fa-solid fa-chart-line`) or image path.
+- `description`: short text shown under the title.
+
+See also: xref:card-system.adoc[] for card data sources and illustration options.

@@ -148,3 +148,94 @@ If you need to include source maps in the bundle, you can do so by setting the `
  $ SOURCEMAPS=true npm run build
 
 In this case, the bundle will include the source maps, which can be used for debugging your production site.
+
+== Search Functionality
+
+This UI supports two search systems and automatically selects the appropriate one:
+
+=== Algolia DocSearch (External Service)
+
+For sites with Algolia DocSearch configured (like `docs.feelpp.org`), the UI will automatically use Algolia DocSearch when these site attributes are set in your Antora playbook:
+
+[source,yaml]
+----
+asciidoc:
+  attributes:
+    docsearch-api-key: your-algolia-api-key
+    docsearch-app-id: your-algolia-app-id  
+    docsearch-index-name: your-algolia-index-name
+----
+
+=== Lunr.js Client-Side Search (Default)
+
+For sites without Algolia configuration, the UI falls back to client-side search using Lunr.js, which provides fast search without requiring external services.
+
+=== Available Build Scripts
+
+The project includes several build scripts for different purposes:
+
+[cols="1,3"]
+|===
+|Script |Purpose
+
+|`npm run build:ui`
+|Build only the UI bundle (same as `npm run build`)
+
+|`npm run build:site`
+|Generate the Antora site using the current UI bundle
+
+|`npm run build:search`
+|Generate the search index from the built site
+
+|`npm run build:full`
+|Complete build: UI → Site → Search index (recommended for production)
+
+|`npm run generate-search-index`
+|Generate search index (alias for `build:search`)
+|===
+
+=== Full Website Build
+
+To build the complete website with search functionality:
+
+ $ npm run build:full
+
+This command will:
+
+1. Build the UI bundle (includes both Algolia DocSearch and Lunr.js support)
+2. Generate the Antora documentation site  
+3. Create the search index for client-side search (only used if Algolia is not configured)
+
+The resulting site in `build/site/` will have fully functional search that automatically selects the appropriate search system.
+
+=== Search Index Generation
+
+The search functionality requires a search index to be generated after the site is built.
+This index is created by crawling the generated HTML files and extracting content.
+
+You can customize the search behavior by modifying:
+
+* `src/js/07-search.js` - Search functionality and UI
+* `src/css/lunr-search.css` - Search results styling  
+* `tasks/generate-search-index.js` - Index generation logic
+
+=== Manual Search Index Generation
+
+You can also generate the search index manually:
+
+ $ node tasks/generate-search-index.js [site-directory] [output-file]
+
+For example:
+
+ $ node tasks/generate-search-index.js ./build/site ./build/site/search-index.json
+
+=== CI/CD Integration
+
+For automated builds, use the full build command:
+
+[source,yaml]
+----
+# Example GitHub Actions step
+- name: Build website with search
+  run: npm run build:full
+----

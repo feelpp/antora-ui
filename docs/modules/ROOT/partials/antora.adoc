@@ -1,0 +1,39 @@
+= Using {feelpp} antora UI
+:page-plotly: true
+
+A UI has been developed for {feelpp}, it is available https://github.com/feelpp/antora-ui]here].
+We describe here how to use it.
+
+NOTE: this manual is indentded 
+
+- [x] install antora-ui
+- [x] use Jupyter notebooks
+- [x] use UI elements
+
+== Jupyter Notebooks
+
+Jupyter notebooks are a great way to document and share your work. 
+{feelpp} antora-ui allows to generate Jupyter notebooks from the documentation by simply adding a `page-jupyter` tag to the page.
+
+.Example
+[.examp#exmap:page-jupyter]
+....
+= My page
+:page-jupyter: true
+....
+
+A button will be added to the navigation bar to download the notebook.
+
+
+
+== UI elements
+
+=== Dynamic blocks
+
+=== Blocks for mathematics
+
+=== Pseudocode
+
+
+
+
