@@ -1,0 +1,23 @@
+= Example Page
+:page-tags: example, card
+:description: Example page to showcase features or concepts
+:page-illustration: fa-solid fa-flask
+
+[.lead.panel.accent.rounded]
+Use example pages to showcase features or concepts.
+
+== Quick Start
+
+[source,asciidoc]
+----
+:page-tags: example
+:description: Short card summary
+:page-illustration: fa-solid fa-flask // or image path
+----
+
+
+== Child Page Fields
+
+- `page-illustration`: Font Awesome or image path (see xref:card-system.adoc[])
+- `description`: one‑line summary
+

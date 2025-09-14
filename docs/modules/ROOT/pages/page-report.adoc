@@ -1,0 +1,27 @@
+= Report Pages
+:page-tags: layout, report
+:description: Guidance for single report pages and how they appear in report catalogs
+:page-illustration: fa-solid fa-chart-column
+
+[.lead.panel.accent.rounded]
+A report is a normal page tagged `report` so it can be collected by a parent `reports` catalog page.
+
+== Minimal Report Page
+
+[source,asciidoc]
+----
+= Title of the Report
+:page-tags: report
+:description: Single‑line summary used by report catalogs
+:page-illustration: fa-solid fa-chart-column // or image path
+
+Intro paragraph explaining the report…
+----
+
+== Fields Used by Cards
+
+- `description`: shown under the card title
+- `page-illustration`: Font Awesome class list (e.g., `fa-solid fa-chart-column`) or image path
+
+Tag the page with `report` so it appears in xref:reports.adoc[Reports Layout] pages.
+

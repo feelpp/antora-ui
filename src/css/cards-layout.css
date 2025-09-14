@@ -1,4 +1,8 @@
 .docs-cards-layout .cases,
+.docs-cards-layout .examples,
+.docs-cards-layout .applications,
+.docs-cards-layout .machines,
+.docs-cards-layout .usecases,
 .docs-cards-layout .benchmarks,
 .docs-cards-layout .toolboxes,
 .docs-cards-layout .manuals,
@@ -15,6 +19,10 @@
 /* Mobile-specific adjustments for card containers */
 @media (max-width: 767px) {
   .docs-cards-layout .cases,
+  .docs-cards-layout .examples,
+  .docs-cards-layout .applications,
+  .docs-cards-layout .machines,
+  .docs-cards-layout .usecases,
   .docs-cards-layout .benchmarks,
   .docs-cards-layout .toolboxes,
   .docs-cards-layout .manuals,
@@ -28,6 +36,10 @@
 }
 
 .docs-cards-layout .cases .case,
+.docs-cards-layout .examples .example,
+.docs-cards-layout .applications .application,
+.docs-cards-layout .machines .machine,
+.docs-cards-layout .usecases .usecase,
 .docs-cards-layout .benchmarks .benchmark,
 .docs-cards-layout .toolboxes .toolbox,
 .docs-cards-layout .manuals .manual,
@@ -48,6 +60,10 @@
 /* Media query for small screens (Mobile: Single column) */
 @media (max-width: 767px) {
   .docs-cards-layout .cases .case,
+  .docs-cards-layout .examples .example,
+  .docs-cards-layout .applications .application,
+  .docs-cards-layout .machines .machine,
+  .docs-cards-layout .usecases .usecase,
   .docs-cards-layout .benchmarks .benchmark,
   .docs-cards-layout .toolboxes .toolbox,
   .docs-cards-layout .manuals .manual,
@@ -72,6 +88,10 @@
 /* Media query for tablet screens (768px - 1024px): 2 columns */
 @media (min-width: 768px) and (max-width: 1024px) {
   .docs-cards-layout .cases .case,
+  .docs-cards-layout .examples .example,
+  .docs-cards-layout .applications .application,
+  .docs-cards-layout .machines .machine,
+  .docs-cards-layout .usecases .usecase,
   .docs-cards-layout .benchmarks .benchmark,
   .docs-cards-layout .toolboxes .toolbox,
   .docs-cards-layout .manuals .manual,
@@ -99,6 +119,10 @@
 /* Media query for large screens (1025px - 1399px): 3 columns */
 @media (min-width: 1025px) and (max-width: 1399px) {
   .docs-cards-layout .cases .case,
+  .docs-cards-layout .examples .example,
+  .docs-cards-layout .applications .application,
+  .docs-cards-layout .machines .machine,
+  .docs-cards-layout .usecases .usecase,
   .docs-cards-layout .benchmarks .benchmark,
   .docs-cards-layout .toolboxes .toolbox,
   .docs-cards-layout .manuals .manual,
@@ -119,6 +143,10 @@
 /* Media query for extra large screens (1400px+): 4 columns */
 @media (min-width: 1400px) {
   .docs-cards-layout .cases .case,
+  .docs-cards-layout .examples .example,
+  .docs-cards-layout .applications .application,
+  .docs-cards-layout .machines .machine,
+  .docs-cards-layout .usecases .usecase,
   .docs-cards-layout .benchmarks .benchmark,
   .docs-cards-layout .toolboxes .toolbox,
   .docs-cards-layout .manuals .manual,
@@ -246,7 +274,12 @@
 /* Small top-right badge to label the card type */
 .docs-cards-layout .manuals .manual .page-card::before,
 .docs-cards-layout .catalogs .catalog .page-card::before,
-.docs-cards-layout .reports .report .page-card::before {
+.docs-cards-layout .reports .report .page-card::before,
+.docs-cards-layout .examples .example .page-card::before,
+.docs-cards-layout .benchmarks .benchmark .page-card::before,
+.docs-cards-layout .applications .application .page-card::before,
+.docs-cards-layout .machines .machine .page-card::before,
+.docs-cards-layout .usecases .usecase .page-card::before {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -262,7 +295,12 @@
 @media (max-width: 767px) {
   .docs-cards-layout .manuals .manual .page-card::before,
   .docs-cards-layout .catalogs .catalog .page-card::before,
-  .docs-cards-layout .reports .report .page-card::before {
+  .docs-cards-layout .reports .report .page-card::before,
+  .docs-cards-layout .examples .example .page-card::before,
+  .docs-cards-layout .benchmarks .benchmark .page-card::before,
+  .docs-cards-layout .applications .application .page-card::before,
+  .docs-cards-layout .machines .machine .page-card::before,
+  .docs-cards-layout .usecases .usecase .page-card::before {
     top: 0.25rem;
     right: 0.25rem;
     padding: 0.1rem 0.4rem;
@@ -283,6 +321,57 @@
 .docs-cards-layout .reports .report .page-card::before {
   content: "Report";
   background: #a56c22; /* orange */
+}
+
+.docs-cards-layout .examples .example .page-card::before {
+  content: "Example";
+  background: #6a1b9a; /* purple */
+}
+
+.docs-cards-layout .benchmarks .benchmark .page-card::before {
+  content: "Benchmark";
+  background: #2e7d32; /* green */
+}
+
+.docs-cards-layout .applications .application .page-card::before {
+  content: "Application";
+  background: #00695c; /* teal */
+}
+
+.docs-cards-layout .machines .machine .page-card::before {
+  content: "Machine";
+  background: #455a64; /* blue gray */
+}
+
+.docs-cards-layout .usecases .usecase .page-card::before {
+  content: "Use Case";
+  background: #5d4037; /* brown */
+}
+
+/* Subtle category tints */
+.docs-cards-layout .examples .example .page-card {
+  background: #f4e9fa; /* soft purple */
+  border: 1px solid rgba(103, 58, 183, 0.12);
+}
+
+.docs-cards-layout .benchmarks .benchmark .page-card {
+  background: #f2fff5; /* soft green */
+  border: 1px solid rgba(46, 125, 50, 0.12);
+}
+
+.docs-cards-layout .applications .application .page-card {
+  background: #e0f2f1; /* soft teal */
+  border: 1px solid rgba(0, 105, 92, 0.12);
+}
+
+.docs-cards-layout .machines .machine .page-card {
+  background: #eceff1; /* soft blue-gray */
+  border: 1px solid rgba(69, 90, 100, 0.12);
+}
+
+.docs-cards-layout .usecases .usecase .page-card {
+  background: #efebe9; /* soft brown */
+  border: 1px solid rgba(93, 64, 55, 0.12);
 }
 
 .docs-cards-layout .page-card .page-card-body {

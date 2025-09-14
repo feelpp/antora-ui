@@ -1,0 +1,25 @@
+= Applications Catalog (via manuals)
+:page-layout: manuals
+:page-tags: layout, applications, catalog
+:description: How to list application pages as cards using the generic catalog layout
+:page-cards-tag: application
+:page-cards-within-module: true
+:page-illustration: fa-solid fa-diagram-project
+
+[.lead.panel.accent.rounded]
+Use the generic `manuals` layout and set `:page-cards-tag:` to `application`. Tag each child page with `application`.
+
+== Quick Start
+
+[source,asciidoc]
+----
+// Parent page
+:page-layout: manuals
+:page-cards-tag: application
+:page-cards-within-module: true
+
+// Child page
+:page-tags: application
+:description: Short application summary
+:page-illustration: fa-solid fa-diagram-project // or image path
+----

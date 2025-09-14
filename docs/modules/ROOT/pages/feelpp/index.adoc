@@ -1,0 +1,9 @@
+= Cemosis UI Extensions
+
+{cemosis} and {feelpp} use some extension for the document
+
+- [ ] xref:cemosis/pseudocode.adoc[pseudocode]
+- [ ] xref:cemosis/pseudocode.plotly.adoc[plot.ly]
+- [ ] xref:cemosis/visu-vtk.adoc[visu-vtk]
+
+

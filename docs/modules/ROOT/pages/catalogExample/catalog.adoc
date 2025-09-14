@@ -1,7 +1,15 @@
 = Catalog Example
 :page-layout: manuals
 :page-tags: catalog-example,catalog
-:page-cards-tag: catalog,manual
+:page-cards-tag: catalog,manual,example,benchmark,report,application,machine,usecase
+:page-cards-catalog-title: Catalogs
+:page-cards-manual-title: Manuals
+:page-cards-example-title: Examples
+:page-cards-benchmark-title: Benchmarks
+:page-cards-report-title: Reports
+:page-cards-application-title: Applications
+:page-cards-machine-title: Machines
+:page-cards-usecase-title: Use Cases
 :page-cards-within-module: false
 :page-cards-title: Example Content
 :parent-catalogs: page-layouts

@@ -1,0 +1,27 @@
+= Use Case page
+:page-tags: layout, usecase
+:description: Guidance for single use case pages and how they appear in use case catalogs
+:page-illustration: fa-solid fa-briefcase
+
+[.lead.panel.accent.rounded]
+A use case is a normal page  tagged `usecase` so it can be collected by a parent `usecases` catalog page.
+
+== Minimal Use Case Page
+
+[source,asciidoc]
+----
+= Title of the Use Case
+:page-tags: usecase
+:description: Single‑line summary used by use case catalogs
+:page-illustration: fa-solid fa-chart-column // or image path
+
+Intro paragraph explaining the use case…
+----
+
+== Fields Used by Cards
+
+- `description`: shown under the card title
+- `page-illustration`: Font Awesome class list (e.g., `fa-solid fa-chart-column`) or image path
+
+Tag the page with `usecase` so it appears in xref:usecases.adoc[Use Cases Layout] pages.
+
