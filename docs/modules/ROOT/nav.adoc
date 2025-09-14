@@ -1,17 +1,38 @@
-
 * xref:index.adoc[Overview]
-* xref:style-guide.adoc[]
-** xref:inline-text-styles.adoc[]
-** xref:admonition-styles.adoc[]
-** xref:dynamic-processor.adoc[]
-** xref:source-highlighting.adoc[]
-** xref:copy-to-clipboard.adoc[]
-//** xref:plotly.adoc[]
-** xref:pseudocode.adoc[]
+
+* UI Element Styles
+** xref:style-guide.adoc[Style Guide]
+** xref:inline-text-styles.adoc[Inline Text]
+** xref:admonition-styles.adoc[Admonitions]
+** xref:dynamic-processor.adoc[Dynamic Processor]
+** xref:source-highlighting.adoc[Source Highlighting]
+** xref:copy-to-clipboard.adoc[Copy to Clipboard]
+//** xref:plotly.adoc[Plotly]
+** xref:pseudocode.adoc[Pseudocode]
 ** xref:lead.adoc[Lead Paragraphs]
-** xref:images.adoc[Image Styles & UI Macros]
+** xref:images.adoc[Images & Icons]
+
+* Layout Helpers
 ** xref:ROOT:grid.adoc[Layout Helpers (Grid)]
-** xref:page-layouts.adoc[Layout Helpers (Page Layouts)]
-** xref:manuals.adoc[]
-** xref:card-system.adoc[]
-** xref:catalogExample/catalog.adoc[]
+** xref:page-layouts.adoc[Page Layouts Overview]
+
+* Catalog Layouts (via Manuals)
+** xref:manuals.adoc[Manuals (Catalog Engine)]
+** xref:layout-examples.adoc[Examples Catalog]
+** xref:layout-benchmarks.adoc[Benchmarks Catalog]
+** xref:layout-reports.adoc[Reports Catalog]
+** xref:layout-applications.adoc[Applications Catalog]
+** xref:layout-machines.adoc[Machines Catalog]
+** xref:layout-usecases.adoc[Use Cases Catalog]
+
+* Page Types
+** xref:page-example.adoc[Example Page]
+** xref:page-benchmark.adoc[Benchmark Page]
+** xref:page-report.adoc[Report Page]
+** xref:page-application.adoc[Application Page]
+** xref:page-machine.adoc[Machine Page]
+** xref:page-usecase.adoc[Use Case Page]
+
+* Cards System
+** xref:card-system.adoc[Card System Documentation]
+** xref:catalogExample/catalog.adoc[Catalog Example]
