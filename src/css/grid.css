@@ -9,6 +9,45 @@
   display: contents;
 }
 
+/* For exampleblocks with grid classes, apply grid to the .content div */
+.doc .exampleblock.grid > .content {
+  display: grid;
+  gap: inherit;
+  /* Remove default exampleblock styling */
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.doc .exampleblock.grid-2 > .content {
+  grid-template-columns: 1fr;
+}
+
+.doc .exampleblock.grid-3 > .content {
+  grid-template-columns: 1fr;
+}
+
+.doc .exampleblock.grid-4 > .content {
+  grid-template-columns: 1fr;
+}
+
+.doc .exampleblock.grid-main-sidebar > .content {
+  grid-template-columns: 1fr;
+}
+
+.doc .exampleblock.grid-sidebar-main > .content {
+  grid-template-columns: 1fr;
+}
+
+/* Also remove styling for no-panel exampleblocks */
+.doc .exampleblock.no-panel > .content {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
 /* Reduce default margins inside grid children so columns align cleanly */
 .doc .grid > .content > * {
   margin: 0;
@@ -75,6 +114,15 @@
   grid-template-columns: 1fr;
 }
 
+/* Asymmetric grid layouts */
+.grid-main-sidebar {
+  grid-template-columns: 1fr;
+}
+
+.grid-sidebar-main {
+  grid-template-columns: 1fr;
+}
+
 /* Breakpoints */
 @media (min-width: 768px) {
   .grid-2 {
@@ -87,6 +135,38 @@
 
   .grid-4 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .doc .exampleblock.grid-2 > .content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .doc .exampleblock.grid-3 > .content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .doc .exampleblock.grid-4 > .content {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-main-sidebar {
+    grid-template-columns: 1fr 280px;
+  }
+
+  .grid-sidebar-main {
+    grid-template-columns: 280px 1fr;
+  }
+
+  .doc .exampleblock.grid-main-sidebar > .content {
+    grid-template-columns: 1fr 300px;
+    align-items: start;
+  }
+
+  .doc .exampleblock.grid-sidebar-main > .content {
+    grid-template-columns: 300px 1fr;
+    align-items: start;
   }
 }
 
@@ -228,4 +308,43 @@
 .float-left {
   float: left;
   margin: 0 1rem 1rem 0;
+}
+
+/* Text alignment utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Text color utilities */
+.doc .text-primary,
+.text-primary {
+  color: var(--color-brand-accent, #3f8e74);
+}
+
+.doc .text-success,
+.text-success {
+  color: var(--color-brand-tip, #2ca01c);
+}
+
+.doc .text-info,
+.text-info {
+  color: var(--color-brand-note, #0074e0);
+}
+
+.doc .text-warning,
+.text-warning {
+  color: var(--color-brand-caution, #ff8f00);
+}
+
+.doc .text-danger,
+.text-danger {
+  color: var(--color-brand-warning, #ea2328);
 }

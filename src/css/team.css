@@ -1,0 +1,90 @@
+/* Team page styling - circular photos and profile cards */
+
+/* Team member photos - circular style */
+.doc .section-gray .quoteblock img,
+.doc .section-white .quoteblock img {
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  margin-bottom: 0.75rem;
+}
+
+/* Ensure consistent sizing for team photos */
+.doc .section-gray .quoteblock img[width="120"],
+.doc .section-white .quoteblock img[width="120"] {
+  width: 120px;
+  height: 120px;
+}
+
+.doc .section-gray .quoteblock img[width="100"],
+.doc .section-white .quoteblock img[width="100"] {
+  width: 100px;
+  height: 100px;
+}
+
+/* Team member name styling */
+.doc .section-gray .quoteblock .text-center strong,
+.doc .section-white .quoteblock .text-center strong {
+  font-size: 1.1rem;
+  color: var(--heading-font-color, #262626);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* Role/title styling (italic text) */
+.doc .section-gray .quoteblock .text-center em,
+.doc .section-white .quoteblock .text-center em {
+  display: block;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Institution styling */
+.doc .section-gray .quoteblock .text-center p:last-child,
+.doc .section-white .quoteblock .text-center p:last-child {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Hover effect for team cards with photos */
+.doc .section-gray .quoteblock:has(img):hover,
+.doc .section-white .quoteblock:has(img):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Recruited personnel cards - list styling */
+.doc .section-gray .quoteblock ul,
+.doc .section-white .quoteblock ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.doc .section-gray .quoteblock ul li,
+.doc .section-white .quoteblock ul li {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.doc .section-gray .quoteblock ul li:last-child,
+.doc .section-white .quoteblock ul li:last-child {
+  border-bottom: none;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .doc .section-gray .quoteblock img[width="120"],
+  .doc .section-white .quoteblock img[width="120"] {
+    width: 100px;
+    height: 100px;
+  }
+
+  .doc .section-gray .quoteblock img[width="100"],
+  .doc .section-white .quoteblock img[width="100"] {
+    width: 80px;
+    height: 80px;
+  }
+}

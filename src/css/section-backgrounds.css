@@ -1,0 +1,111 @@
+/* Full-width alternating section backgrounds for long single-page layouts */
+
+/* Full-width section wrappers with alternating backgrounds */
+.doc .openblock.section-gray,
+.doc .openblock.section-white {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50% + 1rem);
+  padding-right: calc(50vw - 50% + 1rem);
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Gray background sections */
+.doc .openblock.section-gray {
+  background: #e8ecef;
+}
+
+/* White background sections */
+.doc .openblock.section-white {
+  background: #fff;
+}
+
+/* Ensure content inside sections uses full width */
+.doc .section-gray > .content,
+.doc .section-white > .content {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* Expand grids to full width inside sections */
+.doc .section-gray .exampleblock,
+.doc .section-white .exampleblock {
+  max-width: 100%;
+}
+
+.doc .section-gray .exampleblock > .content,
+.doc .section-white .exampleblock > .content {
+  max-width: 100%;
+}
+
+/* Desktop adjustments for better spacing */
+@media screen and (min-width: 1024px) {
+  .doc .openblock.section-gray,
+  .doc .openblock.section-white {
+    padding-left: calc(50vw - 50% + 2rem);
+    padding-right: calc(50vw - 50% + 2rem);
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* ============================================
+   Card styling for quoteblocks in sections
+   ============================================ */
+
+/* Style quoteblocks inside sections as cards */
+.doc .section-gray .quoteblock,
+.doc .section-white .quoteblock {
+  background: #fff;
+  border-left: 4px solid var(--color-brand-accent, #3f8e74);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem 1rem;
+  margin: 0;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.doc .section-gray .quoteblock:hover,
+.doc .section-white .quoteblock:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Remove default quote styling inside cards */
+.doc .section-gray .quoteblock blockquote,
+.doc .section-white .quoteblock blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.doc .section-gray .quoteblock .paragraph,
+.doc .section-white .quoteblock .paragraph {
+  font-style: normal;
+  margin: 0;
+}
+
+.doc .section-gray .quoteblock p,
+.doc .section-white .quoteblock p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Icons in cards */
+.doc .section-gray .quoteblock .fa,
+.doc .section-white .quoteblock .fa {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Strong text (titles) in cards */
+.doc .section-gray .quoteblock strong,
+.doc .section-white .quoteblock strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: var(--heading-font-color, #262626);
+}

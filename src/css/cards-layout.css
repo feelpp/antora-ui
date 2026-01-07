@@ -1,3 +1,14 @@
+/* Section titles for card groups */
+.docs-cards-layout h2.cards-group-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 3em;
+  margin-bottom: 1em;
+  color: var(--color-heading, #333);
+  border-bottom: 2px solid var(--color-primary, #06c);
+  padding-bottom: 0.5em;
+}
+
 .docs-cards-layout .cases,
 .docs-cards-layout .examples,
 .docs-cards-layout .applications,
@@ -7,12 +18,17 @@
 .docs-cards-layout .toolboxes,
 .docs-cards-layout .manuals,
 .docs-cards-layout .catalogs,
-.docs-cards-layout .reports {
+.docs-cards-layout .reports,
+.docs-cards-layout .infos,
+.docs-cards-layout .resources,
+.docs-cards-layout .wps,
+.docs-cards-layout .highlights {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1rem;
-  margin-top: 5em;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
+  gap: 1.5rem;
+  margin-top: 1.5em;
   margin-bottom: 5em;
+  justify-content: start;
 }
 
 /* Mobile-specific adjustments for card containers */
@@ -26,7 +42,11 @@
   .docs-cards-layout .toolboxes,
   .docs-cards-layout .manuals,
   .docs-cards-layout .catalogs,
-  .docs-cards-layout .reports {
+  .docs-cards-layout .reports,
+  .docs-cards-layout .infos,
+  .docs-cards-layout .resources,
+  .docs-cards-layout .wps,
+  .docs-cards-layout .highlights {
     grid-template-columns: 1fr; /* Single column on mobile */
     margin-top: 2em;
     margin-bottom: 2em;
@@ -48,7 +68,11 @@
 .docs-cards-layout .catalogs .catalog,
 .docs-cards-layout .catalogs > *,
 .docs-cards-layout .catalogs > * > *,
-.docs-cards-layout .reports .report {
+.docs-cards-layout .reports .report,
+.docs-cards-layout .infos .info,
+.docs-cards-layout .resources .resource,
+.docs-cards-layout .wps .wp,
+.docs-cards-layout .highlights .highlight {
   /* Consistent card sizing - let grid handle the columns automatically */
   display: flex;
   align-items: stretch;
@@ -241,7 +265,8 @@
 .docs-cards-layout .applications .application .page-card::before,
 .docs-cards-layout .machines .machine .page-card::before,
 .docs-cards-layout .usecases .usecase .page-card::before,
-.docs-cards-layout .cases .case .page-card::before {
+.docs-cards-layout .cases .case .page-card::before,
+.docs-cards-layout .highlights .highlight .page-card::before {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -263,7 +288,8 @@
   .docs-cards-layout .applications .application .page-card::before,
   .docs-cards-layout .machines .machine .page-card::before,
   .docs-cards-layout .usecases .usecase .page-card::before,
-  .docs-cards-layout .cases .case .page-card::before {
+  .docs-cards-layout .cases .case .page-card::before,
+  .docs-cards-layout .highlights .highlight .page-card::before {
     top: 0.25rem;
     right: 0.25rem;
     padding: 0.1rem 0.4rem;
@@ -316,6 +342,11 @@
   background: #5d4037; /* brown */
 }
 
+.docs-cards-layout .highlights .highlight .page-card::before {
+  content: "Highlight";
+  background: #d32f2f; /* red */
+}
+
 /* Subtle category tints */
 .docs-cards-layout .cases .case .page-card {
   background: #fff8e1; /* soft amber */
@@ -345,6 +376,11 @@
 .docs-cards-layout .usecases .usecase .page-card {
   background: #efebe9; /* soft brown */
   border: 1px solid rgba(93, 64, 55, 0.12);
+}
+
+.docs-cards-layout .highlights .highlight .page-card {
+  background: #ffebee; /* soft red */
+  border: 1px solid rgba(211, 47, 47, 0.12);
 }
 
 .docs-cards-layout .page-card .page-card-body {

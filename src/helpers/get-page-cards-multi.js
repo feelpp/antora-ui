@@ -166,8 +166,15 @@ module.exports = function () {
   }
   // Build groups for each tag including optional title from parent page attributes
   const groups = cardsTags.map(function (tag) {
+    // Note: Antora strips the 'page-' prefix when storing page attributes
+    // So :page-cards-catalog-title: becomes page.attributes['cards-catalog-title']
     const titleKey = `page-cards-${tag}-title`
-    const title = parentPage.asciidoc?.attributes?.[titleKey] || parentPage.attributes?.[titleKey]
+    const titleKeyWithoutPagePrefix = `cards-${tag}-title`
+    const title = parentPage.asciidoc?.attributes?.[titleKey] ||
+                  parentPage.asciidoc?.attributes?.[titleKeyWithoutPagePrefix] ||
+                  parentPage.attributes?.[titleKey] ||
+                  parentPage.attributes?.[titleKeyWithoutPagePrefix]
+
     return { tag, title, pages: makePagesForTag(tag) }
   }).filter((g) => g.pages && g.pages.length)
 
@@ -183,7 +190,7 @@ module.exports = function () {
         acrossComponents,
         groups.length)
       groups.forEach(function (g) {
-        console.log('[get-page-cards-multi] group %s -> pages=%d', g.tag, g.pages.length)
+        console.log('[get-page-cards-multi] group %s -> title=%s pages=%d', g.tag, g.title || '(no-title)', g.pages.length)
       })
       /* eslint-enable no-console */
     }

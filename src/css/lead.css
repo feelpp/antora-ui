@@ -1,0 +1,221 @@
+/* Lead paragraph and hero block styles */
+
+/* ============================================
+   CSS Custom Properties for theming
+   ============================================ */
+:root {
+  --lead-bg: linear-gradient(135deg, #fffdf5, #fff7d6);
+  --lead-border: #f2c94c;
+  --lead-border-accent: #f2b90c;
+  --lead-text: inherit;
+  --lead-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --hero-bg: linear-gradient(135deg, #f5faff, #eef6ff);
+  --hero-border: #1d70b8;
+  --hero-border-accent: #3e8ed0;
+  --standout-bg: linear-gradient(90deg, #ffef9f, #ffe070);
+  --critical-bg: #ffe8e6;
+  --critical-border: #ff6b57;
+}
+
+/* Dark mode overrides (class-based for Antora UI) */
+html.is-dark {
+  --lead-bg: linear-gradient(135deg, #3a3215, #4a3e19);
+  --lead-border: #cfa421;
+  --lead-border-accent: #e0b52a;
+  --lead-text: #f7eac0;
+  --lead-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  --hero-bg: linear-gradient(135deg, #0c2333, #0f2d42);
+  --standout-bg: linear-gradient(90deg, #614f00, #876900);
+  --critical-bg: #522;
+  --critical-border: #d55;
+}
+
+/* Also support prefers-color-scheme for users without toggle */
+@media (prefers-color-scheme: dark) {
+  html:not(.is-light) {
+    --lead-bg: linear-gradient(135deg, #3a3215, #4a3e19);
+    --lead-border: #cfa421;
+    --lead-border-accent: #e0b52a;
+    --lead-text: #f7eac0;
+    --lead-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    --hero-bg: linear-gradient(135deg, #0c2333, #0f2d42);
+    --standout-bg: linear-gradient(90deg, #614f00, #876900);
+    --critical-bg: #522;
+    --critical-border: #d55;
+  }
+}
+
+/* ============================================
+   Lead paragraph base styles
+   ============================================ */
+
+/* Box styling on the wrapper div only */
+.doc .paragraph.lead {
+  background: var(--lead-bg);
+  border: 2px solid var(--lead-border);
+  border-left: 6px solid var(--lead-border-accent);
+  padding: 0.9rem 1.1rem 1rem;
+  margin: 1.1rem 0 1.4rem;
+  border-radius: 8px;
+  box-shadow: var(--lead-shadow);
+  color: var(--lead-text);
+}
+
+/* Text styling for the paragraph inside */
+.doc .paragraph.lead p {
+  font-size: 1.18rem;
+  font-weight: 550;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Links inside lead */
+.doc .lead a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+html.is-dark .doc .lead a,
+html:not(.is-light) .doc .lead a {
+  color: #ffd866;
+}
+
+html.is-dark .doc .lead a:hover,
+html:not(.is-light) .doc .lead a:hover {
+  color: #ffe89a;
+}
+
+/* ============================================
+   Lead width variants
+   ============================================ */
+
+/* Wider variant: spans full content width */
+.doc .paragraph.lead.lead-wide {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  border-radius: 0;
+  padding-left: calc(1.25rem + 1rem);
+  padding-right: calc(1.25rem + 1rem);
+}
+
+/* Full-bleed variant: stretches to viewport edges */
+.doc .paragraph.lead.full-bleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  border-radius: 0;
+  padding-left: clamp(1rem, 4vw, 3rem);
+  padding-right: clamp(1rem, 4vw, 3rem);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Compact variant: reduced top margin under headings */
+.doc .paragraph.lead.compact {
+  margin-top: 0.4rem;
+}
+
+/* 75% width centered */
+.doc .paragraph.lead.lead-75 {
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Reading width (~60ch) */
+.doc .paragraph.lead.reading-width {
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive: full width on narrow screens */
+@media (max-width: 900px) {
+  .doc .paragraph.lead.lead-75,
+  .doc .paragraph.lead.reading-width {
+    max-width: 100%;
+  }
+}
+
+/* ============================================
+   Hero blocks (blue theme)
+   ============================================ */
+.doc .hero-block,
+.doc .hero-message {
+  background: var(--hero-bg);
+  border: 2px solid var(--hero-border);
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  margin: 1.25rem 0 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.doc .hero-block {
+  border-left: 6px solid var(--hero-border);
+}
+
+.doc .hero-message {
+  border-left: 6px solid var(--hero-border-accent);
+}
+
+/* Tighten admonition spacing inside hero blocks */
+.doc .hero-block .admonitionblock,
+.doc .hero-message .admonitionblock {
+  margin: 0.75rem 0;
+}
+
+/* ============================================
+   Inline highlights and callouts
+   ============================================ */
+
+/* Standout highlight (inline use) */
+.standout {
+  background: var(--standout-bg);
+  padding: 0 0.4em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+}
+
+html.is-dark .standout {
+  color: #f8f1cf;
+}
+
+/* Critical callout (for warnings/important info) */
+.doc .ai-critical,
+.doc .critical {
+  background: var(--critical-bg);
+  border: 2px solid var(--critical-border);
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+  font-weight: 500;
+}
+
+/* ============================================
+   Utility badges
+   ============================================ */
+.doc-version {
+  background: #eef3ff;
+  padding: 0.15rem 0.55rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+html.is-dark .doc-version {
+  background: #20324a;
+  color: #a8c5e8;
+}
+
+/* ============================================
+   Margin utilities (not in grid.css)
+   ============================================ */
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}

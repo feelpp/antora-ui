@@ -1,0 +1,145 @@
+/* Modern table styles with alternating colors and no borders */
+
+/* Base clean table style */
+.doc table.tableblock {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* Clean table variant - no borders, alternating rows */
+.doc table.tableblock.clean,
+.doc table.tableblock.striped {
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.doc table.tableblock.clean thead,
+.doc table.tableblock.striped thead {
+  background: var(--color-brand-accent, #3f8e74);
+  color: #fff;
+}
+
+.doc table.tableblock.clean th,
+.doc table.tableblock.striped th {
+  border: none;
+  padding: 0.875rem 1rem;
+  font-weight: 600;
+  text-align: left;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.doc table.tableblock.clean td,
+.doc table.tableblock.striped td {
+  border: none;
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+}
+
+/* Alternating row colors */
+.doc table.tableblock.clean tbody tr:nth-child(odd),
+.doc table.tableblock.striped tbody tr:nth-child(odd) {
+  background: #f8f9fa;
+}
+
+.doc table.tableblock.clean tbody tr:nth-child(even),
+.doc table.tableblock.striped tbody tr:nth-child(even) {
+  background: #fff;
+}
+
+/* Hover effect */
+.doc table.tableblock.clean tbody tr:hover,
+.doc table.tableblock.striped tbody tr:hover {
+  background: #e8f4f0;
+}
+
+/* Links in tables */
+.doc table.tableblock.clean a,
+.doc table.tableblock.striped a {
+  color: var(--color-brand-accent, #3f8e74);
+  text-decoration: none;
+}
+
+.doc table.tableblock.clean a:hover,
+.doc table.tableblock.striped a:hover {
+  text-decoration: underline;
+}
+
+/* Icon links in tables */
+.doc table.tableblock .fa {
+  font-size: 1.1rem;
+  margin-right: 0.25rem;
+}
+
+/* Compact variant */
+.doc table.tableblock.compact th,
+.doc table.tableblock.compact td {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Dark mode support */
+html.is-dark .doc table.tableblock.clean thead,
+html.is-dark .doc table.tableblock.striped thead {
+  background: #2a5a4a;
+}
+
+html.is-dark .doc table.tableblock.clean tbody tr:nth-child(odd),
+html.is-dark .doc table.tableblock.striped tbody tr:nth-child(odd) {
+  background: #2a2a2a;
+}
+
+html.is-dark .doc table.tableblock.clean tbody tr:nth-child(even),
+html.is-dark .doc table.tableblock.striped tbody tr:nth-child(even) {
+  background: #1e1e1e;
+}
+
+html.is-dark .doc table.tableblock.clean tbody tr:hover,
+html.is-dark .doc table.tableblock.striped tbody tr:hover {
+  background: #3a4a45;
+}
+
+/* Publication-specific table styling */
+.doc table.tableblock.publications th:first-child,
+.doc table.tableblock.publications td:first-child {
+  width: 55%;
+}
+
+.doc table.tableblock.publications th:nth-child(2),
+.doc table.tableblock.publications td:nth-child(2) {
+  width: 30%;
+}
+
+.doc table.tableblock.publications th:last-child,
+.doc table.tableblock.publications td:last-child {
+  width: 15%;
+  text-align: center;
+}
+
+.doc table.tableblock.publications td:first-child strong {
+  color: var(--heading-font-color, #262626);
+  font-weight: 600;
+}
+
+html.is-dark .doc table.tableblock.publications td:first-child strong {
+  color: #e0e0e0;
+}
+
+/* Responsive tables */
+@media (max-width: 768px) {
+  .doc table.tableblock.clean,
+  .doc table.tableblock.striped {
+    font-size: 0.85rem;
+  }
+
+  .doc table.tableblock.clean th,
+  .doc table.tableblock.clean td,
+  .doc table.tableblock.striped th,
+  .doc table.tableblock.striped td {
+    padding: 0.5rem 0.625rem;
+  }
+}
