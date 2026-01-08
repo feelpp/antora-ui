@@ -22,7 +22,8 @@
 .docs-cards-layout .infos,
 .docs-cards-layout .resources,
 .docs-cards-layout .wps,
-.docs-cards-layout .highlights {
+.docs-cards-layout .highlights,
+.docs-cards-layout .softwares {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
   gap: 1.5rem;
@@ -46,7 +47,8 @@
   .docs-cards-layout .infos,
   .docs-cards-layout .resources,
   .docs-cards-layout .wps,
-  .docs-cards-layout .highlights {
+  .docs-cards-layout .highlights,
+  .docs-cards-layout .softwares {
     grid-template-columns: 1fr; /* Single column on mobile */
     margin-top: 2em;
     margin-bottom: 2em;
@@ -72,7 +74,10 @@
 .docs-cards-layout .infos .info,
 .docs-cards-layout .resources .resource,
 .docs-cards-layout .wps .wp,
-.docs-cards-layout .highlights .highlight {
+.docs-cards-layout .highlights .highlight,
+.docs-cards-layout .softwares .software,
+.docs-cards-layout .softwares > *,
+.docs-cards-layout .softwares > * > * {
   /* Consistent card sizing - let grid handle the columns automatically */
   display: flex;
   align-items: stretch;
@@ -266,7 +271,8 @@
 .docs-cards-layout .machines .machine .page-card::before,
 .docs-cards-layout .usecases .usecase .page-card::before,
 .docs-cards-layout .cases .case .page-card::before,
-.docs-cards-layout .highlights .highlight .page-card::before {
+.docs-cards-layout .highlights .highlight .page-card::before,
+.docs-cards-layout .softwares .software .page-card::before {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -289,7 +295,8 @@
   .docs-cards-layout .machines .machine .page-card::before,
   .docs-cards-layout .usecases .usecase .page-card::before,
   .docs-cards-layout .cases .case .page-card::before,
-  .docs-cards-layout .highlights .highlight .page-card::before {
+  .docs-cards-layout .highlights .highlight .page-card::before,
+  .docs-cards-layout .softwares .software .page-card::before {
     top: 0.25rem;
     right: 0.25rem;
     padding: 0.1rem 0.4rem;
@@ -347,6 +354,11 @@
   background: #d32f2f; /* red */
 }
 
+.docs-cards-layout .softwares .software .page-card::before {
+  content: "Software";
+  background: #0288d1; /* light blue */
+}
+
 /* Subtle category tints */
 .docs-cards-layout .cases .case .page-card {
   background: #fff8e1; /* soft amber */
@@ -381,6 +393,11 @@
 .docs-cards-layout .highlights .highlight .page-card {
   background: #ffebee; /* soft red */
   border: 1px solid rgba(211, 47, 47, 0.12);
+}
+
+.docs-cards-layout .softwares .software .page-card {
+  background: #e1f5fe; /* soft light blue */
+  border: 1px solid rgba(2, 136, 209, 0.12);
 }
 
 .docs-cards-layout .page-card .page-card-body {
