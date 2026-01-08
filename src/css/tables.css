@@ -129,6 +129,62 @@ html.is-dark .doc table.tableblock.publications td:first-child strong {
   color: #e0e0e0;
 }
 
+/* Archive tables - alternating year colors */
+.doc table.tableblock.year-even {
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #f0f7f5;
+}
+
+.doc table.tableblock.year-even td {
+  border: none;
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+  background: #f0f7f5;
+}
+
+.doc table.tableblock.year-even tbody tr:hover td {
+  background: #e0efe8;
+}
+
+.doc table.tableblock.year-odd {
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #f5f0f7;
+}
+
+.doc table.tableblock.year-odd td {
+  border: none;
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+  background: #f5f0f7;
+}
+
+.doc table.tableblock.year-odd tbody tr:hover td {
+  background: #ebe0ef;
+}
+
+/* Dark mode for archive tables */
+html.is-dark .doc table.tableblock.year-even,
+html.is-dark .doc table.tableblock.year-even td {
+  background: #1a2a25;
+}
+
+html.is-dark .doc table.tableblock.year-even tbody tr:hover td {
+  background: #2a3a35;
+}
+
+html.is-dark .doc table.tableblock.year-odd,
+html.is-dark .doc table.tableblock.year-odd td {
+  background: #251a2a;
+}
+
+html.is-dark .doc table.tableblock.year-odd tbody tr:hover td {
+  background: #352a3a;
+}
+
 /* Responsive tables */
 @media (max-width: 768px) {
   .doc table.tableblock.clean,
