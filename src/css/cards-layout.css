@@ -12,6 +12,7 @@
 .docs-cards-layout .cases,
 .docs-cards-layout .examples,
 .docs-cards-layout .applications,
+.docs-cards-layout .frameworks,
 .docs-cards-layout .machines,
 .docs-cards-layout .usecases,
 .docs-cards-layout .benchmarks,
@@ -37,6 +38,7 @@
   .docs-cards-layout .cases,
   .docs-cards-layout .examples,
   .docs-cards-layout .applications,
+  .docs-cards-layout .frameworks,
   .docs-cards-layout .machines,
   .docs-cards-layout .usecases,
   .docs-cards-layout .benchmarks,
@@ -60,6 +62,7 @@
 .docs-cards-layout .cases .case,
 .docs-cards-layout .examples .example,
 .docs-cards-layout .applications .application,
+.docs-cards-layout .frameworks .framework,
 .docs-cards-layout .machines .machine,
 .docs-cards-layout .usecases .usecase,
 .docs-cards-layout .benchmarks .benchmark,
@@ -268,6 +271,7 @@
 .docs-cards-layout .examples .example .page-card::before,
 .docs-cards-layout .benchmarks .benchmark .page-card::before,
 .docs-cards-layout .applications .application .page-card::before,
+.docs-cards-layout .frameworks .framework .page-card::before,
 .docs-cards-layout .machines .machine .page-card::before,
 .docs-cards-layout .usecases .usecase .page-card::before,
 .docs-cards-layout .cases .case .page-card::before,
@@ -292,6 +296,7 @@
   .docs-cards-layout .examples .example .page-card::before,
   .docs-cards-layout .benchmarks .benchmark .page-card::before,
   .docs-cards-layout .applications .application .page-card::before,
+  .docs-cards-layout .frameworks .framework .page-card::before,
   .docs-cards-layout .machines .machine .page-card::before,
   .docs-cards-layout .usecases .usecase .page-card::before,
   .docs-cards-layout .cases .case .page-card::before,
@@ -339,6 +344,11 @@
   background: #00695c; /* teal */
 }
 
+.docs-cards-layout .frameworks .framework .page-card::before {
+  content: "Framework";
+  background: #1565c0; /* blue */
+}
+
 .docs-cards-layout .machines .machine .page-card::before {
   content: "Machine";
   background: #455a64; /* blue gray */
@@ -378,6 +388,11 @@
 .docs-cards-layout .applications .application .page-card {
   background: #e0f2f1; /* soft teal */
   border: 1px solid rgba(0, 105, 92, 0.12);
+}
+
+.docs-cards-layout .frameworks .framework .page-card {
+  background: #e3f2fd; /* soft blue */
+  border: 1px solid rgba(21, 101, 192, 0.12);
 }
 
 .docs-cards-layout .machines .machine .page-card {
