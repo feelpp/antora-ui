@@ -16,6 +16,18 @@
     /* max-width: var(--doc-max-width--desktop); */
     min-width: 0;
   }
+
+  /* When there's no TOC sidebar, use more horizontal space */
+  main > .content > article.doc:only-child {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  /* Remove horizontal margins from exampleblocks when no TOC */
+  article.doc:only-child .exampleblock {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 .doc [id] {
@@ -1623,4 +1635,52 @@ details.proof[open] > summary::before {
   height: 2em;
   border: none;
   transform: translateX(0.25em) translateY(2px);
+}
+
+/* Inline badges for tags and labels */
+.doc .badge {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  margin-left: 0.5em;
+}
+
+/* Badge color variants */
+.doc .badge-primary {
+  background-color: #1565c0;
+}
+
+.doc .badge-success {
+  background-color: #2e7d32;
+}
+
+.doc .badge-info {
+  background-color: #0288d1;
+}
+
+.doc .badge-warning {
+  background-color: #ff8f00;
+}
+
+.doc .badge-danger {
+  background-color: #d32f2f;
+}
+
+.doc .badge-secondary {
+  background-color: #455a64;
+}
+
+/* Co-funding specific badge */
+.doc .badge-cofunding {
+  background-color: #d32f2f; /* red to indicate co-funding */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
 }

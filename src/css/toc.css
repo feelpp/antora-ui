@@ -116,7 +116,7 @@
 }
 
 .toc.sidebar.is-hidden-toc {
-  /* display: none !important; */
+  display: none !important;
   flex: none;
 }
 
