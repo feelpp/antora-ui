@@ -283,3 +283,66 @@ html.is-clipped--nav {
   opacity: 0.9;
   font-weight: var(--body-font-weight-bold);
 }
+
+/* Navigation icon styling */
+/* AsciiDoc renders icon:name[] as <span class="icon"><i class="fa fa-name"></i></span> */
+.nav-menu .nav-item .icon {
+  margin-right: 0.35em;
+}
+
+.nav-menu .nav-item .icon i {
+  opacity: 0.9;
+}
+
+/* Color classes for navigation icons */
+.nav-menu .text-primary,
+.nav-menu i.text-primary {
+  color: var(--link-font-color);
+}
+
+.nav-menu .text-info,
+.nav-menu i.text-info {
+  color: var(--color-brand-accent);
+}
+
+.nav-menu .text-success,
+.nav-menu i.text-success {
+  color: var(--color-brand-tip);
+}
+
+.nav-menu .text-warning,
+.nav-menu i.text-warning {
+  color: var(--color-brand-caution);
+}
+
+.nav-menu .text-danger,
+.nav-menu i.text-danger {
+  color: var(--color-brand-red);
+}
+
+.nav-menu .text-purple,
+.nav-menu i.text-purple {
+  color: var(--color-brand-purple);
+}
+
+.nav-menu .text-teal,
+.nav-menu i.text-teal {
+  color: var(--color-brand-green);
+}
+
+/* Depth-based icon coloring (automatic, no markup changes needed) */
+/* AsciiDoc renders icon:name[] as <span class="icon"><i class="fa fa-name"></i></span> */
+.nav-item[data-depth="0"] > .nav-link > .icon i,
+.nav-item[data-depth="0"] > .nav-text > .icon i {
+  color: var(--link-font-color);
+}
+
+.nav-item[data-depth="1"] > .nav-link > .icon i,
+.nav-item[data-depth="1"] > .nav-text > .icon i {
+  color: var(--color-brand-accent);
+}
+
+.nav-item[data-depth="2"] > .nav-link > .icon i,
+.nav-item[data-depth="2"] > .nav-text > .icon i {
+  color: var(--color-brand-purple);
+}
