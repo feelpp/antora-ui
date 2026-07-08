@@ -123,8 +123,8 @@
    ============================================ */
 
 /* Base styles for automatic alternating sections */
-.doc > .sect1:nth-child(even),
-.doc > .sect1:nth-child(odd) {
+body.alternating-sections .doc > .sect1:nth-child(even),
+body.alternating-sections .doc > .sect1:nth-child(odd) {
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   padding-left: calc(50vw - 50% + 1rem);
@@ -136,44 +136,44 @@
 }
 
 /* Even sections (2, 4, 6, 8...) - gray background */
-.doc > .sect1:nth-child(even) {
+body.alternating-sections .doc > .sect1:nth-child(even) {
   background-color: #e9ecef;
 }
 
 /* Odd sections (1, 3, 5, 7...) - white background */
-.doc > .sect1:nth-child(odd) {
+body.alternating-sections .doc > .sect1:nth-child(odd) {
   background-color: #fff;
 }
 
 /* Section body and all containers - force full width expansion */
-.doc > .sect1 .sectionbody,
-.doc > .sect1 .sectionbody > *,
-.doc > .sect1 .sectionbody > * > * {
+body.alternating-sections .doc > .sect1 .sectionbody,
+body.alternating-sections .doc > .sect1 .sectionbody > *,
+body.alternating-sections .doc > .sect1 .sectionbody > * > * {
   max-width: none !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-.doc > .sect1 .sectionbody {
+body.alternating-sections .doc > .sect1 .sectionbody {
   margin-top: 1rem;
   width: 100%;
 }
 
 /* Grids inside automatic sections - force full width expansion */
-.doc > .sect1 .exampleblock,
-.doc > .sect1 .exampleblock.grid,
-.doc > .sect1 .exampleblock.grid-2,
-.doc > .sect1 .exampleblock.grid-3 {
+body.alternating-sections .doc > .sect1 .exampleblock,
+body.alternating-sections .doc > .sect1 .exampleblock.grid,
+body.alternating-sections .doc > .sect1 .exampleblock.grid-2,
+body.alternating-sections .doc > .sect1 .exampleblock.grid-3 {
   max-width: none !important;
   width: 100% !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-.doc > .sect1 .exampleblock > .content,
-.doc > .sect1 .exampleblock.grid > .content,
-.doc > .sect1 .exampleblock.grid-2 > .content,
-.doc > .sect1 .exampleblock.grid-3 > .content {
+body.alternating-sections .doc > .sect1 .exampleblock > .content,
+body.alternating-sections .doc > .sect1 .exampleblock.grid > .content,
+body.alternating-sections .doc > .sect1 .exampleblock.grid-2 > .content,
+body.alternating-sections .doc > .sect1 .exampleblock.grid-3 > .content {
   max-width: none !important;
   width: 100% !important;
   margin-left: 0 !important;
@@ -181,21 +181,21 @@
 }
 
 /* Individual cards in automatic sections - maintain nice aspect ratio */
-.doc > .sect1 .exampleblock .quoteblock {
+body.alternating-sections .doc > .sect1 .exampleblock .quoteblock {
   max-width: 600px;
   width: 100%;
   justify-self: start;
 }
 
 /* For 3-column grids, smaller max width */
-.doc > .sect1 .exampleblock.grid-3 .quoteblock {
+body.alternating-sections .doc > .sect1 .exampleblock.grid-3 .quoteblock {
   max-width: 400px;
 }
 
 /* Desktop adjustments for automatic sections */
 @media screen and (min-width: 1024px) {
-  .doc > .sect1:nth-child(even),
-  .doc > .sect1:nth-child(odd) {
+  body.alternating-sections .doc > .sect1:nth-child(even),
+  body.alternating-sections .doc > .sect1:nth-child(odd) {
     padding-left: calc(50vw - 50% + 2rem);
     padding-right: calc(50vw - 50% + 2rem);
     padding-top: 3rem;
@@ -203,36 +203,36 @@
   }
 
   /* When no TOC sidebar, optimize for more content space */
-  article.doc:only-child .sect1:nth-child(even),
-  article.doc:only-child .sect1:nth-child(odd) {
+  body.alternating-sections article.doc:only-child .sect1:nth-child(even),
+  body.alternating-sections article.doc:only-child .sect1:nth-child(odd) {
     padding-left: calc(50vw - 50% + 1rem);
     padding-right: calc(50vw - 50% + 1rem);
   }
 
   /* On desktop, allow cards to be slightly wider */
-  .doc > .sect1 .exampleblock .quoteblock {
+  body.alternating-sections .doc > .sect1 .exampleblock .quoteblock {
     max-width: 700px;
   }
 
-  .doc > .sect1 .exampleblock.grid-3 .quoteblock {
+  body.alternating-sections .doc > .sect1 .exampleblock.grid-3 .quoteblock {
     max-width: 450px;
   }
 }
 
 /* Wide screens adjustments */
 @media screen and (min-width: 1440px) {
-  .doc > .sect1:nth-child(even),
-  .doc > .sect1:nth-child(odd) {
+  body.alternating-sections .doc > .sect1:nth-child(even),
+  body.alternating-sections .doc > .sect1:nth-child(odd) {
     padding-left: calc(50vw - 50% + 3rem);
     padding-right: calc(50vw - 50% + 3rem);
   }
 
   /* On wide screens, cards can be even larger */
-  .doc > .sect1 .exampleblock .quoteblock {
+  body.alternating-sections .doc > .sect1 .exampleblock .quoteblock {
     max-width: 800px;
   }
 
-  .doc > .sect1 .exampleblock.grid-3 .quoteblock {
+  body.alternating-sections .doc > .sect1 .exampleblock.grid-3 .quoteblock {
     max-width: 500px;
   }
 }
