@@ -192,6 +192,32 @@ body.alternating-sections .doc > .sect1 .exampleblock.grid-3 .quoteblock {
   max-width: 400px;
 }
 
+/* Webinar report sections: keep the report as one logical sect1, but alternate
+   its direct sect2 children so long meeting reports remain easy to scan. */
+body.alternating-sections .doc > .sect1.webinar-report {
+  padding-bottom: 0;
+}
+
+body.alternating-sections .doc > .sect1.webinar-report > .sectionbody > .sect2 {
+  margin-left: -1rem !important;
+  margin-right: -1rem !important;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding: 2rem 1rem;
+}
+
+body.alternating-sections .doc > .sect1.webinar-report > .sectionbody > .sect2:nth-child(odd of .sect2) {
+  background-color: #fff;
+}
+
+body.alternating-sections .doc > .sect1.webinar-report > .sectionbody > .sect2:nth-child(even of .sect2) {
+  background-color: #e9ecef;
+}
+
+body.alternating-sections .doc > .sect1.webinar-report > .sectionbody > .sect2 > h3:first-child {
+  margin-top: 0;
+}
+
 /* Desktop adjustments for automatic sections */
 @media screen and (min-width: 1024px) {
   body.alternating-sections .doc > .sect1:nth-child(even),
@@ -217,6 +243,13 @@ body.alternating-sections .doc > .sect1 .exampleblock.grid-3 .quoteblock {
   body.alternating-sections .doc > .sect1 .exampleblock.grid-3 .quoteblock {
     max-width: 450px;
   }
+
+  body.alternating-sections .doc > .sect1.webinar-report > .sectionbody > .sect2 {
+    margin-left: -2rem !important;
+    margin-right: -2rem !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 /* Wide screens adjustments */
@@ -234,5 +267,12 @@ body.alternating-sections .doc > .sect1 .exampleblock.grid-3 .quoteblock {
 
   body.alternating-sections .doc > .sect1 .exampleblock.grid-3 .quoteblock {
     max-width: 500px;
+  }
+
+  body.alternating-sections .doc > .sect1.webinar-report > .sectionbody > .sect2 {
+    margin-left: -3rem !important;
+    margin-right: -3rem !important;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
