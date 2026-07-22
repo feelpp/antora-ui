@@ -129,6 +129,84 @@ html.is-dark .doc table.tableblock.publications td:first-child strong {
   color: #e0e0e0;
 }
 
+/* Archive year sections - alternating background colors */
+.doc h2.year-section {
+  padding: 1rem 1.5rem;
+  margin: 1.5rem -1.5rem 0 -1.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.doc h2.year-section.year-even {
+  background: #e8f5e9;
+}
+
+.doc h2.year-section.year-odd {
+  background: #e3f2fd;
+}
+
+.doc h2.year-section + .tableblock {
+  margin-top: 0;
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding: 0 1.5rem 1rem 1.5rem;
+}
+
+.doc h2.year-section.year-even + .tableblock {
+  background: #e8f5e9;
+}
+
+.doc h2.year-section.year-odd + .tableblock {
+  background: #e3f2fd;
+}
+
+/* Dark mode for year sections */
+html.is-dark .doc h2.year-section.year-even,
+html.is-dark .doc h2.year-section.year-even + .tableblock {
+  background: #1a2a25;
+}
+
+html.is-dark .doc h2.year-section.year-odd,
+html.is-dark .doc h2.year-section.year-odd + .tableblock {
+  background: #1a252a;
+}
+
+/* Archive tables - white background for entries */
+.doc table.tableblock.year-even,
+.doc table.tableblock.year-odd {
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.doc table.tableblock.year-even td,
+.doc table.tableblock.year-odd td {
+  border: none;
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+  background: #fff;
+}
+
+.doc table.tableblock.year-even tbody tr:hover td,
+.doc table.tableblock.year-odd tbody tr:hover td {
+  background: #f5f5f5;
+}
+
+/* Dark mode for archive tables */
+html.is-dark .doc table.tableblock.year-even,
+html.is-dark .doc table.tableblock.year-odd,
+html.is-dark .doc table.tableblock.year-even td,
+html.is-dark .doc table.tableblock.year-odd td {
+  background: #2a2a2a;
+}
+
+html.is-dark .doc table.tableblock.year-even tbody tr:hover td,
+html.is-dark .doc table.tableblock.year-odd tbody tr:hover td {
+  background: #3a3a3a;
+}
+
 /* Responsive tables */
 @media (max-width: 768px) {
   .doc table.tableblock.clean,

@@ -3,7 +3,7 @@
 <head>
   {{> head defaultPageTitle='Report'}}
 </head>
-<body class="article docs-report {{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
+<body class="article docs-report {{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}{{#if (has-page-attribute @root.page 'alternating-sections')}} alternating-sections{{/if}}">
 {{> header}}
 
 <div class="body">
@@ -27,4 +27,3 @@
 {{> footer}}
 </body>
 </html>
-
