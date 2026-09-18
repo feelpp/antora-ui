@@ -1,5 +1,6 @@
 {
   "name": "@feelpp/ui-default",
+  "version": "0.54.0",
   "description": "An archetype project that produces a UI for creating documentation sites with Antora",
   "homepage": "https://github.com/feelpp/antora-ui-default",
   "license": "MPL-2.0",
@@ -15,7 +16,7 @@
   ],
   "devDependencies": {
     "@asciidoctor/core": "~2.2",
-    "@feelpp/asciidoctor-extensions": "^1.0.0-rc.13",
+    "@feelpp/asciidoctor-extensions": "1.0.0",
     "@fontsource/roboto": "~4.5",
     "@fontsource/roboto-mono": "~4.5",
     "@fortawesome/fontawesome-free": "~6.4",
@@ -90,7 +91,7 @@
     "@antora/cli": "^3.1.12",
     "@antora/collector-extension": "^1.0.1",
     "@antora/site-generator": "^3.1.12",
-    "@feelpp/antora-extensions": "^1.0.0-rc.3",
+    "@feelpp/antora-extensions": "1.0.0",
     "asciidoctor-jupyter": "^0.7.0",
     "asciidoctor-kroki": "^0.18.1",
     "gulp-cli": "^2.3.0",

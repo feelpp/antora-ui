@@ -16,7 +16,7 @@ Add the extension to `site.yml`:
 # site.yml
 antora:
   extensions:
-    - require: '@feelpp/antora-extensions/src/lunr.js'
+    - require: '@feelpp/antora-extensions'
       lunr:
         indexFile: search-index.json
         maxContentLength: 1000
@@ -39,7 +39,7 @@ Install the extension with the other Antora build dependencies:
   "dependencies": {
     "@antora/cli": "^3.1.12",
     "@antora/site-generator": "^3.1.12", 
-    "@feelpp/antora-extensions": "^1.0.0-rc.6"
+    "@feelpp/antora-extensions": "1.0.0"
   },
   "scripts": {
     "build": "npx antora site.yml --stacktrace"

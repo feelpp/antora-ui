@@ -1,6 +1,9 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-action.json
 name: Generate Antora UI with Gulp
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -82,7 +85,7 @@ jobs:
         files: |
           build/ui-bundle.zip
         token: ${{ secrets.GITHUB_TOKEN }}
-        tag_name: ${{ github.ref }}
+        tag_name: ${{ github.ref_name }}
         name: Release ${{ github.ref_name }}
         generate_release_notes: true
         draft: false

@@ -12,7 +12,7 @@ site:
 
 antora:
   extensions:
-    - require: '@feelpp/antora-extensions/src/lunr.js'
+    - require: '@feelpp/antora-extensions'
       lunr:
         indexFile: search-index.json
         maxContentLength: 1000

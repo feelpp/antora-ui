@@ -29,10 +29,10 @@ If you want to simply use the UI for your Antora-generated site, add the followi
 ----
 ui:
   bundle:
-    url: https://github.com/feelpp/antora-ui/releases/download/v0.7/ui-bundle.zip
+    url: https://github.com/feelpp/antora-ui/releases/download/v0.54.0/ui-bundle.zip
 ----
 
-NOTE: Update the version in the download URL. Here, we are using version `v0.7`.
+NOTE: Update the version in the download URL. Here, we are using version `v0.54.0`.
 
 == Development Quickstart
 
@@ -169,7 +169,7 @@ asciidoc:
 === Lunr.js Client-Side Search (Default)
 
 For sites without Algolia configuration, the UI falls back to client-side search using Lunr.js, which provides fast search without requiring external services.
-The documentation repository must enable `@feelpp/antora-extensions/src/lunr.js` to generate its index; see link:SEARCH-README.md[SEARCH-README.md].
+The documentation repository must enable `@feelpp/antora-extensions` to generate its index; see link:SEARCH-README.md[SEARCH-README.md].
 
 === Available Build Scripts
 
