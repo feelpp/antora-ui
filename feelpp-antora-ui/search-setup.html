@@ -384,89 +384,41 @@ MathJax.Hub.Config({
 <p>The Feel++ Antora UI provides two search options: <strong>Lunr.js</strong> for client-side search and <strong>Algolia DocSearch</strong> for server-based search. The UI automatically detects which search system to use based on your site configuration.</p>
 </div>
 <div class="paragraph">
-<p>Search functionality is now <strong>fully automated</strong> through the <code>@feelpp/antora-extensions</code> package, eliminating the need for manual search index generation.</p>
+<p>The UI includes the Lunr browser client. Enable index generation explicitly in every documentation repository with <code>@feelpp/antora-extensions</code>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_search_options_overview"><a class="anchor" href="#_search_options_overview"></a>1. Search Options Overview</h2>
+<h2 id="_lunr_search"><a class="anchor" href="#_lunr_search"></a>1. Lunr Search</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Search Type</th>
-<th class="tableblock halign-left valign-top">Best For</th>
-<th class="tableblock halign-left valign-top">Requirements</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lunr.js</strong> (Default)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Small to medium sites, self-hosted sites, privacy-focused environments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">@feelpp/antora-extensions package (automatic)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Algolia DocSearch</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Large sites, sites with complex search requirements, existing Algolia integration</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Algolia account and DocSearch configuration</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_lunr_js_client_side_search"><a class="anchor" href="#_lunr_js_client_side_search"></a>2. Lunr.js Client-Side Search</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Lunr.js provides full-text search capabilities directly in the browser without requiring any external services. Search index generation is <strong>completely automated</strong> through the <code>@feelpp/antora-extensions</code> package.</p>
-</div>
 <div class="sect2">
-<h3 id="_automatic_setup"><a class="anchor" href="#_automatic_setup"></a>2.1. Automatic Setup</h3>
+<h3 id="_configure_the_site"><a class="anchor" href="#_configure_the_site"></a>1.1. Configure the Site</h3>
 <div class="paragraph">
-<p>The UI includes Lunr.js search by default. When you build your site with the Feel++ Antora UI, search functionality is automatically available:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The <code>@feelpp/antora-extensions</code> package automatically generates <code>search-index.json</code> during site builds</p>
-</li>
-<li>
-<p>The UI bundle includes Lunr.js for client-side search functionality</p>
-</li>
-<li>
-<p>No manual configuration or build steps required</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_quick_start_for_new_sites"><a class="anchor" href="#_quick_start_for_new_sites"></a>2.2. Quick Start for New Sites</h3>
-<div class="paragraph">
-<p>To add search to a new Antora site:</p>
-</div>
-<div class="sect3">
-<h4 id="_1_install_the_extension"><a class="anchor" href="#_1_install_the_extension"></a>2.2.1. 1. Install the Extension</h4>
-<div class="paragraph">
-<p>Add the Feel++ Antora extensions to your site configuration:</p>
+<p>Add the extension to <code>site.yml</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml"># site.yml
 antora:
   extensions:
-    - '@feelpp/antora-extensions'</code></pre>
+    - require: '@feelpp/antora-extensions'
+      lunr:
+        indexFile: search-index.json
+        maxContentLength: 1000
+        minContentLength: 50</code></pre>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_2_update_package_json"><a class="anchor" href="#_2_update_package_json"></a>2.2.2. 2. Update package.json</h4>
 <div class="paragraph">
-<p>Add the extension to your dependencies:</p>
+<p>Set <code>site.url</code> to the public deployment URL. Its pathname is used both to fetch the index and to create result links. For example, a GitHub Pages project site must use its project path:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">site:
+  url: https://feelpp.github.io/course-rom/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Install the extension with the other Antora build dependencies:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -474,7 +426,7 @@ antora:
   "dependencies": {
     "@antora/cli": "^3.1.12",
     "@antora/site-generator": "^3.1.12",
-    "@feelpp/antora-extensions": "^1.0.0-rc.3"
+    "@feelpp/antora-extensions": "1.0.0"
   },
   "scripts": {
     "build": "npx antora site.yml --stacktrace"
@@ -482,133 +434,55 @@ antora:
 }</code></pre>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_3_build_your_site"><a class="anchor" href="#_3_build_your_site"></a>2.2.3. 3. Build Your Site</h4>
 <div class="paragraph">
-<p>Simply run your normal Antora build:</p>
+<p>Run the normal Antora build:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Single command builds everything including search index
-npm run build</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>That&#8217;s it! The search index is automatically generated during the build process.</p>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run build</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_how_it_works"><a class="anchor" href="#_how_it_works"></a>2.3. How It Works</h3>
+<h3 id="_how_it_works"><a class="anchor" href="#_how_it_works"></a>1.2. How It Works</h3>
 <div class="paragraph">
-<p>The <code>@feelpp/antora-extensions</code> package includes a Lunr extension that:</p>
+<p>The extension listens for Antora&#8217;s <code>sitePublished</code> event and then:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Automatically generates search index</strong>: During the <code>sitePublished</code> event, the extension scans all generated HTML files</p>
+<p>Scans generated HTML pages, excluding the fallback <code>404.html</code> page.</p>
 </li>
 <li>
-<p><strong>Extracts content intelligently</strong>: Page titles, content, and URLs are extracted using JSDOM</p>
+<p>Extracts titles and readable page text.</p>
 </li>
 <li>
-<p><strong>Creates optimized index</strong>: Generates a compact <code>search-index.json</code> file in your site root</p>
+<p>Writes <code>search-index.json</code> to the site output directory.</p>
 </li>
 <li>
-<p><strong>Supports configuration</strong>: Configurable content selectors and indexing options</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The extension runs seamlessly during your normal Antora build process - no additional commands needed.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_configuration_options"><a class="anchor" href="#_configuration_options"></a>2.4. Configuration Options</h3>
-<div class="paragraph">
-<p>You can customize the search index generation by adding configuration to your <code>site.yml</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml"># site.yml
-antora:
-  extensions:
-    - require: '@feelpp/antora-extensions'
-      lunr_index_generation:
-        content_selector: 'article.doc .content'  # CSS selector for content
-        exclude_selectors:                        # Content to exclude
-          - '.navigation'
-          - '.page-toc'
-          - 'pre code'
-        boost_title: 10                          # Title importance multiplier</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_advanced_configuration"><a class="anchor" href="#_advanced_configuration"></a>2.5. Advanced Configuration</h3>
-<div class="paragraph">
-<p>For advanced use cases, you can configure multiple content areas or custom extraction logic:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml"># site.yml
-antora:
-  extensions:
-    - require: '@feelpp/antora-extensions'
-      lunr_index_generation:
-        content_selectors:
-          - selector: 'h1, h2, h3'
-            boost: 5
-          - selector: '.content p'
-            boost: 1
-          - selector: '.sidebar'
-            boost: 0.5
-        min_content_length: 10        # Minimum content length to index
-        max_content_length: 1000      # Maximum content length per document</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_search_ui_features"><a class="anchor" href="#_search_ui_features"></a>2.6. Search UI Features</h3>
-<div class="paragraph">
-<p>The Lunr.js implementation provides:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Real-time search</strong>: Results appear as you type (minimum 2 characters)</p>
-</li>
-<li>
-<p><strong>Fuzzy matching</strong>: Finds results even with minor typos</p>
-</li>
-<li>
-<p><strong>Field boosting</strong>: Page titles are weighted higher than content</p>
-</li>
-<li>
-<p><strong>Responsive design</strong>: Adapts to different screen sizes</p>
-</li>
-<li>
-<p><strong>Keyboard navigation</strong>: Use arrow keys and Enter to navigate results</p>
+<p>Prefixes result URLs with the pathname from <code>site.url</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_responsive_search_results"><a class="anchor" href="#_responsive_search_results"></a>2.7. Responsive Search Results</h3>
+<h3 id="_configuration_options"><a class="anchor" href="#_configuration_options"></a>1.3. Configuration Options</h3>
 <div class="paragraph">
-<p>The search dropdown automatically adjusts its width based on screen size:</p>
+<p>The <code>lunr</code> mapping supports these optional fields:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Mobile</strong> (&lt; 768px): Full-width dropdown with optimized touch targets</p>
+<p><code>indexFile</code>: output filename; defaults to <code>search-index.json</code>.</p>
 </li>
 <li>
-<p><strong>Tablets</strong> (768px - 1199px): Minimum 500px width, up to 80% of viewport</p>
+<p><code>maxContentLength</code>: maximum indexed characters per page; defaults to <code>1000</code>.</p>
 </li>
 <li>
-<p><strong>Desktop</strong> (≥ 1200px): Minimum 600px width, up to 70% of viewport</p>
+<p><code>minContentLength</code>: minimum indexed characters required to include a page; defaults to <code>50</code>.</p>
+</li>
+<li>
+<p><code>debug</code>: writes extraction diagnostics when <code>true</code>.</p>
 </li>
 </ul>
 </div>
@@ -616,128 +490,21 @@ antora:
 </div>
 </div>
 <div class="sect1">
-<h2 id="_algolia_docsearch_integration"><a class="anchor" href="#_algolia_docsearch_integration"></a>3. Algolia DocSearch Integration</h2>
+<h2 id="_algolia_docsearch_integration"><a class="anchor" href="#_algolia_docsearch_integration"></a>2. Algolia DocSearch Integration</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>For sites using Algolia DocSearch (like <code>docs.feelpp.org</code>), the UI automatically detects and uses the existing configuration.</p>
 </div>
-<div class="sect2">
-<h3 id="_configuration_detection"><a class="anchor" href="#_configuration_detection"></a>3.1. Configuration Detection</h3>
 <div class="paragraph">
-<p>The UI checks for Algolia configuration in this order:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>#search-script</code> element with data attributes</p>
-</li>
-<li>
-<p>Global Algolia configuration variables</p>
-</li>
-<li>
-<p>Existing DocSearch initialization</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_setup_for_algolia_docsearch"><a class="anchor" href="#_setup_for_algolia_docsearch"></a>3.2. Setup for Algolia DocSearch</h3>
-<div class="paragraph">
-<p>If you want to use Algolia DocSearch:</p>
-</div>
-<div class="sect3">
-<h4 id="_1_add_configuration_script"><a class="anchor" href="#_1_add_configuration_script"></a>3.2.1. 1. Add Configuration Script</h4>
-<div class="paragraph">
-<p>Add this to your site&#8217;s head or before the closing body tag:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;script id="search-script"
-        data-app-id="YOUR_APP_ID"
-        data-api-key="YOUR_API_KEY"
-        data-index-name="YOUR_INDEX_NAME"
-        data-stylesheet="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"&gt;
-&lt;/script&gt;</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_2_site_configuration"><a class="anchor" href="#_2_site_configuration"></a>3.2.2. 2. Site Configuration</h4>
-<div class="paragraph">
-<p>In your <code>antora.yml</code> or site configuration:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">asciidoc:
-  attributes:
-    algolia-app-id: YOUR_APP_ID
-    algolia-api-key: YOUR_API_KEY
-    algolia-index-name: YOUR_INDEX_NAME</code></pre>
-</div>
-</div>
-</div>
+<p>When a DocSearch API key is present in the UI configuration, the UI does not initialize Lunr. No Lunr index configuration is needed for such a site.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_search_behavior"><a class="anchor" href="#_search_behavior"></a>4. Search Behavior</h2>
+<h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>3. Troubleshooting</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_automatic_detection_logic"><a class="anchor" href="#_automatic_detection_logic"></a>4.1. Automatic Detection Logic</h3>
-<div class="paragraph">
-<p>The UI uses this detection logic:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>Check for Algolia</strong>: If DocSearch configuration exists, use Algolia</p>
-</li>
-<li>
-<p><strong>Check for Lunr Index</strong>: If <code>search-index.json</code> exists, use Lunr.js (automatically generated by @feelpp/antora-extensions)</p>
-</li>
-<li>
-<p><strong>Fallback</strong>: Show "Search not available" message</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_search_input"><a class="anchor" href="#_search_input"></a>4.2. Search Input</h3>
-<div class="paragraph">
-<p>Both search systems use the same search input element:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;input type="text" id="search-query" placeholder="Search {site.title}"&gt;</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_styling"><a class="anchor" href="#_styling"></a>4.3. Styling</h3>
-<div class="paragraph">
-<p>The search interface is styled consistently regardless of the backend:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Search input integrates with the navigation bar</p>
-</li>
-<li>
-<p>Results dropdown uses the same design language</p>
-</li>
-<li>
-<p>Responsive behavior works with both systems</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>5. Troubleshooting</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_lunr_js_issues"><a class="anchor" href="#_lunr_js_issues"></a>5.1. Lunr.js Issues</h3>
+<h3 id="_lunr_js_issues"><a class="anchor" href="#_lunr_js_issues"></a>3.1. Lunr.js Issues</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><strong>Search index not loading</strong></dt>
@@ -748,7 +515,7 @@ antora:
 <p>Verify <code>@feelpp/antora-extensions</code> is installed and configured in <code>site.yml</code></p>
 </li>
 <li>
-<p>Check that the extension is running during the build process</p>
+<p>Verify that <code>site.url</code> matches the public URL, including a GitHub Pages project pathname</p>
 </li>
 <li>
 <p>Ensure the generated <code>search-index.json</code> is accessible via HTTP(S)</p>
@@ -764,10 +531,10 @@ antora:
 <div class="ulist">
 <ul>
 <li>
-<p>Verify the search index contains documents by checking <code>/search-index.json</code> in your browser</p>
+<p>Verify the search index contains documents at the deployment path, for example <code>/course-rom/search-index.json</code></p>
 </li>
 <li>
-<p>Check that page content is being extracted properly (review content selectors)</p>
+<p>Adjust <code>minContentLength</code> when short pages need to be indexed</p>
 </li>
 <li>
 <p>Try rebuilding the site completely</p>
@@ -783,10 +550,7 @@ antora:
 <p>Large search indexes (&gt;1MB) may cause slow loading</p>
 </li>
 <li>
-<p>Use <code>exclude_selectors</code> to remove unnecessary content from indexing</p>
-</li>
-<li>
-<p>Consider using <code>max_content_length</code> to limit document size</p>
+<p>Use <code>maxContentLength</code> to limit document size</p>
 </li>
 </ul>
 </div>
@@ -811,7 +575,7 @@ antora:
 </div>
 </div>
 <div class="sect2">
-<h3 id="_algolia_docsearch_issues"><a class="anchor" href="#_algolia_docsearch_issues"></a>5.2. Algolia DocSearch Issues</h3>
+<h3 id="_algolia_docsearch_issues"><a class="anchor" href="#_algolia_docsearch_issues"></a>3.2. Algolia DocSearch Issues</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><strong>Search not initializing</strong></dt>
@@ -849,10 +613,10 @@ antora:
 </div>
 </div>
 <div class="sect1">
-<h2 id="_development"><a class="anchor" href="#_development"></a>6. Development</h2>
+<h2 id="_development"><a class="anchor" href="#_development"></a>4. Development</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_local_development"><a class="anchor" href="#_local_development"></a>6.1. Local Development</h3>
+<h3 id="_local_development"><a class="anchor" href="#_local_development"></a>4.1. Local Development</h3>
 <div class="paragraph">
 <p>For local development with search:</p>
 </div>
@@ -873,7 +637,7 @@ python3 -m http.server 8080
 </div>
 </div>
 <div class="sect2">
-<h3 id="_search_index_structure"><a class="anchor" href="#_search_index_structure"></a>6.2. Search Index Structure</h3>
+<h3 id="_search_index_structure"><a class="anchor" href="#_search_index_structure"></a>4.2. Search Index Structure</h3>
 <div class="paragraph">
 <p>The automatically generated Lunr.js search index has this structure:</p>
 </div>
@@ -893,7 +657,7 @@ python3 -m http.server 8080
 </div>
 </div>
 <div class="sect2">
-<h3 id="_customization"><a class="anchor" href="#_customization"></a>6.3. Customization</h3>
+<h3 id="_customization"><a class="anchor" href="#_customization"></a>4.3. Customization</h3>
 <div class="paragraph">
 <p>To customize search behavior:</p>
 </div>
@@ -917,13 +681,13 @@ python3 -m http.server 8080
 </div>
 </div>
 <div class="sect1">
-<h2 id="_migration_from_manual_to_automated_search"><a class="anchor" href="#_migration_from_manual_to_automated_search"></a>7. Migration from Manual to Automated Search</h2>
+<h2 id="_migration_from_manual_to_automated_search"><a class="anchor" href="#_migration_from_manual_to_automated_search"></a>5. Migration from Manual to Automated Search</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If migrating from the old manual search setup to <code>@feelpp/antora-extensions</code>:</p>
 </div>
 <div class="sect2">
-<h3 id="_from_manual_lunr_js_setup"><a class="anchor" href="#_from_manual_lunr_js_setup"></a>7.1. From Manual Lunr.js Setup</h3>
+<h3 id="_from_manual_lunr_js_setup"><a class="anchor" href="#_from_manual_lunr_js_setup"></a>5.1. From Manual Lunr.js Setup</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -945,7 +709,7 @@ python3 -m http.server 8080
 </div>
 </div>
 <div class="sect2">
-<h3 id="_from_algolia_to_lunr_js"><a class="anchor" href="#_from_algolia_to_lunr_js"></a>7.2. From Algolia to Lunr.js</h3>
+<h3 id="_from_algolia_to_lunr_js"><a class="anchor" href="#_from_algolia_to_lunr_js"></a>5.2. From Algolia to Lunr.js</h3>
 <div class="paragraph">
 <p>If migrating from Algolia DocSearch to automated Lunr.js:</p>
 </div>
@@ -973,7 +737,7 @@ python3 -m http.server 8080
 </div>
 </div>
 <div class="sect2">
-<h3 id="_benefits_of_automated_approach"><a class="anchor" href="#_benefits_of_automated_approach"></a>7.3. Benefits of Automated Approach</h3>
+<h3 id="_benefits_of_automated_approach"><a class="anchor" href="#_benefits_of_automated_approach"></a>5.3. Benefits of Automated Approach</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1070,7 +834,7 @@ python3 -m http.server 8080
     </div>
   </div>
 </footer>
-<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script id="site-script" src="../_/js/site.js" data-site-url="https://feelpp.github.io/antora-ui" data-ui-root-path="../_"></script>
 
 
 <!-- Font Awesome JS removed to use webfont icons only -->
