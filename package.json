@@ -1,6 +1,6 @@
 {
   "name": "@feelpp/ui-default",
-  "version": "0.54.0",
+  "version": "0.54.1",
   "description": "An archetype project that produces a UI for creating documentation sites with Antora",
   "homepage": "https://github.com/feelpp/antora-ui-default",
   "license": "MPL-2.0",

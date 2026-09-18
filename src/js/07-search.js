@@ -64,6 +64,7 @@
     var siteRoot = siteUrl ? new URL(siteUrl, window.location.href).pathname : '/'
     if (!siteRoot.endsWith('/')) siteRoot += '/'
     var searchIndexPaths = [siteRoot + 'search-index.json']
+    if (siteRoot !== '/') searchIndexPaths.push('/search-index.json')
 
     function tryLoadIndex (pathIndex) {
       if (pathIndex >= searchIndexPaths.length) {

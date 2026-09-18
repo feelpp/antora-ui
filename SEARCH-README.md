@@ -23,6 +23,8 @@ Run the normal Antora build. The extension generates `search-index.json` in the 
 
 `site.url` must be the public deployment URL. Its pathname is used for the index request and every result URL. A site at `https://example.org/project/` therefore loads `/project/search-index.json` and returns links below `/project/`.
 
+For a simple local preview server that serves the generated output directory at `/`, the client retries `/search-index.json` when the deployment-path request is unavailable.
+
 ## Options
 
 The `lunr` mapping accepts:
