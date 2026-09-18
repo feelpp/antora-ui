@@ -59,12 +59,11 @@
       return
     }
 
-    // Try both site root and UI root paths for the search index
-    var searchIndexPaths = [
-      '/search-index.json', // Site root (most likely location)
-      window.uiRootPath + '/search-index.json', // UI root path
-      './search-index.json', // Relative to current page
-    ]
+    var siteScript = document.getElementById('site-script')
+    var siteUrl = siteScript && siteScript.dataset.siteUrl
+    var siteRoot = siteUrl ? new URL(siteUrl, window.location.href).pathname : '/'
+    if (!siteRoot.endsWith('/')) siteRoot += '/'
+    var searchIndexPaths = [siteRoot + 'search-index.json']
 
     function tryLoadIndex (pathIndex) {
       if (pathIndex >= searchIndexPaths.length) {

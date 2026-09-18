@@ -1,0 +1,7 @@
+{
+  "lunr": {
+    "indexFile": "search-index.json",
+    "maxContentLength": 1000,
+    "minContentLength": 50
+  }
+}

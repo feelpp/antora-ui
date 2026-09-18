@@ -169,6 +169,7 @@ asciidoc:
 === Lunr.js Client-Side Search (Default)
 
 For sites without Algolia configuration, the UI falls back to client-side search using Lunr.js, which provides fast search without requiring external services.
+The documentation repository must enable `@feelpp/antora-extensions/src/lunr.js` to generate its index; see link:SEARCH-README.md[SEARCH-README.md].
 
 === Available Build Scripts
 
@@ -185,10 +186,10 @@ The project includes several build scripts for different purposes:
 |Generate the Antora site using the current UI bundle
 
 |`npm run build:search`
-|Generate the search index from the built site
+|Explains that the Antora Lunr extension generates the index during a site build
 
 |`npm run build:full`
-|Complete build: UI → Site → Search index (recommended for production)
+|Build the UI bundle and the UI documentation site
 
 |`npm run generate-search-index`
 |Generate search index (alias for `build:search`)
